@@ -1,123 +1,127 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { ArrowRight, Play, FileText, Video } from "lucide-react";
+import { ArrowRight, Play, FileText, BookOpen, Loader2 } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
+import { useArticles } from "@/hooks/useArticles";
+import type { Article } from "@/types/article";
+import { useNavigate } from "react-router-dom";
 
 const BlogSection = () => {
   const whatsappLink = "https://api.whatsapp.com/send/?phone=5511972896857&text&type=phone_number&app_absent=0";
-  
-  const articles = [
-    {
-      type: "video",
-      icon: <Play className="h-5 w-5" />,
-      title: "Seguro de Crédito em 60 segundos",
-      description: "Entenda rapidamente como funciona o seguro que protege suas vendas a prazo",
-      readTime: "1 min",
-      category: "Introdução"
-    },
-    {
-      type: "article",
-      icon: <FileText className="h-5 w-5" />,
-      title: "O caso Americanas explicado",
-      description: "Como o Seguro de Crédito protegeu fornecedores na maior crise do varejo brasileiro",
-      readTime: "5 min",
-      category: "Case Real"
-    },
-    {
-      type: "video",
-      icon: <Video className="h-5 w-5" />,
-      title: "Como exportar sem risco de inadimplência",
-      description: "Estratégias para expandir internacionalmente com segurança",
-      readTime: "8 min",
-      category: "Exportação"
-    },
-    {
-      type: "article", 
-      icon: <FileText className="h-5 w-5" />,
-      title: "Mitos e verdades sobre Seguro de Crédito",
-      description: "Desmistificamos as principais dúvidas sobre proteção de crédito empresarial",
-      readTime: "6 min",
-      category: "Educativo"
-    },
-    {
-      type: "article",
-      icon: <FileText className="h-5 w-5" />,
-      title: "BI Coface: o poder da informação antes de vender",
-      description: "Como a inteligência de negócios pode transformar sua gestão de risco",
-      readTime: "7 min",
-      category: "Business Intelligence"
-    },
-    {
-      type: "video",
-      icon: <Play className="h-5 w-5" />,
-      title: "40% das falências têm relação com inadimplência",
-      description: "Dados da Coface revelam o impacto da inadimplência em cadeia no Brasil",
-      readTime: "4 min",
-      category: "Mercado"
-    }
-  ];
+  const { data: articles, isLoading, error } = useArticles();
+  const navigate = useNavigate();
+
+  const getIcon = (type: string) => {
+    return type === "video" ? <Play className="h-5 w-5" /> : <FileText className="h-5 w-5" />;
+  };
+
+  const handleArticleClick = (article: Article) => {
+    const slugOrId = article.slug || article.id;
+    navigate(`/conteudo/${slugOrId}`);
+  };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-background">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 sm:mb-14 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">
-            Conteúdo Educativo
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-corporate-gray max-w-4xl mx-auto leading-relaxed">
-            Aprenda mais sobre Seguro de Crédito, gestão de risco e proteção empresarial 
-            com nossos conteúdos especializados.
-          </p>
-        </div>
+        <AnimatedSection animationType="slide-up">
+          <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-4xl mx-auto">
+            <div className="flex justify-center mb-6">
+              <BookOpen className="h-12 w-12 text-secondary" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
+              Conteúdo Educativo
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-corporate-gray leading-relaxed">
+              Aprenda mais sobre Seguro de Crédito, gestão de risco e proteção empresarial 
+              com nossos conteúdos especializados.
+            </p>
+          </div>
+        </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
-          {articles.map((article, index) => (
-            <Card key={index} className="bg-gradient-card shadow-card hover:shadow-premium transition-all duration-300 border-0 cursor-pointer group">
-              <CardContent className="p-5 sm:p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold ${
-                    article.type === 'video' 
-                      ? 'bg-trust-blue/10 text-trust-blue' 
-                      : 'bg-secondary/10 text-secondary'
-                  }`}>
-                    {article.icon}
-                    <span>{article.type === 'video' ? 'Vídeo' : 'Artigo'}</span>
-                  </div>
-                  <span className="text-xs text-corporate-gray">{article.readTime}</span>
-                </div>
+        {isLoading && (
+          <div className="flex justify-center items-center py-20">
+            <Loader2 className="h-8 w-8 animate-spin text-trust-blue" />
+          </div>
+        )}
 
-                <div className="mb-3">
-                  <span className="text-xs font-semibold text-trust-blue bg-trust-blue/10 px-2 py-1 rounded">
-                    {article.category}
-                  </span>
-                </div>
+        {error && (
+          <div className="text-center py-20">
+            <p className="text-corporate-gray mb-4">
+              Erro ao carregar artigos. Por favor, tente novamente.
+            </p>
+            <p className="text-sm text-corporate-gray-light">
+              {error instanceof Error ? error.message : "Erro desconhecido"}
+            </p>
+          </div>
+        )}
 
-                <h3 className="text-lg font-semibold text-primary mb-3 group-hover:text-trust-blue transition-colors">
-                  {article.title}
-                </h3>
-                
-                <p className="text-corporate-gray text-sm leading-relaxed mb-4">
-                  {article.description}
-                </p>
+        {articles && articles.length > 0 && (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+              {articles.map((article, index) => (
+                <AnimatedSection 
+                  key={article.id}
+                  animationType="fade" 
+                  delay={index * 50}
+                >
+                  <Card 
+                    className="bg-card shadow-card hover:shadow-premium transition-all duration-500 border border-border/50 cursor-pointer group h-full flex flex-col hover:-translate-y-1 overflow-hidden"
+                    onClick={() => handleArticleClick(article)}
+                  >
+                    <CardContent className="p-0 h-full flex flex-col">
+                      {article.image_url && (
+                        <div className="w-full overflow-hidden bg-muted" style={{ aspectRatio: '8/3' }}>
+                          <img
+                            src={article.image_url}
+                            alt={article.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                          />
+                        </div>
+                      )}
+                      <div className="p-6 sm:p-8 h-full flex flex-col">
+                        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-trust-blue transition-colors duration-300">
+                          {article.title}
+                        </h3>
+                      
+                        <p 
+                          className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 flex-grow [&_strong]:font-semibold [&_strong]:text-foreground [&_b]:font-semibold [&_b]:text-foreground"
+                          dangerouslySetInnerHTML={{ __html: article.description }}
+                        />
 
-                <div className="flex items-center text-trust-blue font-semibold text-sm group-hover:text-trust-blue-light transition-colors">
-                  <span>Ler mais</span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                        <div className="flex items-center text-trust-blue font-semibold text-sm sm:text-base group-hover:text-trust-blue-light transition-colors duration-300 mt-auto">
+                          <span>Ler mais</span>
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </AnimatedSection>
+              ))}
+            </div>
 
-        <div className="text-center">
-          <Button 
-            variant="premium" 
-            size="lg"
-            onClick={() => window.open(whatsappLink, '_blank')}
-          >
-            Ver todos os conteúdos
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
+            <AnimatedSection animationType="fade" delay={200}>
+              <div className="text-center">
+                <Button 
+                  variant="premium" 
+                  size="lg"
+                  onClick={() => navigate('/conteudo')}
+                  className="shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  Ver todos os conteúdos
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </AnimatedSection>
+          </>
+        )}
+
+        {articles && articles.length === 0 && !isLoading && (
+          <div className="text-center py-20">
+            <p className="text-corporate-gray">
+              Nenhum artigo disponível no momento.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

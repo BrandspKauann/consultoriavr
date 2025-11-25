@@ -3,7 +3,8 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
-import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, AlertCircle, RefreshCw } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
 
 const DiagnosticSection = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -102,7 +103,6 @@ const DiagnosticSection = () => {
   };
 
   const isEligible = () => {
-    // Simple eligibility logic based on key criteria
     const faturamento = answers[0];
     const exports = answers[5];
     
@@ -120,169 +120,179 @@ const DiagnosticSection = () => {
     const eligible = isEligible();
     
     return (
-      <section id="diagnostico" className="py-20 bg-muted/50 dark:bg-muted/20">
+      <section id="diagnostico" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <Card className="bg-gradient-card shadow-premium border-0">
-              <CardHeader className="text-center pb-6">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                  eligible ? 'bg-trust-blue/10' : 'bg-secondary/10'
-                }`}>
+          <AnimatedSection animationType="scale">
+            <div className="max-w-3xl mx-auto">
+              <Card className="bg-gradient-card shadow-premium border-0">
+                <CardHeader className="text-center pb-6 sm:pb-8">
+                  <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 ${
+                    eligible ? 'bg-trust-blue/10' : 'bg-secondary/10'
+                  }`}>
+                    {eligible ? (
+                      <CheckCircle className="h-10 w-10 text-trust-blue" />
+                    ) : (
+                      <AlertCircle className="h-10 w-10 text-secondary" />
+                    )}
+                  </div>
+                  <CardTitle className={`text-2xl sm:text-3xl md:text-4xl ${eligible ? 'text-trust-blue' : 'text-primary'}`}>
+                    {eligible ? 'Parabéns! Sua empresa tem perfil' : 'Sua empresa ainda não tem o perfil ideal'}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center space-y-6">
                   {eligible ? (
-                    <CheckCircle className="h-8 w-8 text-trust-blue" />
+                    <div className="space-y-6">
+                      <p className="text-base sm:text-lg text-corporate-gray leading-relaxed">
+                        Com base no diagnóstico, sua empresa atende aos critérios para contratar 
+                        o Seguro de Crédito Empresarial da Coface.
+                      </p>
+                      <div className="space-y-4">
+                        <Button 
+                          variant="hero" 
+                          size="lg" 
+                          className="w-full shadow-lg hover:shadow-xl transition-shadow"
+                          onClick={() => window.open(whatsappLink, '_blank')}
+                        >
+                          Agende sua sessão estratégica com a Hirayama Corretora
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                        <Button 
+                          variant="trust" 
+                          size="lg" 
+                          className="w-full"
+                          onClick={() => window.open(whatsappLink, '_blank')}
+                        >
+                          Receba uma análise gratuita do perfil da sua empresa
+                        </Button>
+                      </div>
+                    </div>
                   ) : (
-                    <AlertCircle className="h-8 w-8 text-secondary" />
+                    <div className="space-y-6">
+                      <p className="text-base sm:text-lg text-corporate-gray leading-relaxed">
+                        Sua empresa ainda não atende aos critérios mínimos para o Seguro de Crédito, 
+                        mas a Coface oferece outras soluções que podem ajudar.
+                      </p>
+                      <div className="space-y-4">
+                        <Button 
+                          variant="secondary" 
+                          size="lg" 
+                          className="w-full shadow-md hover:shadow-lg transition-shadow"
+                          onClick={() => window.open(whatsappLink, '_blank')}
+                        >
+                          Conheça o BI Coface (URBA360)
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                        <Button 
+                          variant="trust" 
+                          size="lg" 
+                          className="w-full"
+                          onClick={() => window.open(whatsappLink, '_blank')}
+                        >
+                          Falar com especialista
+                        </Button>
+                      </div>
+                    </div>
                   )}
-                </div>
-                <CardTitle className={`text-2xl ${eligible ? 'text-trust-blue' : 'text-primary'}`}>
-                  {eligible ? 'Parabéns! Sua empresa tem perfil' : 'Sua empresa ainda não tem o perfil ideal'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                {eligible ? (
-                  <div>
-                    <p className="text-corporate-gray mb-6 leading-relaxed">
-                      Com base no diagnóstico, sua empresa atende aos critérios para contratar 
-                      o Seguro de Crédito Empresarial da Coface.
-                    </p>
-                    <div className="space-y-4">
-                      <Button 
-                        variant="hero" 
-                        size="lg" 
-                        className="w-full"
-                        onClick={() => window.open(whatsappLink, '_blank')}
-                      >
-                        Agende sua sessão estratégica com a Hirayama Corretora
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                      <Button 
-                        variant="trust" 
-                        size="lg" 
-                        className="w-full"
-                        onClick={() => window.open(whatsappLink, '_blank')}
-                      >
-                        Receba uma análise gratuita do perfil da sua empresa
-                      </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <p className="text-corporate-gray mb-6 leading-relaxed">
-                      Sua empresa ainda não atende aos critérios mínimos para o Seguro de Crédito, 
-                      mas a Coface oferece outras soluções que podem ajudar.
-                    </p>
-                    <div className="space-y-4">
-                      <Button 
-                        variant="secondary" 
-                        size="lg" 
-                        className="w-full"
-                        onClick={() => window.open(whatsappLink, '_blank')}
-                      >
-                        Conheça o BI Coface (URBA360)
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                      <Button 
-                        variant="trust" 
-                        size="lg" 
-                        className="w-full"
-                        onClick={() => window.open(whatsappLink, '_blank')}
-                      >
-                        Falar com especialista
-                      </Button>
-                    </div>
-                  </div>
-                )}
-                
-                <Button 
-                  variant="ghost" 
-                  onClick={resetDiagnostic}
-                  className="mt-6 text-corporate-gray hover:text-primary"
-                >
-                  Refazer diagnóstico
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+                  
+                  <Button 
+                    variant="ghost" 
+                    onClick={resetDiagnostic}
+                    className="mt-6 text-corporate-gray hover:text-primary"
+                  >
+                    <RefreshCw className="mr-2 h-4 w-4" />
+                    Refazer diagnóstico
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     );
   }
 
   return (
-    <section id="diagnostico" className="py-12 sm:py-16 md:py-20 bg-muted/50 dark:bg-muted/20">
+    <section id="diagnostico" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">
-            Diagnóstico Online
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-corporate-gray max-w-3xl mx-auto">
-            Descubra em 2 minutos se sua empresa tem perfil para o Seguro de Crédito
-          </p>
-        </div>
+        <AnimatedSection animationType="slide-up">
+          <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
+              Diagnóstico Online
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-corporate-gray leading-relaxed">
+              Descubra em 2 minutos se sua empresa tem perfil para o Seguro de Crédito
+            </p>
+          </div>
+        </AnimatedSection>
 
-        <div className="max-w-2xl mx-auto">
-          <Card className="bg-gradient-card shadow-card border-0">
-            <CardHeader className="p-5 sm:p-6">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <CardTitle className="text-base sm:text-lg md:text-xl text-primary">
-                  Pergunta {currentQuestion + 1} de {questions.length}
-                </CardTitle>
-                <div className="text-xs sm:text-sm text-corporate-gray">
-                  {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
-                </div>
-              </div>
-              <div className="w-full bg-border rounded-full h-2">
-                <div 
-                  className="bg-gradient-cta h-2 rounded-full transition-all duration-300"
-                  style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
-                ></div>
-              </div>
-            </CardHeader>
-            <CardContent className="p-5 sm:p-6">
-              <h3 className="text-base sm:text-lg font-semibold text-primary mb-5 sm:mb-6">
-                {questions[currentQuestion].question}
-              </h3>
-              
-              <RadioGroup
-                value={answers[currentQuestion] || ""}
-                onValueChange={handleAnswer}
-                className="space-y-2 sm:space-y-3"
-              >
-                {questions[currentQuestion].options.map((option, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <RadioGroupItem value={option.value} id={option.value} />
-                    <Label 
-                      htmlFor={option.value} 
-                      className="flex-1 cursor-pointer py-2 text-sm sm:text-base text-corporate-gray hover:text-primary transition-colors"
-                    >
-                      {option.label}
-                    </Label>
+        <AnimatedSection animationType="scale" delay={100}>
+          <div className="max-w-3xl mx-auto">
+            <Card className="bg-gradient-card shadow-card border-0">
+              <CardHeader className="p-6 sm:p-8">
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl text-primary">
+                    Pergunta {currentQuestion + 1} de {questions.length}
+                  </CardTitle>
+                  <div className="text-sm sm:text-base text-corporate-gray font-semibold">
+                    {Math.round(((currentQuestion + 1) / questions.length) * 100)}%
                   </div>
-                ))}
-              </RadioGroup>
+                </div>
+                <div className="w-full bg-border rounded-full h-3">
+                  <div 
+                    className="bg-gradient-cta h-3 rounded-full transition-all duration-500"
+                    style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+                  ></div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-primary mb-6 sm:mb-8">
+                  {questions[currentQuestion].question}
+                </h3>
+                
+                <RadioGroup
+                  value={answers[currentQuestion] || ""}
+                  onValueChange={handleAnswer}
+                  className="space-y-3 sm:space-y-4"
+                >
+                  {questions[currentQuestion].options.map((option, index) => (
+                    <div 
+                      key={index} 
+                      className="flex items-center space-x-3 p-4 rounded-lg border border-border hover:border-trust-blue hover:bg-muted/50 transition-all cursor-pointer"
+                    >
+                      <RadioGroupItem value={option.value} id={option.value} />
+                      <Label 
+                        htmlFor={option.value} 
+                        className="flex-1 cursor-pointer text-sm sm:text-base text-corporate-gray hover:text-primary transition-colors font-medium"
+                      >
+                        {option.label}
+                      </Label>
+                    </div>
+                  ))}
+                </RadioGroup>
 
-              <div className="flex justify-between mt-6 sm:mt-8 gap-3">
-                <Button 
-                  variant="ghost" 
-                  onClick={prevQuestion}
-                  disabled={currentQuestion === 0}
-                  className="text-corporate-gray text-sm sm:text-base"
-                >
-                  Anterior
-                </Button>
-                <Button 
-                  variant="hero" 
-                  onClick={nextQuestion}
-                  disabled={!answers[currentQuestion]}
-                  className="text-sm sm:text-base"
-                >
-                  {currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Próxima'}
-                  <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                <div className="flex justify-between mt-8 sm:mt-10 gap-4">
+                  <Button 
+                    variant="ghost" 
+                    onClick={prevQuestion}
+                    disabled={currentQuestion === 0}
+                    className="text-corporate-gray"
+                  >
+                    Anterior
+                  </Button>
+                  <Button 
+                    variant="hero" 
+                    onClick={nextQuestion}
+                    disabled={!answers[currentQuestion]}
+                    className="shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    {currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Próxima'}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
