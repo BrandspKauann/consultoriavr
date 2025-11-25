@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Usuário - Hash de Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #007bff;
+        }
+        .sql-code {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+        }
+        .copy-btn {
+            background: #28a745;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Criar Usuário - Gerador de Hash</h1>
+        <p>Este script gera o hash da senha para inserir no Supabase.</p>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="marketingkauann@gmail.com" placeholder="seu@email.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" value="Balboal.10" placeholder="Sua senha">
+        </div>
+        
+        <button onclick="gerarHash()">Gerar Hash e SQL</button>
+        
+        <div id="result" class="result" style="display: none;">
+            <h3>✅ Hash Gerado!</h3>
+            <p><strong>Hash da senha:</strong></p>
+            <div class="sql-code" id="hash-code"></div>
+            <button class="copy-btn" onclick="copiarHash()">Copiar Hash</button>
+            
+            <p style="margin-top: 20px;"><strong>SQL para inserir no Supabase:</strong></p>
+            <div class="sql-code" id="sql-code"></div>
+            <button class="copy-btn" onclick="copiarSQL()">Copiar SQL</button>
+            
+            <p style="margin-top: 20px; color: #666;">
+                <strong>📋 Instruções:</strong><br>
+                1. Copie o SQL acima<br>
+                2. Vá em SQL Editor no Supabase<br>
+                3. Cole e execute o SQL<br>
+                4. ✅ Usuário criado!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        async function gerarHash() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('Por favor, preencha email e senha!');
+                return;
+            }
+            
+            try {
+                // Gerar hash SHA-256
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                // Mostrar resultado
+                document.getElementById('hash-code').textContent = hashHex;
+                
+                // Gerar SQL
+                const sql = `INSERT INTO login (email, password_hash, role, active) 
+VALUES (
+  '${email.toLowerCase().trim()}',
+  '${hashHex}',
+  'admin',
+  true
+) ON CONFLICT (email) DO NOTHING;`;
+                
+                document.getElementById('sql-code').textContent = sql;
+                document.getElementById('result').style.display = 'block';
+                
+                // Salvar para usar depois
+                window.lastHash = hashHex;
+                window.lastSQL = sql;
+                window.lastEmail = email;
+                
+            } catch (error) {
+                alert('Erro ao gerar hash: ' + error.message);
+            }
+        }
+        
+        function copiarHash() {
+            const hash = document.getElementById('hash-code').textContent;
+            navigator.clipboard.writeText(hash).then(() => {
+                alert('Hash copiado para a área de transferência!');
+            });
+        }
+        
+        function copiarSQL() {
+            const sql = document.getElementById('sql-code').textContent;
+            navigator.clipboard.writeText(sql).then(() => {
+                alert('SQL copiado para a área de transferência!');
+            });
+        }
+    </script>
+</body>
+</html>
+

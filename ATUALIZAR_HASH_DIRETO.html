@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Hash Direto</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm" type="module"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #fff;
+        }
+        .container {
+            background: #2d2d2d;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        h1 { color: #4CAF50; }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button:hover { background: #45a049; }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+        .code {
+            background: #1e1e1e;
+            color: #4CAF50;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+            word-break: break-all;
+            border: 1px solid #444;
+        }
+        .success { border-left-color: #4CAF50; }
+        .error { border-left-color: #f44336; background: #3d1e1e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Atualizar Hash no Banco</h1>
+        <p>Este script vai gerar o hash no navegador e atualizar automaticamente no Supabase.</p>
+        
+        <button onclick="atualizarHash()">🔄 Atualizar Hash no Banco</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script type="module">
+        const SUPABASE_URL = 'https://cpejrontfflbzmssomnr.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_3DT42kOTvybQJlBfSA5-ww_OkzlEzil';
+        const EMAIL = 'marketingkauann@gmail.com';
+        const PASSWORD = 'Balboal.10';
+        
+        const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+        
+        async function gerarHashBrowser(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        }
+        
+        window.atualizarHash = async function() {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                resultDiv.innerHTML = '<div class="result">🔄 Gerando hash no navegador...</div>';
+                
+                // Gerar hash
+                const hash = await gerarHashBrowser(PASSWORD);
+                console.log('✅ Hash gerado:', hash);
+                console.log('Primeiros 20 chars:', hash.substring(0, 20));
+                
+                resultDiv.innerHTML = '<div class="result">🔄 Atualizando hash no banco...</div>';
+                
+                // Atualizar no banco
+                const { data, error } = await supabase
+                    .from('login')
+                    .update({
+                        password_hash: hash,
+                        updated_at: new Date().toISOString()
+                    })
+                    .eq('email', EMAIL.toLowerCase().trim())
+                    .select()
+                    .single();
+                
+                if (error) {
+                    console.error('❌ Erro:', error);
+                    resultDiv.innerHTML = `<div class="result error">
+                        <h3>❌ Erro ao atualizar</h3>
+                        <p><strong>Erro:</strong> ${error.message}</p>
+                        <p><strong>Código:</strong> ${error.code || 'N/A'}</p>
+                        <p><strong>Hash gerado:</strong></p>
+                        <div class="code">${hash}</div>
+                        <p><strong>Execute este SQL no Supabase:</strong></p>
+                        <div class="code">UPDATE login SET password_hash = '${hash}', updated_at = NOW() WHERE email = '${EMAIL}';</div>
+                    </div>`;
+                } else {
+                    console.log('✅ Hash atualizado!', data);
+                    resultDiv.innerHTML = `<div class="result success">
+                        <h3>✅ Hash Atualizado com Sucesso!</h3>
+                        <p><strong>Email:</strong> ${data.email}</p>
+                        <p><strong>Hash (primeiros 20 chars):</strong> ${hash.substring(0, 20)}...</p>
+                        <p><strong>Hash completo:</strong></p>
+                        <div class="code">${hash}</div>
+                        <p style="margin-top: 20px; color: #4CAF50; font-weight: bold;">
+                            ✅ Agora você pode testar o login em: 
+                            <a href="http://localhost:8081/admin/login" target="_blank" style="color: #4CAF50;">http://localhost:8081/admin/login</a>
+                        </p>
+                    </div>`;
+                }
+            } catch (error) {
+                console.error('❌ Erro:', error);
+                resultDiv.innerHTML = `<div class="result error">
+                    <h3>❌ Erro</h3>
+                    <p>${error.message}</p>
+                </div>`;
+            }
+        };
+        
+        // Executar automaticamente ao carregar
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('✅ Script carregado. Clique no botão para atualizar o hash.');
+        });
+    </script>
+</body>
+</html>
+

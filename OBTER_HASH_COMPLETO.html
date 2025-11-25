@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Obter Hash Completo</title>
+</head>
+<body>
+    <h1>Gerando Hash...</h1>
+    <div id="result"></div>
+    
+    <script>
+        (async () => {
+            const password = 'Balboal.10';
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            
+            document.getElementById('result').innerHTML = `
+                <h2>Hash Completo:</h2>
+                <p style="font-family: monospace; font-size: 12px; word-break: break-all;">${hashHex}</p>
+                <h2>SQL para Atualizar:</h2>
+                <p style="font-family: monospace; font-size: 12px; word-break: break-all;">UPDATE login SET password_hash = '${hashHex}', updated_at = NOW() WHERE email = 'marketingkauann@gmail.com';</p>
+                <button onclick="navigator.clipboard.writeText('${hashHex}').then(() => alert('Hash copiado!'))">Copiar Hash</button>
+                <button onclick="navigator.clipboard.writeText(\`UPDATE login SET password_hash = '${hashHex}', updated_at = NOW() WHERE email = 'marketingkauann@gmail.com';\`).then(() => alert('SQL copiado!'))">Copiar SQL</button>
+            `;
+            
+            console.log('Hash completo:', hashHex);
+            console.log('Primeiros 20 chars:', hashHex.substring(0, 20));
+            console.log('SQL:', `UPDATE login SET password_hash = '${hashHex}', updated_at = NOW() WHERE email = 'marketingkauann@gmail.com';`);
+        })();
+    </script>
+</body>
+</html>
+

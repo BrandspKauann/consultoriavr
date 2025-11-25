@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testar Conexão e Criar Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover { background: #0056b3; }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #007bff;
+        }
+        .code {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+        }
+        .success { border-left-color: #28a745; background: #d4edda; }
+        .error { border-left-color: #dc3545; background: #f8d7da; }
+        .warning { border-left-color: #ffc107; background: #fff3cd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Testar Conexão e Criar Usuário</h1>
+        
+        <div class="form-group">
+            <label>URL do Supabase:</label>
+            <input type="text" id="supabaseUrl" value="https://cpejrontfflbzmssomnr.supabase.co" placeholder="https://seu-projeto.supabase.co">
+        </div>
+        
+        <div class="form-group">
+            <label>Chave Pública (anon key):</label>
+            <input type="text" id="supabaseKey" value="sb_publishable_3DT42kOTvybQJlBfSA5-ww_OkzlEzil" placeholder="sua-chave-aqui">
+        </div>
+        
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="email" value="marketingkauann@gmail.com">
+        </div>
+        
+        <div class="form-group">
+            <label>Senha:</label>
+            <input type="password" id="password" value="Balboal.10">
+        </div>
+        
+        <button onclick="testarConexao()">1. Testar Conexão</button>
+        <button onclick="gerarHash()">2. Gerar Hash</button>
+        <button onclick="criarUsuario()">3. Criar Usuário</button>
+        <button onclick="testarLogin()">4. Testar Login</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script type="module">
+        // Importar Supabase JS
+        const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+        
+        window.supabaseClient = null;
+        
+        window.testarConexao = async function() {
+            const url = document.getElementById('supabaseUrl').value;
+            const key = document.getElementById('supabaseKey').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                resultDiv.innerHTML = '<div class="result warning">🔄 Testando conexão...</div>';
+                
+                window.supabaseClient = createClient(url, key);
+                
+                // Testar conexão simples
+                const { data, error } = await window.supabaseClient
+                    .from('login')
+                    .select('count')
+                    .limit(1);
+                
+                if (error) {
+                    resultDiv.innerHTML = `<div class="result error">
+                        <h3>❌ Erro na Conexão</h3>
+                        <p><strong>Erro:</strong> ${error.message}</p>
+                        <p><strong>Código:</strong> ${error.code || 'N/A'}</p>
+                        <p><strong>Detalhes:</strong> ${JSON.stringify(error, null, 2)}</p>
+                    </div>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="result success">
+                        <h3>✅ Conexão OK!</h3>
+                        <p>A tabela 'login' existe e está acessível.</p>
+                        <p><strong>URL:</strong> ${url}</p>
+                        <p><strong>Status:</strong> Conectado</p>
+                    </div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">
+                    <h3>❌ Erro</h3>
+                    <p>${error.message}</p>
+                </div>`;
+            }
+        };
+        
+        window.gerarHash = async function() {
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                window.lastHash = hashHex;
+                
+                resultDiv.innerHTML = `<div class="result success">
+                    <h3>✅ Hash Gerado!</h3>
+                    <p><strong>Senha:</strong> ${password}</p>
+                    <p><strong>Hash:</strong></p>
+                    <div class="code">${hashHex}</div>
+                    <button onclick="navigator.clipboard.writeText('${hashHex}').then(() => alert('Hash copiado!'))">Copiar Hash</button>
+                </div>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">
+                    <h3>❌ Erro ao gerar hash</h3>
+                    <p>${error.message}</p>
+                </div>`;
+            }
+        };
+        
+        window.criarUsuario = async function() {
+            if (!window.supabaseClient) {
+                await window.testarConexao();
+                if (!window.supabaseClient) {
+                    alert('Erro: Não foi possível conectar ao Supabase. Teste a conexão primeiro.');
+                    return;
+                }
+            }
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                // Gerar hash se não existir
+                if (!window.lastHash) {
+                    await window.gerarHash();
+                }
+                
+                resultDiv.innerHTML = '<div class="result warning">🔄 Criando usuário...</div>';
+                
+                // Inserir usuário
+                const { data, error } = await window.supabaseClient
+                    .from('login')
+                    .insert([{
+                        email: email.toLowerCase().trim(),
+                        password_hash: window.lastHash,
+                        role: 'admin',
+                        active: true
+                    }])
+                    .select()
+                    .single();
+                
+                if (error) {
+                    if (error.code === '23505') {
+                        // Usuário já existe, tentar atualizar
+                        const { data: updateData, error: updateError } = await window.supabaseClient
+                            .from('login')
+                            .update({
+                                password_hash: window.lastHash,
+                                active: true,
+                                updated_at: new Date().toISOString()
+                            })
+                            .eq('email', email.toLowerCase().trim())
+                            .select()
+                            .single();
+                        
+                        if (updateError) {
+                            resultDiv.innerHTML = `<div class="result error">
+                                <h3>❌ Erro ao atualizar usuário</h3>
+                                <p><strong>Erro:</strong> ${updateError.message}</p>
+                                <p><strong>Código:</strong> ${updateError.code || 'N/A'}</p>
+                                <p><strong>Detalhes:</strong> ${JSON.stringify(updateError, null, 2)}</p>
+                            </div>`;
+                        } else {
+                            resultDiv.innerHTML = `<div class="result success">
+                                <h3>✅ Usuário Atualizado!</h3>
+                                <p><strong>Email:</strong> ${updateData.email}</p>
+                                <p><strong>ID:</strong> ${updateData.id}</p>
+                                <p><strong>Role:</strong> ${updateData.role}</p>
+                                <p><strong>Status:</strong> ${updateData.active ? 'Ativo' : 'Inativo'}</p>
+                            </div>`;
+                        }
+                    } else {
+                        resultDiv.innerHTML = `<div class="result error">
+                            <h3>❌ Erro ao criar usuário</h3>
+                            <p><strong>Erro:</strong> ${error.message}</p>
+                            <p><strong>Código:</strong> ${error.code || 'N/A'}</p>
+                            <p><strong>Detalhes:</strong> ${JSON.stringify(error, null, 2)}</p>
+                        </div>`;
+                    }
+                } else {
+                    resultDiv.innerHTML = `<div class="result success">
+                        <h3>✅ Usuário Criado!</h3>
+                        <p><strong>Email:</strong> ${data.email}</p>
+                        <p><strong>ID:</strong> ${data.id}</p>
+                        <p><strong>Role:</strong> ${data.role}</p>
+                        <p><strong>Status:</strong> ${data.active ? 'Ativo' : 'Inativo'}</p>
+                    </div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">
+                    <h3>❌ Erro</h3>
+                    <p>${error.message}</p>
+                </div>`;
+            }
+        };
+        
+        window.testarLogin = async function() {
+            if (!window.supabaseClient) {
+                await window.testarConexao();
+                if (!window.supabaseClient) {
+                    alert('Erro: Não foi possível conectar ao Supabase. Teste a conexão primeiro.');
+                    return;
+                }
+            }
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                resultDiv.innerHTML = '<div class="result warning">🔄 Testando login...</div>';
+                
+                // Buscar usuário
+                const { data: userData, error: userError } = await window.supabaseClient
+                    .from('login')
+                    .select('*')
+                    .eq('email', email.toLowerCase().trim())
+                    .eq('active', true)
+                    .maybeSingle();
+                
+                if (userError || !userData) {
+                    resultDiv.innerHTML = `<div class="result error">
+                        <h3>❌ Usuário não encontrado</h3>
+                        <p><strong>Erro:</strong> ${userError?.message || 'Usuário não encontrado'}</p>
+                    </div>`;
+                    return;
+                }
+                
+                // Gerar hash da senha
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                // Verificar senha
+                if (hashHex === userData.password_hash) {
+                    resultDiv.innerHTML = `<div class="result success">
+                        <h3>✅ Login Válido!</h3>
+                        <p><strong>Email:</strong> ${userData.email}</p>
+                        <p><strong>ID:</strong> ${userData.id}</p>
+                        <p><strong>Role:</strong> ${userData.role}</p>
+                        <p><strong>Status:</strong> ${userData.active ? 'Ativo' : 'Inativo'}</p>
+                        <p><strong>Hash no banco:</strong> ${userData.password_hash.substring(0, 20)}...</p>
+                        <p><strong>Hash calculado:</strong> ${hashHex.substring(0, 20)}...</p>
+                    </div>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="result error">
+                        <h3>❌ Senha Incorreta</h3>
+                        <p>O hash da senha não corresponde ao hash armazenado no banco.</p>
+                        <p><strong>Hash no banco:</strong> ${userData.password_hash.substring(0, 50)}...</p>
+                        <p><strong>Hash calculado:</strong> ${hashHex.substring(0, 50)}...</p>
+                        <p><strong>Dica:</strong> Verifique se a senha está correta ou recrie o usuário.</p>
+                    </div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">
+                    <h3>❌ Erro</h3>
+                    <p>${error.message}</p>
+                </div>`;
+            }
+        };
+    </script>
+</body>
+</html>
+

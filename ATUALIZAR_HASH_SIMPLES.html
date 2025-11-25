@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Hash - Método Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin: 10px 0;
+        }
+        button:hover { background: #45a049; }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+        .code {
+            background: #282c34;
+            color: #4CAF50;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Atualizar Hash no Banco</h1>
+        <p>Este script gera o hash e mostra o SQL para você executar manualmente no Supabase.</p>
+        
+        <button onclick="gerarHashESQL()">Gerar Hash e SQL</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function gerarHashESQL() {
+            const password = 'Balboal.10';
+            const email = 'marketingkauann@gmail.com';
+            
+            try {
+                // Gerar hash
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password.trim());
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                // SQL para atualizar
+                const sql = `UPDATE login 
+SET password_hash = '${hashHex}', 
+    updated_at = NOW() 
+WHERE email = '${email}';`;
+                
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+                    <div class="result">
+                        <h3>✅ Hash Gerado!</h3>
+                        <p><strong>Senha:</strong> ${password}</p>
+                        <p><strong>Hash completo:</strong></p>
+                        <div class="code">${hashHex}</div>
+                        <p><strong>Primeiros 20 chars:</strong> ${hashHex.substring(0, 20)}</p>
+                        
+                        <h3>📋 SQL para Executar no Supabase:</h3>
+                        <div class="code">${sql}</div>
+                        
+                        <button onclick="navigator.clipboard.writeText('${sql}').then(() => alert('SQL copiado! Cole no Supabase SQL Editor.'))">
+                            Copiar SQL
+                        </button>
+                        
+                        <p style="margin-top: 20px; color: #666;">
+                            <strong>Instruções:</strong><br>
+                            1. Clique em "Copiar SQL" acima<br>
+                            2. Vá no Supabase SQL Editor<br>
+                            3. Cole o SQL e execute (Run ou F5)<br>
+                            4. ✅ Hash atualizado!
+                        </p>
+                    </div>
+                `;
+                
+                console.log('Hash:', hashHex);
+                console.log('SQL:', sql);
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <div class="result" style="border-left-color: #f44336;">
+                        <h3>❌ Erro</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
+
