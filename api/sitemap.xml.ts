@@ -16,6 +16,8 @@ export default async function handler(
 
   // Buscar artigos do Supabase
   let articles: any[] = [];
+  let errorMessage = '';
+  
   try {
     // Na Vercel, as variáveis de ambiente podem ter prefixo VITE_ ou não
     const supabaseUrl = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || '';
@@ -25,40 +27,70 @@ export default async function handler(
     console.log('Sitemap: Supabase URL configurada:', !!supabaseUrl);
     console.log('Sitemap: Supabase Key configurada:', !!supabaseKey);
     
-    if (supabaseUrl && supabaseKey) {
-      const supabase = createClient(supabaseUrl, supabaseKey);
-      
-      console.log('Sitemap: Buscando artigos publicados...');
-      
-      const { data, error } = await supabase
-        .from("articles")
-        .select("id, slug, updated_at")
-        .eq("published", true)
-        .order("updated_at", { ascending: false });
-
-      if (error) {
-        console.error("Sitemap: Erro ao buscar artigos:", error);
-        console.error("Sitemap: Detalhes do erro:", JSON.stringify(error));
-      } else if (data) {
-        articles = data || [];
-        console.log(`Sitemap: ${articles.length} artigos encontrados`);
-        if (articles.length > 0) {
-          console.log('Sitemap: Primeiro artigo:', articles[0]);
-        }
-      } else {
-        console.log('Sitemap: Nenhum dado retornado do Supabase');
-      }
-    } else {
+    if (!supabaseUrl || !supabaseKey) {
+      errorMessage = 'Variáveis de ambiente não configuradas';
       console.error("Sitemap: Variáveis de ambiente do Supabase não configuradas");
       console.error("Sitemap: URL:", supabaseUrl ? 'OK' : 'FALTANDO');
       console.error("Sitemap: Key:", supabaseKey ? 'OK' : 'FALTANDO');
+    } else {
+      const supabase = createClient(supabaseUrl, supabaseKey);
+      
+      console.log('Sitemap: Buscando artigos publicados...');
+      console.log('Sitemap: URL do Supabase:', supabaseUrl.substring(0, 30) + '...');
+      
+      // Tentar buscar sem filtro primeiro para ver se a conexão funciona
+      const { data: allData, error: allError } = await supabase
+        .from("articles")
+        .select("id, slug, updated_at, published")
+        .order("updated_at", { ascending: false })
+        .limit(100);
+      
+      if (allError) {
+        errorMessage = `Erro na query: ${allError.message}`;
+        console.error("Sitemap: Erro ao buscar TODOS os artigos:", allError);
+        console.error("Sitemap: Código do erro:", allError.code);
+        console.error("Sitemap: Detalhes:", JSON.stringify(allError));
+      } else {
+        console.log(`Sitemap: Total de artigos no banco: ${allData?.length || 0}`);
+        
+        // Agora buscar apenas os publicados
+        const { data, error } = await supabase
+          .from("articles")
+          .select("id, slug, updated_at")
+          .eq("published", true)
+          .order("updated_at", { ascending: false });
+
+        if (error) {
+          errorMessage = `Erro ao buscar artigos publicados: ${error.message}`;
+          console.error("Sitemap: Erro ao buscar artigos publicados:", error);
+          console.error("Sitemap: Código do erro:", error.code);
+          console.error("Sitemap: Detalhes:", JSON.stringify(error));
+        } else if (data) {
+          articles = Array.isArray(data) ? data : [];
+          console.log(`Sitemap: ${articles.length} artigos publicados encontrados`);
+          if (articles.length > 0) {
+            console.log('Sitemap: Primeiro artigo:', JSON.stringify(articles[0]));
+            console.log('Sitemap: Último artigo:', JSON.stringify(articles[articles.length - 1]));
+          } else {
+            console.warn('Sitemap: Nenhum artigo publicado encontrado no banco');
+          }
+        } else {
+          console.warn('Sitemap: Query retornou null ou undefined');
+        }
+      }
     }
   } catch (error) {
-    console.error("Sitemap: Erro ao buscar artigos:", error);
+    errorMessage = error instanceof Error ? error.message : 'Erro desconhecido';
+    console.error("Sitemap: Exceção ao buscar artigos:", error);
     if (error instanceof Error) {
       console.error("Sitemap: Mensagem de erro:", error.message);
       console.error("Sitemap: Stack:", error.stack);
     }
+  }
+  
+  // Log final do status
+  if (errorMessage) {
+    console.error(`Sitemap: ERRO - ${errorMessage}`);
   }
 
   // Função para escapar caracteres XML
