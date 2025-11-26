@@ -7,7 +7,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import type { Article } from "@/types/article";
+import { findRelatedArticles } from "@/utils/articleRecommendation";
 
 const ContentDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -15,10 +15,8 @@ const ContentDetail = () => {
   const { data: article, isLoading, error } = useArticleBySlug(slug);
   const { data: allArticles } = useAllPublishedArticles();
 
-  // Buscar artigos relacionados (mesma categoria ou outros artigos, excluindo o atual)
-  const relatedArticles = allArticles
-    ?.filter((a) => a.id !== article?.id && a.published)
-    .slice(0, 3) || [];
+  // Buscar artigos relacionados usando sistema inteligente de recomendação
+  const relatedArticles = findRelatedArticles(article, allArticles, 3);
 
   const renderContent = () => {
     if (!article?.content) {
