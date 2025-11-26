@@ -54,11 +54,13 @@ export default async function handler(
         console.log(`Sitemap: Total de artigos no banco: ${allData?.length || 0}`);
         
         // Agora buscar apenas os publicados
+        // Usar service_role key se disponível para bypass RLS, senão usar anon key
         const { data, error } = await supabase
           .from("articles")
           .select("id, slug, updated_at")
           .eq("published", true)
-          .order("updated_at", { ascending: false });
+          .order("updated_at", { ascending: false })
+          .limit(500); // Limite máximo de 500 artigos
 
         if (error) {
           errorMessage = `Erro ao buscar artigos publicados: ${error.message}`;
@@ -120,6 +122,15 @@ export default async function handler(
 
   // Log final antes de gerar XML
   console.log(`Sitemap: Gerando XML com ${staticPages.length} páginas estáticas e ${articleUrls.length} artigos`);
+  
+  if (errorMessage) {
+    console.error(`Sitemap: AVISO - ${errorMessage}`);
+  }
+  
+  if (articleUrls.length === 0) {
+    console.warn('Sitemap: ATENÇÃO - Nenhum artigo será incluído no sitemap!');
+    console.warn('Sitemap: Verifique se há artigos publicados no banco de dados');
+  }
 
   // Gerar XML com encoding correto
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -133,8 +144,7 @@ ${staticPages
     <priority>${page.priority}</priority>
   </url>`
   )
-  .join("\n")}
-${articleUrls.length > 0 ? articleUrls
+  .join("\n")}${articleUrls.length > 0 ? "\n" + articleUrls
   .map(
     (article) => `  <url>
     <loc>${article.url}</loc>
@@ -147,6 +157,7 @@ ${articleUrls.length > 0 ? articleUrls
 </urlset>`;
 
   console.log(`Sitemap: XML gerado com sucesso. Tamanho: ${sitemap.length} caracteres`);
+  console.log(`Sitemap: Total de URLs no sitemap: ${staticPages.length + articleUrls.length}`);
 
   res.setHeader('Content-Type', 'application/xml; charset=utf-8');
   res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
