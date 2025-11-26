@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const Footer = () => {
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511972896857&text&type=phone_number&app_absent=0";
+  const whatsappLink = "https://wa.link/d3f6ih";
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);

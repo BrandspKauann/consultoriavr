@@ -16,14 +16,9 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511972896857&text&type=phone_number&app_absent=0";
+  const whatsappLink = "https://wa.link/d3f6ih";
 
-  const menuItems = [
-    { label: "Início", href: "/", type: "route" as const },
-    { label: "O que é", href: "#o-que-e", type: "anchor" as const },
-    { label: "Serviços", href: "#servicos", type: "anchor" as const },
-    { label: "Conteúdo", href: "/conteudo", type: "route" as const },
-  ];
+  const menuItems: Array<{ label: string; href: string; type: "route" | "anchor" }> = [];
 
   useEffect(() => {
     const handleScroll = () => {

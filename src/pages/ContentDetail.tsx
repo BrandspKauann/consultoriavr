@@ -224,7 +224,7 @@ const ContentDetail = () => {
                   </p>
                   <div className="space-y-3">
                     <Button
-                      onClick={() => navigate("/")}
+                      onClick={() => window.open("https://wa.link/d3f6ih", "_blank")}
                       className="w-full bg-trust-blue hover:bg-trust-blue-light text-white"
                     >
                       <Phone className="h-4 w-4 mr-2" />

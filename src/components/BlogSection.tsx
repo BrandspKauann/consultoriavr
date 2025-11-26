@@ -7,7 +7,7 @@ import type { Article } from "@/types/article";
 import { useNavigate } from "react-router-dom";
 
 const BlogSection = () => {
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511972896857&text&type=phone_number&app_absent=0";
+  const whatsappLink = "https://wa.link/d3f6ih";
   const { data: articles, isLoading, error } = useArticles();
   const navigate = useNavigate();
 
@@ -98,20 +98,6 @@ const BlogSection = () => {
                 </AnimatedSection>
               ))}
             </div>
-
-            <AnimatedSection animationType="fade" delay={200}>
-              <div className="text-center">
-                <Button 
-                  variant="premium" 
-                  size="lg"
-                  onClick={() => navigate('/conteudo')}
-                  className="shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  Ver todos os conteúdos
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-            </AnimatedSection>
           </>
         )}
 

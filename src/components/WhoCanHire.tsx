@@ -5,7 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const WhoCanHire = () => {
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511972896857&text&type=phone_number&app_absent=0";
+  const whatsappLink = "https://wa.link/d3f6ih";
   
   const criteria = [
     {

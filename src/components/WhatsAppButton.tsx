@@ -8,11 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 
 const WhatsAppButton = () => {
-  // Número do WhatsApp (formato: 5511999999999 - sem espaços, com código do país)
-  const phoneNumber = "5511999999999"; // Altere para o número desejado
-  const message = "Olá! Gostaria de saber mais sobre Seguro de Crédito Empresarial.";
-  
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = "https://wa.link/d3f6ih";
 
   const handleClick = () => {
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
