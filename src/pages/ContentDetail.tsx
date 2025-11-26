@@ -1,16 +1,24 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useArticleBySlug } from "@/hooks/useArticles";
+import { useArticleBySlug, useAllPublishedArticles } from "@/hooks/useArticles";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Loader2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, ExternalLink, Loader2, ArrowRight, BookOpen, Phone, Mail, FileText } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import type { Article } from "@/types/article";
 
 const ContentDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { data: article, isLoading, error } = useArticleBySlug(slug);
+  const { data: allArticles } = useAllPublishedArticles();
+
+  // Buscar artigos relacionados (mesma categoria ou outros artigos, excluindo o atual)
+  const relatedArticles = allArticles
+    ?.filter((a) => a.id !== article?.id && a.published)
+    .slice(0, 3) || [];
 
   const renderContent = () => {
     if (!article?.content) {
@@ -144,18 +152,123 @@ const ContentDetail = () => {
             </div>
           </div>
 
-          {/* Sidebar com vídeo do YouTube */}
-          {article.youtube_iframe && (
-            <div className="lg:col-span-1">
-              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-card sticky top-6">
-                <h3 className="text-lg font-semibold text-foreground mb-4">Vídeo</h3>
-                <div
-                  className="w-full [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-lg [&_iframe]:border-0"
-                  dangerouslySetInnerHTML={{ __html: article.youtube_iframe }}
-                />
-              </div>
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="space-y-6 sticky top-6">
+              {/* Vídeo do YouTube se existir */}
+              {article.youtube_iframe && (
+                <Card className="border border-border/50 shadow-card">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <FileText className="h-5 w-5 text-trust-blue" />
+                      Vídeo
+                    </h3>
+                    <div
+                      className="w-full [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-lg [&_iframe]:border-0"
+                      dangerouslySetInnerHTML={{ __html: article.youtube_iframe }}
+                    />
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Artigos Relacionados */}
+              {relatedArticles.length > 0 && (
+                <Card className="border border-border/50 shadow-card">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <BookOpen className="h-5 w-5 text-trust-blue" />
+                      Artigos Relacionados
+                    </h3>
+                    <div className="space-y-4">
+                      {relatedArticles.map((relatedArticle) => (
+                        <button
+                          key={relatedArticle.id}
+                          onClick={() => navigate(`/conteudo/${relatedArticle.slug || relatedArticle.id}`)}
+                          className="text-left w-full group hover:bg-muted/50 p-3 rounded-lg transition-colors"
+                        >
+                          <h4 className="font-semibold text-foreground group-hover:text-trust-blue transition-colors mb-2 line-clamp-2">
+                            {relatedArticle.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground line-clamp-2">
+                            {relatedArticle.description}
+                          </p>
+                          <div className="flex items-center gap-2 mt-2 text-xs text-trust-blue">
+                            Ler mais
+                            <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* CTA de Contato */}
+              <Card className="border border-border/50 shadow-card bg-gradient-to-br from-trust-blue/10 to-secondary/10">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    Precisa de ajuda?
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Fale com nossos especialistas em Seguro de Crédito e proteja o fluxo de caixa da sua empresa.
+                  </p>
+                  <div className="space-y-3">
+                    <Button
+                      onClick={() => navigate("/")}
+                      className="w-full bg-trust-blue hover:bg-trust-blue-light text-white"
+                    >
+                      <Phone className="h-4 w-4 mr-2" />
+                      Falar com Especialista
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => navigate("/conteudo")}
+                      className="w-full"
+                    >
+                      <BookOpen className="h-4 w-4 mr-2" />
+                      Ver Mais Conteúdos
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Links Úteis */}
+              <Card className="border border-border/50 shadow-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    Links Úteis
+                  </h3>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => navigate("/")}
+                      className="w-full text-left text-sm text-muted-foreground hover:text-trust-blue transition-colors py-2 flex items-center justify-between group"
+                    >
+                      <span>Página Inicial</span>
+                      <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </button>
+                    <button
+                      onClick={() => navigate("/conteudo")}
+                      className="w-full text-left text-sm text-muted-foreground hover:text-trust-blue transition-colors py-2 flex items-center justify-between group"
+                    >
+                      <span>Biblioteca de Conteúdos</span>
+                      <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </button>
+                    {article.external_url && (
+                      <a
+                        href={article.external_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full text-left text-sm text-muted-foreground hover:text-trust-blue transition-colors py-2 flex items-center justify-between group"
+                      >
+                        <span>Link Externo</span>
+                        <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-all" />
+                      </a>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-          )}
+          </div>
         </div>
       </div>
       </article>
