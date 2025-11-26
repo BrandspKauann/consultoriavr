@@ -5,7 +5,7 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  const baseUrl = "https://segurosdecredito.com.br";
+  const baseUrl = "https://www.segurosdecredito.com.br";
   const currentDate = new Date().toISOString().split("T")[0];
 
   // Páginas estáticas
