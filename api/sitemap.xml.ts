@@ -5,7 +5,7 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  const baseUrl = "https://www.segurodecredito.com.br";
+  const baseUrl = "https://segurosdecredito.com.br";
   const currentDate = new Date().toISOString().split("T")[0];
 
   // Páginas estáticas
@@ -37,23 +37,37 @@ export default async function handler(
     console.error("Erro ao buscar artigos:", error);
   }
 
-  // URLs dos artigos
-  const articleUrls = articles.map((article) => ({
-    url: `${baseUrl}/conteudo/${article.slug || article.id}`,
-    priority: "0.7",
-    changefreq: "monthly",
-    lastmod: article.updated_at
-      ? new Date(article.updated_at).toISOString().split("T")[0]
-      : currentDate,
-  }));
+  // Função para escapar caracteres XML
+  function escapeXml(unsafe: string): string {
+    return unsafe
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
+  }
 
-  // Gerar XML
+  // URLs dos artigos
+  const articleUrls = articles.map((article) => {
+    const slug = article.slug || article.id;
+    const url = `${baseUrl}/conteudo/${slug}`;
+    return {
+      url: escapeXml(url),
+      priority: "0.7",
+      changefreq: "monthly",
+      lastmod: article.updated_at
+        ? new Date(article.updated_at).toISOString().split("T")[0]
+        : currentDate,
+    };
+  });
+
+  // Gerar XML com encoding correto
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticPages
   .map(
     (page) => `  <url>
-    <loc>${page.url}</loc>
+    <loc>${escapeXml(page.url)}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>

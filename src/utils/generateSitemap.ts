@@ -2,7 +2,7 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Article } from "@/types/article";
 
 export const generateSitemap = async (): Promise<string> => {
-  const baseUrl = "https://www.segurodecredito.com.br";
+  const baseUrl = "https://segurosdecredito.com.br";
   const currentDate = new Date().toISOString().split("T")[0];
 
   // Páginas estáticas

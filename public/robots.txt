@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.segurodecredito.com.br/sitemap.xml
+Sitemap: https://segurosdecredito.com.br/sitemap.xml
