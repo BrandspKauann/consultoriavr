@@ -136,7 +136,7 @@ const Footer = () => {
                 <Button 
                   variant="hero" 
                   size="lg"
-                  onClick={() => window.open(whatsappLink, '_blank')}
+                  onClick={() => window.open(calendlyLink, '_blank')}
                   className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
                 >
                   Agendar reunião
