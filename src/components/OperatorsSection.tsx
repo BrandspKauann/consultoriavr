@@ -8,7 +8,7 @@ const cajuLogo = "/caju.jpg";
 import AnimatedSection from "./AnimatedSection";
 
 const OperatorsSection = () => {
-  const whatsappLink = "https://wa.link/d3f6ih";
+  const whatsappLink = "https://wa.link/3gwhbl";
   
   const operators = [
     {

@@ -10,7 +10,7 @@ const DiagnosticSection = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
-  const whatsappLink = "https://wa.link/d3f6ih";
+  const whatsappLink = "https://wa.link/3gwhbl";
 
   const questions = [
     {

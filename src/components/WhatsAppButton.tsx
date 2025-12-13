@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 
 const WhatsAppButton = () => {
-  const whatsappUrl = "https://wa.link/d3f6ih";
+  const whatsappUrl = "https://wa.link/3gwhbl";
 
   const handleClick = () => {
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");

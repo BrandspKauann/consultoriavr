@@ -8,7 +8,7 @@ import AnimatedSection from "./AnimatedSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ServicesSection = () => {
-  const whatsappLink = "https://wa.link/d3f6ih";
+  const whatsappLink = "https://wa.link/3gwhbl";
   
   const services = [
     {

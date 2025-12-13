@@ -7,7 +7,7 @@ import type { Article } from "@/types/article";
 import { useNavigate } from "react-router-dom";
 
 const BlogSection = () => {
-  const whatsappLink = "https://wa.link/d3f6ih";
+  const whatsappLink = "https://wa.link/3gwhbl";
   const { data: articles, isLoading, error } = useArticles();
   const navigate = useNavigate();
 

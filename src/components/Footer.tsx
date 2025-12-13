@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const Footer = () => {
-  const whatsappLink = "https://wa.link/d3f6ih";
+  const whatsappLink = "https://wa.link/3gwhbl";
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 const heroBackground = "/fundo4.png";
 
 const Hero = () => {
-  const whatsappLink = "https://wa.link/d3f6ih";
+  const whatsappLink = "https://wa.link/3gwhbl";
   const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
 
