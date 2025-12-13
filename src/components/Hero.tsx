@@ -48,10 +48,10 @@ const Hero = () => {
           <img 
             src={heroBackground} 
             alt="Consultoria em Vale Refeição" 
-            className="w-full h-full object-cover opacity-50 dark:opacity-40"
+            className="w-full h-full object-cover opacity-30 dark:opacity-25"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-primary/45 to-primary/40 dark:from-primary/60 dark:via-primary/55 dark:to-primary/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/65 via-primary/60 to-primary/55 dark:from-primary/70 dark:via-primary/65 dark:to-primary/60"></div>
       </div>
       
       {/* Animated Background Elements */}
