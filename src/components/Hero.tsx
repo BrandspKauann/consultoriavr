@@ -3,7 +3,7 @@ import { ArrowRight, Shield, TrendingUp, CheckCircle2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Fundos disponíveis para o Hero
-const heroBackground = "/fundo3.png";
+const heroBackground = "/fundo4.png";
 
 const Hero = () => {
   const whatsappLink = "https://wa.link/d3f6ih";
