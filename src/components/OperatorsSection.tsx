@@ -1,9 +1,9 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { ArrowRight, CheckCircle2, Building2, TrendingUp, Zap } from "lucide-react";
-import protectionIcon from "@/assets/protection-icon.jpg";
-import intelligenceIcon from "@/assets/intelligence-icon.jpg";
-import collectionIcon from "@/assets/collection-icon.jpg";
+import aleloLogo from "../../imagens/alelo.jpg";
+import vrLogo from "../../imagens/vr.jpg";
+import cajuLogo from "../../imagens/caju.jpg";
 import AnimatedSection from "./AnimatedSection";
 
 const OperatorsSection = () => {
@@ -11,7 +11,7 @@ const OperatorsSection = () => {
   
   const operators = [
     {
-      icon: protectionIcon,
+      icon: aleloLogo,
       iconComponent: <Building2 className="h-8 w-8 text-secondary" />,
       title: "Alelo Benefícios",
       description: "Uma das maiores operadoras do Brasil, nascida da parceria com o Bradesco. Oferece soluções completas, seguras e flexíveis para empresas de todos os portes.",
@@ -24,7 +24,7 @@ const OperatorsSection = () => {
       variant: "premium" as const
     },
     {
-      icon: intelligenceIcon,
+      icon: vrLogo,
       iconComponent: <TrendingUp className="h-8 w-8 text-secondary" />,
       title: "VR Benefícios",
       description: "Mais de 40 anos de história no mercado de benefícios corporativos. Somos parceiros da VR há mais de 7 anos, entregando soluções confiáveis para RHs que precisam de controle e previsibilidade.",
@@ -37,7 +37,7 @@ const OperatorsSection = () => {
       variant: "trust" as const
     },
     {
-      icon: collectionIcon,
+      icon: cajuLogo,
       iconComponent: <Zap className="h-8 w-8 text-secondary" />,
       title: "Caju Benefícios",
       description: "Uma startup inovadora que mudou a forma de usar benefícios corporativos. Cartão bandeirado VISA, saldo único e liberdade total para o colaborador.",
@@ -75,8 +75,8 @@ const OperatorsSection = () => {
                     <div className="relative inline-block mb-4 sm:mb-6">
                       <img 
                         src={operator.icon} 
-                        alt={`${operator.title} icon`}
-                        className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-xl object-cover border-2 border-border group-hover:border-secondary transition-colors shadow-md group-hover:shadow-lg"
+                        alt={`${operator.title} logo`}
+                        className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl object-contain border-2 border-border group-hover:border-secondary transition-colors shadow-md group-hover:shadow-lg bg-white p-2"
                       />
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3 sm:mb-4">
