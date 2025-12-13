@@ -1,9 +1,10 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { ArrowRight, CheckCircle2, Building2, TrendingUp, Zap } from "lucide-react";
-import aleloLogo from "../../imagens/alelo.jpg";
-import vrLogo from "../../imagens/vr.jpg";
-import cajuLogo from "../../imagens/caju.jpg";
+// Logos das operadoras
+const aleloLogo = "/alelo.jpg";
+const vrLogo = "/vr.jpg";
+const cajuLogo = "/caju.jpg";
 import AnimatedSection from "./AnimatedSection";
 
 const OperatorsSection = () => {
