@@ -6,6 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const PartnershipSection = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
+  const calendlyLink = "https://calendly.com/ewertonhirayama/consultoria-em-cartoes-de-vale-refeicao-e-alimentacao";
   
   const services = [
     {
@@ -148,7 +149,7 @@ const PartnershipSection = () => {
               <Button 
                 variant="hero" 
                 size="lg"
-                onClick={() => window.open(whatsappLink, '_blank')}
+                onClick={() => window.open(calendlyLink, '_blank')}
                 className="bg-secondary text-foreground hover:bg-secondary-hover shadow-lg hover:shadow-xl transition-all border-2 border-secondary/30"
               >
                 Agendar reunião
