@@ -4,6 +4,7 @@ import AnimatedSection from "./AnimatedSection";
 
 const Footer = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
+  const calendlyLink = "https://calendly.com/ewertonhirayama/consultoria-em-cartoes-de-vale-refeicao-e-alimentacao";
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
