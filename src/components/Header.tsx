@@ -97,6 +97,15 @@ const Header = () => {
             <ThemeToggle />
             
             <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={() => window.open(calendlyLink, '_blank')}
+              className="hidden sm:flex border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+            >
+              Agendar reunião
+            </Button>
+            
+            <Button 
               variant="hero" 
               size="lg" 
               onClick={() => window.open(whatsappLink, '_blank')}
@@ -127,13 +136,24 @@ const Header = () => {
                     </button>
                   ))}
                   <Button 
+                    variant="outline" 
+                    size="lg" 
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      window.open(calendlyLink, '_blank');
+                    }}
+                    className="mt-4 w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    Agendar reunião
+                  </Button>
+                  <Button 
                     variant="hero" 
                     size="lg" 
                     onClick={() => {
                       setIsMenuOpen(false);
                       window.open(whatsappLink, '_blank');
                     }}
-                    className="mt-4 w-full border-2 border-white"
+                    className="mt-2 w-full border-2 border-white"
                   >
                     Falar com um consultor
                   </Button>
