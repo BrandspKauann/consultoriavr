@@ -55,7 +55,7 @@ Você deve ver algo como:
 ```
 VITE v5.x.x  ready in XXX ms
 
-➜  Local:   http://localhost:8081/
+➜  Local:   http://localhost:3000/
 ➜  Network: use --host to expose
 ```
 
@@ -70,7 +70,7 @@ Agora o servidor está rodando com as novas credenciais!
 ## 🎯 PRÓXIMOS PASSOS
 
 1. ✅ Servidor reiniciado
-2. ⏳ Acesse: `http://localhost:8081/admin/login`
+2. ⏳ Acesse: `http://localhost:3000/admin/login`
 3. ⏳ Login: `admin123`
 4. ⏳ Crie um artigo
 5. ⏳ Veja no site!

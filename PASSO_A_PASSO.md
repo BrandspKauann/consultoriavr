@@ -100,7 +100,7 @@ VITE_ADMIN_PASSWORD=minhasenhasupersecreta
    - Execute: `npm run dev`
 
 2. **Acesse o admin:**
-   - Abra: `http://localhost:8081/admin/login`
+   - Abra: `http://localhost:3000/admin/login`
    - Digite qualquer email (ex: `admin@hirayama.com`)
    - Digite a senha que você configurou em `VITE_ADMIN_PASSWORD`
    - Clique em **"Entrar"**
@@ -111,7 +111,7 @@ VITE_ADMIN_PASSWORD=minhasenhasupersecreta
    - Clique em **"Criar Artigo"**
 
 4. **Veja no site principal:**
-   - Acesse: `http://localhost:8081/`
+   - Acesse: `http://localhost:3000/`
    - Role até "Conteúdo Educativo"
    - ✅ Seu artigo deve aparecer!
 

@@ -24,8 +24,8 @@ const disableCSPPlugin = (): Plugin => {
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
-    port: 8080,
+    host: "localhost",
+    port: 3000,
     hmr: {
       overlay: false, // Desabilita overlay de erros que pode causar problemas com CSP
     },

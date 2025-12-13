@@ -77,7 +77,7 @@ VITE_ADMIN_PASSWORD=admin123
 - [ ] **5.1** No terminal, pare o servidor (Ctrl + C)
 - [ ] **5.2** Execute: `npm run dev`
 - [ ] **5.3** Aguarde aparecer: `ready in X ms`
-- [ ] **5.4** Verifique a URL: `http://localhost:8081/`
+- [ ] **5.4** Verifique a URL: `http://localhost:3000/`
 
 **✅ Pronto quando:** Servidor rodando sem erros
 
@@ -85,7 +85,7 @@ VITE_ADMIN_PASSWORD=admin123
 
 ### 📌 PASSO 6: Testar Login (1 minuto)
 
-- [ ] **6.1** Acesse: `http://localhost:8081/admin/login`
+- [ ] **6.1** Acesse: `http://localhost:3000/admin/login`
 - [ ] **6.2** Digite qualquer email (ex: `admin@hirayama.com`)
 - [ ] **6.3** Digite a senha do `.env` (padrão: `admin123`)
 - [ ] **6.4** Clique em **"Entrar"**
@@ -114,7 +114,7 @@ VITE_ADMIN_PASSWORD=admin123
 
 ### 📌 PASSO 8: Ver no Site (1 minuto)
 
-- [ ] **8.1** Acesse: `http://localhost:8081/`
+- [ ] **8.1** Acesse: `http://localhost:3000/`
 - [ ] **8.2** Role até a seção **"Conteúdo Educativo"**
 - [ ] **8.3** Verifique se seu artigo aparece lá
 

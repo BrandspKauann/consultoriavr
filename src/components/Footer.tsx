@@ -25,15 +25,15 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-6 sm:mb-8">
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 text-primary-foreground">
-                  Hirayama Administradora e Corretora de Seguros LTDA
+                  Consultoria VR
                 </h3>
                 <p className="text-sm text-primary-foreground/80 mb-4">
-                  CNPJ: 18.166.550/0001-40
+                  Benefícios corporativos com quem entende do assunto
                 </p>
               </div>
               <p className="text-primary-foreground/90 mb-6 sm:mb-8 leading-relaxed max-w-md text-sm sm:text-base">
-                Parceria oficial Coface – líder mundial em seguro de crédito e inteligência de riscos. 
-                Protegemos o fluxo de caixa de empresas que vendem a prazo.
+                Consultoria especializada em Vale Refeição (VR), Alelo e Caju. 
+                Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores.
               </p>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center space-x-3">
@@ -76,39 +76,31 @@ const Footer = () => {
                     onClick={() => scrollToSection("#o-que-e")} 
                     className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
                   >
-                    O que é Seguro de Crédito
+                    Operadoras
                   </button>
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection("#beneficios")} 
+                    onClick={() => scrollToSection("#parceria")} 
                     className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
                   >
-                    Quem pode contratar
+                    Parceria
                   </button>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => scrollToSection("#casos")} 
+                  <a 
+                    href="/conteudo" 
                     className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
                   >
-                    Cases de sucesso
-                  </button>
+                    Blog da Consultoria
+                  </a>
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection("#servicos")} 
+                    onClick={() => window.open(whatsappLink, '_blank')} 
                     className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
                   >
-                    Serviços Coface
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection("#diagnostico")} 
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
-                  >
-                    Diagnóstico online
+                    Falar com consultor
                   </button>
                 </li>
               </ul>
@@ -118,11 +110,11 @@ const Footer = () => {
             <div>
               <h4 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8">Serviços</h4>
               <ul className="space-y-3 sm:space-y-4">
-                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Seguro de Crédito</span></li>
-                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Business Information</span></li>
-                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Debt Collection</span></li>
-                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Análise de Risco</span></li>
-                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Consultoria Especializada</span></li>
+                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Comparativos entre operadoras</span></li>
+                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Portabilidade de benefícios</span></li>
+                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Orientação sobre PAT</span></li>
+                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Redução de custos</span></li>
+                <li><span className="text-primary-foreground/80 text-sm sm:text-base">Integração com folha</span></li>
               </ul>
             </div>
           </div>
@@ -133,11 +125,11 @@ const Footer = () => {
           <div className="bg-primary-hover rounded-3xl p-8 sm:p-10 md:p-12 mb-12 sm:mb-16 text-center shadow-xl border border-primary-foreground/10">
             <div className="max-w-3xl mx-auto">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-                Pronto para blindar seu fluxo de caixa?
+                Pronto para otimizar seus benefícios?
               </h3>
               <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
-                Agende uma sessão estratégica gratuita com nossos especialistas e 
-                descubra como proteger sua empresa contra inadimplência.
+                Agende uma reunião com um consultor e descubra como sua empresa pode 
+                economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -146,16 +138,16 @@ const Footer = () => {
                   onClick={() => window.open(whatsappLink, '_blank')}
                   className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
                 >
-                  Falar no WhatsApp
+                  Agendar reunião
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-2 border-white/90 text-white hover:bg-white/10 backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+                  className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
                   onClick={() => window.open(whatsappLink, '_blank')}
                 >
-                  Falar com Especialista
+                  Falar com um consultor
                 </Button>
               </div>
             </div>
@@ -166,10 +158,13 @@ const Footer = () => {
         <AnimatedSection animationType="fade" delay={200}>
           <div className="border-t border-primary-foreground/20 pt-8 text-center">
             <p className="text-primary-foreground/70 text-sm sm:text-base mb-2">
-              © {new Date().getFullYear()} Hirayama Administradora e Corretora de Seguros LTDA. Todos os direitos reservados.
+              Site institucional
+            </p>
+            <p className="text-primary-foreground/60 text-xs sm:text-sm mb-2">
+              Criado por Ewerton Hirayama
             </p>
             <p className="text-primary-foreground/60 text-xs sm:text-sm">
-              CNPJ: 18.166.550/0001-40
+              Todos os direitos reservados.
             </p>
           </div>
         </AnimatedSection>

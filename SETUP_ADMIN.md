@@ -49,7 +49,7 @@ O SQL já cria as políticas básicas. Se precisar ajustar:
 ### 5. Testar o Sistema
 
 1. Inicie o servidor: `npm run dev`
-2. Acesse: `http://localhost:8081/admin/login`
+2. Acesse: `http://localhost:3000/admin/login`
 3. Use a senha configurada em `VITE_ADMIN_PASSWORD`
 4. Crie seu primeiro artigo!
 

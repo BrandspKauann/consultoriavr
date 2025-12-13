@@ -29,27 +29,26 @@ const BlogSection = () => {
               <BookOpen className="h-12 w-12 text-secondary" />
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
-              Conteúdo Educativo
+              📌 Blog da Consultoria
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-corporate-gray leading-relaxed">
-              Aprenda mais sobre Seguro de Crédito, gestão de risco e proteção empresarial 
-              com nossos conteúdos especializados.
+            <p className="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed">
+              Conteúdos práticos sobre benefícios corporativos, legislação, PAT e gestão de RH.
             </p>
           </div>
         </AnimatedSection>
 
         {isLoading && (
           <div className="flex justify-center items-center py-20">
-            <Loader2 className="h-8 w-8 animate-spin text-trust-blue" />
+            <Loader2 className="h-8 w-8 animate-spin text-secondary" />
           </div>
         )}
 
         {error && (
           <div className="text-center py-20">
-            <p className="text-corporate-gray mb-4">
+            <p className="text-foreground/80 mb-4">
               Erro ao carregar artigos. Por favor, tente novamente.
             </p>
-            <p className="text-sm text-corporate-gray-light">
+            <p className="text-sm text-foreground/70">
               {error instanceof Error ? error.message : "Erro desconhecido"}
             </p>
           </div>
@@ -79,7 +78,7 @@ const BlogSection = () => {
                         </div>
                       )}
                       <div className="p-6 sm:p-8 h-full flex flex-col">
-                        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-trust-blue transition-colors duration-300">
+                        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-secondary transition-colors duration-300">
                           {article.title}
                         </h3>
                       
@@ -88,7 +87,7 @@ const BlogSection = () => {
                           dangerouslySetInnerHTML={{ __html: article.description }}
                         />
 
-                        <div className="flex items-center text-trust-blue font-semibold text-sm sm:text-base group-hover:text-trust-blue-light transition-colors duration-300 mt-auto">
+                        <div className="flex items-center text-secondary font-semibold text-sm sm:text-base group-hover:text-secondary/80 transition-colors duration-300 mt-auto">
                           <span>Ler mais</span>
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                         </div>
@@ -98,12 +97,23 @@ const BlogSection = () => {
                 </AnimatedSection>
               ))}
             </div>
+            <div className="flex justify-center mt-8">
+              <Button
+                variant="hero"
+                size="lg"
+                onClick={() => navigate("/conteudo")}
+                className="flex items-center gap-2 shadow-md hover:shadow-lg transition-shadow"
+              >
+                Ver mais artigos
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </div>
           </>
         )}
 
         {articles && articles.length === 0 && !isLoading && (
           <div className="text-center py-20">
-            <p className="text-corporate-gray">
+            <p className="text-foreground/80">
               Nenhum artigo disponível no momento.
             </p>
           </div>

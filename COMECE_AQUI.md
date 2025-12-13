@@ -27,7 +27,7 @@ VITE_ADMIN_PASSWORD=admin123
 ### ✅ PASSO 3: Testar
 
 1. **Reinicie servidor**: `npm run dev`
-2. **Acesse**: http://localhost:8081/admin/login
+2. **Acesse**: http://localhost:3000/admin/login
 3. **Senha**: `admin123` (ou a que você colocou)
 4. **Crie artigo** → Veja aparecer no site!
 

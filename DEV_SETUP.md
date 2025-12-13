@@ -19,13 +19,13 @@ O servidor Vite está configurado para enviar headers CSP permissivos apenas em 
 
 ### Opção A: Usar Preview Interno do Cursor
 1. Execute `npm run dev`
-2. O servidor iniciará em `http://localhost:8080`
+2. O servidor iniciará em `http://localhost:3000`
 3. O preview interno deve funcionar com as configurações de CSP
 
 ### Opção B: Usar Navegador Externo (Recomendado)
 1. Execute `npm run dev`
 2. Abra seu navegador (Chrome/Edge/Firefox)
-3. Acesse `http://localhost:8080`
+3. Acesse `http://localhost:3000`
 4. Isso evita completamente problemas de CSP do preview interno
 
 ### Opção C: Desabilitar CSP Completamente (Apenas Dev)

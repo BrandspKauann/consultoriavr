@@ -31,7 +31,7 @@ VITE_ADMIN_PASSWORD=admin123
 ### 4️⃣ Testar (1 min)
 ```
 1. npm run dev
-2. Acesse: http://localhost:8081/admin/login
+2. Acesse: http://localhost:3000/admin/login
 3. Senha: admin123 (ou a que você colocou)
 4. Criar artigo → Ver no site!
 ```

@@ -32,7 +32,7 @@ npm run dev
 
 ### 4. Acessar o Admin
 
-1. Acesse: `http://localhost:8081/admin/login`
+1. Acesse: `http://localhost:3000/admin/login`
 2. Use a senha configurada em `VITE_ADMIN_PASSWORD`
 3. Comece a gerenciar seus artigos!
 

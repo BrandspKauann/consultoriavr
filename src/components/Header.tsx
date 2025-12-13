@@ -18,7 +18,12 @@ const Header = () => {
   const location = useLocation();
   const whatsappLink = "https://wa.link/d3f6ih";
 
-  const menuItems: Array<{ label: string; href: string; type: "route" | "anchor" }> = [];
+  const menuItems: Array<{ label: string; href: string; type: "route" | "anchor" }> = [
+    { label: "Início", href: "/", type: "route" },
+    { label: "Operadoras", href: "#operadoras", type: "anchor" },
+    { label: "Parceria", href: "#parceria", type: "anchor" },
+    { label: "Blog", href: "/conteudo", type: "route" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,8 +74,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Brand Name */}
           <div className="flex items-center gap-6">
-            <a href="/" className="text-lg sm:text-xl font-bold text-primary hover:text-trust-blue transition-colors">
-              Hirayama Seguros de Crédito
+            <a href="/" className="text-lg sm:text-xl font-bold text-primary hover:text-secondary transition-colors">
+              Consultoria VR
             </a>
             
             {/* Desktop Navigation */}
@@ -95,9 +100,9 @@ const Header = () => {
               variant="hero" 
               size="lg" 
               onClick={() => window.open(whatsappLink, '_blank')}
-              className="hidden sm:flex shadow-md hover:shadow-lg transition-shadow"
+              className="hidden sm:flex shadow-md hover:shadow-lg transition-shadow border-2 border-white"
             >
-              Falar no WhatsApp
+              Falar com um consultor
             </Button>
 
             {/* Mobile Menu */}
@@ -116,7 +121,7 @@ const Header = () => {
                     <button
                       key={item.href}
                       onClick={() => handleNavigation(item)}
-                      className="text-left px-4 py-3 text-base text-corporate-gray hover:text-primary hover:bg-muted rounded-lg transition-all duration-200 font-medium"
+                      className="text-left px-4 py-3 text-base text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                     >
                       {item.label}
                     </button>
@@ -128,9 +133,9 @@ const Header = () => {
                       setIsMenuOpen(false);
                       window.open(whatsappLink, '_blank');
                     }}
-                    className="mt-4 w-full"
+                    className="mt-4 w-full border-2 border-white"
                   >
-                    Falar no WhatsApp
+                    Falar com um consultor
                   </Button>
                 </nav>
               </SheetContent>

@@ -44,7 +44,7 @@ VITE_SUPABASE_STORAGE_BUCKET=article-media
    - Deve mostrar: `https://cpejrontfflbzmssomnr.supabase.co`
 
 2. **Teste a conexão e o upload:**
-   - Acesse: `http://localhost:8081/admin/login`
+   - Acesse: `http://localhost:3000/admin/login`
    - No formulário de artigos, envie uma imagem pequena para validar o bucket
 
 ---

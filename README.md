@@ -50,7 +50,9 @@ Você precisará ter o **Node.js** (versão LTS recomendada) e o gerenciador de 
     ```sh
     npm run dev
     ```
-    O projeto estará acessível em `http://localhost:<PORTA_DO_VITE>`.
+    O projeto estará acessível em `http://localhost:3000`.
+    - Site principal: `http://localhost:3000`
+    - Área administrativa: `http://localhost:3000/admin`
 
 ---
 

@@ -33,7 +33,7 @@ VITE_ADMIN_PASSWORD=admin123
 npm run dev
 ```
 
-1. Acesse: `http://localhost:8081/admin/login`
+1. Acesse: `http://localhost:3000/admin/login`
 2. Digite qualquer email e a senha do `.env`
 3. Clique em **Entrar**
 4. ✅ Você está no admin!
@@ -53,7 +53,7 @@ npm run dev
 
 ### 5️⃣ Veja no Site Principal
 
-1. Acesse: `http://localhost:8081/`
+1. Acesse: `http://localhost:3000/`
 2. Role até a seção **"Conteúdo Educativo"**
 3. ✅ Seu artigo aparece automaticamente!
 

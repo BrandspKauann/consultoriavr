@@ -54,7 +54,7 @@ VITE_ADMIN_PASSWORD=admin123
 npm run dev
 ```
 
-1. Acesse: `http://localhost:8081/admin/login`
+1. Acesse: `http://localhost:3000/admin/login`
 2. Use a senha do `.env`
 3. Crie seu primeiro artigo!
 4. Veja aparecer automaticamente no site principal!

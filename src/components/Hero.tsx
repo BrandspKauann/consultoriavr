@@ -24,9 +24,9 @@ const Hero = () => {
   }, []);
 
   const features = [
-    "Proteção 360°",
-    "Crescimento Seguro",
-    "Parceiro Coface"
+    "Atendimento humano",
+    "Comparativos reais",
+    "Zero dor de cabeça"
   ];
 
   const parallaxOffset = Math.min(scrollY * 0.3, 200);
@@ -45,17 +45,17 @@ const Hero = () => {
         >
           <img 
             src={heroImage} 
-            alt="Seguro de Crédito Empresarial" 
+            alt="Consultoria em Vale Refeição" 
             className="w-full h-full object-cover opacity-15 dark:opacity-5 scale-110"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-trust-blue/90 dark:from-primary/95 dark:via-primary/90 dark:to-trust-blue/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-primary/80 dark:from-primary/95 dark:via-primary/90 dark:to-primary/85"></div>
       </div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-trust-blue/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
       
       {/* Content */}
@@ -66,28 +66,35 @@ const Hero = () => {
         <div className="max-w-5xl">
           {/* Badge */}
           <div className="flex items-center space-x-2 mb-6 sm:mb-8">
-            <div className="flex items-center justify-center w-10 h-10 bg-secondary/20 rounded-full">
-              <Shield className="h-5 w-5 text-secondary" />
+            <div className="flex items-center justify-center w-10 h-10 bg-secondary/25 rounded-full border border-secondary/30">
+              <TrendingUp className="h-5 w-5 text-secondary" />
             </div>
-            <span className="text-secondary font-semibold text-sm sm:text-base bg-secondary/10 px-4 py-2 rounded-full">
-              Parceria oficial Coface
+            <span className="text-secondary font-semibold text-sm sm:text-base bg-secondary/15 backdrop-blur-sm px-4 py-2 rounded-full border border-secondary/20 shadow-md">
+              Benefícios corporativos com quem entende do assunto
             </span>
           </div>
           
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-            Seguro de Crédito
-            <span className="block text-secondary mt-3">Empresarial</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-6 sm:mb-8 leading-[1.15] tracking-tight">
+            Consultoria especializada em
+            <span className="block text-secondary mt-2 sm:mt-3">Vale Refeição</span>
           </h1>
           
           {/* Description */}
-          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/95 mb-5 sm:mb-6 max-w-4xl leading-relaxed font-medium">
-            Blindagem do fluxo de caixa para empresas que vendem a prazo.
+          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground mb-5 sm:mb-6 max-w-4xl leading-relaxed font-medium">
+            VR, Alelo e Caju
           </p>
           
-          <p className="text-base sm:text-lg md:text-xl text-secondary/95 font-semibold mb-8 sm:mb-10 max-w-3xl leading-relaxed">
-            Você protege sua fábrica, seu estoque e sua equipe. 
-            <span className="block mt-2">Mas quem protege o seu contas a receber?</span>
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground font-semibold mb-4 sm:mb-6 max-w-3xl leading-relaxed">
+            Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores
+          </p>
+          
+          <p className="text-sm sm:text-base text-primary-foreground mb-4 sm:mb-6 max-w-3xl leading-relaxed">
+            — do diagnóstico ao pós-venda.
+          </p>
+          
+          <p className="text-base sm:text-lg text-primary-foreground mb-8 sm:mb-10 max-w-3xl leading-relaxed font-medium">
+            👉 Atendimento humano, comparativos reais e zero dor de cabeça para o RH.
           </p>
           
           {/* CTA Buttons */}
@@ -95,10 +102,10 @@ const Hero = () => {
             <Button 
               variant="hero" 
               size="lg" 
-              className="text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
               onClick={() => window.open(whatsappLink, '_blank')}
             >
-              Falar com Especialista
+              Falar com um consultor
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
@@ -108,14 +115,14 @@ const Hero = () => {
               className="text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 border-2 border-white/90 text-white hover:bg-white hover:text-primary w-full sm:w-auto backdrop-blur-sm bg-white/10 transition-all duration-300"
               onClick={() => window.open(whatsappLink, '_blank')}
             >
-              Falar com Especialista
+              Peça já seus cartões
             </Button>
           </div>
           
           {/* Features */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2 sm:space-x-3 bg-white/15 backdrop-blur-lg rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/30 shadow-lg">
+              <div key={index} className="flex items-center space-x-2 sm:space-x-3 bg-white/20 backdrop-blur-lg rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-secondary/40 shadow-lg">
                 <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
                 <span className="text-primary-foreground text-sm sm:text-base font-semibold">
                   {feature}

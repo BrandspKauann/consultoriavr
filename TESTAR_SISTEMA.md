@@ -25,7 +25,7 @@
 ### ✅ PASSO 3: Testar o Login (1 minuto)
 
 1. Abra o navegador
-2. Acesse: **http://localhost:8081/admin/login**
+2. Acesse: **http://localhost:3000/admin/login**
 3. Preencha:
    - **Email**: Digite qualquer email (ex: `admin@hirayama.com`)
    - **Senha**: `admin123`
@@ -64,7 +64,7 @@
 ### ✅ PASSO 6: Ver Artigo no Site Principal (1 minuto)
 
 1. Abra uma nova aba no navegador
-2. Acesse: **http://localhost:8081/**
+2. Acesse: **http://localhost:3000/**
 3. Role a página para baixo
 4. Procure pela seção **"Conteúdo Educativo"**
 5. ✅ Seu artigo deve aparecer lá!
