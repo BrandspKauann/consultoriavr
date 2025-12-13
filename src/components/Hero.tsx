@@ -1,7 +1,9 @@
 import { Button } from "./ui/button";
 import { ArrowRight, Shield, TrendingUp, CheckCircle2 } from "lucide-react";
-import heroImage from "@/assets/hero-credit-insurance.jpg";
 import { useEffect, useRef, useState } from "react";
+
+// Fundos disponíveis para o Hero
+const heroBackground = "/fundo1.png";
 
 const Hero = () => {
   const whatsappLink = "https://wa.link/d3f6ih";
@@ -44,12 +46,12 @@ const Hero = () => {
           className="absolute inset-0 transition-transform duration-300 ease-out"
         >
           <img 
-            src={heroImage} 
+            src={heroBackground} 
             alt="Consultoria em Vale Refeição" 
-            className="w-full h-full object-cover opacity-15 dark:opacity-5 scale-110"
+            className="w-full h-full object-cover opacity-20 dark:opacity-10"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-primary/80 dark:from-primary/95 dark:via-primary/90 dark:to-primary/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/75 to-primary/70 dark:from-primary/85 dark:via-primary/80 dark:to-primary/75"></div>
       </div>
       
       {/* Animated Background Elements */}
