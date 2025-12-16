@@ -77,14 +77,37 @@ const Hero = () => {
           </div>
           
           {/* Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-4 sm:mb-6 md:mb-8 leading-[1.2] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-[1.2] tracking-tight">
             Consultoria especializada em
             <span className="block text-secondary mt-1 sm:mt-2 md:mt-3">Vale Refeição</span>
           </h1>
           
-          {/* Description - Simplified on mobile */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-4xl leading-relaxed font-medium">
-            VR, Alelo e Caju
+          {/* Brief text - Visible on mobile */}
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl leading-relaxed">
+            Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores com soluções completas em benefícios corporativos.
+          </p>
+          
+          {/* Bandeiras - Visible on mobile */}
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary font-semibold mb-4 sm:mb-5 md:mb-6 max-w-4xl leading-relaxed">
+            Bandeiras VR, Alelo e Caju
+          </p>
+          
+          {/* CTA Button - Mobile first */}
+          <div className="mb-4 sm:mb-6 md:mb-8">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
+              onClick={() => window.open(whatsappLink, '_blank')}
+            >
+              Falar com um consultor
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+            </Button>
+          </div>
+          
+          {/* Description - Hidden on mobile, shown on larger screens */}
+          <p className="hidden sm:block text-base sm:text-lg md:text-xl text-primary-foreground font-semibold mb-3 sm:mb-4 md:mb-6 max-w-3xl leading-relaxed">
+            — do diagnóstico ao pós-venda.
           </p>
           
           {/* Hidden on mobile, shown on larger screens */}
@@ -100,18 +123,8 @@ const Hero = () => {
             👉 Atendimento humano, comparativos reais e zero dor de cabeça para o RH.
           </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 sm:flex-row mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
-              onClick={() => window.open(whatsappLink, '_blank')}
-            >
-              Falar com um consultor
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-            </Button>
-            
+          {/* CTA Buttons - Second button only on larger screens */}
+          <div className="hidden sm:flex flex-col gap-3 sm:gap-4 md:gap-6 sm:flex-row mb-6 sm:mb-8 md:mb-10 lg:mb-12">
             <Button 
               variant="outline" 
               size="lg" 
