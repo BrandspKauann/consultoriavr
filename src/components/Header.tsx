@@ -71,11 +71,11 @@ const Header = () => {
         isScrolled ? "shadow-lg shadow-primary/5" : "shadow-sm"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-3 sm:px-4 py-2.5 sm:py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Brand Name */}
-          <div className="flex items-center gap-6">
-            <a href="/" className="text-lg sm:text-xl font-bold text-primary hover:text-secondary transition-colors">
+          <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+            <a href="/" className="text-base sm:text-lg md:text-xl font-bold text-primary hover:text-secondary transition-colors">
               Consultoria VR
             </a>
             
@@ -85,7 +85,7 @@ const Header = () => {
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item)}
-                  className="px-4 py-2.5 text-sm lg:text-base text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-lg transition-all duration-300 font-medium"
+                  className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-lg transition-all duration-300 font-medium"
                 >
                   {item.label}
                 </button>
@@ -94,14 +94,14 @@ const Header = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
             
             <Button 
               variant="outline" 
               size="lg" 
               onClick={() => window.open(calendlyLink, '_blank')}
-              className="hidden sm:flex border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+              className="hidden md:flex text-sm lg:text-base px-4 lg:px-6 py-2 lg:py-2.5 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
             >
               Agendar reunião
             </Button>
@@ -110,7 +110,7 @@ const Header = () => {
               variant="hero" 
               size="lg" 
               onClick={() => window.open(whatsappLink, '_blank')}
-              className="hidden sm:flex shadow-md hover:shadow-lg transition-shadow border-2 border-white"
+              className="hidden md:flex text-sm lg:text-base px-4 lg:px-6 py-2 lg:py-2.5 shadow-md hover:shadow-lg transition-shadow border-2 border-white"
             >
               Falar com um consultor
             </Button>
@@ -122,16 +122,16 @@ const Header = () => {
                   {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                 <SheetHeader>
-                  <SheetTitle className="text-left text-xl">Menu</SheetTitle>
+                  <SheetTitle className="text-left text-lg sm:text-xl">Menu</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-2 mt-8">
+                <nav className="flex flex-col gap-2 mt-6 sm:mt-8">
                   {menuItems.map((item) => (
                     <button
                       key={item.href}
                       onClick={() => handleNavigation(item)}
-                      className="text-left px-4 py-3 text-base text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-all duration-200 font-medium"
+                      className="text-left px-4 py-2.5 sm:py-3 text-sm sm:text-base text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-all duration-200 font-medium"
                     >
                       {item.label}
                     </button>
@@ -143,7 +143,7 @@ const Header = () => {
                       setIsMenuOpen(false);
                       window.open(calendlyLink, '_blank');
                     }}
-                    className="mt-4 w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    className="mt-4 w-full text-sm sm:text-base px-4 py-2.5 sm:py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   >
                     Agendar reunião
                   </Button>
@@ -154,7 +154,7 @@ const Header = () => {
                       setIsMenuOpen(false);
                       window.open(whatsappLink, '_blank');
                     }}
-                    className="mt-2 w-full border-2 border-white"
+                    className="mt-2 w-full text-sm sm:text-base px-4 py-2.5 sm:py-3 border-2 border-white"
                   >
                     Falar com um consultor
                   </Button>

@@ -37,7 +37,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[85vh] flex items-center bg-gradient-hero overflow-hidden"
+      className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[85vh] flex items-center bg-gradient-hero overflow-hidden"
     >
       {/* Background Image with Overlay - Parallax Effect */}
       <div className="absolute inset-0 z-0">
@@ -62,12 +62,12 @@ const Hero = () => {
       
       {/* Content */}
       <div 
-        className="container mx-auto px-4 py-16 sm:py-20 lg:py-24 relative z-10"
+        className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10"
         style={{ transform: `translateY(${contentOffset}px)` }}
       >
         <div className="max-w-5xl">
-          {/* Badge */}
-          <div className="flex items-center space-x-2 mb-6 sm:mb-8">
+          {/* Badge - Hidden on mobile */}
+          <div className="hidden sm:flex items-center space-x-2 mb-6 sm:mb-8">
             <div className="flex items-center justify-center w-10 h-10 bg-secondary/25 rounded-full border border-secondary/30">
               <TrendingUp className="h-5 w-5 text-secondary" />
             </div>
@@ -77,52 +77,53 @@ const Hero = () => {
           </div>
           
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-6 sm:mb-8 leading-[1.15] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-4 sm:mb-6 md:mb-8 leading-[1.2] tracking-tight">
             Consultoria especializada em
-            <span className="block text-secondary mt-2 sm:mt-3">Vale Refeição</span>
+            <span className="block text-secondary mt-1 sm:mt-2 md:mt-3">Vale Refeição</span>
           </h1>
           
-          {/* Description */}
-          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground mb-5 sm:mb-6 max-w-4xl leading-relaxed font-medium">
+          {/* Description - Simplified on mobile */}
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-4xl leading-relaxed font-medium">
             VR, Alelo e Caju
           </p>
           
-          <p className="text-base sm:text-lg md:text-xl text-primary-foreground font-semibold mb-4 sm:mb-6 max-w-3xl leading-relaxed">
+          {/* Hidden on mobile, shown on larger screens */}
+          <p className="hidden sm:block text-base sm:text-lg md:text-xl text-primary-foreground font-semibold mb-3 sm:mb-4 md:mb-6 max-w-3xl leading-relaxed">
             Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores
           </p>
           
-          <p className="text-sm sm:text-base text-primary-foreground mb-4 sm:mb-6 max-w-3xl leading-relaxed">
+          <p className="hidden md:block text-sm sm:text-base text-primary-foreground mb-3 sm:mb-4 md:mb-6 max-w-3xl leading-relaxed">
             — do diagnóstico ao pós-venda.
           </p>
           
-          <p className="text-base sm:text-lg text-primary-foreground mb-8 sm:mb-10 max-w-3xl leading-relaxed font-medium">
+          <p className="hidden lg:block text-base sm:text-lg text-primary-foreground mb-6 sm:mb-8 md:mb-10 max-w-3xl leading-relaxed font-medium">
             👉 Atendimento humano, comparativos reais e zero dor de cabeça para o RH.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-10 sm:mb-12">
+          <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 sm:flex-row mb-6 sm:mb-8 md:mb-10 lg:mb-12">
             <Button 
               variant="hero" 
               size="lg" 
-              className="text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
+              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
               onClick={() => window.open(whatsappLink, '_blank')}
             >
               Falar com um consultor
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-7 border-2 border-white/90 text-white hover:bg-white hover:text-primary w-full sm:w-auto backdrop-blur-sm bg-white/10 transition-all duration-300"
+              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 border-2 border-white/90 text-white hover:bg-white hover:text-primary w-full sm:w-auto backdrop-blur-sm bg-white/10 transition-all duration-300"
               onClick={() => window.open(whatsappLink, '_blank')}
             >
               Peça já seus cartões
             </Button>
           </div>
           
-          {/* Features */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          {/* Features - Hidden on mobile, shown on larger screens */}
+          <div className="hidden sm:flex flex-wrap items-center gap-3 sm:gap-4">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center space-x-2 sm:space-x-3 bg-white/20 backdrop-blur-lg rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-secondary/40 shadow-lg">
                 <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
