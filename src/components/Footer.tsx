@@ -33,8 +33,7 @@ const Footer = () => {
                 </p>
               </div>
               <p className="text-primary-foreground/90 mb-6 sm:mb-8 leading-relaxed max-w-md text-sm sm:text-base">
-                Consultoria especializada em Vale Refeição (VR), Alelo e Caju. 
-                Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores.
+                Consultoria especializada em Vale Refeição (VR), Alelo e Caju.
               </p>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center space-x-3">

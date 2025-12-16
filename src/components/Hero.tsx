@@ -65,7 +65,7 @@ const Hero = () => {
         className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10"
         style={{ transform: `translateY(${contentOffset}px)` }}
       >
-        <div className="max-w-5xl">
+        <div className="max-w-5xl mx-auto text-center sm:text-left">
           {/* Badge - Hidden on mobile */}
           <div className="hidden sm:flex items-center space-x-2 mb-6 sm:mb-8">
             <div className="flex items-center justify-center w-10 h-10 bg-secondary/25 rounded-full border border-secondary/30">
@@ -83,17 +83,17 @@ const Hero = () => {
           </h1>
           
           {/* Brief text - Visible on mobile */}
-          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed">
             Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores com soluções completas em benefícios corporativos.
           </p>
           
           {/* Bandeiras - Visible on mobile */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary font-semibold mb-4 sm:mb-5 md:mb-6 max-w-4xl leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary font-semibold mb-4 sm:mb-5 md:mb-6 max-w-4xl mx-auto sm:mx-0 leading-relaxed">
             Bandeiras VR, Alelo e Caju
           </p>
           
           {/* CTA Button - Mobile first */}
-          <div className="mb-4 sm:mb-6 md:mb-8">
+          <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center sm:justify-start">
             <Button 
               variant="hero" 
               size="lg" 
@@ -105,23 +105,6 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Description - Hidden on mobile, shown on larger screens */}
-          <p className="hidden sm:block text-base sm:text-lg md:text-xl text-primary-foreground font-semibold mb-3 sm:mb-4 md:mb-6 max-w-3xl leading-relaxed">
-            — do diagnóstico ao pós-venda.
-          </p>
-          
-          {/* Hidden on mobile, shown on larger screens */}
-          <p className="hidden sm:block text-base sm:text-lg md:text-xl text-primary-foreground font-semibold mb-3 sm:mb-4 md:mb-6 max-w-3xl leading-relaxed">
-            Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores
-          </p>
-          
-          <p className="hidden md:block text-sm sm:text-base text-primary-foreground mb-3 sm:mb-4 md:mb-6 max-w-3xl leading-relaxed">
-            — do diagnóstico ao pós-venda.
-          </p>
-          
-          <p className="hidden lg:block text-base sm:text-lg text-primary-foreground mb-6 sm:mb-8 md:mb-10 max-w-3xl leading-relaxed font-medium">
-            👉 Atendimento humano, comparativos reais e zero dor de cabeça para o RH.
-          </p>
           
           {/* CTA Buttons - Second button only on larger screens */}
           <div className="hidden sm:flex flex-col gap-3 sm:gap-4 md:gap-6 sm:flex-row mb-6 sm:mb-8 md:mb-10 lg:mb-12">
