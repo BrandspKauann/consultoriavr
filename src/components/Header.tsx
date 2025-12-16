@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 import {
   Sheet,
   SheetContent,
@@ -95,8 +94,6 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <ThemeToggle />
-            
             <Button 
               variant="outline" 
               size="lg" 
