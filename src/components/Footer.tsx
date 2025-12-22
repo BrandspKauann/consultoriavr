@@ -21,14 +21,29 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 relative z-10">
         {/* Main Footer Content */}
         <AnimatedSection animationType="fade">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16 text-center md:text-left">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="mb-6 sm:mb-8">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-primary-foreground">
-                  Consultoria VR
-                </h3>
-                <p className="text-sm text-primary-foreground/80 mb-4">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 justify-center md:justify-start">
+                  <div className="relative">
+                    <img 
+                      src="/vr.jpg" 
+                      alt="VR Logo" 
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl object-cover border-2 border-yellow-400/30 shadow-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-transparent rounded-xl"></div>
+                  </div>
+                  <div className="flex flex-col items-center md:items-start">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent">
+                      Consultoria VR
+                    </h3>
+                    <p className="text-xs sm:text-sm text-primary-foreground/70 font-medium">
+                      Especialistas em Benefícios
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm text-primary-foreground/80 mb-4 text-center md:text-left">
                   Benefícios corporativos com quem entende do assunto
                 </p>
               </div>
@@ -69,8 +84,8 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8">Links Rápidos</h4>
-              <ul className="space-y-3 sm:space-y-4">
+              <h4 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-yellow-400">Links Rápidos</h4>
+              <ul className="space-y-3 sm:space-y-4 flex flex-col items-center md:items-start">
                 <li>
                   <button 
                     onClick={() => scrollToSection("#o-que-e")} 
@@ -108,8 +123,8 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h4 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8">Serviços</h4>
-              <ul className="space-y-3 sm:space-y-4">
+              <h4 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-yellow-400">Serviços</h4>
+              <ul className="space-y-3 sm:space-y-4 flex flex-col items-center md:items-start">
                 <li><span className="text-primary-foreground/80 text-sm sm:text-base">Comparativos entre operadoras</span></li>
                 <li><span className="text-primary-foreground/80 text-sm sm:text-base">Portabilidade de benefícios</span></li>
                 <li><span className="text-primary-foreground/80 text-sm sm:text-base">Orientação sobre PAT</span></li>
@@ -124,7 +139,7 @@ const Footer = () => {
         <AnimatedSection animationType="scale" delay={100}>
           <div className="bg-primary-hover rounded-3xl p-8 sm:p-10 md:p-12 mb-12 sm:mb-16 text-center shadow-xl border border-primary-foreground/10">
             <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-yellow-400">
                 Pronto para otimizar seus benefícios?
               </h3>
               <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">

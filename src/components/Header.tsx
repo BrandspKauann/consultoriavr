@@ -66,31 +66,46 @@ const Header = () => {
 
   return (
     <header 
-      className={`w-full bg-background/98 backdrop-blur-xl border-b border-border/50 sticky top-0 z-50 transition-all duration-500 ${
+      className={`w-full bg-white border-b border-border/50 fixed top-0 z-50 transition-all duration-500 ${
         isScrolled ? "shadow-lg shadow-primary/5" : "shadow-sm"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4 py-2.5 sm:py-3 md:py-4">
-        <div className="flex items-center justify-between">
-          {/* Brand Name */}
-          <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-            <a href="/" className="text-base sm:text-lg md:text-xl font-bold text-primary hover:text-secondary transition-colors">
-              Consultoria VR
+        <div className="flex items-center justify-between md:justify-between relative">
+          {/* Brand Name - Centralizado no mobile */}
+          <div className="flex-1 flex justify-center md:justify-start md:flex-initial">
+            <a href="/" className="flex items-center gap-2 sm:gap-3 group">
+              <div className="relative">
+                <img 
+                  src="/vr.jpg" 
+                  alt="VR Logo" 
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg object-cover border-2 border-primary/20 group-hover:border-primary transition-all shadow-md group-hover:shadow-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              <div className="flex flex-col items-center md:items-start">
+                <span className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent group-hover:from-secondary group-hover:to-primary transition-all">
+                  Consultoria VR
+                </span>
+                <span className="text-[10px] sm:text-xs text-muted-foreground/70 font-medium hidden sm:block">
+                  Especialistas em Benefícios
+                </span>
+              </div>
             </a>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
-              {menuItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => handleNavigation(item)}
-                  className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-lg transition-all duration-300 font-medium"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
           </div>
+            
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+            {menuItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => handleNavigation(item)}
+                className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-lg transition-all duration-300 font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
 
           {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -121,7 +136,16 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                 <SheetHeader>
-                  <SheetTitle className="text-left text-lg sm:text-xl">Menu</SheetTitle>
+                  <div className="flex items-center gap-3 mb-2">
+                    <img 
+                      src="/vr.jpg" 
+                      alt="VR Logo" 
+                      className="w-10 h-10 rounded-lg object-cover border-2 border-primary/20 shadow-md"
+                    />
+                    <SheetTitle className="text-left text-lg sm:text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                      Consultoria VR
+                    </SheetTitle>
+                  </div>
                 </SheetHeader>
                 <nav className="flex flex-col gap-2 mt-6 sm:mt-8">
                   {menuItems.map((item) => (

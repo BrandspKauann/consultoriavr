@@ -23,7 +23,7 @@ const Content = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <section className="min-h-screen bg-background">
+      <section className="min-h-screen bg-background pt-16 md:pt-20">
         <div className="container mx-auto px-4 py-16 sm:py-20 md:py-24">
         <AnimatedSection animationType="slide-up">
           <div className="text-center mb-16 max-w-3xl mx-auto">

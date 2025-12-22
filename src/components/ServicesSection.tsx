@@ -66,7 +66,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <AnimatedSection animationType="slide-up">
           <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-400 mb-6 sm:mb-8">
               Serviços Coface
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-corporate-gray leading-relaxed">

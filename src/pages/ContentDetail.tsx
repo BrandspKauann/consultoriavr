@@ -79,7 +79,7 @@ const ContentDetail = () => {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center pt-16 md:pt-20">
           <Loader2 className="h-8 w-8 animate-spin text-trust-blue" />
         </div>
         <Footer />
@@ -91,7 +91,7 @@ const ContentDetail = () => {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16 md:pt-20">
           <h1 className="text-2xl font-bold text-primary mb-3">Conteúdo não encontrado</h1>
           <p className="text-corporate-gray mb-6">
             O material que você tentou acessar não está disponível ou foi movido.
@@ -106,7 +106,7 @@ const ContentDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <article className="bg-background min-h-screen">
+      <article className="bg-background min-h-screen pt-16 md:pt-20">
       <div className="bg-gradient-hero py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
         {/* Background image com opacidade */}
         {article.image_url && (

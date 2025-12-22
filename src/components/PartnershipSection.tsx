@@ -85,7 +85,7 @@ const PartnershipSection = () => {
               >
                 <Card className="bg-card border border-border/50 shadow-card hover:shadow-premium transition-all duration-500 h-full group hover:-translate-y-1">
                   <CardContent className="p-6 sm:p-8 h-full flex flex-col">
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-4 justify-center md:justify-start">
                       <div className="w-12 h-12 bg-secondary/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/25 transition-colors border border-secondary/20">
                         {service.icon}
                       </div>
@@ -117,7 +117,7 @@ const PartnershipSection = () => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {differentials.map((differential, index) => (
-                      <div key={index} className="flex items-center gap-3 text-left">
+                      <div key={index} className="flex items-center gap-3 justify-center md:justify-start text-center md:text-left">
                     <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0" />
                     <span className="text-base sm:text-lg text-foreground/80">{differential}</span>
                   </div>
