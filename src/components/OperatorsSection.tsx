@@ -2,24 +2,27 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { ArrowRight, CheckCircle2, Building2, TrendingUp, Zap } from "lucide-react";
 // Logos das operadoras
-const aleloLogo = "/alelo.jpg";
+const flashLogo = "/flash.png";
 const vrLogo = "/vr.jpg";
 const cajuLogo = "/caju.jpg";
 import AnimatedSection from "./AnimatedSection";
+import { LeadFormModal } from "./LeadFormModal";
+import { useState } from "react";
 
 const OperatorsSection = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
+  const [showForm, setShowForm] = useState(false);
   
   const operators = [
     {
-      icon: aleloLogo,
-      iconComponent: <Building2 className="h-8 w-8 text-secondary" />,
-      title: "Alelo Benefícios",
-      description: "Uma das maiores operadoras do Brasil, nascida da parceria com o Bradesco. Oferece soluções completas, seguras e flexíveis para empresas de todos os portes.",
+      icon: flashLogo,
+      iconComponent: <Zap className="h-8 w-8 text-secondary" />,
+      title: "Flash Benefícios",
+      description: "Uma operadora moderna e inovadora que oferece soluções rápidas e eficientes em benefícios corporativos. Com tecnologia de ponta e atendimento ágil, o Flash é ideal para empresas que buscam praticidade e modernidade.",
       features: [
-        "Ampla rede credenciada",
-        "Tradição e solidez no mercado",
-        "Ideal para empresas que buscam estabilidade"
+        "Tecnologia moderna e ágil",
+        "Atendimento rápido e eficiente",
+        "Soluções práticas para empresas"
       ],
       cta: "Saiba mais",
       variant: "premium" as const
@@ -102,7 +105,7 @@ const OperatorsSection = () => {
                   <Button 
                     variant={operator.variant} 
                     className="w-full shadow-md hover:shadow-lg transition-shadow group/btn"
-                    onClick={() => window.open(whatsappLink, '_blank')}
+                    onClick={() => setShowForm(true)}
                   >
                     {operator.cta}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -113,6 +116,15 @@ const OperatorsSection = () => {
           ))}
         </div>
       </div>
+
+      {/* Form Modal */}
+      <LeadFormModal
+        open={showForm}
+        onOpenChange={setShowForm}
+        title="Saiba Mais"
+        description="Preencha o formulário e entraremos em contato para fornecer mais informações."
+        origem="operators_section"
+      />
     </section>
   );
 };

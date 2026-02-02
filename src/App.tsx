@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import RouteScrollToTop from "@/components/RouteScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { ExitIntentModal } from "@/components/ExitIntentModal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <WhatsAppButton />
+          <ExitIntentModal />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

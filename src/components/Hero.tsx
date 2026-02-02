@@ -48,7 +48,7 @@ const Hero = () => {
           <img 
             src={heroBackground} 
             alt="Consultoria em Vale Refeição" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-15"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/65 via-primary/60 to-primary/55"></div>
@@ -87,11 +87,6 @@ const Hero = () => {
             Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores com soluções completas em benefícios corporativos.
           </p>
           
-          {/* Bandeiras - Visible on mobile */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary font-semibold mb-4 sm:mb-5 md:mb-6 max-w-4xl mx-auto sm:mx-0 leading-relaxed">
-            Bandeiras VR, Alelo e Caju
-          </p>
-          
           {/* CTA Button - Mobile first */}
           <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center sm:justify-start">
             <Button 
@@ -102,19 +97,6 @@ const Hero = () => {
             >
               Falar com um consultor
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-            </Button>
-          </div>
-          
-          
-          {/* CTA Buttons - Second button only on larger screens */}
-          <div className="hidden sm:flex flex-col gap-3 sm:gap-4 md:gap-6 sm:flex-row mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 border-2 border-white/90 text-white hover:bg-white hover:text-primary w-full sm:w-auto backdrop-blur-sm bg-white/10 transition-all duration-300"
-              onClick={() => window.open(whatsappLink, '_blank')}
-            >
-              Peça já seus cartões
             </Button>
           </div>
           
@@ -138,6 +120,7 @@ const Hero = () => {
           <div className="w-1.5 h-3 bg-white/70 rounded-full mt-2"></div>
         </div>
       </div>
+
     </section>
   );
 };

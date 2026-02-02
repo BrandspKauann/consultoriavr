@@ -6,9 +6,12 @@ import intelligenceIcon from "@/assets/intelligence-icon.jpg";
 import collectionIcon from "@/assets/collection-icon.jpg";
 import AnimatedSection from "./AnimatedSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { LeadFormModal } from "./LeadFormModal";
+import { useState } from "react";
 
 const ServicesSection = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
+  const [showForm, setShowForm] = useState(false);
   
   const services = [
     {
@@ -115,7 +118,13 @@ const ServicesSection = () => {
                   <Button 
                     variant={service.variant} 
                     className="w-full shadow-md hover:shadow-lg transition-shadow group/btn"
-                    onClick={() => window.open(whatsappLink, '_blank')}
+                    onClick={() => {
+                      if (service.cta === "Saiba Mais") {
+                        setShowForm(true);
+                      } else {
+                        window.open(whatsappLink, '_blank');
+                      }
+                    }}
                   >
                     {service.cta}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -163,6 +172,15 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Form Modal */}
+      <LeadFormModal
+        open={showForm}
+        onOpenChange={setShowForm}
+        title="Saiba Mais"
+        description="Preencha o formulário e entraremos em contato para fornecer mais informações sobre nossos serviços."
+        origem="services_section"
+      />
     </section>
   );
 };

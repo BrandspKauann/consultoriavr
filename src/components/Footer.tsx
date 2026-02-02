@@ -1,10 +1,13 @@
 import { Button } from "./ui/button";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { LeadFormModal } from "./LeadFormModal";
+import { useState } from "react";
 
 const Footer = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
   const calendlyLink = "https://calendly.com/ewertonhirayama/consultoria-em-cartoes-de-vale-refeicao-e-alimentacao";
+  const [showForm, setShowForm] = useState(false);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -26,14 +29,6 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-6 sm:mb-8">
                 <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 justify-center md:justify-start">
-                  <div className="relative">
-                    <img 
-                      src="/vr.jpg" 
-                      alt="VR Logo" 
-                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl object-cover border-2 border-yellow-400/30 shadow-lg"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-transparent rounded-xl"></div>
-                  </div>
                   <div className="flex flex-col items-center md:items-start">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent">
                       Consultoria VR
@@ -48,7 +43,7 @@ const Footer = () => {
                 </p>
               </div>
               <p className="text-primary-foreground/90 mb-6 sm:mb-8 leading-relaxed max-w-md text-sm sm:text-base">
-                Consultoria especializada em Vale Refeição (VR), Alelo e Caju.
+                Consultoria especializada em Vale Refeição (VR), Flash e Caju.
               </p>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center space-x-3">
@@ -150,7 +145,7 @@ const Footer = () => {
                 <Button 
                   variant="hero" 
                   size="lg"
-                  onClick={() => window.open(calendlyLink, '_blank')}
+                  onClick={() => setShowForm(true)}
                   className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
                 >
                   Agendar reunião
@@ -184,6 +179,15 @@ const Footer = () => {
           </div>
         </AnimatedSection>
       </div>
+
+      {/* Form Modal */}
+      <LeadFormModal
+        open={showForm}
+        onOpenChange={setShowForm}
+        title="Agendar Reunião"
+        description="Preencha o formulário e entraremos em contato para agendar sua reunião."
+        origem="footer"
+      />
     </footer>
   );
 };

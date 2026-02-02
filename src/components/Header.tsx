@@ -9,10 +9,12 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { useNavigate, useLocation } from "react-router-dom";
+import { LeadFormModal } from "./LeadFormModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const whatsappLink = "https://wa.link/3gwhbl";
@@ -75,14 +77,6 @@ const Header = () => {
           {/* Brand Name - Centralizado no mobile */}
           <div className="flex-1 flex justify-center md:justify-start md:flex-initial">
             <a href="/" className="flex items-center gap-2 sm:gap-3 group">
-              <div className="relative">
-                <img 
-                  src="/vr.jpg" 
-                  alt="VR Logo" 
-                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg object-cover border-2 border-primary/20 group-hover:border-primary transition-all shadow-md group-hover:shadow-lg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
               <div className="flex flex-col items-center md:items-start">
                 <span className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent group-hover:from-secondary group-hover:to-primary transition-all">
                   Consultoria VR
@@ -112,7 +106,7 @@ const Header = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              onClick={() => window.open(calendlyLink, '_blank')}
+              onClick={() => setShowForm(true)}
               className="hidden md:flex text-sm lg:text-base px-4 lg:px-6 py-2 lg:py-2.5 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
             >
               Agendar reunião
@@ -136,16 +130,9 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                 <SheetHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <img 
-                      src="/vr.jpg" 
-                      alt="VR Logo" 
-                      className="w-10 h-10 rounded-lg object-cover border-2 border-primary/20 shadow-md"
-                    />
-                    <SheetTitle className="text-left text-lg sm:text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                      Consultoria VR
-                    </SheetTitle>
-                  </div>
+                  <SheetTitle className="text-left text-lg sm:text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Consultoria VR
+                  </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-2 mt-6 sm:mt-8">
                   {menuItems.map((item) => (
@@ -162,7 +149,7 @@ const Header = () => {
                     size="lg" 
                     onClick={() => {
                       setIsMenuOpen(false);
-                      window.open(calendlyLink, '_blank');
+                      setShowForm(true);
                     }}
                     className="mt-4 w-full text-sm sm:text-base px-4 py-2.5 sm:py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   >
@@ -185,6 +172,15 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      {/* Form Modal */}
+      <LeadFormModal
+        open={showForm}
+        onOpenChange={setShowForm}
+        title="Agendar Reunião"
+        description="Preencha o formulário e entraremos em contato para agendar sua reunião."
+        origem="header"
+      />
     </header>
   );
 };
