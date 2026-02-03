@@ -34,7 +34,6 @@ const OperatorsSection = () => {
       description: "Mais de 40 anos de história no mercado de benefícios corporativos. Somos parceiros da VR há mais de 7 anos, entregando soluções confiáveis para RHs que precisam de controle e previsibilidade.",
       features: [
         "Rede fechada",
-        "TotalPass* incluso",
         "Foco em controle, economia e cashback"
       ],
       cta: "Saiba mais",
@@ -59,10 +58,67 @@ const OperatorsSection = () => {
     <section id="operadoras" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedSection animationType="slide-up">
-          <div className="text-center mb-16 sm:mb-20 md:mb-24 max-w-4xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
               Trabalhamos com as melhores marcas do mercado
             </h2>
+          </div>
+        </AnimatedSection>
+
+        {/* Explicação sobre Operadoras */}
+        <AnimatedSection animationType="fade" delay={100}>
+          <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
+            <Card className="border-2 border-primary/20 shadow-lg bg-gradient-to-br from-primary/5 to-transparent">
+              <CardContent className="p-6 sm:p-8 md:p-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6 text-center">
+                  O que são Operadoras de Benefícios?
+                </h3>
+                <div className="space-y-4 sm:space-y-6 text-left">
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 text-foreground">
+                      Vale Refeição (VR)
+                    </h4>
+                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                      É um benefício corporativo que permite aos colaboradores comprarem alimentos e refeições. 
+                      Pode ser oferecido através de cartões físicos ou digitais, com diferentes tipos de rede.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 text-foreground">
+                      Rede Aberta vs Rede Fechada
+                    </h4>
+                    <div className="grid sm:grid-cols-2 gap-4 mt-3">
+                      <div className="p-4 bg-background rounded-lg border border-border">
+                        <h5 className="font-semibold mb-2 text-primary">Rede Aberta</h5>
+                        <p className="text-sm text-muted-foreground">
+                          Cartão aceito em qualquer estabelecimento que aceite o tipo de cartão (VISA, Mastercard, etc.). 
+                          Mais flexibilidade para o colaborador.
+                        </p>
+                      </div>
+                      <div className="p-4 bg-background rounded-lg border border-border">
+                        <h5 className="font-semibold mb-2 text-primary">Rede Fechada</h5>
+                        <p className="text-sm text-muted-foreground">
+                          Cartão aceito apenas em estabelecimentos credenciados pela operadora. 
+                          Mais controle para a empresa e possibilidade de melhor negociação.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 text-foreground">
+                      Como Funciona
+                    </h4>
+                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                      As operadoras são empresas especializadas em emitir e gerenciar esses cartões de benefícios. 
+                      Elas fazem a ponte entre empresas e estabelecimentos, facilitando o processo de pagamento e 
+                      oferecendo diferentes soluções conforme a necessidade de cada empresa.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </AnimatedSection>
 
@@ -102,14 +158,30 @@ const OperatorsSection = () => {
                     </ul>
                   </div>
 
-                  <Button 
-                    variant={operator.variant} 
-                    className="w-full shadow-md hover:shadow-lg transition-shadow group/btn"
-                    onClick={() => setShowForm(true)}
-                  >
-                    {operator.cta}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
+                  <div className="flex flex-col gap-2">
+                    <Button 
+                      variant={operator.variant} 
+                      className="w-full shadow-md hover:shadow-lg transition-shadow group/btn"
+                      onClick={() => {
+                        // Scroll suave para seção de parceria onde tem mais informações
+                        const partnershipSection = document.getElementById('parceria');
+                        if (partnershipSection) {
+                          partnershipSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                    >
+                      {operator.cta}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      size="sm"
+                      className="w-full text-xs"
+                      onClick={() => setShowForm(true)}
+                    >
+                      Quero conversar
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </AnimatedSection>

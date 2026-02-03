@@ -21,7 +21,14 @@ import {
 } from './ui/form';
 import { useCreateLead } from '@/hooks/useLeads';
 import { toast } from 'sonner';
-import { Loader2, CheckCircle2, User, Mail, Phone, Building2, Briefcase, MessageSquare, Sparkles } from 'lucide-react';
+import { Loader2, CheckCircle2, User, Mail, Phone, Building2, Briefcase, MessageSquare, Sparkles, CreditCard, AlertCircle } from 'lucide-react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './ui/select';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -35,6 +42,8 @@ const leadSchema = z.object({
   empresa: z.string().optional(),
   cargo: z.string().optional(),
   mensagem: z.string().optional(),
+  quantidadeCartoes: z.string().optional(),
+  principalDor: z.string().optional(),
 });
 
 type LeadFormValues = z.infer<typeof leadSchema>;
@@ -77,13 +86,15 @@ export const LeadFormModal = ({
       empresa: '',
       cargo: '',
       mensagem: '',
+      quantidadeCartoes: '',
+      principalDor: '',
     },
   });
 
   // Calcular progresso do formulário
   const watchedValues = form.watch();
   useEffect(() => {
-    const fields = ['nome', 'email', 'telefone', 'empresa', 'cargo', 'mensagem'];
+    const fields = ['nome', 'email', 'telefone', 'empresa', 'cargo', 'mensagem', 'quantidadeCartoes', 'principalDor'];
     const filledFields = fields.filter(field => {
       const value = watchedValues[field as keyof LeadFormValues];
       return value && value.trim().length > 0;
@@ -324,6 +335,76 @@ export const LeadFormModal = ({
                               {...field} 
                             />
                           </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="quantidadeCartoes"
+                    render={({ field }) => {
+                      const hasValue = field.value && field.value.length > 0;
+                      return (
+                        <FormItem className="space-y-2">
+                          <FormLabel className="flex items-center gap-2 text-sm font-semibold">
+                            <CreditCard className={cn("h-4 w-4 transition-colors", hasValue ? "text-primary" : "text-muted-foreground")} />
+                            Quantidade de cartões
+                          </FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className={cn(
+                                "transition-all duration-200",
+                                hasValue && "border-primary/50"
+                              )}>
+                                <SelectValue placeholder="Selecione a quantidade" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="1-10">1 a 10 cartões</SelectItem>
+                              <SelectItem value="11-50">11 a 50 cartões</SelectItem>
+                              <SelectItem value="51-200">51 a 200 cartões</SelectItem>
+                              <SelectItem value="201-500">201 a 500 cartões</SelectItem>
+                              <SelectItem value="500+">Mais de 500 cartões</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="principalDor"
+                    render={({ field }) => {
+                      const hasValue = field.value && field.value.length > 0;
+                      return (
+                        <FormItem className="space-y-2">
+                          <FormLabel className="flex items-center gap-2 text-sm font-semibold">
+                            <AlertCircle className={cn("h-4 w-4 transition-colors", hasValue ? "text-primary" : "text-muted-foreground")} />
+                            Principal necessidade
+                          </FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className={cn(
+                                "transition-all duration-200",
+                                hasValue && "border-primary/50"
+                              )}>
+                                <SelectValue placeholder="Selecione a principal necessidade" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="reducao-custos">Redução de custos</SelectItem>
+                              <SelectItem value="otimizacao-fiscal">Otimização fiscal</SelectItem>
+                              <SelectItem value="gestao-operacional">Gestão operacional</SelectItem>
+                              <SelectItem value="comparativo-operadoras">Comparativo de operadoras</SelectItem>
+                              <SelectItem value="outro">Outro</SelectItem>
+                            </SelectContent>
+                          </Select>
                           <FormMessage />
                         </FormItem>
                       );

@@ -110,8 +110,25 @@ const SalaryFitsSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Hero Section */}
+        {/* Connection with Main Theme */}
         <AnimatedSection animationType="fade">
+          <div className="text-center mb-8 md:mb-12">
+            <Card className="border-2 shadow-xl inline-block" style={{ borderColor: '#7c3aed', backgroundColor: '#3d1f6d' }}>
+              <CardContent className="p-4 md:p-6">
+                <h3 className="text-xl md:text-2xl font-bold mb-2" style={{ color: '#ffffff' }}>
+                  Tire o RH do operacional e leve para o estratégico
+                </h3>
+                <p className="text-sm md:text-base" style={{ color: '#e9d5ff' }}>
+                  A SalaryFits reduz o trabalho operacional do seu RH, permitindo que você foque no que realmente importa: 
+                  estratégia e desenvolvimento de pessoas.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </AnimatedSection>
+
+        {/* Hero Section */}
+        <AnimatedSection animationType="fade" delay={100}>
           <div className="text-center mb-12 md:mb-16">
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -314,9 +331,12 @@ const SalaryFitsSection = () => {
               <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#ffffff' }}>
                 Transforme o bem-estar financeiro da sua equipe
               </h3>
-              <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: '#e9d5ff' }}>
+              <p className="text-lg mb-4 max-w-2xl mx-auto" style={{ color: '#e9d5ff' }}>
                 Solução moderna que combina tecnologia, benefícios financeiros e integração com empresas 
                 para entregar mais controle, economia e bem-estar financeiro aos colaboradores.
+              </p>
+              <p className="text-base mb-8 max-w-2xl mx-auto font-semibold" style={{ color: '#fbbf24' }}>
+                ⭐ Gratuito para empresas com mais de 500 vidas
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -9,6 +9,8 @@ export interface LeadData {
   empresa?: string;
   cargo?: string;
   mensagem?: string;
+  quantidadeCartoes?: string;
+  principalDor?: string;
   origem?: string;
   metadata?: Record<string, any>;
 }
@@ -36,6 +38,8 @@ const callLeadWebhook = async (leadData: LeadData) => {
       empresa: leadData.empresa,
       cargo: leadData.cargo,
       mensagem: leadData.mensagem,
+      quantidadeCartoes: leadData.quantidadeCartoes,
+      principalDor: leadData.principalDor,
       origem: leadData.origem || 'formulario_site',
       timestamp: new Date().toISOString(),
       url: window.location.href,
@@ -105,16 +109,20 @@ export const syncPendingLeads = async () => {
       try {
         const { error } = await supabase
           .from('leads')
-          .insert([{
-            nome: lead.nome,
-            email: lead.email,
-            telefone: lead.telefone,
-            empresa: lead.empresa,
-            cargo: lead.cargo,
-            mensagem: lead.mensagem,
-            origem: lead.origem || 'formulario_site',
-            metadata: lead.metadata
-          }]);
+        .insert([{
+          nome: lead.nome,
+          email: lead.email,
+          telefone: lead.telefone,
+          empresa: lead.empresa,
+          cargo: lead.cargo,
+          mensagem: lead.mensagem,
+          origem: lead.origem || 'formulario_site',
+          metadata: {
+            ...lead.metadata,
+            quantidadeCartoes: lead.quantidadeCartoes,
+            principalDor: lead.principalDor
+          }
+        }]);
 
         if (!error) {
           lead.synced = true;
@@ -158,6 +166,8 @@ export const useCreateLead = () => {
           origem: leadData.origem || 'formulario_site',
           metadata: {
             ...leadData.metadata,
+            quantidadeCartoes: leadData.quantidadeCartoes,
+            principalDor: leadData.principalDor,
             userAgent: navigator.userAgent,
             timestamp: new Date().toISOString(),
             url: window.location.href

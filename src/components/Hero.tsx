@@ -82,8 +82,18 @@ const Hero = () => {
             <span className="block text-secondary mt-1 sm:mt-2 md:mt-3">Vale Refeição</span>
           </h1>
           
+          {/* Slogan */}
+          <p className="text-base sm:text-lg md:text-xl text-secondary font-semibold mb-3 sm:mb-4 md:mb-5 italic">
+            Consultoria VR – Aqui o seu vale, vale muito!
+          </p>
+          
+          {/* Purpose - Clear explanation */}
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed font-medium">
+            Somos uma consultoria especializada que analisa as necessidades da sua empresa e trabalha com cartões de rede aberta e fechada.
+          </p>
+          
           {/* Brief text - Visible on mobile */}
-          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed">
             Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores com soluções completas em benefícios corporativos.
           </p>
           
@@ -114,11 +124,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce hidden lg:block">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-white/70 rounded-full mt-2"></div>
+      {/* Scroll Indicator - Visible on all devices */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <div className="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center animate-bounce shadow-lg">
+          <div className="w-1.5 h-3 bg-white rounded-full mt-2"></div>
         </div>
+        <p className="text-white/80 text-xs sm:text-sm font-medium animate-pulse hidden sm:block">
+          Role para ver mais
+        </p>
+        <p className="text-white/80 text-xs font-medium animate-pulse sm:hidden">
+          ↓
+        </p>
       </div>
 
     </section>
