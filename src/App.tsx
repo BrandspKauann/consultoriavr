@@ -16,6 +16,7 @@ import AdminSignup from "./pages/AdminSignup";
 import { AdminProtectedRoute } from "./components/admin/AdminProtectedRoute";
 import Content from "./pages/Content";
 import ContentDetail from "./pages/ContentDetail";
+import SalaryFits from "./pages/SalaryFits";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +40,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/conteudo" element={<Content />} />
               <Route path="/conteudo/:slug" element={<ContentDetail />} />
+              <Route path="/salaryfits" element={<SalaryFits />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/signup" element={<AdminSignup />} />
               <Route
