@@ -1,7 +1,6 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
 // Plugin para desabilitar CSP em desenvolvimento
 const disableCSPPlugin = (): Plugin => {
@@ -24,8 +23,9 @@ const disableCSPPlugin = (): Plugin => {
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "localhost",
+    host: "0.0.0.0", // Aceita conexões de qualquer interface (IPv4 e IPv6)
     port: 3000,
+    strictPort: false, // Permite usar outra porta se 3000 estiver ocupada
     hmr: {
       overlay: false, // Desabilita overlay de erros que pode causar problemas com CSP
     },
@@ -51,9 +51,15 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(), 
-    mode === "development" && componentTagger(),
-    mode === "development" && disableCSPPlugin(),
-  ].filter(Boolean),
+    ...(mode === "development" 
+      ? [
+          // lovable-tagger removido para evitar problemas no build do Vercel
+          // Se necessário, pode ser adicionado manualmente apenas em desenvolvimento local
+          disableCSPPlugin(),
+        ]
+      : []
+    ),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

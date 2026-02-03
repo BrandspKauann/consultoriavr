@@ -411,11 +411,3 @@ export const LeadFormModal = ({
     </Dialog>
   );
 };
-              </form>
-            </Form>
-          </>
-        )}
-      </DialogContent>
-    </Dialog>
-  );
-};

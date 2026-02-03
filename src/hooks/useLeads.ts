@@ -15,8 +15,9 @@ export interface LeadData {
 
 const STORAGE_KEY = 'pending_leads';
 // URL do webhook - pode ser configurada via .env ou usar a padrão da VPS
-// Para mudar, configure no .env: VITE_LEAD_WEBHOOK_URL=http://sua-vps.com/webhook-test/webhookn8n
-const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL || 'http://77.37.43.210:5678/webhook-test/webhookn8n';
+// O n8n está rodando em Docker na VPS, então usamos o IP da VPS
+// Para mudar, configure no .env: VITE_LEAD_WEBHOOK_URL=http://seu-ip-ou-dominio:5678/webhook/webhookn8n
+const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL || 'http://77.37.43.210:5678/webhook/webhookn8n';
 
 // Chamar webhook do n8n
 const callLeadWebhook = async (leadData: LeadData) => {

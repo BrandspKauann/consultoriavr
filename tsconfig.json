@@ -12,5 +12,6 @@
     "allowJs": true,
     "noUnusedLocals": false,
     "strictNullChecks": false
-  }
+  },
+  "exclude": ["api", "node_modules", "dist"]
 }
