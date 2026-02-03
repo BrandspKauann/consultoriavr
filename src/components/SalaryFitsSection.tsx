@@ -130,13 +130,14 @@ const SalaryFitsSection = () => {
                   }}
                 />
                 <div className="absolute -top-2 -right-2">
-                  <Sparkles className="h-8 w-8 animate-pulse" style={{ color: '#ffffff' }} />
+                  <Sparkles className="h-8 w-8 animate-pulse" style={{ color: '#fbbf24' }} />
                 </div>
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#ffffff' }}>
-              SalaryFits
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <span style={{ color: '#fbbf24' }}>Salary</span>
+              <span style={{ color: '#ffffff' }}>Fits</span>
             </h2>
             <p className="text-xl md:text-2xl mb-2 font-semibold" style={{ color: '#e9d5ff' }}>
               Bem-estar financeiro e benefícios para funcionários
