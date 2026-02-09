@@ -16,15 +16,51 @@ export interface LeadData {
 }
 
 const STORAGE_KEY = 'pending_leads';
-// URL do webhook - pode ser configurada via .env ou usar a padrão da VPS
-// O n8n está rodando em Docker na VPS, então usamos o IP da VPS
-// Para mudar, configure no .env: VITE_LEAD_WEBHOOK_URL=http://seu-ip-ou-dominio:5678/webhook/webhookn8n
-const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL || 'http://77.37.43.210:5678/webhook/webhookn8n';
+
+// Detectar se está em produção
+// Verifica múltiplas condições para garantir detecção correta
+const isProduction = (): boolean => {
+  // 1. Verifica se está em modo produção do Vite
+  if (import.meta.env.PROD) return true;
+  
+  // 2. Verifica se não está em localhost
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname;
+    if (hostname !== 'localhost' && hostname !== '127.0.0.1' && !hostname.includes('192.168.')) {
+      return true;
+    }
+  }
+  
+  // 3. Verifica variável de ambiente customizada (pode ser configurada no Vercel)
+  if (import.meta.env.VITE_ENVIRONMENT === 'production') {
+    return true;
+  }
+  
+  return false;
+};
+
+// URL do webhook - configuração baseada no ambiente
+// Desenvolvimento: usa VITE_LEAD_WEBHOOK_URL do .env ou localhost padrão
+// Produção: usa API route do Vercel (/api/webhook/lead)
+const getWebhookUrl = (): string => {
+  const isProd = isProduction();
+  
+  if (isProd) {
+    // Em produção, usar API route do Vercel (resolve problemas de CORS e mixed content)
+    console.log('🌐 Ambiente detectado: PRODUÇÃO - usando API route do Vercel');
+    return '/api/webhook/lead';
+  } else {
+    // Em desenvolvimento, usar URL direta do .env
+    const devUrl = import.meta.env.VITE_LEAD_WEBHOOK_URL || 'http://localhost:5678/webhook/webhookn8n';
+    console.log('💻 Ambiente detectado: DESENVOLVIMENTO - usando URL direta:', devUrl);
+    return devUrl;
+  }
+};
 
 // Chamar webhook do n8n
 const callLeadWebhook = async (leadData: LeadData) => {
   try {
-    const webhookUrl = WEBHOOK_URL || import.meta.env.VITE_LEAD_WEBHOOK_URL;
+    const webhookUrl = getWebhookUrl();
     
     if (!webhookUrl) {
       console.warn('⚠️ URL do webhook não configurada');
@@ -46,7 +82,8 @@ const callLeadWebhook = async (leadData: LeadData) => {
       userAgent: navigator.userAgent,
     };
 
-    console.log('🚀 Chamando webhook n8n:', webhookUrl);
+    const environment = isProduction() ? 'PRODUÇÃO' : 'DESENVOLVIMENTO';
+    console.log(`🚀 [${environment}] Chamando webhook n8n:`, webhookUrl);
     console.log('📦 Payload:', payload);
 
     const response = await fetch(webhookUrl, {
@@ -64,17 +101,41 @@ const callLeadWebhook = async (leadData: LeadData) => {
     });
 
     if (!response.ok) {
-      const errorText = await response.text().catch(() => 'Sem resposta');
+      let errorText = 'Sem resposta';
+      try {
+        const errorData = await response.json();
+        errorText = errorData.message || errorData.error || JSON.stringify(errorData);
+      } catch {
+        errorText = await response.text().catch(() => 'Sem resposta');
+      }
+      
+      // Verificar se o erro é de webhook não registrado
+      if (response.status === 404 || errorText.includes('not registered') || errorText.includes('not found')) {
+        console.warn('⚠️ Webhook não encontrado no n8n. Certifique-se de que:');
+        console.warn('   1. O workflow está criado no n8n');
+        console.warn('   2. O webhook está configurado com o path correto: /webhook/webhookn8n');
+        console.warn('   3. O workflow está ATIVO (toggle no canto superior direito)');
+        if (isProduction) {
+          console.warn('   4. A variável LEAD_WEBHOOK_URL está configurada no Vercel Dashboard');
+        } else {
+          console.warn(`   4. A URL do webhook está correta: ${webhookUrl}`);
+        }
+      }
+      
       throw new Error(`Webhook retornou status ${response.status}: ${errorText}`);
     }
 
     const responseData = await response.json().catch(() => null);
-    console.log('✅ Webhook n8n chamado com sucesso!', responseData);
+    console.log(`✅ [${environment}] Webhook n8n chamado com sucesso!`, responseData);
   } catch (error: any) {
     console.error('❌ Erro ao chamar webhook n8n:', error);
     console.error('Detalhes:', {
       message: error.message,
-      stack: error.stack
+      stack: error.stack,
+      environment: isProduction() ? 'PRODUÇÃO' : 'DESENVOLVIMENTO',
+      hostname: typeof window !== 'undefined' ? window.location.hostname : 'N/A',
+      viteProd: import.meta.env.PROD,
+      viteMode: import.meta.env.MODE
     });
     // Não bloqueia o salvamento do lead se o webhook falhar
   }
