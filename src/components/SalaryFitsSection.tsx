@@ -27,7 +27,9 @@ const SalaryFitsSection = () => {
   const handleDownloadPDF = async () => {
     setIsDownloading(true);
     try {
+      // Tentar diferentes nomes de arquivo possíveis (incluindo o nome real do arquivo)
       const possibleFiles = [
+        '/pdfs/Apresentação SalaryFits_Hirayama_2024.pdf',
         '/pdfs/salaryfits-informacoes.pdf',
         '/pdfs/salaryfits.pdf',
         '/pdfs/informacoes-salaryfits.pdf',
@@ -38,24 +40,60 @@ const SalaryFitsSection = () => {
       let fileFound = false;
       for (const filePath of possibleFiles) {
         try {
-          const response = await fetch(filePath, { method: 'HEAD' });
+          // Usar URL absoluta em produção para evitar problemas com rewrites
+          const baseUrl = window.location.origin;
+          const fullUrl = `${baseUrl}${filePath}`;
+          
+          // Usar GET para buscar o arquivo
+          const response = await fetch(fullUrl, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/pdf'
+            }
+          });
+          
           if (response.ok) {
-            const link = document.createElement('a');
-            link.href = filePath;
-            link.download = filePath.split('/').pop() || 'salaryfits-informacoes.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            fileFound = true;
-            break;
+            // Verificar se a resposta é realmente um PDF (não HTML)
+            const contentType = response.headers.get('content-type') || '';
+            const blob = await response.blob();
+            
+            // Verificar se é PDF: Content-Type deve ser application/pdf E o blob deve ser grande o suficiente
+            const isPDF = contentType.includes('application/pdf') || 
+                          (blob.type === 'application/pdf' && blob.size > 10000) ||
+                          (blob.size > 10000 && !contentType.includes('text/html'));
+            
+            if (isPDF) {
+              const url = window.URL.createObjectURL(blob);
+              
+              // Criar link para download
+              const link = document.createElement('a');
+              link.href = url;
+              link.download = filePath.split('/').pop() || 'salaryfits-informacoes.pdf';
+              link.style.display = 'none';
+              document.body.appendChild(link);
+              link.click();
+              
+              // Limpar
+              document.body.removeChild(link);
+              window.URL.revokeObjectURL(url);
+              
+              fileFound = true;
+              console.log(`✅ PDF baixado com sucesso: ${filePath}`);
+              break;
+            } else {
+              console.log(`❌ Resposta não é PDF: ${filePath} (Content-Type: ${contentType}, tipo blob: ${blob.type}, tamanho: ${blob.size})`);
+            }
+          } else {
+            console.log(`❌ Resposta não OK: ${filePath} (status: ${response.status})`);
           }
         } catch (e) {
+          console.log(`❌ Erro ao buscar arquivo: ${filePath}`, e);
           continue;
         }
       }
       
       if (!fileFound) {
-        alert('Arquivo PDF não encontrado. Por favor, verifique se o arquivo está na pasta public/pdfs/ com o nome "salaryfits-informacoes.pdf"');
+        alert('Arquivo PDF não encontrado. Por favor, verifique se o arquivo está na pasta public/pdfs/');
       }
     } catch (error) {
       console.error('Erro ao fazer download do PDF:', error);
