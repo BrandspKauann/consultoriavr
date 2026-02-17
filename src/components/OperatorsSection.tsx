@@ -70,38 +70,38 @@ const OperatorsSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {operators.map((operator, index) => (
             <AnimatedSection 
               key={index}
               animationType="scale" 
               delay={index * 75}
             >
-                <Card className="shadow-card hover:shadow-premium transition-all duration-300 border-2 h-full flex flex-col group hover:-translate-y-2" style={{ borderColor: '#7c3aed', backgroundColor: '#3d1f6d' }}>
-                <CardContent className="p-6 sm:p-8 h-full flex flex-col items-center text-center">
+              <Card className="shadow-card hover:shadow-premium transition-all duration-300 border-2 h-full flex flex-col group hover:-translate-y-2" style={{ borderColor: '#7c3aed', backgroundColor: '#3d1f6d' }}>
+                <CardContent className="p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
                   <div className="w-full mb-4 sm:mb-6">
                     <div className="relative inline-block mb-3 sm:mb-4">
                       <img 
                         src={operator.icon} 
                         alt={`${operator.title} logo`}
-                        className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl object-contain border-2 shadow-md group-hover:shadow-lg bg-white p-2"
+                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto rounded-xl object-contain border-2 shadow-md group-hover:shadow-lg bg-white p-2"
                         style={{ borderColor: '#7c3aed' }}
                       />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{ color: '#ffffff' }}>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3" style={{ color: '#ffffff' }}>
                       {operator.title}
                     </h3>
-                    <p className="text-xs sm:text-sm leading-relaxed mx-auto" style={{ color: '#e9d5ff' }}>
+                    <p className="text-xs sm:text-sm leading-relaxed mx-auto px-2 sm:px-0" style={{ color: '#e9d5ff' }}>
                       {operator.description}
                     </p>
                   </div>
 
                   <div className="flex-grow mb-4 sm:mb-6 w-full">
-                    <ul className="space-y-2 flex flex-col items-center">
+                    <ul className="space-y-1.5 sm:space-y-2 flex flex-col items-center">
                       {operator.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center justify-center text-xs sm:text-sm w-full" style={{ color: '#e9d5ff' }}>
-                          <CheckCircle2 className="w-4 h-4 mr-2 flex-shrink-0" style={{ color: '#fbbf24' }} />
-                          <span>{feature}</span>
+                        <li key={featureIndex} className="flex items-center justify-center text-xs sm:text-sm w-full px-2 sm:px-0" style={{ color: '#e9d5ff' }}>
+                          <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 flex-shrink-0" style={{ color: '#fbbf24' }} />
+                          <span className="text-left">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -109,7 +109,7 @@ const OperatorsSection = () => {
 
                   <div className="flex flex-col gap-2 w-full">
                     <Button 
-                      className="w-full shadow-md hover:shadow-lg transition-shadow group/btn font-semibold"
+                      className="w-full shadow-md hover:shadow-lg transition-shadow group/btn font-semibold text-sm sm:text-base py-5 sm:py-6"
                       style={{ 
                         backgroundColor: '#fbbf24', 
                         color: '#4c1aa3',
@@ -129,12 +129,12 @@ const OperatorsSection = () => {
                       }}
                     >
                       {operator.cta}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
                     <Button 
                       variant="outline"
                       size="sm"
-                      className="w-full text-xs font-semibold"
+                      className="w-full text-xs sm:text-sm font-semibold py-4 sm:py-5"
                       style={{
                         borderColor: '#fbbf24',
                         color: '#fbbf24',

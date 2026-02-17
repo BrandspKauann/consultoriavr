@@ -174,6 +174,17 @@ const ContentDetail = () => {
             )}
             <div className="bg-card border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-card">
               {renderContent()}
+              
+              {/* Botão Voltar aos Artigos */}
+              <div className="mt-8 sm:mt-10 md:mt-12 flex justify-center">
+                <Button
+                  onClick={() => navigate("/conteudo")}
+                  className="bg-primary hover:bg-primary-hover text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                  Voltar aos artigos
+                </Button>
+              </div>
             </div>
           </div>
 

@@ -64,16 +64,16 @@ const AboutSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Quem Somos */}
           <AnimatedSection animationType="slide-up">
-            <div className="text-center mb-12 sm:mb-16 md:mb-20">
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-primary/10 rounded-2xl">
+            <div className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+              <div className="flex justify-center mb-4 sm:mb-6">
+                <div className="p-3 sm:p-4 bg-primary/10 rounded-xl sm:rounded-2xl">
                   {quemSomos.icon}
                 </div>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary mb-4 sm:mb-6 md:mb-8">
                 {quemSomos.title}
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
                 {quemSomos.description}
               </p>
             </div>
@@ -81,12 +81,12 @@ const AboutSection = () => {
 
           {/* O que Resolvemos */}
           <AnimatedSection animationType="fade" delay={100}>
-            <div className="mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-8 sm:mb-12 text-center">
+            <div className="mb-10 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 sm:mb-8 md:mb-12 text-center">
                 O que Resolvemos
               </h2>
               
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
                 {oQueResolvemos.map((item, index) => (
                   <AnimatedSection 
                     key={index}
@@ -94,16 +94,16 @@ const AboutSection = () => {
                     delay={index * 50}
                   >
                     <Card className="h-full border-2 border-border/50 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1">
-                      <CardContent className="p-6 sm:p-8">
-                        <div className="flex items-start gap-4">
-                          <div className="p-3 bg-secondary/10 rounded-lg flex-shrink-0">
+                      <CardContent className="p-5 sm:p-6 md:p-8">
+                        <div className="flex items-start gap-3 sm:gap-4">
+                          <div className="p-2.5 sm:p-3 bg-secondary/10 rounded-lg flex-shrink-0">
                             {item.icon}
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-lg sm:text-xl font-bold text-primary mb-2">
+                            <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-2">
                               {item.title}
                             </h3>
-                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                               {item.description}
                             </p>
                           </div>
@@ -119,28 +119,28 @@ const AboutSection = () => {
           {/* CTA */}
           <AnimatedSection animationType="fade" delay={400}>
             <Card className="border-2 border-primary shadow-xl bg-gradient-to-br from-primary/5 to-secondary/5">
-              <CardContent className="p-8 sm:p-12 text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4 sm:mb-6">
+              <CardContent className="p-6 sm:p-8 md:p-12 text-center">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4 sm:mb-6">
                   Pronto para transformar seu RH?
                 </h3>
-                <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2 sm:px-0">
                   Vamos analisar as necessidades da sua empresa e encontrar a melhor solução em benefícios corporativos.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Button 
                     size="lg" 
                     variant="hero"
                     onClick={() => setShowForm(true)}
-                    className="shadow-lg hover:shadow-xl transition-all"
+                    className="shadow-lg hover:shadow-xl transition-all text-sm sm:text-base w-full sm:w-auto"
                   >
                     Quero uma análise gratuita
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline"
                     onClick={() => window.open(whatsappLink, '_blank')}
-                    className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm sm:text-base w-full sm:w-auto"
                   >
                     Falar com consultor
                   </Button>

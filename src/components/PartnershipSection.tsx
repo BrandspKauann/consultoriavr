@@ -84,7 +84,7 @@ const PartnershipSection = () => {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <AnimatedSection 
                 key={index}
@@ -92,16 +92,16 @@ const PartnershipSection = () => {
                 delay={index * 100}
               >
                 <Card className="bg-card border border-border/50 shadow-card hover:shadow-premium transition-all duration-500 h-full group hover:-translate-y-1">
-                  <CardContent className="p-6 sm:p-8 h-full flex flex-col">
-                    <div className="flex items-start gap-4 justify-center md:justify-start">
-                      <div className="w-12 h-12 bg-primary/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors border border-primary/20">
+                  <CardContent className="p-5 sm:p-6 md:p-8 h-full flex flex-col">
+                    <div className="flex items-start gap-3 sm:gap-4 justify-center md:justify-start">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors border border-primary/20">
                         {service.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2">
                           {service.title}
                         </h3>
-                        <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
+                        <p className="text-xs sm:text-sm md:text-base text-foreground/75 leading-relaxed">
                           {service.description}
                         </p>
                       </div>
@@ -120,14 +120,14 @@ const PartnershipSection = () => {
             </p>
             
             <div className="mb-8 sm:mb-12">
-              <h3 className="text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4 sm:mb-6 md:mb-8">
                 Diferenciais que fazem a diferença
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {differentials.map((differential, index) => (
-                      <div key={index} className="flex items-center gap-3 justify-center md:justify-start text-center md:text-left">
-                    <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0" />
-                    <span className="text-base sm:text-lg text-foreground/80">{differential}</span>
+                      <div key={index} className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start text-center md:text-left">
+                    <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-secondary flex-shrink-0" />
+                    <span className="text-sm sm:text-base md:text-lg text-foreground/80">{differential}</span>
                   </div>
                 ))}
               </div>
@@ -138,7 +138,7 @@ const PartnershipSection = () => {
         {/* CTA Section */}
         <div 
           ref={ctaRef}
-          className={`bg-gradient-hero rounded-3xl p-8 sm:p-10 md:p-12 text-center shadow-premium relative overflow-hidden scroll-animate-fade ${ctaVisible ? "visible" : ""}`}
+          className={`bg-gradient-hero rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-center shadow-premium relative overflow-hidden scroll-animate-fade ${ctaVisible ? "visible" : ""}`}
         >
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
           <div className="relative z-10 max-w-4xl mx-auto">

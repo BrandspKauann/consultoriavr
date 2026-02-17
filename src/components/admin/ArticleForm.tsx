@@ -175,9 +175,9 @@ export const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const MAX_SIZE = 2 * 1024 * 1024; // 2MB
+    const MAX_SIZE = 10 * 1024 * 1024; // 10MB
     if (file.size > MAX_SIZE) {
-      toast.error("A imagem precisa ter no máximo 2MB.");
+      toast.error("A imagem precisa ter no máximo 10MB.");
       event.target.value = "";
       return;
     }
@@ -202,9 +202,9 @@ export const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const MAX_SIZE = 2 * 1024 * 1024; // 2MB
+    const MAX_SIZE = 10 * 1024 * 1024; // 10MB
     if (file.size > MAX_SIZE) {
-      toast.error("A imagem precisa ter no máximo 2MB.");
+      toast.error("A imagem precisa ter no máximo 10MB.");
       event.target.value = "";
       return;
     }
@@ -403,7 +403,7 @@ export const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
               onChange={handleFileChange}
             />
             <p className="text-xs text-muted-foreground">
-              Envie JPG, PNG, WebP ou SVG (máx. 2MB) ou cole um link público
+              Envie JPG, PNG, WebP ou SVG (máx. 10MB) ou cole um link público
             </p>
             <p className="text-xs text-muted-foreground mt-1">
               📐 <strong>Recomendação:</strong> Use imagens retangulares (proporção 1200x450px ou 8:3) para melhor visualização nos cards e na página do artigo.
@@ -532,7 +532,7 @@ export const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
                   onChange={handleOgFileChange}
                 />
                 <p className="text-xs text-muted-foreground">
-                  Imagem exibida ao compartilhar em redes sociais (máx. 2MB)
+                  Imagem exibida ao compartilhar em redes sociais (máx. 10MB)
                 </p>
               </div>
             </div>

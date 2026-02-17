@@ -62,7 +62,7 @@ const Hero = () => {
       
       {/* Content */}
       <div 
-        className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10"
+        className="container mx-auto px-4 sm:px-4 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative z-10"
         style={{ transform: `translateY(${contentOffset}px)` }}
       >
         <div className="max-w-5xl mx-auto text-center sm:text-left">
@@ -77,9 +77,9 @@ const Hero = () => {
           </div>
           
           {/* Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-[1.2] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-4 sm:mb-4 md:mb-6 lg:mb-8 leading-[1.15] sm:leading-[1.2] tracking-tight px-2 sm:px-0">
             Consultoria em
-            <span className="block text-secondary mt-1 sm:mt-2 md:mt-3">Gestão de Pessoas e RH</span>
+            <span className="block text-secondary mt-2 sm:mt-2 md:mt-3">Gestão de Pessoas e RH</span>
           </h1>
           
           {/* Slogan */}
@@ -87,21 +87,21 @@ const Hero = () => {
           </p>
           
           {/* Purpose - Clear explanation */}
-          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed font-medium">
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-4 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed font-medium px-2 sm:px-0">
             Transformamos o RH operacional em estratégico. Oferecemos soluções completas em benefícios corporativos, gestão de ponto, vale-transporte e desenvolvimento de pessoas.
           </p>
           
           {/* Brief text - Visible on mobile */}
-          <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mb-6 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed px-2 sm:px-0">
             Ajudamos sua empresa a economizar, otimizar processos, reduzir custos e engajar colaboradores com tecnologia e consultoria especializada.
           </p>
           
           {/* CTA Button - Mobile first */}
-          <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center sm:justify-start">
+          <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center sm:justify-start px-2 sm:px-0">
             <Button 
               variant="hero" 
               size="lg" 
-              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
+              className="text-base sm:text-base md:text-lg px-8 sm:px-8 md:px-10 py-6 sm:py-6 md:py-7 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
               onClick={() => window.open(whatsappLink, '_blank')}
             >
               Falar com um consultor

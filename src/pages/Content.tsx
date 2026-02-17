@@ -62,7 +62,7 @@ const Content = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {articles.map((article, index) => (
               <AnimatedSection key={article.id} animationType="fade" delay={index * 50}>
-                <Card className="border border-border/50 shadow-card bg-card hover:shadow-premium transition-all duration-500 h-full flex flex-col overflow-hidden hover:-translate-y-1">
+                <Card className="border border-border/50 shadow-card bg-card transition-all duration-500 h-full flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-[0_25px_80px_-10px_hsl(280_45%_20%_/_0.6),_0_12px_32px_-6px_hsl(280_45%_20%_/_0.5),_0_4px_16px_-2px_hsl(280_45%_20%_/_0.4)] cursor-pointer group">
                   {article.image_url && (
                     <div className="w-full overflow-hidden bg-muted" style={{ aspectRatio: '8/3' }}>
                       <img

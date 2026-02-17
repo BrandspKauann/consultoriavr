@@ -24,13 +24,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 relative z-10">
         {/* Main Footer Content */}
         <AnimatedSection animationType="fade">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16 text-center md:text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 mb-10 sm:mb-12 md:mb-16 text-center md:text-left">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="mb-6 sm:mb-8">
+              <div className="mb-5 sm:mb-6 md:mb-8">
                 <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 justify-center md:justify-start">
                   <div className="flex flex-col items-center md:items-start">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent">
+                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent">
                       Consultoria VR
                     </h3>
                     <p className="text-xs sm:text-sm text-primary-foreground/70 font-medium">
@@ -38,49 +38,49 @@ const Footer = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-sm text-primary-foreground/80 mb-4 text-center md:text-left">
+                <p className="text-xs sm:text-sm text-primary-foreground/80 mb-3 sm:mb-4 text-center md:text-left">
                   Benefícios corporativos com quem entende do assunto
                 </p>
               </div>
-              <p className="text-primary-foreground/90 mb-6 sm:mb-8 leading-relaxed max-w-md text-sm sm:text-base">
+              <p className="text-primary-foreground/90 mb-5 sm:mb-6 md:mb-8 leading-relaxed max-w-md mx-auto md:mx-0 text-xs sm:text-sm md:text-base">
                 Consultoria especializada em Vale Refeição (VR), Flash e Caju.
               </p>
-              <div className="space-y-3 sm:space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-secondary" />
+              <div className="space-y-2.5 sm:space-y-3 md:space-y-4">
+                <div className="flex items-center space-x-2 sm:space-x-3 justify-center md:justify-start">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
                   </div>
                   <a 
                     href="mailto:ewerton@hirayamacorretora.com.br" 
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-xs sm:text-sm md:text-base break-all"
                   >
                     ewerton@hirayamacorretora.com.br
                   </a>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-secondary" />
+                <div className="flex items-center space-x-2 sm:space-x-3 justify-center md:justify-start">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
                   </div>
                   <a 
                     href="tel:+5511972896857" 
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm sm:text-base"
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors text-xs sm:text-sm md:text-base"
                   >
                     (11) 97289-6857
                   </a>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-secondary" />
+                <div className="flex items-center space-x-2 sm:space-x-3 justify-center md:justify-start">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
                   </div>
-                  <span className="text-primary-foreground/80 text-sm sm:text-base">São Paulo, SP</span>
+                  <span className="text-primary-foreground/80 text-xs sm:text-sm md:text-base">São Paulo, SP</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-yellow-400">Links Rápidos</h4>
-              <ul className="space-y-3 sm:space-y-4 flex flex-col items-center md:items-start">
+              <h4 className="text-base sm:text-lg md:text-xl font-semibold mb-4 sm:mb-6 md:mb-8 text-yellow-400">Links Rápidos</h4>
+              <ul className="space-y-2.5 sm:space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
                 <li>
                   <button 
                     onClick={() => scrollToSection("#o-que-e")} 
