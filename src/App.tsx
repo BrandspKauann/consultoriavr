@@ -8,6 +8,7 @@ import { ExitIntentModal } from "@/components/ExitIntentModal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "@/components/admin/ErrorBoundary";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
@@ -56,6 +57,7 @@ const App = () => (
             <WhatsAppButton />
             <ExitIntentModal />
           </BrowserRouter>
+          <Analytics />
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
