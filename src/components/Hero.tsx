@@ -78,23 +78,22 @@ const Hero = () => {
           
           {/* Heading */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-[1.2] tracking-tight">
-            Consultoria especializada em
-            <span className="block text-secondary mt-1 sm:mt-2 md:mt-3">Vale Refeição</span>
+            Consultoria em
+            <span className="block text-secondary mt-1 sm:mt-2 md:mt-3">Gestão de Pessoas e RH</span>
           </h1>
           
           {/* Slogan */}
           <p className="text-base sm:text-lg md:text-xl text-secondary font-semibold mb-3 sm:mb-4 md:mb-5 italic">
-            Consultoria VR – Aqui o seu vale, vale muito!
           </p>
           
           {/* Purpose - Clear explanation */}
           <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed font-medium">
-            Somos uma consultoria especializada que analisa as necessidades da sua empresa e trabalha com cartões de rede aberta e fechada.
+            Transformamos o RH operacional em estratégico. Oferecemos soluções completas em benefícios corporativos, gestão de ponto, vale-transporte e desenvolvimento de pessoas.
           </p>
           
           {/* Brief text - Visible on mobile */}
           <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mb-3 sm:mb-4 md:mb-5 max-w-3xl mx-auto sm:mx-0 leading-relaxed">
-            Ajudamos sua empresa a economizar, ganhar eficiência fiscal e cuidar melhor dos colaboradores com soluções completas em benefícios corporativos.
+            Ajudamos sua empresa a economizar, otimizar processos, reduzir custos e engajar colaboradores com tecnologia e consultoria especializada.
           </p>
           
           {/* CTA Button - Mobile first */}

@@ -81,7 +81,7 @@ const Header = () => {
                 <span className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent group-hover:from-secondary group-hover:to-primary transition-all">
                   Consultoria VR
                 </span>
-                <span className="text-[10px] sm:text-xs text-muted-foreground/70 font-medium hidden sm:block">
+                <span className="text-[10px] sm:text-xs font-medium hidden sm:block" style={{ color: '#1a1a1a' }}>
                   Especialistas em Benefícios
                 </span>
               </div>
@@ -94,9 +94,10 @@ const Header = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item)}
-                className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-lg transition-all duration-300 font-medium"
+                className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300 font-medium relative group hover:scale-105 hover:shadow-md"
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
           </nav>

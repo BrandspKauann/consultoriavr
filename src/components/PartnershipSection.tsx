@@ -13,29 +13,34 @@ const PartnershipSection = () => {
   
   const services = [
     {
-      icon: <TrendingDown className="h-6 w-6 text-secondary" />,
+      icon: <TrendingDown className="h-6 w-6 text-primary" />,
       title: "Comparativos reais entre operadoras",
       description: "Análise detalhada de VR, Flash e Caju para sua empresa"
     },
     {
-      icon: <ArrowRight className="h-6 w-6 text-secondary" />,
+      icon: <ArrowRight className="h-6 w-6 text-primary" />,
       title: "Portabilidade de benefícios",
       description: "Ajudamos na migração entre operadoras quando necessário"
     },
     {
-      icon: <FileText className="h-6 w-6 text-secondary" />,
+      icon: <FileText className="h-6 w-6 text-primary" />,
       title: "Orientação sobre PAT",
       description: "Suporte completo em questões de Programa de Alimentação do Trabalhador"
     },
     {
-      icon: <TrendingDown className="h-6 w-6 text-secondary" />,
+      icon: <TrendingDown className="h-6 w-6 text-primary" />,
       title: "Redução de custos e carga tributária",
       description: "Otimização fiscal e redução de custos operacionais"
     },
     {
-      icon: <Users className="h-6 w-6 text-secondary" />,
+      icon: <Users className="h-6 w-6 text-primary" />,
       title: "Integração com a folha de pagamento",
       description: "Facilidade na integração com sistemas de RH"
+    },
+    {
+      icon: <Zap className="h-6 w-6 text-primary" />,
+      title: "Gestão de ponto e vale-transporte",
+      description: "Parceria com Solides para controle de ponto e gestão de vale-transporte"
     }
   ];
 
@@ -89,7 +94,7 @@ const PartnershipSection = () => {
                 <Card className="bg-card border border-border/50 shadow-card hover:shadow-premium transition-all duration-500 h-full group hover:-translate-y-1">
                   <CardContent className="p-6 sm:p-8 h-full flex flex-col">
                     <div className="flex items-start gap-4 justify-center md:justify-start">
-                      <div className="w-12 h-12 bg-secondary/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/25 transition-colors border border-secondary/20">
+                      <div className="w-12 h-12 bg-primary/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors border border-primary/20">
                         {service.icon}
                       </div>
                       <div className="flex-1">

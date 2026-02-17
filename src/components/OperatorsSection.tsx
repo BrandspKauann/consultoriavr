@@ -55,115 +55,73 @@ const OperatorsSection = () => {
   ];
 
   return (
-    <section id="operadoras" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-background">
+    <section id="operadoras" className="py-16 sm:py-20 md:py-24 lg:py-28" style={{ backgroundColor: '#2d1b4e' }}>
       <div className="container mx-auto px-4">
         <AnimatedSection animationType="slide-up">
           <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8" style={{ color: '#ffffff' }}>
               Trabalhamos com as melhores marcas do mercado
             </h2>
+            <div className="max-w-2xl mx-auto mb-6 sm:mb-8">
+              <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#e9d5ff' }}>
+                Consultoria especializada em cartões de vale refeição. Trabalhamos com operadoras de rede aberta e fechada para encontrar a melhor solução para sua empresa.
+              </p>
+            </div>
           </div>
         </AnimatedSection>
 
-        {/* Explicação sobre Operadoras */}
-        <AnimatedSection animationType="fade" delay={100}>
-          <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
-            <Card className="border-2 border-primary/20 shadow-lg bg-gradient-to-br from-primary/5 to-transparent">
-              <CardContent className="p-6 sm:p-8 md:p-10">
-                <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6 text-center">
-                  O que são Operadoras de Benefícios?
-                </h3>
-                <div className="space-y-4 sm:space-y-6 text-left">
-                  <div>
-                    <h4 className="font-semibold text-lg mb-2 text-foreground">
-                      Vale Refeição (VR)
-                    </h4>
-                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                      É um benefício corporativo que permite aos colaboradores comprarem alimentos e refeições. 
-                      Pode ser oferecido através de cartões físicos ou digitais, com diferentes tipos de rede.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-lg mb-2 text-foreground">
-                      Rede Aberta vs Rede Fechada
-                    </h4>
-                    <div className="grid sm:grid-cols-2 gap-4 mt-3">
-                      <div className="p-4 bg-background rounded-lg border border-border">
-                        <h5 className="font-semibold mb-2 text-primary">Rede Aberta</h5>
-                        <p className="text-sm text-muted-foreground">
-                          Cartão aceito em qualquer estabelecimento que aceite o tipo de cartão (VISA, Mastercard, etc.). 
-                          Mais flexibilidade para o colaborador.
-                        </p>
-                      </div>
-                      <div className="p-4 bg-background rounded-lg border border-border">
-                        <h5 className="font-semibold mb-2 text-primary">Rede Fechada</h5>
-                        <p className="text-sm text-muted-foreground">
-                          Cartão aceito apenas em estabelecimentos credenciados pela operadora. 
-                          Mais controle para a empresa e possibilidade de melhor negociação.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-lg mb-2 text-foreground">
-                      Como Funciona
-                    </h4>
-                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                      As operadoras são empresas especializadas em emitir e gerenciar esses cartões de benefícios. 
-                      Elas fazem a ponte entre empresas e estabelecimentos, facilitando o processo de pagamento e 
-                      oferecendo diferentes soluções conforme a necessidade de cada empresa.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </AnimatedSection>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {operators.map((operator, index) => (
             <AnimatedSection 
               key={index}
               animationType="scale" 
               delay={index * 75}
             >
-              <Card className="bg-gradient-card shadow-card hover:shadow-premium transition-all duration-300 border-0 h-full flex flex-col group hover:-translate-y-2">
-                <CardContent className="p-6 sm:p-8 h-full flex flex-col">
-                  <div className="text-center mb-6 sm:mb-8">
-                    <div className="relative inline-block mb-4 sm:mb-6">
+                <Card className="shadow-card hover:shadow-premium transition-all duration-300 border-2 h-full flex flex-col group hover:-translate-y-2" style={{ borderColor: '#7c3aed', backgroundColor: '#3d1f6d' }}>
+                <CardContent className="p-6 sm:p-8 h-full flex flex-col items-center text-center">
+                  <div className="w-full mb-4 sm:mb-6">
+                    <div className="relative inline-block mb-3 sm:mb-4">
                       <img 
                         src={operator.icon} 
                         alt={`${operator.title} logo`}
-                        className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl object-contain border-2 border-border group-hover:border-secondary transition-colors shadow-md group-hover:shadow-lg bg-white p-2"
+                        className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl object-contain border-2 shadow-md group-hover:shadow-lg bg-white p-2"
+                        style={{ borderColor: '#7c3aed' }}
                       />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3 sm:mb-4">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{ color: '#ffffff' }}>
                       {operator.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm leading-relaxed mx-auto" style={{ color: '#e9d5ff' }}>
                       {operator.description}
                     </p>
                   </div>
 
-                  <div className="flex-grow mb-6 sm:mb-8">
-                    <ul className="space-y-3">
+                  <div className="flex-grow mb-4 sm:mb-6 w-full">
+                    <ul className="space-y-2 flex flex-col items-center">
                       {operator.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-sm sm:text-base text-foreground/80">
-                          <CheckCircle2 className="w-5 h-5 text-secondary mr-3 mt-0.5 flex-shrink-0" />
+                        <li key={featureIndex} className="flex items-center justify-center text-xs sm:text-sm w-full" style={{ color: '#e9d5ff' }}>
+                          <CheckCircle2 className="w-4 h-4 mr-2 flex-shrink-0" style={{ color: '#fbbf24' }} />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-full">
                     <Button 
-                      variant={operator.variant} 
-                      className="w-full shadow-md hover:shadow-lg transition-shadow group/btn"
+                      className="w-full shadow-md hover:shadow-lg transition-shadow group/btn font-semibold"
+                      style={{ 
+                        backgroundColor: '#fbbf24', 
+                        color: '#4c1aa3',
+                        border: 'none'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#f59e0b';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#fbbf24';
+                      }}
                       onClick={() => {
-                        // Scroll suave para seção de parceria onde tem mais informações
                         const partnershipSection = document.getElementById('parceria');
                         if (partnershipSection) {
                           partnershipSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -176,7 +134,20 @@ const OperatorsSection = () => {
                     <Button 
                       variant="outline"
                       size="sm"
-                      className="w-full text-xs"
+                      className="w-full text-xs font-semibold"
+                      style={{
+                        borderColor: '#fbbf24',
+                        color: '#fbbf24',
+                        backgroundColor: 'transparent'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#fbbf24';
+                        e.currentTarget.style.color = '#4c1aa3';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = '#fbbf24';
+                      }}
                       onClick={() => setShowForm(true)}
                     >
                       Quero conversar
