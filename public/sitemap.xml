@@ -1,55 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Páginas estáticas -->
+  <!-- NOTA: Este é um sitemap estático. O sitemap dinâmico está em /api/sitemap.xml -->
   <url>
-    <loc>https://www.segurosdecredito.com.br</loc>
-    <lastmod>2025-11-26</lastmod>
+    <loc>https://www.consultoriavr.com.br</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo</loc>
-    <lastmod>2025-11-26</lastmod>
+    <loc>https://www.consultoriavr.com.br/conteudo</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Artigos -->
-  <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo/riscos-construcao-civil-fornecedores</loc>
-    <lastmod>2025-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo/falencia-fmu-risco-para-empresas</loc>
-    <lastmod>2025-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo/impacto-rj-fornecedor-coteminas</loc>
-    <lastmod>2025-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo/risco-fornecer-entidades-sem-fins-lucrativos</loc>
-    <lastmod>2025-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo/protecao-caixa-fornecedores-construcao-civil-2025</loc>
-    <lastmod>2025-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.segurosdecredito.com.br/conteudo/o-papai-noel-dos-cfos-seguro-de-credito</loc>
-    <lastmod>2025-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Artigos serão adicionados dinamicamente via /api/sitemap.xml -->
 </urlset>
 
 

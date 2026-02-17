@@ -209,6 +209,7 @@ const SolidesSection = () => {
               size="lg" 
               onClick={handleDownloadPDF}
               disabled={isDownloading}
+              variant="default"
               className="bg-white hover:bg-gray-100 shadow-md hover:shadow-lg transition-all font-semibold"
               style={{ color: '#4c1aa3' }}
             >
@@ -220,7 +221,7 @@ const SolidesSection = () => {
               ) : (
                 <>
                   <Download className="mr-2 h-4 w-4" />
-                  Solicitar Informações
+                  Baixar Informações (PDF)
                 </>
               )}
             </Button>

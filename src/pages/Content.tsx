@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import type { Article } from "@/types/article";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 const Content = () => {
   const { data: articles, isLoading, error } = useAllPublishedArticles();
@@ -21,9 +22,16 @@ const Content = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <section className="min-h-screen bg-background pt-16 md:pt-20">
+    <>
+      <SEO 
+        title="Blog da Consultoria | Artigos sobre Benefícios Corporativos"
+        description="Conteúdos práticos sobre benefícios corporativos, legislação, PAT, gestão de RH, vale-refeição e muito mais."
+        keywords="blog consultoria vr, artigos benefícios corporativos, vale refeição, gestão de rh, pat"
+        url="https://www.consultoriavr.com.br/conteudo"
+      />
+      <div className="min-h-screen bg-background">
+        <Header />
+        <section className="min-h-screen bg-background pt-16 md:pt-20">
         <div className="container mx-auto px-4 py-16 sm:py-20 md:py-24">
         <AnimatedSection animationType="slide-up">
           <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -112,6 +120,7 @@ const Content = () => {
       </section>
       <Footer />
     </div>
+    </>
   );
 };
 

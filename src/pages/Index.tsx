@@ -7,11 +7,14 @@ import SolidesSection from "@/components/SolidesSection";
 import PartnershipSection from "@/components/PartnershipSection";
 import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <>
+      <SEO />
+      <div className="min-h-screen bg-background">
+        <Header />
       <div className="pt-16 md:pt-20">
         <Hero />
         <AboutSection />
@@ -23,6 +26,7 @@ const Index = () => {
         <Footer />
       </div>
     </div>
+    </>
   );
 };
 

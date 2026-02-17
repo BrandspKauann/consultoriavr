@@ -2,13 +2,14 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Article } from "@/types/article";
 
 export const generateSitemap = async (): Promise<string> => {
-  const baseUrl = "https://www.segurosdecredito.com.br";
+  const baseUrl = "https://www.consultoriavr.com.br";
   const currentDate = new Date().toISOString().split("T")[0];
 
   // Páginas estáticas
   const staticPages = [
     { url: baseUrl, priority: "1.0", changefreq: "weekly" },
     { url: `${baseUrl}/conteudo`, priority: "0.8", changefreq: "weekly" },
+    { url: `${baseUrl}/salaryfits`, priority: "0.7", changefreq: "monthly" },
   ];
 
   // Buscar todos os artigos publicados

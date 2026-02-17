@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { findRelatedArticles } from "@/utils/articleRecommendation";
+import { SEO } from "@/components/SEO";
 
 const ContentDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -104,9 +105,21 @@ const ContentDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <article className="bg-background min-h-screen pt-16 md:pt-20">
+    <>
+      {article && (
+        <SEO
+          title={article.seo_title || article.title}
+          description={article.seo_description || article.description}
+          keywords={article.seo_keywords}
+          image={article.og_image_url || article.image_url}
+          url={`https://www.consultoriavr.com.br/conteudo/${article.slug || article.id}`}
+          type="article"
+          article={article}
+        />
+      )}
+      <div className="min-h-screen bg-background">
+        <Header />
+        <article className="bg-background min-h-screen pt-16 md:pt-20">
       <div className="bg-gradient-hero py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
         {/* Background image com opacidade */}
         {article.image_url && (
@@ -307,9 +320,10 @@ const ContentDetail = () => {
           </div>
         </div>
       </div>
-      </article>
-      <Footer />
-    </div>
+        </article>
+        <Footer />
+      </div>
+    </>
   );
 };
 
