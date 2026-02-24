@@ -12,75 +12,11 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
+import { MaterialRequestModal } from "./MaterialRequestModal";
 
 const SalaryFitsSection = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownloadPDF = async () => {
-    setIsDownloading(true);
-    try {
-      const possibleFiles = [
-        '/pdfs/Apresentação SalaryFits_Hirayama_2024.pdf',
-        '/pdfs/salaryfits-informacoes.pdf',
-        '/pdfs/salaryfits.pdf',
-        '/pdfs/informacoes-salaryfits.pdf',
-        '/salaryfits-informacoes.pdf',
-        '/salaryfits.pdf'
-      ];
-      
-      let fileFound = false;
-      for (const filePath of possibleFiles) {
-        try {
-          const baseUrl = window.location.origin;
-          const fullUrl = `${baseUrl}${filePath}`;
-          
-          const response = await fetch(fullUrl, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/pdf'
-            }
-          });
-          
-          if (response.ok) {
-            const contentType = response.headers.get('content-type') || '';
-            const blob = await response.blob();
-            
-            const isPDF = contentType.includes('application/pdf') || 
-                          (blob.type === 'application/pdf' && blob.size > 10000) ||
-                          (blob.size > 10000 && !contentType.includes('text/html'));
-            
-            if (isPDF) {
-              const url = window.URL.createObjectURL(blob);
-              const link = document.createElement('a');
-              link.href = url;
-              link.download = filePath.split('/').pop() || 'salaryfits-informacoes.pdf';
-              link.style.display = 'none';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-              window.URL.revokeObjectURL(url);
-              fileFound = true;
-              break;
-            }
-          }
-        } catch (e) {
-          continue;
-        }
-      }
-      
-      if (!fileFound) {
-        alert('Arquivo PDF não encontrado. Entre em contato conosco para receber mais informações sobre o SalaryFits.');
-      }
-    } catch (error) {
-      console.error('Erro ao fazer download do PDF:', error);
-      alert('Erro ao fazer download do PDF. Por favor, tente novamente.');
-    } finally {
-      setTimeout(() => {
-        setIsDownloading(false);
-      }, 1000);
-    }
-  };
+  const [materialModalOpen, setMaterialModalOpen] = useState(false);
 
   const beneficios = [
     {
@@ -197,22 +133,12 @@ const SalaryFitsSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              onClick={handleDownloadPDF}
-              disabled={isDownloading}
+              onClick={() => setMaterialModalOpen(true)}
               variant="default"
               className="shadow-md hover:shadow-lg transition-all"
             >
-              {isDownloading ? (
-                <>
-                  <Download className="mr-2 h-4 w-4 animate-spin" />
-                  Baixando...
-                </>
-              ) : (
-                <>
-                  <Download className="mr-2 h-4 w-4" />
-                  Baixar Informações (PDF)
-                </>
-              )}
+              <Download className="mr-2 h-4 w-4" />
+              Baixar Informações (PDF)
             </Button>
             
             <Button 
@@ -227,6 +153,14 @@ const SalaryFitsSection = () => {
             </Button>
           </div>
         </AnimatedSection>
+
+        <MaterialRequestModal
+          open={materialModalOpen}
+          onOpenChange={setMaterialModalOpen}
+          materialName="SalaryFits (PDF)"
+          origem="material_salaryfits"
+          metadata={{ product: "salaryfits", channel: "pdf" }}
+        />
       </div>
     </section>
   );

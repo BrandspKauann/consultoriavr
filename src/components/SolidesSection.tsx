@@ -13,74 +13,11 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
+import { MaterialRequestModal } from "./MaterialRequestModal";
 
 const SolidesSection = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownloadPDF = async () => {
-    setIsDownloading(true);
-    try {
-      const possibleFiles = [
-        '/pdfs/solides-informacoes.pdf',
-        '/pdfs/solides-apresentacao.pdf',
-        '/pdfs/Apresentação Solides.pdf',
-        '/solides-informacoes.pdf',
-        '/solides.pdf'
-      ];
-      
-      let fileFound = false;
-      for (const filePath of possibleFiles) {
-        try {
-          const baseUrl = window.location.origin;
-          const fullUrl = `${baseUrl}${filePath}`;
-          
-          const response = await fetch(fullUrl, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/pdf'
-            }
-          });
-          
-          if (response.ok) {
-            const contentType = response.headers.get('content-type') || '';
-            const blob = await response.blob();
-            
-            const isPDF = contentType.includes('application/pdf') || 
-                          (blob.type === 'application/pdf' && blob.size > 10000) ||
-                          (blob.size > 10000 && !contentType.includes('text/html'));
-            
-            if (isPDF) {
-              const url = window.URL.createObjectURL(blob);
-              const link = document.createElement('a');
-              link.href = url;
-              link.download = filePath.split('/').pop() || 'solides-informacoes.pdf';
-              link.style.display = 'none';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-              window.URL.revokeObjectURL(url);
-              fileFound = true;
-              break;
-            }
-          }
-        } catch (e) {
-          continue;
-        }
-      }
-      
-      if (!fileFound) {
-        alert('Arquivo PDF não encontrado. Entre em contato conosco para receber mais informações sobre a Solides.');
-      }
-    } catch (error) {
-      console.error('Erro ao fazer download do PDF:', error);
-      alert('Erro ao fazer download do PDF. Por favor, tente novamente.');
-    } finally {
-      setTimeout(() => {
-        setIsDownloading(false);
-      }, 1000);
-    }
-  };
+  const [materialModalOpen, setMaterialModalOpen] = useState(false);
 
   const solucoes = [
     {
@@ -207,23 +144,13 @@ const SolidesSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              onClick={handleDownloadPDF}
-              disabled={isDownloading}
+              onClick={() => setMaterialModalOpen(true)}
               variant="default"
               className="bg-white hover:bg-gray-100 shadow-md hover:shadow-lg transition-all font-semibold"
               style={{ color: '#4c1aa3' }}
             >
-              {isDownloading ? (
-                <>
-                  <Download className="mr-2 h-4 w-4 animate-spin" />
-                  Baixando...
-                </>
-              ) : (
-                <>
-                  <Download className="mr-2 h-4 w-4" />
-                  Baixar Informações (PDF)
-                </>
-              )}
+              <Download className="mr-2 h-4 w-4" />
+              Baixar Informações (PDF)
             </Button>
             
             <Button 
@@ -247,6 +174,14 @@ const SolidesSection = () => {
             </Button>
           </div>
         </AnimatedSection>
+
+        <MaterialRequestModal
+          open={materialModalOpen}
+          onOpenChange={setMaterialModalOpen}
+          materialName="Solides (PDF)"
+          origem="material_solides"
+          metadata={{ product: "solides", channel: "pdf" }}
+        />
       </div>
     </section>
   );
