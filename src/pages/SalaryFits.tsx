@@ -161,7 +161,7 @@ const SalaryFits = () => {
                   if (img.src.includes('.png')) {
                     img.src = '/salaryfits.jpg';
                   } else {
-                    img.src = '/logo.jpg';
+                    img.src = '/brand-consultoria-vr.svg';
                   }
                 }}
               />

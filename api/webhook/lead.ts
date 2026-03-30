@@ -10,6 +10,7 @@ interface LeadPayload {
   quantidadeCartoes?: string;
   principalDor?: string;
   origem?: string;
+  metadata?: Record<string, unknown>;
   timestamp?: string;
   url?: string;
   userAgent?: string;
@@ -28,15 +29,19 @@ export default async function handler(
   }
 
   try {
-    // Obter URL do webhook da variável de ambiente
-    // No Vercel, use LEAD_WEBHOOK_URL (sem prefixo VITE_)
-    const webhookUrl = process.env.LEAD_WEBHOOK_URL || process.env.VITE_LEAD_WEBHOOK_URL;
+    // URL do webhook n8n (Vercel / servidor — sem expor no bundle do front)
+    const webhookUrl =
+      process.env.N8N_WEBHOOK_URL ||
+      process.env.LEAD_WEBHOOK_URL ||
+      process.env.VITE_N8N_WEBHOOK_URL ||
+      process.env.VITE_LEAD_WEBHOOK_URL;
 
     if (!webhookUrl) {
-      console.error('❌ LEAD_WEBHOOK_URL não configurada no Vercel');
+      console.error("❌ N8N_WEBHOOK_URL ou LEAD_WEBHOOK_URL não configurada");
       return res.status(500).json({
-        error: 'Webhook URL not configured',
-        message: 'A variável de ambiente LEAD_WEBHOOK_URL não está configurada no Vercel'
+        error: "Webhook URL not configured",
+        message:
+          "Configure N8N_WEBHOOK_URL ou LEAD_WEBHOOK_URL com a URL completa do Webhook no n8n",
       });
     }
 
@@ -54,16 +59,17 @@ export default async function handler(
     const fullPayload = {
       nome: payload.nome,
       email: payload.email,
-      telefone: payload.telefone || '',
-      empresa: payload.empresa || '',
-      cargo: payload.cargo || '',
-      mensagem: payload.mensagem || '',
-      quantidadeCartoes: payload.quantidadeCartoes || '',
-      principalDor: payload.principalDor || '',
-      origem: payload.origem || 'formulario_site',
+      telefone: payload.telefone || "",
+      empresa: payload.empresa || "",
+      cargo: payload.cargo || "",
+      mensagem: payload.mensagem || "",
+      quantidadeCartoes: payload.quantidadeCartoes || "",
+      principalDor: payload.principalDor || "",
+      origem: payload.origem || "formulario_site",
+      metadata: payload.metadata ?? {},
       timestamp: payload.timestamp || new Date().toISOString(),
-      url: payload.url || '',
-      userAgent: payload.userAgent || '',
+      url: payload.url || "",
+      userAgent: payload.userAgent || "",
     };
 
     console.log('🚀 [Vercel API] Chamando webhook n8n:', webhookUrl);

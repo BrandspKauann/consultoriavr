@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import { SITE_ID, ARTICLES_FILTER_BY_SITE_ID } from "@/config/sites";
 import type { Article } from "@/types/article";
 
 export const generateSitemap = async (): Promise<string> => {
@@ -15,11 +16,11 @@ export const generateSitemap = async (): Promise<string> => {
   // Buscar todos os artigos publicados
   let articles: Article[] = [];
   try {
-    const { data, error } = await supabase
-      .from("articles")
-      .select("id, slug, updated_at")
-      .eq("published", true)
-      .order("updated_at", { ascending: false });
+    let sq = supabase.from("articles").select("id, slug, updated_at");
+    if (ARTICLES_FILTER_BY_SITE_ID) {
+      sq = sq.eq("site_id", SITE_ID);
+    }
+    const { data, error } = await sq.eq("published", true).order("updated_at", { ascending: false });
 
     if (!error && data) {
       articles = data as Article[];

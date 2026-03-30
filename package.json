@@ -8,7 +8,11 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seed:articles": "node scripts/seed-articles.mjs",
+    "update:articles": "node scripts/seed-articles.mjs --update",
+    "sync:articles-sql": "node scripts/sync-articles-sql.mjs",
+    "articles:clear-images": "node scripts/clear-article-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

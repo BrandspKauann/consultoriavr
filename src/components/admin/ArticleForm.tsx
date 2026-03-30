@@ -13,10 +13,12 @@ import { toast } from "@/components/ui/sonner";
 
 interface ArticleFormProps {
   article?: Article;
+  /** Site em que o artigo será criado / já pertence (multi-site no mesmo Supabase) */
+  siteId: string;
   onClose: () => void;
 }
 
-export const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
+export const ArticleForm = ({ article, siteId, onClose }: ArticleFormProps) => {
   const createArticle = useCreateArticle();
   const updateArticle = useUpdateArticle();
   const { uploadImage } = useImageUpload();
@@ -156,10 +158,11 @@ export const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
         await updateArticle.mutateAsync({
           id: article.id,
           updates: cleanData,
+          siteId: article.site_id ?? siteId,
         });
         toast.success("Artigo atualizado com sucesso!");
       } else {
-        await createArticle.mutateAsync(cleanData);
+        await createArticle.mutateAsync({ ...cleanData, site_id: siteId });
         toast.success("Artigo criado com sucesso!");
       }
 

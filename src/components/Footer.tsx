@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { LeadFormModal } from "./LeadFormModal";
+import { ConsultoriaLogo } from "./ConsultoriaLogo";
 import { useState } from "react";
 
 const Footer = () => {
@@ -29,14 +30,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-5 sm:mb-6 md:mb-8">
                 <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 justify-center md:justify-start">
-                  <div className="flex flex-col items-center md:items-start">
-                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent">
-                      Consultoria VR
-                    </h3>
-                    <p className="text-xs sm:text-sm text-primary-foreground/70 font-medium">
-                      Especialistas em Benefícios
-                    </p>
-                  </div>
+                  <ConsultoriaLogo variant="dark" size="lg" />
                 </div>
                 <p className="text-xs sm:text-sm text-primary-foreground/80 mb-3 sm:mb-4 text-center md:text-left">
                   Benefícios corporativos com quem entende do assunto

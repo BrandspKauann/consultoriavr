@@ -152,7 +152,7 @@ export const LeadFormModal = ({
               <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping"></div>
             </div>
             <h3 className="text-2xl font-bold text-green-800 mb-3 animate-in slide-in-from-bottom-4 duration-500">
-              Mensagem Enviada! 🎉
+              Mensagem enviada!
             </h3>
             <p className="text-green-700 text-lg animate-in slide-in-from-bottom-4 duration-700">
               Entraremos em contato em breve.

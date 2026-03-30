@@ -66,9 +66,14 @@ const ContentDetail = () => {
         prose-ul:text-muted-foreground prose-ol:text-muted-foreground prose-li:text-muted-foreground prose-li:text-sm sm:prose-li:text-base
         prose-code:text-secondary prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs sm:prose-code:text-sm
         prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-pre:text-xs sm:prose-pre:text-sm
-        prose-blockquote:border-l-4 prose-blockquote:border-trust-blue prose-blockquote:pl-3 sm:prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-sm sm:prose-blockquote:text-base
+        prose-blockquote:border-l-4 prose-blockquote:border-primary/50 prose-blockquote:bg-muted/30 prose-blockquote:py-2 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:pl-3 sm:prose-blockquote:pl-4 prose-blockquote:text-sm sm:prose-blockquote:text-base prose-blockquote:text-muted-foreground
+        prose-hr:border-border prose-hr:my-8 sm:prose-hr:my-10
         [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-lg [&_iframe]:my-4 sm:[&_iframe]:my-6
-        [&_table]:text-xs sm:[&_table]:text-sm [&_table]:overflow-x-auto">
+        [&_table]:my-6 [&_table]:w-full [&_table]:border-collapse [&_table]:overflow-x-auto [&_table]:text-xs sm:[&_table]:text-sm
+        [&_table]:rounded-lg [&_table]:border [&_table]:border-border
+        [&_thead]:bg-muted/50 [&_th]:border [&_th]:border-border [&_th]:px-3 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-semibold [&_th]:text-foreground
+        [&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2.5 [&_td]:align-top [&_td]:text-muted-foreground
+        [&_tbody_tr:nth-child(even)]:bg-muted/20">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {article.content}
         </ReactMarkdown>
@@ -111,7 +116,7 @@ const ContentDetail = () => {
           title={article.seo_title || article.title}
           description={article.seo_description || article.description}
           keywords={article.seo_keywords}
-          image={article.og_image_url || article.image_url}
+          image={article.og_image_url || undefined}
           url={`https://www.consultoriavr.com.br/conteudo/${article.slug || article.id}`}
           type="article"
           article={article}
@@ -121,17 +126,8 @@ const ContentDetail = () => {
         <Header />
         <article className="bg-background min-h-screen pt-16 md:pt-20">
       <div className="bg-gradient-hero py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
-        {/* Background image com opacidade */}
-        {article.image_url && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
-            style={{ backgroundImage: `url(${article.image_url})` }}
-          />
-        )}
-        
-        {/* Overlay escuro com degradê para melhorar legibilidade do texto */}
-        <div className="absolute inset-0 bg-gradient-to-br from-trust-blue via-blue-900/90 to-trust-blue" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-[hsl(280,38%,42%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/25" />
         
         {/* Decorative elements - ocultos no mobile para melhor performance */}
         <div className="absolute inset-0 overflow-hidden hidden sm:block">
@@ -175,17 +171,7 @@ const ContentDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Conteúdo principal */}
           <div className="lg:col-span-2 order-1">
-            {article.image_url && (
-              <div className="mb-4 sm:mb-6 md:mb-8 w-full overflow-hidden rounded-xl sm:rounded-2xl bg-muted shadow-card" style={{ aspectRatio: '8/3' }}>
-                <img
-                  src={article.image_url}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            )}
-            <div className="bg-card border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-card">
+            <div className="bg-card border-2 border-border/60 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-[0_4px_24px_-6px_hsl(280_30%_20%_/_0.12)]">
               {renderContent()}
               
               {/* Botão Voltar aos Artigos */}

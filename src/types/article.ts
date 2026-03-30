@@ -1,5 +1,7 @@
 export interface Article {
   id: string;
+  /** Partição multi-site no mesmo projeto Supabase */
+  site_id: string;
   title: string;
   description: string;
   content?: string;
@@ -23,6 +25,7 @@ export interface Article {
 }
 
 export interface ArticleInsert {
+  site_id?: string;
   title: string;
   description: string;
   content?: string;
@@ -44,6 +47,7 @@ export interface ArticleInsert {
 }
 
 export interface ArticleUpdate {
+  site_id?: string;
   title?: string;
   description?: string;
   content?: string;

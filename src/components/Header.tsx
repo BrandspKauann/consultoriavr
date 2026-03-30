@@ -10,6 +10,7 @@ import {
 } from "./ui/sheet";
 import { useNavigate, useLocation } from "react-router-dom";
 import { LeadFormModal } from "./LeadFormModal";
+import { ConsultoriaLogo } from "./ConsultoriaLogo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,15 +77,12 @@ const Header = () => {
         <div className="flex items-center justify-between md:justify-between relative">
           {/* Brand Name - Centralizado no mobile */}
           <div className="flex-1 flex justify-center md:justify-start md:flex-initial">
-            <a href="/" className="flex items-center gap-2 sm:gap-3 group">
-              <div className="flex flex-col items-center md:items-start">
-                <span className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent group-hover:from-secondary group-hover:to-primary transition-all">
-                  Consultoria VR
-                </span>
-                <span className="text-[10px] sm:text-xs font-medium hidden sm:block" style={{ color: '#1a1a1a' }}>
-                  Especialistas em Benefícios
-                </span>
-              </div>
+            <a href="/" className="group rounded-lg outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-primary/40">
+              <ConsultoriaLogo
+                variant="light"
+                size="md"
+                className="transition-opacity group-hover:opacity-90"
+              />
             </a>
           </div>
             
@@ -131,8 +129,13 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                 <SheetHeader>
-                  <SheetTitle className="text-left text-lg sm:text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Consultoria VR
+                  <SheetTitle className="text-left p-0 font-normal">
+                    <ConsultoriaLogo
+                      variant="light"
+                      size="sm"
+                      showByline={false}
+                      className="!items-start"
+                    />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-2 mt-6 sm:mt-8">

@@ -56,9 +56,15 @@ export default async function handler(
         
         // Agora buscar apenas os publicados
         // Usar service_role key se disponível para bypass RLS, senão usar anon key
-        const { data, error } = await supabase
-          .from("articles")
-          .select("id, slug, updated_at")
+        const siteId =
+          process.env.VITE_SITE_ID || process.env.SITE_ID || "default";
+        const filterBySite = process.env.VITE_ARTICLES_USE_SITE_ID !== "false";
+
+        let pubQ = supabase.from("articles").select("id, slug, updated_at");
+        if (filterBySite) {
+          pubQ = pubQ.eq("site_id", siteId);
+        }
+        const { data, error } = await pubQ
           .eq("published", true)
           .order("updated_at", { ascending: false })
           .limit(500); // Limite máximo de 500 artigos

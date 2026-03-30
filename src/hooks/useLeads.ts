@@ -39,22 +39,22 @@ const isProduction = (): boolean => {
   return false;
 };
 
-// URL do webhook - configuração baseada no ambiente
-// Desenvolvimento: usa VITE_LEAD_WEBHOOK_URL do .env ou localhost padrão
-// Produção: usa API route do Vercel (/api/webhook/lead)
+// URL do webhook n8n — desenvolvimento: URL completa no .env; produção: proxy na Vercel (CORS)
+// Preferência: VITE_N8N_WEBHOOK_URL → VITE_LEAD_WEBHOOK_URL
 const getWebhookUrl = (): string => {
   const isProd = isProduction();
-  
+
   if (isProd) {
-    // Em produção, usar API route do Vercel (resolve problemas de CORS e mixed content)
-    console.log('🌐 Ambiente detectado: PRODUÇÃO - usando API route do Vercel');
-    return '/api/webhook/lead';
-  } else {
-    // Em desenvolvimento, usar URL direta do .env
-    const devUrl = import.meta.env.VITE_LEAD_WEBHOOK_URL || 'http://localhost:5678/webhook/webhookn8n';
-    console.log('💻 Ambiente detectado: DESENVOLVIMENTO - usando URL direta:', devUrl);
-    return devUrl;
+    console.log("🌐 PRODUÇÃO — webhook via /api/webhook/lead (usa LEAD_WEBHOOK_URL ou N8N_WEBHOOK_URL na Vercel)");
+    return "/api/webhook/lead";
   }
+
+  const devUrl =
+    import.meta.env.VITE_N8N_WEBHOOK_URL ||
+    import.meta.env.VITE_LEAD_WEBHOOK_URL ||
+    "http://host.docker.internal:5678/webhook-test/consultoria-vr";
+  console.log("💻 DESENVOLVIMENTO — webhook direto:", devUrl);
+  return devUrl;
 };
 
 // Chamar webhook do n8n
@@ -76,10 +76,11 @@ const callLeadWebhook = async (leadData: LeadData) => {
       mensagem: leadData.mensagem,
       quantidadeCartoes: leadData.quantidadeCartoes,
       principalDor: leadData.principalDor,
-      origem: leadData.origem || 'formulario_site',
+      origem: leadData.origem || "formulario_site",
+      metadata: leadData.metadata ?? {},
       timestamp: new Date().toISOString(),
-      url: window.location.href,
-      userAgent: navigator.userAgent,
+      url: typeof window !== "undefined" ? window.location.href : "",
+      userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "",
     };
 
     const environment = isProduction() ? 'PRODUÇÃO' : 'DESENVOLVIMENTO';
@@ -113,12 +114,14 @@ const callLeadWebhook = async (leadData: LeadData) => {
       if (response.status === 404 || errorText.includes('not registered') || errorText.includes('not found')) {
         console.warn('⚠️ Webhook não encontrado no n8n. Certifique-se de que:');
         console.warn('   1. O workflow está criado no n8n');
-        console.warn('   2. O webhook está configurado com o path correto: /webhook/webhookn8n');
+        console.warn(
+          "   2. Path do webhook no n8n (ex.: /webhook-test/consultoria-vr) e workflow ativo"
+        );
         console.warn('   3. O workflow está ATIVO (toggle no canto superior direito)');
-        if (isProduction) {
-          console.warn('   4. A variável LEAD_WEBHOOK_URL está configurada no Vercel Dashboard');
+        if (isProduction()) {
+          console.warn("   4. Configure LEAD_WEBHOOK_URL ou N8N_WEBHOOK_URL na Vercel (URL do webhook n8n)");
         } else {
-          console.warn(`   4. A URL do webhook está correta: ${webhookUrl}`);
+          console.warn(`   4. Confira VITE_N8N_WEBHOOK_URL / VITE_LEAD_WEBHOOK_URL: ${webhookUrl}`);
         }
       }
       
@@ -213,52 +216,49 @@ export const useCreateLead = () => {
     let savedToDatabase = false;
     let savedToLocalStorage = false;
 
+    // Webhook n8n em paralelo ao Supabase — o fluxo do n8n recebe mesmo se o banco falhar
+    const webhookPromise = callLeadWebhook(leadData);
+
     try {
-      // Tentativa 1: Salvar no Supabase
       const { data, error } = await supabase
-        .from('leads')
-        .insert([{
-          nome: leadData.nome,
-          email: leadData.email,
-          telefone: leadData.telefone,
-          empresa: leadData.empresa,
-          cargo: leadData.cargo,
-          mensagem: leadData.mensagem,
-          origem: leadData.origem || 'formulario_site',
-          metadata: {
-            ...leadData.metadata,
-            quantidadeCartoes: leadData.quantidadeCartoes,
-            principalDor: leadData.principalDor,
-            userAgent: navigator.userAgent,
-            timestamp: new Date().toISOString(),
-            url: window.location.href
-          }
-        }])
+        .from("leads")
+        .insert([
+          {
+            nome: leadData.nome,
+            email: leadData.email,
+            telefone: leadData.telefone,
+            empresa: leadData.empresa,
+            cargo: leadData.cargo,
+            mensagem: leadData.mensagem,
+            origem: leadData.origem || "formulario_site",
+            metadata: {
+              ...leadData.metadata,
+              quantidadeCartoes: leadData.quantidadeCartoes,
+              principalDor: leadData.principalDor,
+              userAgent: navigator.userAgent,
+              timestamp: new Date().toISOString(),
+              url: window.location.href,
+            },
+          },
+        ])
         .select()
         .single();
 
       if (error) throw error;
-      
+
       savedToDatabase = true;
-      console.log('✅ Lead salvo no banco:', data);
+      console.log("✅ Lead salvo no banco:", data);
+    } catch (error: unknown) {
+      console.error("❌ Erro ao salvar no Supabase:", error);
 
-      // Chamar webhook do n8n após salvar com sucesso
-      await callLeadWebhook(leadData);
-
-    } catch (error: any) {
-      console.error('❌ Erro ao salvar no Supabase:', error);
-      
-      // Tentativa 2: Salvar no localStorage como fallback
       savedToLocalStorage = saveToLocalStorage(leadData);
-      
       if (savedToLocalStorage) {
-        console.log('💾 Lead salvo no localStorage como fallback');
-        // Chamar webhook mesmo se salvou no localStorage
-        await callLeadWebhook(leadData);
-        // Tentar sincronizar em background
+        console.log("💾 Lead salvo no localStorage como fallback");
         setTimeout(() => syncPendingLeads(), 2000);
       }
     }
+
+    await webhookPromise;
 
     setIsLoading(false);
 

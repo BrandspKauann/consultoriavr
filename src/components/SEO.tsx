@@ -50,7 +50,7 @@ export const SEO = ({
       name: 'Consultoria VR',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/logo.jpg`
+        url: `${siteUrl}/brand-consultoria-vr.svg`
       }
     },
     mainEntityOfPage: {
@@ -62,7 +62,7 @@ export const SEO = ({
     '@type': 'Organization',
     name: 'Consultoria VR',
     url: siteUrl,
-    logo: `${siteUrl}/logo.jpg`,
+    logo: `${siteUrl}/brand-consultoria-vr.svg`,
     description: defaultDescription,
     sameAs: [
       'https://wa.link/3gwhbl'
