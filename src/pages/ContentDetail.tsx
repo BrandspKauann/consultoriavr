@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { findRelatedArticles } from "@/utils/articleRecommendation";
+import { sanitizeArticleBody } from "@/utils/stripArticleContentMetadata";
 import { SEO } from "@/components/SEO";
 
 const ContentDetail = () => {
@@ -28,10 +29,11 @@ const ContentDetail = () => {
       );
     }
 
-    const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(article.content);
+    const rawBody = sanitizeArticleBody(article.content);
+    const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(rawBody);
 
     // Se contém HTML, renderiza como HTML (para compatibilidade)
-    if (looksLikeHtml && !article.content.includes("```") && !article.content.match(/^#{1,6}\s/)) {
+    if (looksLikeHtml && !rawBody.includes("```") && !rawBody.match(/^#{1,6}\s/)) {
       return (
         <div
           className="prose prose-sm sm:prose-base md:prose-lg prose-invert max-w-none 
@@ -48,7 +50,7 @@ const ContentDetail = () => {
             [&_iframe]:w-full [&_iframe]:aspect-video [&_iframe]:rounded-lg [&_iframe]:my-4 sm:[&_iframe]:my-6
             [&_table]:text-xs sm:[&_table]:text-sm [&_table]:overflow-x-auto
             [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg"
-          dangerouslySetInnerHTML={{ __html: article.content }}
+          dangerouslySetInnerHTML={{ __html: rawBody }}
         />
       );
     }
@@ -75,7 +77,7 @@ const ContentDetail = () => {
         [&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2.5 [&_td]:align-top [&_td]:text-muted-foreground
         [&_tbody_tr:nth-child(even)]:bg-muted/20">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {article.content}
+          {rawBody}
         </ReactMarkdown>
       </div>
     );

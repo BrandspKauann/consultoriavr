@@ -9,6 +9,7 @@ import { useCreateArticle, useUpdateArticle } from "@/hooks/useArticles";
 import { useImageUpload } from "@/hooks/useImageUpload";
 import { Loader2, Upload } from "lucide-react";
 import type { Article, ArticleInsert } from "@/types/article";
+import { sanitizeArticleBody } from "@/utils/stripArticleContentMetadata";
 import { toast } from "@/components/ui/sonner";
 
 interface ArticleFormProps {
@@ -43,7 +44,7 @@ export const ArticleForm = ({ article, siteId, onClose }: ArticleFormProps) => {
       return {
         title: article.title || "",
         description: article.description || "",
-        content: article.content || "",
+        content: sanitizeArticleBody(article.content || ""),
         slug: article.slug || "",
         seo_title: article.seo_title || "",
         seo_description: article.seo_description || "",
@@ -92,7 +93,7 @@ export const ArticleForm = ({ article, siteId, onClose }: ArticleFormProps) => {
         setFormData({
           title: article.title || "",
           description: article.description || "",
-          content: article.content || "",
+          content: sanitizeArticleBody(article.content || ""),
           slug: article.slug || "",
           seo_title: article.seo_title || "",
           seo_description: article.seo_description || "",
@@ -142,7 +143,9 @@ export const ArticleForm = ({ article, siteId, onClose }: ArticleFormProps) => {
         published: formData.published ?? true,
         featured: formData.featured ?? false,
         // Campos opcionais básicos - só incluir se tiver valor
-        ...(formData.content?.trim() && { content: formData.content.trim() }),
+        ...(formData.content?.trim() && {
+          content: sanitizeArticleBody(formData.content.trim()),
+        }),
         ...(formData.external_url?.trim() && { external_url: formData.external_url.trim() }),
         ...(formData.youtube_iframe?.trim() && { youtube_iframe: formData.youtube_iframe.trim() }),
         ...(formData.image_url?.trim() && { image_url: formData.image_url.trim() }),

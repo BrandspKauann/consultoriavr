@@ -12,7 +12,8 @@
     "seed:articles": "node scripts/seed-articles.mjs",
     "update:articles": "node scripts/seed-articles.mjs --update",
     "sync:articles-sql": "node scripts/sync-articles-sql.mjs",
-    "articles:clear-images": "node scripts/clear-article-images.mjs"
+    "articles:clear-images": "node scripts/clear-article-images.mjs",
+    "articles:strip-metadata": "node scripts/strip-article-metadata-bulk.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
