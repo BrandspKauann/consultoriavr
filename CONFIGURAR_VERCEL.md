@@ -16,17 +16,19 @@ Esta solução resolve os seguintes problemas:
 ### Desenvolvimento (Local)
 
 ```
-Frontend → http://localhost:5678/webhook/webhookn8n (direto)
+Frontend → http://host.docker.internal:5678/webhook/consultoria-vr (direto)
 ```
 
-- Usa variável `VITE_LEAD_WEBHOOK_URL` do arquivo `.env`
-- Requisição direta do navegador para o n8n local
+- Usa variável `VITE_LEAD_WEBHOOK_URL` no `.env` (URL oficial permanente)
+- Requisição direta do navegador para o n8n no Docker (host)
 
 ### Produção (Vercel)
 
 ```
-Frontend → /api/webhook/lead (Vercel API) → http://77.37.43.210:5678/webhook/webhookn8n (n8n)
+Frontend → /api/webhook/lead (Vercel API) → LEAD_WEBHOOK_URL (mesmo path: /webhook/consultoria-vr)
 ```
+
+**Nota:** Na Vercel, `LEAD_WEBHOOK_URL` precisa ser uma URL **alcançável pelos servidores da Vercel** (IP/domínio público do n8n com path `/webhook/consultoria-vr`). `host.docker.internal` vale para desenvolvimento local com Docker.
 
 - Frontend chama API route do próprio domínio (sem CORS)
 - API route do Vercel faz requisição server-side para o n8n
@@ -49,7 +51,8 @@ Frontend → /api/webhook/lead (Vercel API) → http://77.37.43.210:5678/webhook
 #### Variável 1: LEAD_WEBHOOK_URL
 
 - **Key**: `LEAD_WEBHOOK_URL`
-- **Value**: `http://77.37.43.210:5678/webhook/webhookn8n`
+- **Value (oficial permanente, dev Docker):** `http://host.docker.internal:5678/webhook/consultoria-vr`  
+  Em produção na Vercel use a mesma URL **se** o n8n for acessível assim, ou a URL pública equivalente com path `/webhook/consultoria-vr`.
 - **Environment**: Selecione todas as opções:
   - ✅ Production
   - ✅ Preview
@@ -115,12 +118,12 @@ Se você ainda não configurou as variáveis do Supabase no Vercel:
 4. Procure por `api/webhook/lead`
 5. Clique para ver os logs
 6. Deve aparecer:
-   - `🚀 [Vercel API] Chamando webhook n8n: http://77.37.43.210:5678/webhook/webhookn8n`
+   - `🚀 [Vercel API] Chamando webhook n8n: http://host.docker.internal:5678/webhook/consultoria-vr` (ou o valor de `LEAD_WEBHOOK_URL`)
    - `✅ [Vercel API] Webhook n8n chamado com sucesso!`
 
 ### 5. Verificar no n8n
 
-1. Acesse o n8n: `http://77.37.43.210:5678`
+1. Acesse o n8n (ex.: `http://host.docker.internal:5678`)
 2. Verifique se o workflow está **ATIVO**
 3. Verifique se há execuções recentes do webhook
 4. Os dados do formulário devem aparecer
@@ -142,9 +145,9 @@ Se você ainda não configurou as variáveis do Supabase no Vercel:
 
 **Solução**:
 1. Verifique se o workflow está **ATIVO** no n8n
-2. Verifique se o path do webhook é: `/webhook/webhookn8n`
+2. Verifique se o path do webhook é: `/webhook/consultoria-vr`
 3. Verifique se o método está configurado como **POST**
-4. Verifique se a URL está correta: `http://77.37.43.210:5678/webhook/webhookn8n`
+4. Verifique se a URL está correta: `http://host.docker.internal:5678/webhook/consultoria-vr`
 
 ### Erro: "CORS" ou "Mixed Content"
 
@@ -159,7 +162,7 @@ Se você ainda não configurou as variáveis do Supabase no Vercel:
 **Causa**: Problema de conectividade ou n8n offline
 
 **Solução**:
-1. Verifique se o n8n está rodando: `http://77.37.43.210:5678`
+1. Verifique se o n8n está rodando: `http://host.docker.internal:5678`
 2. Verifique se o servidor VPS está acessível
 3. Verifique firewall/portas abertas
 
@@ -180,15 +183,15 @@ Antes de considerar a configuração completa, verifique:
 - [ ] Variável disponível para ambiente **Production**
 - [ ] Deploy realizado após configurar variáveis
 - [ ] Workflow do n8n está **ATIVO**
-- [ ] Path do webhook está correto: `/webhook/webhookn8n`
+- [ ] Path do webhook está correto: `/webhook/consultoria-vr`
 - [ ] Método do webhook está como **POST**
-- [ ] n8n está acessível em `http://77.37.43.210:5678`
+- [ ] n8n está acessível (ex.: `http://host.docker.internal:5678`)
 - [ ] CORS configurado no n8n (pode deixar `*` para teste)
 
 ## 🎯 Resumo Rápido
 
 1. **Vercel Dashboard** → **Settings** → **Environment Variables**
-2. Adicionar: `LEAD_WEBHOOK_URL` = `http://77.37.43.210:5678/webhook/webhookn8n`
+2. Adicionar: `LEAD_WEBHOOK_URL` = `http://host.docker.internal:5678/webhook/consultoria-vr` (ou URL pública equivalente)
 3. Selecionar ambiente: **Production** (e outros se necessário)
 4. **Save** e fazer **Redeploy**
 5. Testar formulário no site

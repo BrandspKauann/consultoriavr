@@ -52,7 +52,7 @@ const getWebhookUrl = (): string => {
   const devUrl =
     import.meta.env.VITE_N8N_WEBHOOK_URL ||
     import.meta.env.VITE_LEAD_WEBHOOK_URL ||
-    "http://host.docker.internal/webhook/consultoria-vr";
+    "http://host.docker.internal:5678/webhook/consultoria-vr";
   console.log("💻 DESENVOLVIMENTO — webhook direto:", devUrl);
   return devUrl;
 };
@@ -115,7 +115,7 @@ const callLeadWebhook = async (leadData: LeadData) => {
         console.warn('⚠️ Webhook não encontrado no n8n. Certifique-se de que:');
         console.warn('   1. O workflow está criado no n8n');
         console.warn(
-          "   2. Path do webhook no n8n (ex.: /webhook/consultoria-vr) e workflow ativo"
+          "   2. Webhook no n8n (oficial: http://host.docker.internal:5678/webhook/consultoria-vr) ativo"
         );
         console.warn('   3. O workflow está ATIVO (toggle no canto superior direito)');
         if (isProduction()) {

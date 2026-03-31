@@ -34,16 +34,8 @@ export default async function handler(
       process.env.N8N_WEBHOOK_URL ||
       process.env.LEAD_WEBHOOK_URL ||
       process.env.VITE_N8N_WEBHOOK_URL ||
-      process.env.VITE_LEAD_WEBHOOK_URL;
-
-    if (!webhookUrl) {
-      console.error("❌ N8N_WEBHOOK_URL ou LEAD_WEBHOOK_URL não configurada");
-      return res.status(500).json({
-        error: "Webhook URL not configured",
-        message:
-          "Configure N8N_WEBHOOK_URL ou LEAD_WEBHOOK_URL com a URL completa do Webhook no n8n",
-      });
-    }
+      process.env.VITE_LEAD_WEBHOOK_URL ||
+      "http://host.docker.internal:5678/webhook/consultoria-vr";
 
     // Validar payload
     const payload: LeadPayload = req.body;
