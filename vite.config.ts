@@ -23,18 +23,12 @@ const disableCSPPlugin = (): Plugin => {
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "0.0.0.0", // Aceita conexões de qualquer interface (IPv4 e IPv6)
-    port: 3000,
-    strictPort: false, // Permite usar outra porta se 3000 estiver ocupada
+    host: "0.0.0.0",
+    port: 5174,
+    strictPort: true,
+    open: true,
     hmr: {
-      overlay: false, // Desabilita overlay de erros que pode causar problemas com CSP
-    },
-    // Headers para desenvolvimento - permite eval necessário para HMR
-    // Em produção, nenhum header CSP é adicionado (deve ser configurado no servidor)
-    headers: {
-      "Content-Security-Policy": mode === "development" 
-        ? "script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'none'; base-uri 'self';"
-        : undefined,
+      overlay: true,
     },
   },
   build: {
