@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" role="img" aria-labelledby="title">
+  <title id="title">Flash Benefícios</title>
+  <rect width="480" height="180" rx="28" fill="#ff2f7d"/>
+  <path d="M92 45 56 104h38l-13 31 67-75h-40l17-15H92z" fill="#fff"/>
+  <text x="162" y="92" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">Flash</text>
+  <text x="166" y="126" fill="#ffe0ec" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">BENEFICIOS</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" role="img" aria-labelledby="title">
+  <title id="title">Caju Benefícios</title>
+  <rect width="480" height="180" rx="28" fill="#ff7a00"/>
+  <path d="M87 47c35 0 62 27 62 60 0 16-6 30-17 41-8-35-33-61-68-69 7-19 16-32 23-32z" fill="#fff"/>
+  <path d="M62 83c39 7 66 34 73 73-8 5-18 8-29 8-35 0-62-27-62-60 0-8 2-15 5-22 4 0 8 0 13 1z" fill="#ffe3c2"/>
+  <text x="178" y="94" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">Caju</text>
+  <text x="182" y="128" fill="#fff4e8" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">BENEFICIOS</text>
+</svg>
