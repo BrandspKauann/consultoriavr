@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" role="img" aria-labelledby="title">
-  <title id="title">VR Multi</title>
-  <rect width="480" height="180" rx="28" fill="#00a651"/>
-  <circle cx="105" cy="90" r="56" fill="#fff"/>
-  <text x="65" y="108" fill="#00a651" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="900">VR</text>
-  <text x="184" y="88" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">Multi</text>
-  <text x="188" y="122" fill="#d8ffe9" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2">BENEFICIOS EM UM CARTAO</text>
-</svg>

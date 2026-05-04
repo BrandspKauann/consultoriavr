@@ -30,7 +30,7 @@ const operators = [
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
-    logo: "/vr-multi.svg",
+    logo: "/vr-beneficios.png",
     title: "VR Multi",
     eyebrow: "Tradição, rede e segurança jurídica",
     description:
