@@ -1,180 +1,251 @@
-import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
-import { ArrowRight, CheckCircle2, Building2, TrendingUp, Zap } from "lucide-react";
-// Logos das operadoras
-const flashLogo = "/flash.png";
-const vrLogo = "/vr.jpg";
-const cajuLogo = "/caju.jpg";
-const ifoodLogo = "/ifood.svg";
+import { useState } from "react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Smartphone, Utensils, WalletCards } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { LeadFormModal } from "./LeadFormModal";
-import { useState } from "react";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+
+const operators = [
+  {
+    logo: "/flash.png",
+    title: "Flash Benefícios",
+    eyebrow: "Cartão multibenefícios moderno",
+    description:
+      "A Flash combina benefícios, despesas corporativas e gestão digital em uma experiência prática para RH e colaboradores.",
+    highlights: [
+      "Categorias como alimentação, refeição, saúde, mobilidade, educação, home office, cultura e vale-transporte.",
+      "Cartão Visa com uso conforme saldo e categoria configurados pela empresa.",
+      "App com saldo, extrato e vantagens para o colaborador acompanhar tudo em tempo real.",
+    ],
+    metrics: ["Visa", "Categorias flexíveis", "App integrado"],
+    fit: "Boa escolha para empresas que querem uma experiência digital, flexível e fácil de administrar.",
+    accent: "#fbbf24",
+    bg: "#2d1b4e",
+    panel: "#3d1f6d",
+    icon: <Sparkles className="h-5 w-5" />,
+  },
+  {
+    logo: "/vr.jpg",
+    title: "VR Benefícios",
+    eyebrow: "Tradição, rede e segurança jurídica",
+    description:
+      "A VR oferece soluções de alimentação, refeição e Multi para empresas que valorizam rede credenciada, gestão centralizada e previsibilidade.",
+    highlights: [
+      "VR Multi reúne saldos como Alimentação, Refeição, Mobilidade, Home Office, Premiação e Auxílio VR+VA.",
+      "Saldos de alimentação e refeição podem ficar separados conforme regras do PAT.",
+      "SuperPortal e SuperApp ajudam empresa e trabalhador a acompanhar pedidos, saldos e uso.",
+    ],
+    metrics: ["VR Multi", "PAT", "SuperPortal"],
+    fit: "Faz sentido para RHs que precisam de controle, ampla aceitação e um parceiro consolidado.",
+    accent: "#fbbf24",
+    bg: "#f8fafc",
+    panel: "#ffffff",
+    darkText: true,
+    icon: <ShieldCheck className="h-5 w-5" />,
+  },
+  {
+    logo: "/caju.jpg",
+    title: "Caju Benefícios",
+    eyebrow: "Flexibilidade com gestão simples",
+    description:
+      "A Caju posiciona o cartão multibenefícios como uma solução para dar liberdade ao time sem tirar visibilidade e controle do RH.",
+    highlights: [
+      "Cartão Visa aceito em milhões de estabelecimentos e disponível nas principais carteiras digitais.",
+      "Até 9 categorias de saldo em um único cartão, incluindo alimentação e refeição.",
+      "Plataforma digital para pedidos, gestão de saldos, relatórios e rotina operacional do RH.",
+    ],
+    metrics: ["Visa", "Até 9 categorias", "Carteiras digitais"],
+    fit: "Ideal para empresas que querem modernizar benefícios sem criar complexidade operacional.",
+    accent: "#f97316",
+    bg: "#2d1b4e",
+    panel: "#3d1f6d",
+    icon: <WalletCards className="h-5 w-5" />,
+  },
+  {
+    logo: "/ifood.svg",
+    title: "iFood Benefícios",
+    eyebrow: "Alimentação, refeição e saldos extras",
+    description:
+      "O iFood Benefícios leva a familiaridade do ecossistema iFood para o pacote de benefícios, com cartão e app voltados ao uso diário.",
+    highlights: [
+      "Cartão multibenefícios com 8 saldos disponíveis para a empresa configurar.",
+      "Bandeira Elo, pagamento por QR Code e suporte a carteiras digitais Apple Pay e Google Pay.",
+      "Saldos Alimentação e Refeição segregados para empresas que buscam aderência ao PAT.",
+    ],
+    metrics: ["Elo", "8 saldos", "App iFood Benefícios"],
+    fit: "Ótimo para empresas que querem uma marca conhecida e uma experiência simples para alimentação e refeição.",
+    accent: "#ea1d2c",
+    bg: "#fff7f7",
+    panel: "#ffffff",
+    darkText: true,
+    icon: <Utensils className="h-5 w-5" />,
+  },
+];
 
 const OperatorsSection = () => {
-  const whatsappLink = "https://wa.link/3gwhbl";
   const [showForm, setShowForm] = useState(false);
-  
-  const operators = [
-    {
-      icon: flashLogo,
-      iconComponent: <Zap className="h-8 w-8 text-secondary" />,
-      title: "Flash Benefícios",
-      description: "Uma operadora moderna e inovadora que oferece soluções rápidas e eficientes em benefícios corporativos. Com tecnologia de ponta e atendimento ágil, o Flash é ideal para empresas que buscam praticidade e modernidade.",
-      features: [
-        "Tecnologia moderna e ágil",
-        "Atendimento rápido e eficiente",
-        "Soluções práticas para empresas"
-      ],
-      cta: "Saiba mais",
-      variant: "premium" as const
-    },
-    {
-      icon: vrLogo,
-      iconComponent: <TrendingUp className="h-8 w-8 text-secondary" />,
-      title: "VR Benefícios",
-      description: "Mais de 40 anos de história no mercado de benefícios corporativos. Somos parceiros da VR há mais de 7 anos, entregando soluções confiáveis para RHs que precisam de controle e previsibilidade.",
-      features: [
-        "Rede fechada",
-        "Foco em controle, economia e cashback"
-      ],
-      cta: "Saiba mais",
-      variant: "trust" as const
-    },
-    {
-      icon: cajuLogo,
-      iconComponent: <Zap className="h-8 w-8 text-secondary" />,
-      title: "Caju Benefícios",
-      description: "Uma startup inovadora que mudou a forma de usar benefícios corporativos. Cartão bandeirado VISA, saldo único e liberdade total para o colaborador.",
-      features: [
-        "Tecnologia e flexibilidade",
-        "Wellhub* integrado",
-        "Experiência moderna para o time"
-      ],
-      cta: "Saiba mais",
-      variant: "secondary" as const
-    },
-    {
-      icon: ifoodLogo,
-      iconComponent: <Building2 className="h-8 w-8 text-secondary" />,
-      title: "iFood Benefícios",
-      description: "Cartão de benefícios com a força da marca iFood, pensado para alimentação e refeição com praticidade no dia a dia dos colaboradores.",
-      features: [
-        "Cartão para alimentação e refeição",
-        "Experiência simples para colaboradores",
-        "Mais uma opção para o pacote de benefícios"
-      ],
-      cta: "Saiba mais",
-      variant: "premium" as const
+
+  const scrollToPartnership = () => {
+    const partnershipSection = document.getElementById("parceria");
+    if (partnershipSection) {
+      partnershipSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  ];
+  };
 
   return (
-    <section id="operadoras" className="py-16 sm:py-20 md:py-24 lg:py-28" style={{ backgroundColor: '#2d1b4e' }}>
-      <div className="container mx-auto px-4">
-        <AnimatedSection animationType="slide-up">
-          <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8" style={{ color: '#ffffff' }}>
-              Trabalhamos com as melhores marcas do mercado
-            </h2>
-            <div className="max-w-2xl mx-auto mb-6 sm:mb-8">
-              <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#e9d5ff' }}>
-                Consultoria especializada em cartões de vale refeição. Trabalhamos com operadoras de rede aberta e fechada para encontrar a melhor solução para sua empresa.
+    <section id="operadoras" className="overflow-hidden">
+      <div className="py-16 sm:py-20 md:py-24" style={{ backgroundColor: "#2d1b4e" }}>
+        <div className="container mx-auto px-4">
+          <AnimatedSection animationType="slide-up">
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: "#fbbf24" }}>
+                Operadoras parceiras
+              </p>
+              <h2 className="mb-6 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl" style={{ color: "#ffffff" }}>
+                Uma solução certa para cada perfil de empresa
+              </h2>
+              <p className="mx-auto max-w-2xl text-sm leading-relaxed sm:text-base" style={{ color: "#e9d5ff" }}>
+                Comparamos cartões, redes, categorias e modelo de gestão para indicar o pacote de benefícios que combina melhor com a rotina do seu RH.
               </p>
             </div>
-          </div>
-        </AnimatedSection>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-          {operators.map((operator, index) => (
-            <AnimatedSection 
-              key={index}
-              animationType="scale" 
-              delay={index * 75}
-            >
-              <Card className="shadow-card hover:shadow-premium transition-all duration-300 border-2 h-full flex flex-col group hover:-translate-y-2" style={{ borderColor: '#7c3aed', backgroundColor: '#3d1f6d' }}>
-                <CardContent className="p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
-                  <div className="w-full mb-4 sm:mb-6">
-                    <div className="relative inline-block mb-3 sm:mb-4">
-                      <img 
-                        src={operator.icon} 
-                        alt={`${operator.title} logo`}
-                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto rounded-xl object-contain border-2 shadow-md group-hover:shadow-lg bg-white p-2"
-                        style={{ borderColor: '#7c3aed' }}
-                      />
-                    </div>
-                    <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3" style={{ color: '#ffffff' }}>
-                      {operator.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm leading-relaxed mx-auto px-2 sm:px-0" style={{ color: '#e9d5ff' }}>
-                      {operator.description}
-                    </p>
-                  </div>
-
-                  <div className="flex-grow mb-4 sm:mb-6 w-full">
-                    <ul className="space-y-1.5 sm:space-y-2 flex flex-col items-center">
-                      {operator.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center justify-center text-xs sm:text-sm w-full px-2 sm:px-0" style={{ color: '#e9d5ff' }}>
-                          <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 flex-shrink-0" style={{ color: '#fbbf24' }} />
-                          <span className="text-left">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex flex-col gap-2 w-full">
-                    <Button 
-                      className="w-full shadow-md hover:shadow-lg transition-shadow group/btn font-semibold text-sm sm:text-base py-5 sm:py-6"
-                      style={{ 
-                        backgroundColor: '#fbbf24', 
-                        color: '#4c1aa3',
-                        border: 'none'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#f59e0b';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#fbbf24';
-                      }}
-                      onClick={() => {
-                        const partnershipSection = document.getElementById('parceria');
-                        if (partnershipSection) {
-                          partnershipSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                      }}
-                    >
-                      {operator.cta}
-                      <ArrowRight className="ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      size="sm"
-                      className="w-full text-xs sm:text-sm font-semibold py-4 sm:py-5"
-                      style={{
-                        borderColor: '#fbbf24',
-                        color: '#fbbf24',
-                        backgroundColor: 'transparent'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#fbbf24';
-                        e.currentTarget.style.color = '#4c1aa3';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = '#fbbf24';
-                      }}
-                      onClick={() => setShowForm(true)}
-                    >
-                      Quero conversar
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-          ))}
+          </AnimatedSection>
         </div>
       </div>
 
-      {/* Form Modal */}
+      {operators.map((operator, index) => {
+        const isDark = !operator.darkText;
+        const textColor = isDark ? "#ffffff" : "#241338";
+        const mutedColor = isDark ? "#e9d5ff" : "#4b3b63";
+        const reverse = index % 2 === 1;
+
+        return (
+          <article
+            key={operator.title}
+            className="min-h-[calc(100vh-5rem)] py-16 sm:py-20 md:py-24 lg:py-28"
+            style={{ backgroundColor: operator.bg }}
+          >
+            <div className="container mx-auto flex min-h-[70vh] items-center px-4">
+              <div className={`grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-12 ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                <AnimatedSection animationType={reverse ? "slide-left" : "slide-right"}>
+                  <div className="max-w-2xl">
+                    <div
+                      className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.16em]"
+                      style={{
+                        borderColor: operator.accent,
+                        color: operator.accent,
+                        backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.75)",
+                      }}
+                    >
+                      {operator.icon}
+                      {operator.eyebrow}
+                    </div>
+
+                    <h3 className="mb-5 text-3xl font-bold sm:text-4xl md:text-5xl" style={{ color: textColor }}>
+                      {operator.title}
+                    </h3>
+                    <p className="mb-8 text-base leading-relaxed sm:text-lg" style={{ color: mutedColor }}>
+                      {operator.description}
+                    </p>
+
+                    <div className="mb-8 grid gap-3">
+                      {operator.highlights.map((highlight) => (
+                        <div key={highlight} className="flex gap-3">
+                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0" style={{ color: operator.accent }} />
+                          <p className="text-sm leading-relaxed sm:text-base" style={{ color: mutedColor }}>
+                            {highlight}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mb-8 flex flex-wrap gap-3">
+                      {operator.metrics.map((metric) => (
+                        <span
+                          key={metric}
+                          className="rounded-full px-4 py-2 text-sm font-semibold"
+                          style={{
+                            backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#ffffff",
+                            color: isDark ? "#ffffff" : "#3d1f6d",
+                            border: `1px solid ${isDark ? "rgba(255,255,255,0.18)" : "rgba(61,31,109,0.12)"}`,
+                          }}
+                        >
+                          {metric}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                      <Button
+                        className="shadow-md transition-shadow hover:shadow-lg"
+                        style={{
+                          backgroundColor: operator.accent,
+                          color: operator.accent === "#fbbf24" ? "#4c1aa3" : "#ffffff",
+                          border: "none",
+                        }}
+                        onClick={scrollToPartnership}
+                      >
+                        Ver consultoria
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="font-semibold"
+                        style={{
+                          borderColor: operator.accent,
+                          color: operator.accent,
+                          backgroundColor: "transparent",
+                        }}
+                        onClick={() => setShowForm(true)}
+                      >
+                        Quero conversar
+                      </Button>
+                    </div>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection animationType={reverse ? "slide-right" : "slide-left"} delay={100}>
+                  <Card
+                    className="mx-auto w-full max-w-xl border-2 shadow-premium"
+                    style={{
+                      borderColor: isDark ? "#7c3aed" : "rgba(61,31,109,0.12)",
+                      backgroundColor: operator.panel,
+                    }}
+                  >
+                    <CardContent className="p-6 sm:p-8 md:p-10">
+                      <div className="mb-8 flex min-h-48 items-center justify-center rounded-2xl bg-white p-8 shadow-inner">
+                        <img
+                          src={operator.logo}
+                          alt={`${operator.title} logo`}
+                          className="max-h-32 w-full max-w-xs object-contain"
+                        />
+                      </div>
+
+                      <div
+                        className="rounded-2xl border p-5"
+                        style={{
+                          borderColor: isDark ? "rgba(255,255,255,0.14)" : "rgba(61,31,109,0.12)",
+                          backgroundColor: isDark ? "#4c1aa3" : "#f8fafc",
+                        }}
+                      >
+                        <div className="mb-3 flex items-center gap-2">
+                          <Smartphone className="h-5 w-5" style={{ color: operator.accent }} />
+                          <h4 className="text-lg font-bold" style={{ color: textColor }}>
+                            Quando indicar
+                          </h4>
+                        </div>
+                        <p className="text-sm leading-relaxed sm:text-base" style={{ color: mutedColor }}>
+                          {operator.fit}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </AnimatedSection>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+
       <LeadFormModal
         open={showForm}
         onOpenChange={setShowForm}
@@ -187,4 +258,3 @@ const OperatorsSection = () => {
 };
 
 export default OperatorsSection;
-
