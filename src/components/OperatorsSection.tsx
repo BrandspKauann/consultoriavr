@@ -7,7 +7,7 @@ import { Card, CardContent } from "./ui/card";
 
 const operators = [
   {
-    logo: "/flash-beneficios.svg",
+    logo: "/flash-logo-card.png",
     title: "Flash Benefícios",
     eyebrow: "Cartão multibenefícios moderno",
     description:
@@ -23,10 +23,10 @@ const operators = [
     categories: ["Alimentação", "Refeição", "Mobilidade", "Saúde", "Educação", "Home office"],
     proof: "Saldos por categoria, app para colaborador e gestão digital para o RH.",
     fit: "Boa escolha para empresas que querem uma experiência digital, flexível e fácil de administrar.",
-    accent: "#ff2f7d",
-    cardBg: "#ff2f7d",
-    bg: "#2d1b4e",
-    panel: "#3d1f6d",
+    accent: "#fe2b8f",
+    cardBg: "#fe2b8f",
+    logoPanelBg: "#fe2b8f",
+    logoClass: "h-full max-h-36 w-full object-contain",
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
@@ -48,13 +48,12 @@ const operators = [
     fit: "Faz sentido para RHs que precisam de controle, ampla aceitação e um parceiro consolidado.",
     accent: "#00a651",
     cardBg: "#00a651",
-    bg: "#f8fafc",
-    panel: "#ffffff",
-    darkText: true,
+    logoPanelBg: "#00a651",
+    logoClass: "max-h-32 w-auto object-contain",
     icon: <ShieldCheck className="h-5 w-5" />,
   },
   {
-    logo: "/caju-beneficios.svg",
+    logo: "/caju-logo-card.png",
     title: "Caju Benefícios",
     eyebrow: "Flexibilidade com gestão simples",
     description:
@@ -70,10 +69,10 @@ const operators = [
     categories: ["Alimentação", "Refeição", "Saúde", "Mobilidade", "Cultura", "Saldo flexível"],
     proof: "Cartão Visa, carteiras digitais e plataforma para pedidos e relatórios.",
     fit: "Ideal para empresas que querem modernizar benefícios sem criar complexidade operacional.",
-    accent: "#f97316",
-    cardBg: "#f97316",
-    bg: "#2d1b4e",
-    panel: "#3d1f6d",
+    accent: "#e80537",
+    cardBg: "#e80537",
+    logoPanelBg: "#e80537",
+    logoClass: "h-full max-h-36 w-full object-contain",
     icon: <WalletCards className="h-5 w-5" />,
   },
   {
@@ -95,9 +94,8 @@ const operators = [
     fit: "Ótimo para empresas que querem uma marca conhecida e uma experiência simples para alimentação e refeição.",
     accent: "#ea1d2c",
     cardBg: "#ea1d2c",
-    bg: "#fff7f7",
-    panel: "#ffffff",
-    darkText: true,
+    logoPanelBg: "#ffffff",
+    logoClass: "max-h-24 w-full max-w-xs object-contain",
     icon: <Utensils className="h-5 w-5" />,
   },
 ];
@@ -133,27 +131,26 @@ const OperatorsSection = () => {
       </div>
 
       {operators.map((operator, index) => {
-        const isDark = !operator.darkText;
-        const textColor = isDark ? "#ffffff" : "#241338";
-        const mutedColor = isDark ? "#e9d5ff" : "#4b3b63";
+        const textColor = "#ffffff";
+        const mutedColor = "rgba(255,255,255,0.86)";
         const reverse = index % 2 === 1;
 
         return (
           <article
             key={operator.title}
-            className="min-h-[calc(100vh-5rem)] py-16 sm:py-20 md:py-24 lg:py-28"
-            style={{ backgroundColor: operator.bg }}
+            className="min-h-screen py-16 sm:py-20 md:py-24 lg:py-28"
+            style={{ backgroundColor: operator.cardBg }}
           >
-            <div className="container mx-auto flex min-h-[70vh] items-center px-4">
+            <div className="container mx-auto flex min-h-[78vh] items-center px-4">
               <div className={`grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-12 ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
                 <AnimatedSection animationType={reverse ? "slide-left" : "slide-right"}>
                   <div className="max-w-2xl">
                     <div
                       className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.16em]"
                       style={{
-                        borderColor: operator.accent,
-                        color: operator.accent,
-                        backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.75)",
+                        borderColor: "rgba(255,255,255,0.42)",
+                        color: "#ffffff",
+                        backgroundColor: "rgba(255,255,255,0.12)",
                       }}
                     >
                       {operator.icon}
@@ -170,7 +167,7 @@ const OperatorsSection = () => {
                     <div className="mb-7 grid gap-3">
                       {operator.highlights.map((highlight) => (
                         <div key={highlight} className="flex gap-3">
-                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0" style={{ color: operator.accent }} />
+                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
                           <p className="text-sm leading-relaxed sm:text-base" style={{ color: mutedColor }}>
                             {highlight}
                           </p>
@@ -184,9 +181,9 @@ const OperatorsSection = () => {
                           key={metric}
                           className="rounded-full px-4 py-2 text-sm font-semibold"
                           style={{
-                            backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#ffffff",
-                            color: isDark ? "#ffffff" : "#3d1f6d",
-                            border: `1px solid ${isDark ? "rgba(255,255,255,0.18)" : "rgba(61,31,109,0.12)"}`,
+                            backgroundColor: "rgba(255,255,255,0.16)",
+                            color: "#ffffff",
+                            border: "1px solid rgba(255,255,255,0.22)",
                           }}
                         >
                           {metric}
@@ -198,8 +195,8 @@ const OperatorsSection = () => {
                       <Button
                         className="shadow-md transition-shadow hover:shadow-lg"
                         style={{
-                          backgroundColor: operator.accent,
-                          color: operator.accent === "#fbbf24" ? "#4c1aa3" : "#ffffff",
+                          backgroundColor: "#ffffff",
+                          color: operator.cardBg,
                           border: "none",
                         }}
                         onClick={scrollToPartnership}
@@ -211,8 +208,8 @@ const OperatorsSection = () => {
                         variant="outline"
                         className="font-semibold"
                         style={{
-                          borderColor: operator.accent,
-                          color: operator.accent,
+                          borderColor: "rgba(255,255,255,0.72)",
+                          color: "#ffffff",
                           backgroundColor: "transparent",
                         }}
                         onClick={() => setShowForm(true)}
@@ -225,70 +222,74 @@ const OperatorsSection = () => {
 
                 <AnimatedSection animationType={reverse ? "slide-right" : "slide-left"} delay={100}>
                   <Card
-                    className="mx-auto w-full max-w-xl overflow-hidden border-0 shadow-premium"
+                    className="mx-auto w-full max-w-xl overflow-hidden border border-white/30 bg-white/95 shadow-premium backdrop-blur"
                     style={{
-                      backgroundColor: operator.cardBg,
+                      backgroundColor: "rgba(255,255,255,0.95)",
                     }}
                   >
                     <CardContent className="p-0">
-                      <div className="relative min-h-[560px] p-6 text-white sm:p-8 md:p-10">
-                        <div className="absolute inset-0 opacity-15">
-                          <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-white" />
-                          <div className="absolute -bottom-20 left-10 h-64 w-64 rounded-full bg-white" />
+                      <div className="min-h-[560px] p-6 text-[#241338] sm:p-8 md:p-10">
+                        <div
+                          className="mb-8 flex min-h-40 items-center justify-center overflow-hidden rounded-lg p-4 shadow-sm"
+                          style={{ backgroundColor: operator.logoPanelBg }}
+                        >
+                          <img
+                            src={operator.logo}
+                            alt={`${operator.title} logo`}
+                            className={operator.logoClass}
+                          />
                         </div>
 
-                        <div className="relative">
-                          <div className="mb-8 flex min-h-36 items-center justify-center rounded-2xl bg-white p-6 shadow-lg">
-                        <img
-                          src={operator.logo}
-                          alt={`${operator.title} logo`}
-                              className="max-h-28 w-full max-w-sm object-contain"
-                        />
-                      </div>
-
-                          <div className="mb-6">
-                            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/75">
-                              Cartão em destaque
-                            </p>
-                            <h4 className="text-2xl font-bold leading-tight sm:text-3xl">
-                              {operator.cardTitle}
+                        <div className="mb-6">
+                          <p
+                            className="mb-2 text-sm font-semibold uppercase tracking-[0.18em]"
+                            style={{ color: operator.cardBg }}
+                          >
+                            Cartão em destaque
+                          </p>
+                          <h4 className="text-2xl font-bold leading-tight sm:text-3xl">
+                            {operator.cardTitle}
                           </h4>
-                            <p className="mt-3 text-sm leading-relaxed text-white/85 sm:text-base">
-                              {operator.cardSubtitle}
-                            </p>
+                          <p className="mt-3 text-sm leading-relaxed text-[#4b3b63] sm:text-base">
+                            {operator.cardSubtitle}
+                          </p>
                         </div>
 
-                          <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                            {operator.categories.map((category) => (
-                              <span
-                                key={category}
-                                className="rounded-xl bg-white/16 px-3 py-2 text-center text-xs font-bold text-white ring-1 ring-white/20"
-                              >
-                                {category}
-                              </span>
-                            ))}
-                      </div>
+                        <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                          {operator.categories.map((category) => (
+                            <span
+                              key={category}
+                              className="rounded-lg px-3 py-2 text-center text-xs font-bold"
+                              style={{
+                                backgroundColor: `${operator.cardBg}14`,
+                                color: operator.cardBg,
+                                border: `1px solid ${operator.cardBg}26`,
+                              }}
+                            >
+                              {category}
+                            </span>
+                          ))}
+                        </div>
 
-                          <div className="grid gap-3 sm:grid-cols-2">
-                            <div className="rounded-2xl bg-white p-5 text-[#241338] shadow-lg">
-                              <div className="mb-3 flex items-center gap-2">
-                                <Smartphone className="h-5 w-5" style={{ color: operator.cardBg }} />
-                                <h5 className="font-bold">Para o RH</h5>
-                              </div>
-                              <p className="text-sm leading-relaxed text-[#4b3b63]">
-                                {operator.proof}
-                              </p>
+                        <div className="grid gap-5 border-t border-slate-200 pt-6 sm:grid-cols-2">
+                          <div>
+                            <div className="mb-3 flex items-center gap-2">
+                              <Smartphone className="h-5 w-5" style={{ color: operator.cardBg }} />
+                              <h5 className="font-bold">Para o RH</h5>
                             </div>
+                            <p className="text-sm leading-relaxed text-[#4b3b63]">
+                              {operator.proof}
+                            </p>
+                          </div>
 
-                            <div className="rounded-2xl bg-black/18 p-5 ring-1 ring-white/20">
-                              <div className="mb-3 flex items-center gap-2">
-                                <CheckCircle2 className="h-5 w-5 text-white" />
-                                <h5 className="font-bold">Quando indicar</h5>
-                              </div>
-                              <p className="text-sm leading-relaxed text-white/85">
-                                {operator.fit}
-                              </p>
+                          <div className="border-t border-slate-200 pt-5 sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
+                            <div className="mb-3 flex items-center gap-2">
+                              <CheckCircle2 className="h-5 w-5" style={{ color: operator.cardBg }} />
+                              <h5 className="font-bold">Quando indicar</h5>
                             </div>
+                            <p className="text-sm leading-relaxed text-[#4b3b63]">
+                              {operator.fit}
+                            </p>
                           </div>
                         </div>
                       </div>
