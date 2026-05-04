@@ -2,8 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import OperatorsSection from "@/components/OperatorsSection";
-import SalaryFitsSection from "@/components/SalaryFitsSection";
-import SolidesSection from "@/components/SolidesSection";
 import PartnershipSection from "@/components/PartnershipSection";
 import YouTubeVideosSection from "@/components/YouTubeVideosSection";
 import BlogSection from "@/components/BlogSection";
@@ -20,8 +18,6 @@ const Index = () => {
         <Hero />
         <AboutSection />
         <OperatorsSection />
-        <SalaryFitsSection />
-        <SolidesSection />
         <PartnershipSection />
         <YouTubeVideosSection
           videoUrls={[

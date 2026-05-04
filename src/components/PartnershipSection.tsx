@@ -39,8 +39,8 @@ const PartnershipSection = () => {
     },
     {
       icon: <Zap className="h-6 w-6 text-primary" />,
-      title: "Gestão de ponto e vale-transporte",
-      description: "Parceria com Solides para controle de ponto e gestão de vale-transporte"
+      title: "Gestão de benefícios corporativos",
+      description: "Apoio para organizar cartões, saldos, pedidos e rotinas do RH"
     }
   ];
 

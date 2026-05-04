@@ -13,7 +13,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Content from "./pages/Content";
 import ContentDetail from "./pages/ContentDetail";
-import SalaryFits from "./pages/SalaryFits";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,7 +37,6 @@ const App = () => (
                 <Route path="/" element={<Index />} />
                 <Route path="/conteudo" element={<Content />} />
                 <Route path="/conteudo/:slug" element={<ContentDetail />} />
-                <Route path="/salaryfits" element={<SalaryFits />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <WhatsAppButton />

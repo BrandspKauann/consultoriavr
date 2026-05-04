@@ -10,7 +10,6 @@ export const generateSitemap = async (): Promise<string> => {
   const staticPages = [
     { url: baseUrl, priority: "1.0", changefreq: "weekly" },
     { url: `${baseUrl}/conteudo`, priority: "0.8", changefreq: "weekly" },
-    { url: `${baseUrl}/salaryfits`, priority: "0.7", changefreq: "monthly" },
   ];
 
   // Buscar todos os artigos publicados

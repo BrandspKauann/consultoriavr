@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Building2, TrendingUp, Zap } from "lucide-rea
 const flashLogo = "/flash.png";
 const vrLogo = "/vr.jpg";
 const cajuLogo = "/caju.jpg";
+const ifoodLogo = "/ifood.svg";
 import AnimatedSection from "./AnimatedSection";
 import { LeadFormModal } from "./LeadFormModal";
 import { useState } from "react";
@@ -51,6 +52,19 @@ const OperatorsSection = () => {
       ],
       cta: "Saiba mais",
       variant: "secondary" as const
+    },
+    {
+      icon: ifoodLogo,
+      iconComponent: <Building2 className="h-8 w-8 text-secondary" />,
+      title: "iFood Benefícios",
+      description: "Cartão de benefícios com a força da marca iFood, pensado para alimentação e refeição com praticidade no dia a dia dos colaboradores.",
+      features: [
+        "Cartão para alimentação e refeição",
+        "Experiência simples para colaboradores",
+        "Mais uma opção para o pacote de benefícios"
+      ],
+      cta: "Saiba mais",
+      variant: "premium" as const
     }
   ];
 
@@ -70,7 +84,7 @@ const OperatorsSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {operators.map((operator, index) => (
             <AnimatedSection 
               key={index}
