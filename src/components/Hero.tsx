@@ -4,6 +4,39 @@ import { useEffect, useRef, useState } from "react";
 
 const heroBackground = "/fundo4.png";
 
+const benefitCards = [
+  {
+    id: "flash",
+    name: "Flash",
+    logo: "/flash-logo-card.png",
+    bg: "#fe2b8f",
+    logoClass: "h-full w-full object-contain",
+  },
+  {
+    id: "vr",
+    name: "VR Multi",
+    logo: "/vr-beneficios.png",
+    bg: "#00a651",
+    logoClass: "h-14 w-auto object-contain",
+  },
+  {
+    id: "caju",
+    name: "Caju",
+    logo: "/caju-logo-card.png",
+    bg: "#ff7227",
+    logoBg: "#db021f",
+    logoClass: "h-full w-full object-contain",
+  },
+  {
+    id: "ifood",
+    name: "iFood",
+    logo: "/ifood.svg",
+    bg: "#ea1d2c",
+    logoBg: "#ffffff",
+    logoClass: "h-11 w-full object-contain",
+  },
+];
+
 const Hero = () => {
   const whatsappLink = "https://wa.link/3gwhbl";
   const [scrollY, setScrollY] = useState(0);
@@ -26,6 +59,14 @@ const Hero = () => {
 
   const parallaxOffset = Math.min(scrollY * 0.3, 200);
   const contentOffset = Math.min(scrollY * 0.15, 100);
+
+  const scrollToCard = (cardId: string) => {
+    const target = document.getElementById(`cartao-${cardId}`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `#cartao-${cardId}`);
+    }
+  };
 
   return (
     <section
@@ -118,6 +159,31 @@ const Hero = () => {
               Falar com um consultor
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
+            {benefitCards.map((card) => (
+              <button
+                key={card.id}
+                type="button"
+                onClick={() => scrollToCard(card.id)}
+                className="group min-h-24 overflow-hidden rounded-lg border border-white/20 bg-white/10 p-2 text-left shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/18 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                aria-label={`Ver detalhes do ${card.name}`}
+              >
+                <div
+                  className="mb-2 flex h-14 items-center justify-center overflow-hidden rounded-md px-2"
+                  style={{ backgroundColor: card.logoBg ?? card.bg }}
+                >
+                  <img src={card.logo} alt={`${card.name} logo`} className={card.logoClass} />
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-extrabold leading-tight text-white sm:text-[0.95rem]">
+                    {card.name}
+                  </span>
+                  <ArrowRight className="h-4 w-4 flex-shrink-0 text-white/80 transition-transform group-hover:translate-x-0.5" />
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { Card, CardContent } from "./ui/card";
 
 const operators = [
   {
+    id: "flash",
     logo: "/flash-logo-card.png",
     title: "Flash Benefícios",
     eyebrow: "Cartão multibenefícios moderno",
@@ -30,6 +31,7 @@ const operators = [
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
+    id: "vr",
     logo: "/vr-beneficios.png",
     title: "VR Multi",
     eyebrow: "Tradição, rede e segurança jurídica",
@@ -53,6 +55,7 @@ const operators = [
     icon: <ShieldCheck className="h-5 w-5" />,
   },
   {
+    id: "caju",
     logo: "/caju-logo-card.png",
     title: "Caju Benefícios",
     eyebrow: "Flexibilidade com gestão simples",
@@ -76,6 +79,7 @@ const operators = [
     icon: <WalletCards className="h-5 w-5" />,
   },
   {
+    id: "ifood",
     logo: "/ifood.svg",
     title: "iFood Benefícios",
     eyebrow: "Alimentação, refeição e saldos extras",
@@ -137,8 +141,9 @@ const OperatorsSection = () => {
 
         return (
           <article
+            id={`cartao-${operator.id}`}
             key={operator.title}
-            className="min-h-screen py-16 sm:py-20 md:py-24 lg:py-28"
+            className="min-h-screen scroll-mt-20 py-16 sm:py-20 md:py-24 lg:py-28"
             style={{ backgroundColor: operator.cardBg }}
           >
             <div className="container mx-auto flex min-h-[78vh] items-center px-4">
@@ -259,11 +264,11 @@ const OperatorsSection = () => {
                           {operator.categories.map((category) => (
                             <span
                               key={category}
-                              className="rounded-lg px-3 py-2 text-center text-xs font-bold"
+                              className="rounded-lg px-3 py-2.5 text-center text-sm font-extrabold leading-tight sm:text-[0.95rem]"
                               style={{
-                                backgroundColor: `${operator.cardBg}14`,
+                                backgroundColor: `${operator.cardBg}1F`,
                                 color: operator.cardBg,
-                                border: `1px solid ${operator.cardBg}26`,
+                                border: `1px solid ${operator.cardBg}40`,
                               }}
                             >
                               {category}
