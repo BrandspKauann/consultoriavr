@@ -12,7 +12,7 @@ const cards = [
     id: "vr",
     name: "VR Multi",
     logo: "/vr-beneficios.png",
-    bg: "#00a651",
+    bg: "#00be28",
     logoClass: "h-12 w-auto object-contain",
   },
   {
