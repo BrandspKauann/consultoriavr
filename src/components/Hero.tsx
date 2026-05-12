@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const heroBackground = "/fundo4.png";
+const heroBackground = "/hero-empresarial.png";
 
 const benefitCards = [
   {
