@@ -19,15 +19,16 @@ const cards = [
     id: "caju",
     name: "Caju",
     logo: "/caju-logo-card.png",
-    bg: "#ff7227",
+    bg: "#db021f",
     logoClass: "h-12 w-full object-contain",
   },
   {
     id: "ifood",
     name: "iFood",
     logo: "/ifood.svg",
-    bg: "#ea1d2c",
-    logoPanel: "#ffffff",
+    bg: "#ffffff",
+    border: "#ea1d2c",
+    text: "#ea1d2c",
     logoClass: "h-10 w-full object-contain",
   },
 ];
@@ -50,30 +51,42 @@ const BenefitCardsStrip = () => {
               key={card.id}
               type="button"
               onClick={() => scrollToCard(card.id)}
-              className="group relative aspect-[1.586/1] overflow-hidden rounded-2xl p-4 text-left shadow-[0_18px_45px_rgba(36,19,56,0.14)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(36,19,56,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4c1aa3]"
+              className="group relative aspect-[1.586/1] overflow-hidden rounded-2xl border p-4 text-left shadow-[0_18px_45px_rgba(36,19,56,0.14)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(36,19,56,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4c1aa3]"
               style={{
-                background: `linear-gradient(135deg, ${card.bg} 0%, ${card.bg} 68%, rgba(255,255,255,0.2) 100%)`,
+                backgroundColor: card.bg,
+                borderColor: card.border ?? "rgba(255,255,255,0.18)",
               }}
               aria-label={`Ver detalhes do ${card.name}`}
             >
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.26),transparent_38%),radial-gradient(circle_at_82%_16%,rgba(255,255,255,0.2),transparent_30%)]" />
-              <div className="pointer-events-none absolute -bottom-16 -right-12 h-36 w-36 rounded-full bg-white/12" />
+              <div className="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-16px_42px_rgba(0,0,0,0.12)]" />
               <div className="relative flex h-full flex-col justify-between">
                 <div className="flex items-start justify-between">
-                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+                  <span
+                    className="text-xs font-bold uppercase tracking-[0.18em]"
+                    style={{ color: card.text ?? "rgba(255,255,255,0.7)" }}
+                  >
                     Benefícios
                   </span>
-                  <ArrowRight className="h-5 w-5 text-white/75 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight
+                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                    style={{ color: card.text ?? "rgba(255,255,255,0.75)" }}
+                  />
                 </div>
 
                 <div>
-                  <div className="mb-4 flex h-16 max-w-36 items-center justify-center overflow-hidden rounded-xl bg-white/95 px-4 shadow-sm">
+                  <div className="mb-4 flex h-16 max-w-36 items-center justify-start overflow-hidden rounded-xl">
                     <img src={card.logo} alt={`${card.name} logo`} className={card.logoClass} />
                   </div>
-                  <p className="text-lg font-extrabold leading-tight text-white drop-shadow-sm">
+                  <p
+                    className="text-lg font-extrabold leading-tight"
+                    style={{ color: card.text ?? "#ffffff" }}
+                  >
                     {card.name}
                   </p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/65">
+                  <p
+                    className="mt-1 text-xs font-semibold uppercase tracking-[0.16em]"
+                    style={{ color: card.text ?? "rgba(255,255,255,0.65)" }}
+                  >
                     Cartão corporativo
                   </p>
                 </div>
