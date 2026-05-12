@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const heroBackground = "/hero-empresarial.png";
+const heroBackground = "/hero-consultoria-empresarial.jpg";
 
 const benefitCards = [
   {
@@ -10,14 +10,14 @@ const benefitCards = [
     name: "Flash",
     logo: "/flash-logo-card.png",
     bg: "#fe2b8f",
-    logoClass: "h-full w-full object-contain",
+    logoClass: "h-12 w-full object-contain",
   },
   {
     id: "vr",
     name: "VR Multi",
     logo: "/vr-beneficios.png",
     bg: "#00a651",
-    logoClass: "h-14 w-auto object-contain",
+    logoClass: "h-12 w-auto object-contain",
   },
   {
     id: "caju",
@@ -25,7 +25,7 @@ const benefitCards = [
     logo: "/caju-logo-card.png",
     bg: "#ff7227",
     logoBg: "#db021f",
-    logoClass: "h-full w-full object-contain",
+    logoClass: "h-12 w-full object-contain",
   },
   {
     id: "ifood",
@@ -33,7 +33,7 @@ const benefitCards = [
     logo: "/ifood.svg",
     bg: "#ea1d2c",
     logoBg: "#ffffff",
-    logoClass: "h-11 w-full object-contain",
+    logoClass: "h-10 w-full object-contain",
   },
 ];
 
@@ -161,26 +161,44 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {benefitCards.map((card) => (
               <button
                 key={card.id}
                 type="button"
                 onClick={() => scrollToCard(card.id)}
-                className="group min-h-24 overflow-hidden rounded-lg border border-white/20 bg-white/10 p-2 text-left shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/18 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="group relative aspect-[1.586/1] overflow-hidden rounded-xl border border-white/25 p-3 text-left shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                style={{
+                  background: `linear-gradient(135deg, ${card.bg} 0%, ${card.logoBg ?? card.bg} 56%, rgba(25,14,36,0.88) 100%)`,
+                }}
                 aria-label={`Ver detalhes do ${card.name}`}
               >
-                <div
-                  className="mb-2 flex h-14 items-center justify-center overflow-hidden rounded-md px-2"
-                  style={{ backgroundColor: card.logoBg ?? card.bg }}
-                >
-                  <img src={card.logo} alt={`${card.name} logo`} className={card.logoClass} />
-                </div>
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-sm font-extrabold leading-tight text-white sm:text-[0.95rem]">
-                    {card.name}
-                  </span>
-                  <ArrowRight className="h-4 w-4 flex-shrink-0 text-white/80 transition-transform group-hover:translate-x-0.5" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.36),transparent_30%),linear-gradient(115deg,rgba(255,255,255,0.2),transparent_42%)]" />
+                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/12" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="grid h-7 w-9 grid-cols-2 gap-0.5 rounded-md bg-[#f3c65d] p-1 shadow-inner">
+                      <span className="rounded-[2px] bg-[#c7942d]" />
+                      <span className="rounded-[2px] bg-[#f8dc82]" />
+                      <span className="rounded-[2px] bg-[#f8dc82]" />
+                      <span className="rounded-[2px] bg-[#c7942d]" />
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-white/75 transition-transform group-hover:translate-x-0.5" />
+                  </div>
+
+                  <div className="flex items-end justify-between gap-2">
+                    <div>
+                      <p className="mb-1 text-[0.56rem] font-bold uppercase tracking-[0.18em] text-white/65">
+                        Benefício
+                      </p>
+                      <span className="block text-sm font-extrabold leading-tight text-white sm:text-[0.95rem]">
+                        {card.name}
+                      </span>
+                    </div>
+                    <div className="flex h-12 w-16 items-center justify-center overflow-hidden rounded-md bg-white/95 px-2 shadow-sm">
+                      <img src={card.logo} alt={`${card.name} logo`} className={card.logoClass} />
+                    </div>
+                  </div>
                 </div>
               </button>
             ))}
