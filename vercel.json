@@ -4,10 +4,13 @@
   "buildCommand": null,
   "installCommand": "",
   "outputDirectory": ".",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/conteudo/:path*",
-      "destination": "/index.html"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/conteudo/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
