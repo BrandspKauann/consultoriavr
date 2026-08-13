@@ -1,0 +1,10 @@
+{
+  "name": "consultoriavr-static",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "publish:scheduled": "node tools/publish-scheduled-posts.mjs",
+    "seed:scheduled": "python tools/seed-scheduled-posts.py"
+  }
+}

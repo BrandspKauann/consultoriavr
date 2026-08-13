@@ -1,0 +1,5 @@
+content/**
+tools/**
+.github/**
+package.json
+package-lock.json

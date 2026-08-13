@@ -6,11 +6,23 @@
   "outputDirectory": ".",
   "routes": [
     {
+      "src": "/content/(.*)",
+      "status": 404
+    },
+    {
+      "src": "/tools/(.*)",
+      "status": 404
+    },
+    {
+      "src": "/package(-lock)?\\.json",
+      "status": 404
+    },
+    {
       "handle": "filesystem"
     },
     {
       "src": "/conteudo/(.*)",
-      "dest": "/index.html"
+      "status": 404
     }
   ]
 }
