@@ -1,6 +1,6 @@
 [
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-08-20T15:00:00.000Z",
     "title": "Como comparar VR, Flash, Caju, iFood, ValeCard e Pluxee com critério",
     "shortTitle": "Comparar cartões",
@@ -74,7 +74,8 @@
         "question": "Vale comparar apenas a taxa?",
         "answer": "Não. Taxa importa, mas implantação, suporte, rede, relatórios e retrabalho operacional também impactam o custo real."
       }
-    ]
+    ],
+    "publishedAt": "2026-08-20T15:40:21.583Z"
   },
   {
     "status": "scheduled",
