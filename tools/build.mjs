@@ -107,13 +107,13 @@ function formatDate(iso) {
 
 function googleTag() {
   return `    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM1ZJGL2RN"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9HSX541BN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-FM1ZJGL2RN');
+      gtag('config', 'G-G9HSX541BN');
     </script>`;
 }
 
