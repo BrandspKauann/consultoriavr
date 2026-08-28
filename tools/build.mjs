@@ -113,7 +113,9 @@ function googleTag() {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-G9HSX541BN');
+      gtag('config', 'G-G9HSX541BN', {
+        send_page_view: true
+      });
     </script>`;
 }
 
