@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-08-27T15:00:00.000Z",
+    "title": "Cartão de benefícios corporativos: o que o RH deve avaliar antes de trocar",
+    "shortTitle": "Troca de fornecedor",
+    "slug": "cartao-beneficios-corporativos-o-que-rh-deve-avaliar",
+    "category": "Gestão de RH",
+    "description": "Entenda os pontos que o RH deve revisar antes de trocar o cartão de benefícios corporativos e evitar retrabalho depois da implantação.",
+    "keywords": [
+      "cartão de benefícios corporativos",
+      "RH",
+      "troca de operadora de benefícios",
+      "gestão de benefícios",
+      "implantação de benefícios"
+    ],
+    "hashtags": [
+      "#RH",
+      "#GestaoDeBeneficios",
+      "#BeneficiosCorporativos",
+      "#CartaoCorporativo",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 6,
+    "image": "scheduled-02.png",
+    "imageAlt": "Consultora de RH analisando cartões e dados de benefícios corporativos",
+    "imagePrompt": "Imagem editorial gerada por IA sobre RH avaliando cartão de benefícios corporativos, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Trocar o cartão de benefícios pode resolver problemas antigos, mas também pode criar novos atritos quando a decisão é tomada depressa demais.",
+      "Para o RH, a pergunta principal não é apenas qual fornecedor promete mais. A pergunta é qual fornecedor sustenta a rotina da empresa com menos ruído."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "O RH precisa avaliar o benefício como operação contínua. Depois da assinatura, virão admissões, desligamentos, ajustes de valores, dúvidas de colaboradores, relatórios, notas, conciliação e suporte.",
+          "Quando esses pontos não entram na comparação, a empresa pode trocar de cartão e descobrir que reduziu uma despesa visível, mas aumentou o custo invisível de gestão."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco aparece quando a decisão fica concentrada no fechamento comercial. A implantação exige cronograma, comunicação, base de colaboradores atualizada, testes de acesso e clareza sobre o primeiro crédito.",
+          "Outro ponto crítico é a expectativa do colaborador. Se a rede não atende os locais de uso ou se o aplicativo confunde, a percepção do benefício cai rapidamente."
+        ]
+      },
+      {
+        "heading": "Checklist antes da troca",
+        "bullets": [
+          "Mapear reclamações atuais e separar problema de fornecedor, política e comunicação.",
+          "Validar rede por cidade, turno, unidade e perfil de consumo.",
+          "Entender como será a migração de saldos e cartões ativos.",
+          "Comparar relatórios, gestão de usuários, permissões e atendimento.",
+          "Criar uma régua de comunicação para colaboradores e liderança."
+        ]
+      },
+      {
+        "heading": "Como a consultoria reduz ruído",
+        "paragraphs": [
+          "Uma análise consultiva cria ordem na decisão. Ela coloca o RH, o financeiro e a liderança na mesma página antes da troca, evitando que cada área olhe apenas para uma parte do problema.",
+          "Esse método não elimina todo imprevisto, mas reduz bastante a chance de uma migração virar uma sequência de chamados."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quando faz sentido trocar o cartão de benefícios?",
+        "answer": "Quando a solução atual não atende rede, gestão, custo, suporte ou experiência dos colaboradores de forma adequada."
+      },
+      {
+        "question": "O RH deve conduzir a decisão sozinho?",
+        "answer": "O RH deve liderar a análise operacional, mas financeiro e liderança precisam participar para alinhar custo, política e governança."
+      }
+    ],
+    "publishedAt": "2026-08-28T00:20:33.834Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-08-20T15:00:00.000Z",
     "title": "Como comparar VR, Flash, Caju, iFood, ValeCard e Pluxee com critério",
     "shortTitle": "Comparar cartões",

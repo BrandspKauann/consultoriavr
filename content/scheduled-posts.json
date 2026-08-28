@@ -78,7 +78,7 @@
     "publishedAt": "2026-08-20T15:40:21.583Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-08-27T15:00:00.000Z",
     "title": "Cartão de benefícios corporativos: o que o RH deve avaliar antes de trocar",
     "shortTitle": "Troca de fornecedor",
@@ -149,7 +149,8 @@
         "question": "O RH deve conduzir a decisão sozinho?",
         "answer": "O RH deve liderar a análise operacional, mas financeiro e liderança precisam participar para alinhar custo, política e governança."
       }
-    ]
+    ],
+    "publishedAt": "2026-08-28T00:20:33.834Z"
   },
   {
     "status": "scheduled",
