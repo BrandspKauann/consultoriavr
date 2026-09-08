@@ -105,24 +105,27 @@ function formatDate(iso) {
   }).format(new Date(iso));
 }
 
-function googleTag() {
-  return `    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9HSX541BN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+function googleTagManagerHead() {
+  return `    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T636X4P7');</script>
+    <!-- End Google Tag Manager -->`;
+}
 
-      gtag('config', 'G-G9HSX541BN', {
-        send_page_view: true
-      });
-    </script>`;
+function googleTagManagerBody() {
+  return `    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T636X4P7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->`;
 }
 
 function head({ title, description, keywords = [], canonical, type = 'website', image = '/hero-reuniao-empresarial.jpg', structuredData = [] }) {
   const imageUrl = absoluteUrl(image);
   return `<head>
-${googleTag()}
+${googleTagManagerHead()}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -193,6 +196,7 @@ function renderBlogIndex(posts) {
   })}
 
   <body>
+${googleTagManagerBody()}
     <div id="root">
       <main class="seo-fallback" aria-label="Conteúdo da Consultoria VR">
         <header class="seo-fallback__hero">
@@ -317,6 +321,7 @@ function renderArticle(post, posts) {
     structuredData
   })}
   <body>
+${googleTagManagerBody()}
     <main class="seo-fallback" id="topo" aria-label="Artigo da Consultoria VR">
       <section class="seo-fallback__hero seo-fallback__article">
         <div class="seo-fallback__article-shell">
