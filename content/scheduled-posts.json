@@ -153,7 +153,7 @@
     "publishedAt": "2026-08-28T00:20:33.834Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-09-03T15:00:00.000Z",
     "title": "PAT e vale-alimentação: cuidados antes de revisar a política de benefícios",
     "shortTitle": "PAT e VA",
@@ -225,7 +225,8 @@
         "question": "Trocar operadora resolve problemas de política interna?",
         "answer": "Nem sempre. Se a política estiver confusa, a troca pode apenas transferir o problema para outro sistema."
       }
-    ]
+    ],
+    "publishedAt": "2026-09-03T18:28:50.061Z"
   },
   {
     "status": "scheduled",

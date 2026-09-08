@@ -1,6 +1,82 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-09-03T15:00:00.000Z",
+    "title": "PAT e vale-alimentação: cuidados antes de revisar a política de benefícios",
+    "shortTitle": "PAT e VA",
+    "slug": "pat-vale-alimentacao-cuidados-politica-beneficios",
+    "category": "PAT e compliance",
+    "description": "Veja cuidados de PAT, vale-alimentação e política interna antes de mudar fornecedores ou regras de benefícios corporativos.",
+    "keywords": [
+      "PAT",
+      "vale-alimentação",
+      "política de benefícios",
+      "benefícios corporativos",
+      "compliance RH",
+      "cartão alimentação"
+    ],
+    "hashtags": [
+      "#PAT",
+      "#ValeAlimentacao",
+      "#ComplianceRH",
+      "#BeneficiosCorporativos",
+      "#PoliticaDeBeneficios"
+    ],
+    "readTime": 7,
+    "image": "scheduled-03.png",
+    "imageAlt": "Mesa corporativa com cartão de alimentação e checklist de governança",
+    "imagePrompt": "Imagem editorial gerada por IA sobre PAT e vale-alimentação em contexto corporativo, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O vale-alimentação não deve ser tratado apenas como um valor mensal carregado em cartão. Ele faz parte da política de benefícios, da experiência do colaborador e da governança da empresa.",
+      "Quando o PAT entra na conversa, a decisão precisa ser ainda mais cuidadosa, porque política, operação e comunicação precisam caminhar juntas."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "Revisar benefício alimentar exige clareza. A empresa precisa saber quem recebe, quando recebe, qual valor será aplicado, como exceções serão tratadas e como a regra será comunicada.",
+          "Sem esse alinhamento, qualquer mudança de operadora ou política pode virar uma fonte de dúvidas recorrentes para o RH."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco não está apenas no fornecedor. Muitas vezes ele está em regras internas pouco documentadas, diferenças entre unidades, ajustes manuais ou comunicação incompleta.",
+          "Quando a política não está clara, o colaborador compara experiências, o gestor pede exceções e o RH precisa decidir caso a caso."
+        ]
+      },
+      {
+        "heading": "O que revisar antes de mudar",
+        "bullets": [
+          "Critérios de elegibilidade para colaboradores, afastados, temporários e recém-admitidos.",
+          "Datas de crédito, fechamento e tratamento de desligamentos.",
+          "Documentação interna da política e coerência com a operação.",
+          "Capacidade do fornecedor em relatórios, auditoria e controle.",
+          "Plano de comunicação para evitar interpretação errada."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A revisão deve começar pela política e só depois chegar ao cartão. Assim, a empresa escolhe a solução que sustenta a regra desejada, em vez de adaptar a regra ao limite do fornecedor.",
+          "Esse caminho melhora governança e evita que o benefício seja decidido apenas pelo preço ou por uma urgência de migração."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "PAT deve ser considerado na escolha do cartão?",
+        "answer": "Sim. A empresa precisa avaliar como a política de alimentação se conecta à operação, à documentação e ao fornecedor escolhido."
+      },
+      {
+        "question": "Trocar operadora resolve problemas de política interna?",
+        "answer": "Nem sempre. Se a política estiver confusa, a troca pode apenas transferir o problema para outro sistema."
+      }
+    ],
+    "publishedAt": "2026-09-03T18:28:50.061Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-08-27T15:00:00.000Z",
     "title": "Cartão de benefícios corporativos: o que o RH deve avaliar antes de trocar",
     "shortTitle": "Troca de fornecedor",
