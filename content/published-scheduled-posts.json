@@ -1,6 +1,82 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-09-10T15:00:00.000Z",
+    "title": "Vale-refeição ou benefício flexível: como decidir sem perder governança",
+    "shortTitle": "VR ou flexível",
+    "slug": "vale-refeicao-ou-beneficio-flexivel-como-decidir",
+    "category": "Estratégia de benefícios",
+    "description": "Compare vale-refeição e benefício flexível com atenção a governança, experiência do colaborador, regras internas e operação do RH.",
+    "keywords": [
+      "vale-refeição",
+      "benefício flexível",
+      "cartão de benefícios",
+      "gestão de RH",
+      "benefícios corporativos",
+      "governança"
+    ],
+    "hashtags": [
+      "#ValeRefeicao",
+      "#BeneficioFlexivel",
+      "#RH",
+      "#Governanca",
+      "#BeneficiosCorporativos"
+    ],
+    "readTime": 6,
+    "image": "scheduled-04.png",
+    "imageAlt": "Dashboard de benefícios corporativos com cartões e gráficos",
+    "imagePrompt": "Imagem editorial gerada por IA sobre comparação entre vale-refeição e benefício flexível, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "A discussão entre vale-refeição tradicional e benefício flexível aparece com frequência em empresas que querem modernizar a experiência dos colaboradores.",
+      "A decisão, porém, precisa equilibrar liberdade de uso, clareza de política, aderência às regras internas e capacidade de gestão."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "Flexibilidade pode ser positiva quando a empresa sabe exatamente qual problema quer resolver. Sem esse diagnóstico, o modelo flexível pode criar dúvidas sobre categorias, limites e comunicação.",
+          "O vale-refeição tradicional, por outro lado, pode ser mais simples de explicar, mas nem sempre acompanha as expectativas de equipes com rotinas variadas."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco está em adotar um modelo pela tendência do mercado, sem avaliar impacto operacional. Se o benefício fica flexível demais sem governança, o RH pode perder clareza sobre regras e exceções.",
+          "Também é comum subestimar a comunicação. O colaborador precisa entender o que mudou, por que mudou e como usar corretamente."
+        ]
+      },
+      {
+        "heading": "Critérios para comparar os modelos",
+        "bullets": [
+          "Perfil dos colaboradores e principais usos do benefício.",
+          "Regras internas de elegibilidade, categoria e valor.",
+          "Capacidade do fornecedor em limitar, reportar e auditar usos.",
+          "Facilidade de comunicação e suporte ao colaborador.",
+          "Aderência à estratégia de atração, retenção e governança."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A escolha deve partir de um diagnóstico. Empresas com operação padronizada podem priorizar simplicidade. Empresas com perfis diversos podem ganhar com flexibilidade, desde que a política esteja bem desenhada.",
+          "A Consultoria VR ajuda a transformar essa comparação em uma decisão estruturada, sem reduzir o tema a moda ou preferência pessoal."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Benefício flexível é sempre melhor?",
+        "answer": "Não. Ele pode ser melhor para alguns cenários, mas exige política clara, comunicação e gestão adequada."
+      },
+      {
+        "question": "Vale-refeição tradicional ainda faz sentido?",
+        "answer": "Sim. Para muitas empresas, a simplicidade e a clareza operacional continuam sendo vantagens importantes."
+      }
+    ],
+    "publishedAt": "2026-09-10T18:16:45.936Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-09-03T15:00:00.000Z",
     "title": "PAT e vale-alimentação: cuidados antes de revisar a política de benefícios",
     "shortTitle": "PAT e VA",

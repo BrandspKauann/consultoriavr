@@ -229,7 +229,7 @@
     "publishedAt": "2026-09-03T18:28:50.061Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-09-10T15:00:00.000Z",
     "title": "Vale-refeição ou benefício flexível: como decidir sem perder governança",
     "shortTitle": "VR ou flexível",
@@ -301,7 +301,8 @@
         "question": "Vale-refeição tradicional ainda faz sentido?",
         "answer": "Sim. Para muitas empresas, a simplicidade e a clareza operacional continuam sendo vantagens importantes."
       }
-    ]
+    ],
+    "publishedAt": "2026-09-10T18:16:45.936Z"
   },
   {
     "status": "scheduled",
