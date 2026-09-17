@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-09-17T15:00:00.000Z",
+    "title": "Implantação de cartão de benefícios: checklist para evitar retrabalho",
+    "shortTitle": "Checklist de implantação",
+    "slug": "implantacao-cartao-beneficios-checklist-retrabalho",
+    "category": "Implantação",
+    "description": "Use um checklist consultivo para implantar cartão de benefícios com menos retrabalho, dúvidas de colaboradores e falhas de comunicação.",
+    "keywords": [
+      "implantação de cartão de benefícios",
+      "checklist RH",
+      "benefícios corporativos",
+      "migração de operadora",
+      "gestão de colaboradores"
+    ],
+    "hashtags": [
+      "#ImplantacaoDeBeneficios",
+      "#ChecklistRH",
+      "#BeneficiosCorporativos",
+      "#GestaoDeRH",
+      "#CartaoDeBeneficios"
+    ],
+    "readTime": 7,
+    "image": "scheduled-05.png",
+    "imageAlt": "Checklist de implantação de benefícios corporativos com cartões e selo de aprovação",
+    "imagePrompt": "Imagem editorial gerada por IA sobre checklist de implantação de cartão de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "A implantação é o momento em que a promessa comercial encontra a rotina real da empresa. Se o processo não for bem organizado, o RH vira central de dúvidas antes mesmo do primeiro crédito.",
+      "Um checklist simples ajuda a reduzir falhas e transformar a mudança em uma transição compreensível para todos."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "Implantar cartão de benefícios não é apenas enviar uma base de colaboradores. É alinhar cronograma, comunicação, validações, suporte, data de crédito, regras de uso e plano para exceções.",
+          "Quando essas etapas são antecipadas, a empresa reduz pressão sobre o RH e melhora a percepção do benefício."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco aparece em bases desatualizadas, dados incompletos, comunicação enviada tarde demais, cartões não entregues, dúvidas sobre senha e conflito entre data de corte e primeiro crédito.",
+          "Esses problemas parecem pequenos isoladamente, mas juntos criam uma experiência ruim para o colaborador e desgaste para a equipe de RH."
+        ]
+      },
+      {
+        "heading": "Checklist prático de implantação",
+        "bullets": [
+          "Conferir base de colaboradores, CPF, unidade, valor e categoria de benefício.",
+          "Definir datas de corte, carga, entrega e primeiro uso.",
+          "Testar portal, permissões, relatórios e canais de suporte.",
+          "Criar comunicação objetiva para gestores e colaboradores.",
+          "Acompanhar a primeira carga e registrar dúvidas recorrentes."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A melhor implantação é aquela que parece simples para o colaborador porque foi bem planejada nos bastidores.",
+          "A Consultoria VR atua antes da troca para identificar pontos sensíveis e montar uma régua de transição compatível com a rotina da empresa."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quanto tempo leva uma implantação de benefícios?",
+        "answer": "Depende do porte, da base de colaboradores e do fornecedor, mas a empresa deve reservar tempo para validação, comunicação e primeira carga."
+      },
+      {
+        "question": "O que mais gera retrabalho na implantação?",
+        "answer": "Bases desatualizadas, falta de comunicação, dúvidas sobre acesso e ausência de responsável claro por cada etapa."
+      }
+    ],
+    "publishedAt": "2026-09-17T18:55:21.571Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-09-10T15:00:00.000Z",
     "title": "Vale-refeição ou benefício flexível: como decidir sem perder governança",
     "shortTitle": "VR ou flexível",

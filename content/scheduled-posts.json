@@ -305,7 +305,7 @@
     "publishedAt": "2026-09-10T18:16:45.936Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-09-17T15:00:00.000Z",
     "title": "Implantação de cartão de benefícios: checklist para evitar retrabalho",
     "shortTitle": "Checklist de implantação",
@@ -376,7 +376,8 @@
         "question": "O que mais gera retrabalho na implantação?",
         "answer": "Bases desatualizadas, falta de comunicação, dúvidas sobre acesso e ausência de responsável claro por cada etapa."
       }
-    ]
+    ],
+    "publishedAt": "2026-09-17T18:55:21.571Z"
   },
   {
     "status": "scheduled",
