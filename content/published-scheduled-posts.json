@@ -1,6 +1,232 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-09-24T15:00:00.000Z",
+    "title": "Gestão de benefícios para empresas em crescimento: quando pedir apoio consultivo",
+    "shortTitle": "Empresas em crescimento",
+    "slug": "gestao-beneficios-empresas-em-crescimento-apoio-consultivo",
+    "category": "Crescimento empresarial",
+    "description": "Saiba quando uma empresa em crescimento deve buscar apoio consultivo para organizar benefícios, fornecedores, governança e rotina do RH.",
+    "keywords": [
+      "gestão de benefícios",
+      "empresa em crescimento",
+      "consultoria de benefícios",
+      "RH estratégico",
+      "benefícios corporativos"
+    ],
+    "hashtags": [
+      "#GestaoDeBeneficios",
+      "#RHEstrategico",
+      "#EmpresaEmCrescimento",
+      "#ConsultoriaDeBeneficios",
+      "#BeneficiosCorporativos"
+    ],
+    "readTime": 6,
+    "image": "scheduled-06.png",
+    "imageAlt": "Profissional de RH usando aplicativo de benefícios corporativos",
+    "imagePrompt": "Imagem editorial gerada por IA sobre empresa em crescimento organizando benefícios corporativos, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O que funciona para uma empresa pequena pode ficar frágil quando o time cresce. Benefícios, que antes eram simples de administrar, passam a exigir política, sistema, controle e comunicação.",
+      "Esse é o momento em que apoio consultivo deixa de ser luxo e passa a evitar decisões improvisadas."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "Crescimento aumenta complexidade. Novas unidades, cargos, escalas, regiões e modelos de trabalho criam perfis diferentes de uso do benefício.",
+          "Se a empresa mantém uma gestão informal, o RH começa a gastar tempo resolvendo exceções, dúvidas e ajustes manuais."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco está em crescer com a mesma estrutura de quando a operação era pequena. Uma planilha manual, uma regra pouco documentada ou um fornecedor limitado podem gerar falhas quando o volume aumenta.",
+          "Outro ponto é a comparação de fornecedores. Quanto maior a empresa, maior o impacto de uma decisão mal calibrada."
+        ]
+      },
+      {
+        "heading": "Sinais de que a empresa precisa de apoio",
+        "bullets": [
+          "O RH recebe as mesmas dúvidas todos os meses.",
+          "As regras de benefício variam por área sem documentação clara.",
+          "A empresa não sabe se a rede atual atende as novas regiões.",
+          "O financeiro sente dificuldade para conciliar custos e relatórios.",
+          "A liderança quer melhorar benefício, mas não tem critério comparativo."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A consultoria ajuda a empresa a criar um mapa de maturidade: o que precisa continuar simples, o que precisa ser formalizado e quais fornecedores suportam o próximo estágio.",
+          "Esse olhar evita que o crescimento transforme benefícios em um problema operacional."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Empresa pequena também precisa de consultoria?",
+        "answer": "Pode precisar quando já existe complexidade em unidades, turnos, regras internas ou fornecedores."
+      },
+      {
+        "question": "Consultoria substitui o RH?",
+        "answer": "Não. Ela apoia o RH com método, comparação e organização da decisão."
+      }
+    ],
+    "publishedAt": "2026-09-24T18:58:50.834Z"
+  },
+  {
+    "status": "published",
+    "publishAt": "2026-09-17T15:00:00.000Z",
+    "title": "Implantação de cartão de benefícios: checklist para evitar retrabalho",
+    "shortTitle": "Checklist de implantação",
+    "slug": "implantacao-cartao-beneficios-checklist-retrabalho",
+    "category": "Implantação",
+    "description": "Use um checklist consultivo para implantar cartão de benefícios com menos retrabalho, dúvidas de colaboradores e falhas de comunicação.",
+    "keywords": [
+      "implantação de cartão de benefícios",
+      "checklist RH",
+      "benefícios corporativos",
+      "migração de operadora",
+      "gestão de colaboradores"
+    ],
+    "hashtags": [
+      "#ImplantacaoDeBeneficios",
+      "#ChecklistRH",
+      "#BeneficiosCorporativos",
+      "#GestaoDeRH",
+      "#CartaoDeBeneficios"
+    ],
+    "readTime": 7,
+    "image": "scheduled-05.png",
+    "imageAlt": "Checklist de implantação de benefícios corporativos com cartões e selo de aprovação",
+    "imagePrompt": "Imagem editorial gerada por IA sobre checklist de implantação de cartão de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "A implantação é o momento em que a promessa comercial encontra a rotina real da empresa. Se o processo não for bem organizado, o RH vira central de dúvidas antes mesmo do primeiro crédito.",
+      "Um checklist simples ajuda a reduzir falhas e transformar a mudança em uma transição compreensível para todos."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "Implantar cartão de benefícios não é apenas enviar uma base de colaboradores. É alinhar cronograma, comunicação, validações, suporte, data de crédito, regras de uso e plano para exceções.",
+          "Quando essas etapas são antecipadas, a empresa reduz pressão sobre o RH e melhora a percepção do benefício."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco aparece em bases desatualizadas, dados incompletos, comunicação enviada tarde demais, cartões não entregues, dúvidas sobre senha e conflito entre data de corte e primeiro crédito.",
+          "Esses problemas parecem pequenos isoladamente, mas juntos criam uma experiência ruim para o colaborador e desgaste para a equipe de RH."
+        ]
+      },
+      {
+        "heading": "Checklist prático de implantação",
+        "bullets": [
+          "Conferir base de colaboradores, CPF, unidade, valor e categoria de benefício.",
+          "Definir datas de corte, carga, entrega e primeiro uso.",
+          "Testar portal, permissões, relatórios e canais de suporte.",
+          "Criar comunicação objetiva para gestores e colaboradores.",
+          "Acompanhar a primeira carga e registrar dúvidas recorrentes."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A melhor implantação é aquela que parece simples para o colaborador porque foi bem planejada nos bastidores.",
+          "A Consultoria VR atua antes da troca para identificar pontos sensíveis e montar uma régua de transição compatível com a rotina da empresa."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quanto tempo leva uma implantação de benefícios?",
+        "answer": "Depende do porte, da base de colaboradores e do fornecedor, mas a empresa deve reservar tempo para validação, comunicação e primeira carga."
+      },
+      {
+        "question": "O que mais gera retrabalho na implantação?",
+        "answer": "Bases desatualizadas, falta de comunicação, dúvidas sobre acesso e ausência de responsável claro por cada etapa."
+      }
+    ],
+    "publishedAt": "2026-09-17T18:55:21.571Z"
+  },
+  {
+    "status": "published",
+    "publishAt": "2026-09-10T15:00:00.000Z",
+    "title": "Vale-refeição ou benefício flexível: como decidir sem perder governança",
+    "shortTitle": "VR ou flexível",
+    "slug": "vale-refeicao-ou-beneficio-flexivel-como-decidir",
+    "category": "Estratégia de benefícios",
+    "description": "Compare vale-refeição e benefício flexível com atenção a governança, experiência do colaborador, regras internas e operação do RH.",
+    "keywords": [
+      "vale-refeição",
+      "benefício flexível",
+      "cartão de benefícios",
+      "gestão de RH",
+      "benefícios corporativos",
+      "governança"
+    ],
+    "hashtags": [
+      "#ValeRefeicao",
+      "#BeneficioFlexivel",
+      "#RH",
+      "#Governanca",
+      "#BeneficiosCorporativos"
+    ],
+    "readTime": 6,
+    "image": "scheduled-04.png",
+    "imageAlt": "Dashboard de benefícios corporativos com cartões e gráficos",
+    "imagePrompt": "Imagem editorial gerada por IA sobre comparação entre vale-refeição e benefício flexível, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "A discussão entre vale-refeição tradicional e benefício flexível aparece com frequência em empresas que querem modernizar a experiência dos colaboradores.",
+      "A decisão, porém, precisa equilibrar liberdade de uso, clareza de política, aderência às regras internas e capacidade de gestão."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "Flexibilidade pode ser positiva quando a empresa sabe exatamente qual problema quer resolver. Sem esse diagnóstico, o modelo flexível pode criar dúvidas sobre categorias, limites e comunicação.",
+          "O vale-refeição tradicional, por outro lado, pode ser mais simples de explicar, mas nem sempre acompanha as expectativas de equipes com rotinas variadas."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco está em adotar um modelo pela tendência do mercado, sem avaliar impacto operacional. Se o benefício fica flexível demais sem governança, o RH pode perder clareza sobre regras e exceções.",
+          "Também é comum subestimar a comunicação. O colaborador precisa entender o que mudou, por que mudou e como usar corretamente."
+        ]
+      },
+      {
+        "heading": "Critérios para comparar os modelos",
+        "bullets": [
+          "Perfil dos colaboradores e principais usos do benefício.",
+          "Regras internas de elegibilidade, categoria e valor.",
+          "Capacidade do fornecedor em limitar, reportar e auditar usos.",
+          "Facilidade de comunicação e suporte ao colaborador.",
+          "Aderência à estratégia de atração, retenção e governança."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A escolha deve partir de um diagnóstico. Empresas com operação padronizada podem priorizar simplicidade. Empresas com perfis diversos podem ganhar com flexibilidade, desde que a política esteja bem desenhada.",
+          "A Consultoria VR ajuda a transformar essa comparação em uma decisão estruturada, sem reduzir o tema a moda ou preferência pessoal."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Benefício flexível é sempre melhor?",
+        "answer": "Não. Ele pode ser melhor para alguns cenários, mas exige política clara, comunicação e gestão adequada."
+      },
+      {
+        "question": "Vale-refeição tradicional ainda faz sentido?",
+        "answer": "Sim. Para muitas empresas, a simplicidade e a clareza operacional continuam sendo vantagens importantes."
+      }
+    ],
+    "publishedAt": "2026-09-10T18:16:45.936Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-09-03T15:00:00.000Z",
     "title": "PAT e vale-alimentação: cuidados antes de revisar a política de benefícios",
     "shortTitle": "PAT e VA",
