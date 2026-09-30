@@ -1113,7 +1113,7 @@ body {
 
 .article-landing__signal p {
   margin: 0;
-  color: rgba(16, 63, 59, 0.68);
+  color: rgba(16, 63, 59, 0.84);
   font-size: 14px;
   line-height: 1.6;
 }
@@ -1132,6 +1132,8 @@ body {
 
 .article-landing__opening h2,
 .article-landing__chapter h2,
+.article-landing__application h2,
+.article-landing__metrics h2,
 .article-landing__consulting h2,
 .article-landing__faq h2,
 .article-landing__related h2 {
@@ -1143,7 +1145,7 @@ body {
 .article-landing__opening-inner > div:last-child p,
 .article-landing__chapter-copy p {
   margin: 0 0 20px;
-  color: rgba(16, 63, 59, 0.78);
+  color: #294f4a;
   font-size: 18px;
   line-height: 1.78;
 }
@@ -1208,6 +1210,83 @@ body {
   line-height: 1.5;
 }
 
+.article-landing__application {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  gap: 9vw;
+  padding: 104px max(28px, calc((100vw - 1064px) / 2));
+  border-top: 1px solid rgba(16, 63, 59, 0.12);
+  background: #fff;
+}
+
+.article-landing__application-intro > p:last-child,
+.article-landing__metrics-heading > p:last-child {
+  color: #294f4a;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.article-landing__application-steps {
+  border-top: 1px solid rgba(16, 63, 59, 0.2);
+}
+
+.article-landing__application-steps article {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(16, 63, 59, 0.2);
+}
+
+.article-landing__application-steps span,
+.article-landing__metrics-grid strong {
+  color: var(--hirayama-amber);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.article-landing__application-steps h3,
+.article-landing__metrics-grid h3 {
+  margin: 0 0 9px;
+  color: var(--hirayama-teal);
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.article-landing__application-steps p,
+.article-landing__metrics-grid p {
+  margin: 0;
+  color: #315752;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.article-landing__metrics {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 9vw;
+  padding: 104px max(28px, calc((100vw - 1064px) / 2));
+  background: #dfeae5;
+}
+
+.article-landing__metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(16, 63, 59, 0.2);
+  border-left: 1px solid rgba(16, 63, 59, 0.2);
+}
+
+.article-landing__metrics-grid article {
+  min-height: 190px;
+  padding: 26px;
+  border-right: 1px solid rgba(16, 63, 59, 0.2);
+  border-bottom: 1px solid rgba(16, 63, 59, 0.2);
+}
+
+.article-landing__metrics-grid h3 {
+  margin-top: 28px;
+}
+
 .article-landing__consulting {
   display: flex;
   align-items: flex-end;
@@ -1227,7 +1306,7 @@ body {
 
 .article-landing__consulting p:not(.article-landing__section-label) {
   max-width: 700px;
-  color: rgba(16, 47, 44, 0.78);
+  color: rgba(16, 47, 44, 0.92);
   font-size: 17px;
   line-height: 1.7;
 }
@@ -1285,7 +1364,7 @@ body {
 
 .article-landing__faq details p {
   max-width: 720px;
-  color: rgba(16, 63, 59, 0.72);
+  color: rgba(16, 63, 59, 0.88);
   line-height: 1.7;
 }
 
@@ -1343,7 +1422,7 @@ body {
 }
 
 .article-landing__related-grid span {
-  color: rgba(16, 63, 59, 0.58);
+  color: rgba(16, 63, 59, 0.76);
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -1367,11 +1446,15 @@ body {
   .article-landing__hero-shade { background: linear-gradient(90deg, rgba(7, 37, 34, 0.96), rgba(7, 37, 34, 0.72)); }
   .article-landing__signals-inner > div,
   .article-landing__opening-inner,
-  .article-landing__chapter-inner { grid-template-columns: 1fr; }
+  .article-landing__chapter-inner,
+  .article-landing__application,
+  .article-landing__metrics { grid-template-columns: 1fr; }
   .article-landing__signal { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(16, 63, 59, 0.14); }
   .article-landing__signal:last-child { border-bottom: 0; }
   .article-landing__opening-inner,
-  .article-landing__chapter-inner { gap: 42px; padding-block: 78px; }
+  .article-landing__chapter-inner,
+  .article-landing__application,
+  .article-landing__metrics { gap: 42px; padding-block: 78px; }
   .article-landing__consulting,
   .article-landing__related-heading { align-items: flex-start; flex-direction: column; }
   .article-landing__related-grid { grid-template-columns: 1fr; gap: 34px; }
@@ -1386,8 +1469,12 @@ body {
   .article-landing__signals-inner,
   .article-landing__opening-inner,
   .article-landing__chapter-inner,
-  .article-landing__faq { padding-left: 20px; padding-right: 20px; }
+  .article-landing__faq,
+  .article-landing__application,
+  .article-landing__metrics { padding-left: 20px; padding-right: 20px; }
   .article-landing__signal { padding-inline: 0; }
+  .article-landing__metrics-grid { grid-template-columns: 1fr; }
+  .article-landing__metrics-grid article { min-height: auto; }
   .article-landing__consulting,
   .article-landing__related { padding-left: 20px; padding-right: 20px; }
 }
