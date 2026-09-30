@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /content/
 Disallow: /tools/
 
 Sitemap: https://www.consultoriavr.com.br/sitemap.xml
