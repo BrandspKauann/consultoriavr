@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { articleDepthFor } from './article-depth.mjs';
 
 const projectDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://www.consultoriavr.com.br';
@@ -324,7 +325,7 @@ function articleContentFor(post) {
   const fallback = basePostContent[post.slug] || {};
   return {
     intro: post.intro?.length ? post.intro : fallback.intro || [post.description],
-    sections: post.sections?.length ? post.sections : fallback.sections || [],
+    sections: [...(post.sections?.length ? post.sections : fallback.sections || []), ...articleDepthFor(post)],
     faq: post.faq?.length ? post.faq : fallback.faq || []
   };
 }
@@ -348,7 +349,7 @@ function renderLandingChapter(section, index) {
   const number = String(index + 1).padStart(2, '0');
   const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n              ');
   if (section.bullets?.length) {
-    return `<section class="article-landing__chapter article-landing__chapter--checklist">
+    return `<section class="article-landing__chapter article-landing__chapter--checklist" id="secao-${index + 1}">
           <div class="article-landing__chapter-inner">
             <div class="article-landing__chapter-heading">
               <span>${number}</span>
@@ -359,7 +360,7 @@ function renderLandingChapter(section, index) {
           </div>
         </section>`;
   }
-  return `<section class="article-landing__chapter${index % 2 ? ' article-landing__chapter--tint' : ''}">
+  return `<section class="article-landing__chapter${index % 2 ? ' article-landing__chapter--tint' : ''}" id="secao-${index + 1}">
           <div class="article-landing__chapter-inner">
             <div class="article-landing__chapter-heading">
               <span>${number}</span>
@@ -460,6 +461,13 @@ ${editorialNav('content')}
         </div>
         </header>
 
+        <nav class="article-landing__index" aria-label="Índice do artigo">
+          <strong>Nesta análise</strong>
+          <ol>${content.sections.map((section, index) => `<li><a href="#secao-${index + 1}">${escapeHtml(section.heading)}</a></li>`).join('')}</ol>
+          <a href="#aplicacao">Plano de ação</a>
+          ${content.faq.length ? '<a href="#faq">Perguntas frequentes</a>' : ''}
+        </nav>
+
         <section class="article-landing__signals" aria-label="Resumo executivo">
           <div class="article-landing__signals-inner">
             <p class="article-landing__section-label">Resumo executivo</p>
@@ -479,7 +487,7 @@ ${editorialNav('content')}
 
         ${content.sections.map(renderLandingChapter).join('\n        ')}
 
-        <section class="article-landing__application">
+        <section class="article-landing__application" id="aplicacao">
           <div class="article-landing__application-intro">
             <p class="article-landing__section-label">Da análise para a rotina</p>
             <h2>Como transformar esta leitura em um plano de ação.</h2>
