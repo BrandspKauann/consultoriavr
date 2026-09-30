@@ -7,6 +7,7 @@ const siteUrl = 'https://www.consultoriavr.com.br';
 const contentDir = path.join(projectDir, 'content');
 const scheduledPath = path.join(contentDir, 'scheduled-posts.json');
 const publishedPath = path.join(contentDir, 'published-scheduled-posts.json');
+const operatorsPath = path.join(contentDir, 'operators.json');
 const publishedAssetsDir = path.join(contentDir, 'published-assets', 'blog');
 const publicScheduledAssetsDir = path.join(projectDir, 'assets', 'blog', 'scheduled');
 const baseSiteLastmod = '2026-08-13';
@@ -84,6 +85,10 @@ function routeFor(post) {
   return `/conteudo/${post.slug}/`;
 }
 
+function operatorRoute(operator) {
+  return `/operadoras/${operator.slug}/`;
+}
+
 function absoluteUrl(value) {
   if (!value) return `${siteUrl}/hero-reuniao-empresarial.jpg`;
   if (value.startsWith('http')) return value;
@@ -120,6 +125,17 @@ function googleTagManagerBody() {
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T636X4P7"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->`;
+}
+
+function editorialNav(current = '') {
+  return `    <nav class="operator-page__nav" aria-label="Navegação principal">
+      <a class="operator-page__brand" href="/">Consultoria<span>VR</span></a>
+      <div>
+        <a href="/#operadoras"${current === 'operators' ? ' aria-current="page"' : ''}>Operadoras</a>
+        <a href="/conteudo/"${current === 'content' ? ' aria-current="page"' : ''}>Conteúdos</a>
+        <a class="operator-page__contact" href="https://wa.link/3gwhbl" rel="noopener">Falar com a equipe</a>
+      </div>
+    </nav>`;
 }
 
 function head({ title, description, keywords = [], canonical, type = 'website', image = '/hero-reuniao-empresarial.jpg', structuredData = [] }) {
@@ -197,6 +213,7 @@ function renderBlogIndex(posts) {
 
   <body>
 ${googleTagManagerBody()}
+${editorialNav('content')}
     <div id="root">
       <main class="seo-fallback" aria-label="Conteúdo da Consultoria VR">
         <header class="seo-fallback__hero">
@@ -322,6 +339,7 @@ function renderArticle(post, posts) {
   })}
   <body>
 ${googleTagManagerBody()}
+${editorialNav('content')}
     <main class="seo-fallback" id="topo" aria-label="Artigo da Consultoria VR">
       <section class="seo-fallback__hero seo-fallback__article">
         <div class="seo-fallback__article-shell">
@@ -381,6 +399,127 @@ ${googleTagManagerBody()}
 `;
 }
 
+function renderOperatorPage(operator, operators) {
+  const route = operatorRoute(operator);
+  const canonical = `${siteUrl}${route}`;
+  const related = operators.filter((item) => item.slug !== operator.slug);
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: operator.title,
+      description: operator.description,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: 'Consultoria VR', url: siteUrl },
+      about: { '@type': 'Organization', name: operator.name }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Operadoras', item: `${siteUrl}/#operadoras` },
+        { '@type': 'ListItem', position: 3, name: operator.name, item: canonical }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: operator.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer }
+      }))
+    }
+  ];
+
+  return `<!doctype html>
+<html lang="pt-BR">
+  ${head({
+    title: `${operator.title} | Consultoria VR`,
+    description: operator.description,
+    keywords: operator.keywords,
+    canonical,
+    image: operator.logo,
+    structuredData
+  })}
+  <body>
+${googleTagManagerBody()}
+${editorialNav('operators')}
+    <main class="seo-fallback operator-page" id="topo" aria-label="Análise da ${escapeHtml(operator.name)}">
+      <header class="operator-page__hero operator-page__hero--${escapeHtml(operator.cardClass)}">
+        <div class="operator-page__hero-inner">
+          <div class="operator-page__hero-copy">
+            <div class="operator-page__breadcrumb"><a href="/">Início</a><span>→</span><a href="/#operadoras">Operadoras</a><span>→</span><strong>${escapeHtml(operator.name)}</strong></div>
+            <p class="operator-page__eyebrow">${escapeHtml(operator.eyebrow)}</p>
+            <h1>${escapeHtml(operator.title)}</h1>
+            <p>${escapeHtml(operator.description)}</p>
+            <a class="operator-page__button" href="https://wa.link/3gwhbl" rel="noopener">Analisar para minha empresa</a>
+          </div>
+          <div class="operator-page__card" aria-label="Cartão ilustrativo da ${escapeHtml(operator.name)}">
+            <span class="operator-page__chip" aria-hidden="true"></span>
+            <img src="${escapeHtml(operator.logo)}" alt="${escapeHtml(operator.logoAlt)}" />
+            <small>Benefícios corporativos</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="operator-page__intro">
+        <p class="operator-page__label">Visão consultiva</p>
+        <h2>O nome da operadora é só o começo da análise.</h2>
+        <p>${escapeHtml(operator.summary)}</p>
+      </section>
+
+      <section class="operator-page__reading">
+        <article>
+          <p class="operator-page__label">Entenda o cenário</p>
+          <h2>Como olhar para a ${escapeHtml(operator.name)}</h2>
+          ${operator.overview.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n          ')}
+        </article>
+        <aside>
+          <h3>Pontos que podem entrar no comparativo</h3>
+          <ul>${operator.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+          <p>Recursos, rede e condições comerciais podem mudar. Confirme sempre a documentação e a proposta oficiais vigentes.</p>
+        </aside>
+      </section>
+
+      <section class="operator-page__checklist">
+        <div>
+          <p class="operator-page__label">Checklist para RH e financeiro</p>
+          <h2>O que validar antes de decidir</h2>
+        </div>
+        <ol>${operator.evaluate.map((item, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(item)}</strong></li>`).join('')}</ol>
+      </section>
+
+      <section class="operator-page__fit">
+        <p class="operator-page__label">Aderência ao perfil</p>
+        <h2>Quando essa alternativa pode entrar na conversa</h2>
+        <p>${escapeHtml(operator.fit)}</p>
+        <a href="/conteudo/como-escolher-cartao-beneficios-corporativos/">Veja como estruturar a comparação completa <span>→</span></a>
+      </section>
+
+      <section class="operator-page__faq" aria-labelledby="operator-faq-title">
+        <p class="operator-page__label">Perguntas frequentes</p>
+        <h2 id="operator-faq-title">Dúvidas sobre ${escapeHtml(operator.name)}</h2>
+        ${operator.faq.map((item) => `<details><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${escapeHtml(item.answer)}</p></details>`).join('\n        ')}
+      </section>
+
+      <section class="operator-page__others" aria-labelledby="other-operators-title">
+        <p class="operator-page__label">Continue comparando</p>
+        <h2 id="other-operators-title">Conheça as outras operadoras</h2>
+        <div>${related.map((item) => `<a href="${escapeHtml(operatorRoute(item))}"><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" loading="lazy" /><span>${escapeHtml(item.name)}</span></a>`).join('')}</div>
+      </section>
+
+      <footer class="seo-fallback__footer">
+        <strong>Consultoria VR by Hirayama</strong>
+        <span>Análise independente de cartões e benefícios corporativos.</span>
+      </footer>
+    </main>
+  </body>
+</html>
+`;
+}
+
 async function copyPublishedAssets(posts) {
   await fs.rm(publicScheduledAssetsDir, { recursive: true, force: true });
   const publishedScheduled = posts.filter((post) => post.source === 'scheduled' && post.image);
@@ -400,15 +539,15 @@ async function writeRoute(route, html) {
   await fs.writeFile(path.join(targetDir, 'index.html'), html, 'utf8');
 }
 
-async function removeFutureScheduledRoutes() {
+async function removeFutureScheduledRoutes(now) {
   const scheduled = await readJson(scheduledPath, []);
-  for (const post of scheduled.filter((item) => item.status !== 'published')) {
+  for (const post of scheduled.filter((item) => item.status !== 'published' || new Date(item.publishAt) > now)) {
     const routeDir = path.join(projectDir, 'conteudo', post.slug);
     await fs.rm(routeDir, { recursive: true, force: true });
   }
 }
 
-function renderSitemap(posts) {
+function renderSitemap(posts, operators) {
   const siteLastmod = process.env.BUILD_DATE || [baseSiteLastmod, ...posts.map((post) => post.publishedAt || post.publishAt || baseSiteLastmod)]
     .map((value) => String(value).slice(0, 10))
     .sort()
@@ -416,6 +555,12 @@ function renderSitemap(posts) {
   const routes = [
     { loc: siteUrl, lastmod: siteLastmod, changefreq: 'weekly', priority: '1.0' },
     { loc: `${siteUrl}/conteudo`, lastmod: siteLastmod, changefreq: 'weekly', priority: '0.8' },
+    ...operators.map((operator) => ({
+      loc: `${siteUrl}${operatorRoute(operator)}`,
+      lastmod: '2026-09-29',
+      changefreq: 'monthly',
+      priority: '0.8'
+    })),
     ...posts.map((post) => ({
       loc: `${siteUrl}${routeFor(post)}`,
       lastmod: (post.publishedAt || post.publishAt || siteLastmod).slice(0, 10),
@@ -444,18 +589,25 @@ function normalizeScheduled(post) {
 }
 
 export async function buildSite() {
-  const publishedScheduled = (await readJson(publishedPath, [])).map(normalizeScheduled);
+  const now = new Date(process.env.BUILD_NOW || Date.now());
+  const publishedScheduled = (await readJson(publishedPath, []))
+    .filter((post) => new Date(post.publishAt) <= now)
+    .map(normalizeScheduled);
+  const operators = await readJson(operatorsPath, []);
   const posts = [...publishedScheduled, ...basePosts]
     .sort((a, b) => new Date(b.publishAt) - new Date(a.publishAt));
 
   await copyPublishedAssets(posts);
-  await removeFutureScheduledRoutes();
+  await removeFutureScheduledRoutes(now);
   await fs.writeFile(path.join(projectDir, 'conteudo', 'index.html'), renderBlogIndex(posts), 'utf8');
   for (const post of publishedScheduled) {
     await writeRoute(routeFor(post), renderArticle(post, posts));
   }
-  await fs.writeFile(path.join(projectDir, 'sitemap.xml'), renderSitemap(posts), 'utf8');
-  console.log(`Build completed with ${posts.length} visible posts (${publishedScheduled.length} scheduled published).`);
+  for (const operator of operators) {
+    await writeRoute(operatorRoute(operator), renderOperatorPage(operator, operators));
+  }
+  await fs.writeFile(path.join(projectDir, 'sitemap.xml'), renderSitemap(posts, operators), 'utf8');
+  console.log(`Build completed with ${posts.length} visible posts (${publishedScheduled.length} scheduled published) and ${operators.length} operator pages.`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

@@ -754,5 +754,1485 @@
       }
     ],
     "publishedAt": "2030-01-01T12:00:00.000Z"
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-10-29T15:00:00.000Z",
+    "title": "Auditoria de benefícios corporativos: quais dados revisar antes da renovação",
+    "shortTitle": "Auditoria antes da renovação",
+    "slug": "auditoria-beneficios-corporativos-dados-antes-renovacao",
+    "category": "Auditoria de benefícios",
+    "description": "Veja quais dados de uso, operação, suporte e rede ajudam o RH a preparar uma renovação de benefícios corporativos com critérios claros.",
+    "keywords": [
+      "auditoria de benefícios corporativos",
+      "renovação de benefícios",
+      "dados de RH",
+      "cartão de benefícios",
+      "gestão de benefícios"
+    ],
+    "hashtags": [
+      "#AuditoriaDeBeneficios",
+      "#GestaoDeRH",
+      "#BeneficiosCorporativos",
+      "#DadosDeRH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Equipe de RH revisando dados para a renovação de benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre auditoria antes da renovação, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Renovar um contrato de benefícios sem revisar a operação do período anterior faz a empresa repetir decisões com pouca evidência. A proposta comercial é apenas uma parte da análise.",
+      "Uma auditoria organizada reúne dados de uso, chamados, rede, cargas, ajustes e percepção dos colaboradores para mostrar o que deve ser mantido, corrigido ou comparado."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A auditoria transforma fatos dispersos em perguntas objetivas. Quantos chamados foram abertos, quais unidades concentraram reclamações e onde o RH precisou intervir manualmente são sinais importantes.",
+          "Também vale separar problemas do fornecedor de problemas da política interna. Sem essa distinção, a empresa pode trocar de operadora e levar o mesmo ruído para o contrato seguinte."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "O risco mais comum é negociar apenas taxa e prazo. Essa abordagem deixa de fora o trabalho operacional, a disponibilidade da rede e a qualidade do suporte durante eventos críticos.",
+          "Outro risco é usar médias gerais que escondem diferenças entre filiais, turnos e perfis de colaboradores. A auditoria precisa observar o contexto de uso."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Consolidar cargas, ajustes, estornos e divergências do período.",
+          "Classificar chamados por motivo, unidade e tempo de solução.",
+          "Revisar aceitação nos locais de uso mais relevantes.",
+          "Ouvir RH, financeiro, gestores e uma amostra de colaboradores.",
+          "Registrar critérios e pesos antes de receber novas propostas."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O resultado da auditoria deve virar uma matriz de renovação. Cada critério recebe peso conforme a realidade da empresa, sem presumir que um fornecedor atende melhor todos os cenários.",
+          "Com esse material, a conversa de renovação fica mais transparente e permite comparar permanência, ajustes contratuais ou nova cotação com a mesma régua."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Auditoria significa que a empresa precisa trocar de fornecedor?",
+        "answer": "Não. A auditoria serve para entender o cenário e pode sustentar a permanência, uma renegociação ou uma nova comparação."
+      },
+      {
+        "question": "Quais áreas devem participar?",
+        "answer": "RH e financeiro costumam liderar, com contribuições de gestores, compras, jurídico e colaboradores conforme o porte e a política da empresa."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-11-05T15:00:00.000Z",
+    "title": "Indicadores de benefícios corporativos: o que acompanhar além do valor carregado",
+    "shortTitle": "Indicadores de benefícios",
+    "slug": "indicadores-beneficios-corporativos-alem-valor-carregado",
+    "category": "Dados e indicadores",
+    "description": "Conheça indicadores de benefícios corporativos para acompanhar adesão, chamados, rede, operação e experiência sem depender apenas do valor carregado.",
+    "keywords": [
+      "indicadores de benefícios corporativos",
+      "dados de benefícios",
+      "KPIs de RH",
+      "gestão de benefícios",
+      "cartão corporativo"
+    ],
+    "hashtags": [
+      "#IndicadoresDeRH",
+      "#DadosDeBeneficios",
+      "#GestaoDeBeneficios",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Painel com indicadores de benefícios corporativos para análise do RH",
+    "imagePrompt": "Imagem editorial sobre indicadores de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O valor mensal carregado informa quanto a empresa destinou ao benefício, mas não explica se a operação está funcionando bem. Para isso, o RH precisa combinar indicadores financeiros, operacionais e de experiência.",
+      "A leitura não precisa começar com um painel complexo. Poucos indicadores consistentes já ajudam a identificar gargalos e orientar perguntas ao fornecedor."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Indicadores úteis acompanham ativação, cartões bloqueados, chamados, prazo de resposta, ajustes de carga e cobertura da rede. Eles mostram onde a jornada exige intervenção do RH.",
+          "Quando possível, os dados devem ser analisados por unidade ou público de forma agregada. Isso evita conclusões baseadas em uma média que não representa toda a empresa."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Medir apenas volume pode incentivar interpretações erradas. Mais chamados podem indicar problema, mas também podem refletir uma comunicação que orientou os colaboradores a usar o canal correto.",
+          "Também é importante evitar dados pessoais desnecessários. A análise deve respeitar finalidade, acesso e governança definidos pela empresa."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Taxa de ativação e primeiro acesso ao aplicativo.",
+          "Chamados por motivo e tempo de resolução.",
+          "Ocorrências de carga, ajuste, estorno e segunda via.",
+          "Cobertura da rede nas regiões prioritárias.",
+          "Percepção do colaborador em pesquisas curtas e periódicas."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O conjunto de indicadores deve responder às decisões do RH. Se a prioridade é reduzir retrabalho, chamados e exceções merecem mais atenção; se é melhorar acesso, rede e experiência ganham peso.",
+          "O acompanhamento periódico cria uma base comparável para renovação e implantação, sem transformar um número isolado em promessa de resultado."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "É preciso acompanhar muitos indicadores?",
+        "answer": "Não. É melhor começar com poucos indicadores ligados às decisões da empresa e ampliar somente quando houver rotina para analisar e agir."
+      },
+      {
+        "question": "Indicadores permitem comparar operadoras?",
+        "answer": "Sim, desde que sejam coletados com definições equivalentes e interpretados considerando público, política e período analisado."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-11-12T15:00:00.000Z",
+    "title": "SLA de operadora de benefícios: como avaliar suporte antes de contratar",
+    "shortTitle": "SLA e suporte",
+    "slug": "sla-operadora-beneficios-como-avaliar-suporte",
+    "category": "Suporte e atendimento",
+    "description": "Entenda como avaliar SLA, canais, escalonamento e suporte de uma operadora de benefícios antes da contratação ou renovação.",
+    "keywords": [
+      "SLA operadora de benefícios",
+      "suporte cartão de benefícios",
+      "atendimento ao RH",
+      "benefícios corporativos",
+      "gestão de fornecedores"
+    ],
+    "hashtags": [
+      "#SLA",
+      "#SuporteAoRH",
+      "#GestaoDeFornecedores",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-09.png",
+    "imageAlt": "Equipe analisando SLA e suporte de operadora de benefícios",
+    "imagePrompt": "Imagem editorial sobre sla e suporte, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O suporte costuma receber atenção somente quando algo falha. Por isso, avaliar SLA antes da contratação ajuda o RH a entender como ocorrências serão registradas, priorizadas e resolvidas.",
+      "Um prazo escrito no contrato é importante, mas precisa vir acompanhado de canais, responsabilidades, evidências e regras de escalonamento."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "SLA deve diferenciar dúvidas simples de incidentes que impedem uso, afetam uma carga ou atingem muitos colaboradores. Cada situação exige prioridade e comunicação compatíveis.",
+          "Também importa saber quem acompanha a empresa após a implantação. Atendimento comercial, suporte operacional e canal do colaborador cumprem papéis diferentes."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Um SLA genérico pode parecer suficiente até surgir uma ocorrência crítica. Sem classificação, um problema de carga pode entrar na mesma fila de uma dúvida de cadastro.",
+          "Outro risco é depender de conversas sem protocolo. Sem registro, o RH perde histórico e fica difícil avaliar recorrência ou cobrar o fluxo previsto."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Canais disponíveis para RH e colaboradores.",
+          "Prazos por severidade e horário de atendimento.",
+          "Fluxo de escalonamento para incidentes críticos.",
+          "Formato dos relatórios de chamados e causas recorrentes.",
+          "Responsabilidades da empresa e do fornecedor em cada etapa."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A comparação de suporte deve usar situações reais da empresa. Perguntar como o fornecedor trataria uma carga divergente ou cartões não entregues produz evidências mais úteis do que uma descrição ampla.",
+          "O objetivo é escolher um modelo de atendimento compatível com a complexidade da operação, sem assumir que um único formato serve para todas as empresas."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "SLA mais curto significa suporte melhor?",
+        "answer": "Não necessariamente. O prazo precisa ser viável, mensurável e acompanhado de qualidade da solução e comunicação durante o atendimento."
+      },
+      {
+        "question": "O colaborador deve falar direto com a operadora?",
+        "answer": "Depende do tema e do desenho de suporte. O fluxo deve deixar claro o que vai para a operadora e o que permanece com o RH."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-11-19T15:00:00.000Z",
+    "title": "Rede credenciada por CEP: como testar aceitação antes de escolher o cartão",
+    "shortTitle": "Rede por CEP",
+    "slug": "rede-credenciada-por-cep-testar-aceitacao-cartao",
+    "category": "Rede de aceitação",
+    "description": "Aprenda a testar a rede credenciada por CEP, unidade e rotina de uso antes de escolher um cartão de alimentação ou refeição.",
+    "keywords": [
+      "rede credenciada por CEP",
+      "aceitação cartão benefícios",
+      "vale-refeição",
+      "vale-alimentação",
+      "comparação de operadoras"
+    ],
+    "hashtags": [
+      "#RedeCredenciada",
+      "#ValeRefeicao",
+      "#ValeAlimentacao",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-10.png",
+    "imageAlt": "Mapa com pontos de aceitação de cartão de benefícios por região",
+    "imagePrompt": "Imagem editorial sobre rede por cep, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Listas amplas de estabelecimentos não garantem que o cartão funcione bem onde os colaboradores vivem, trabalham e fazem refeições. A rede precisa ser testada a partir da geografia real da empresa.",
+      "Uma análise por CEP e unidade ajuda a identificar vazios de cobertura antes que a implantação transforme essa descoberta em reclamação."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "O teste deve incluir bairros próximos às unidades, rotas de transporte e cidades com concentração de colaboradores. Para equipes externas, a análise pode considerar corredores de deslocamento.",
+          "Também vale separar alimentação, refeição e outras categorias. Um estabelecimento conhecido pode aceitar uma modalidade e não outra."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Consultar apenas capitais ou grandes redes pode esconder dificuldades em cidades menores e regiões industriais. A quantidade total de credenciados não substitui a relevância local.",
+          "A rede também muda ao longo do tempo. Por isso, a empresa precisa entender como atualizações, contestações e solicitações de credenciamento são tratadas."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Selecionar CEPs representativos de cada unidade.",
+          "Testar estabelecimentos de diferentes portes e categorias.",
+          "Confirmar modalidade aceita e condições de uso.",
+          "Registrar pontos críticos e alternativas próximas.",
+          "Entender o processo de atualização e expansão da rede."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A rede deve receber peso proporcional ao perfil da empresa. Operações concentradas podem testar uma amostra menor; equipes distribuídas exigem análise mais ampla e recorrente.",
+          "O resultado não aponta uma rede universalmente superior. Ele mostra qual cobertura se aproxima melhor do uso esperado em cada cenário."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "A lista no aplicativo é suficiente para validar a rede?",
+        "answer": "Ela é um ponto de partida. Uma amostra prática por região ajuda a confirmar disponibilidade e modalidade aceita."
+      },
+      {
+        "question": "Como avaliar empresas com colaboradores em muitas cidades?",
+        "answer": "Priorize cidades com maior concentração, regiões críticas e perfis diferentes, documentando a amostra e as limitações da análise."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-11-26T15:00:00.000Z",
+    "title": "Benefícios corporativos em empresas com várias unidades: como padronizar sem ignorar diferenças",
+    "shortTitle": "Benefícios multiunidade",
+    "slug": "beneficios-corporativos-varias-unidades-padronizar",
+    "category": "Operação multiunidade",
+    "description": "Veja como organizar benefícios corporativos em várias unidades conciliando padrão, rede local, governança e necessidades diferentes.",
+    "keywords": [
+      "benefícios corporativos várias unidades",
+      "gestão multiunidade",
+      "política de benefícios",
+      "rede credenciada",
+      "RH corporativo"
+    ],
+    "hashtags": [
+      "#GestaoMultiunidade",
+      "#PoliticaDeBeneficios",
+      "#RHCorporativo",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Mapa de unidades empresariais conectado a uma política de benefícios",
+    "imagePrompt": "Imagem editorial sobre benefícios multiunidade, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Empresas com várias unidades precisam equilibrar consistência e contexto local. Uma regra única facilita governança, mas pode falhar se rede, jornada ou perfil de uso variar muito entre regiões.",
+      "O desenho deve começar pelaquilo que precisa ser comum e pelo que pode receber tratamento específico sem virar exceção permanente."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Elegibilidade, calendário, responsáveis e critérios de aprovação costumam funcionar melhor quando padronizados. Já rede e comunicação podem exigir adaptação regional.",
+          "Mapear diferenças antes da contratação evita que a matriz escolha com base em sua própria realidade e transfira o problema para filiais."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Exceções não documentadas criam tratamento desigual e dificultam conciliação. No extremo oposto, uma padronização rígida pode manter um benefício pouco utilizável em certas localidades.",
+          "Outro risco é descentralizar cadastros sem controles de acesso e datas de corte, aumentando divergências entre folha, fornecedor e financeiro."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Definir regras corporativas que não mudam por unidade.",
+          "Mapear necessidades locais e cobertura por região.",
+          "Estabelecer responsáveis, acessos e datas de corte.",
+          "Criar comunicação central com complementos regionais.",
+          "Acompanhar indicadores por unidade sem expor indivíduos."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A matriz de comparação pode combinar critérios corporativos e regionais. Assim, a empresa enxerga onde uma solução atende de forma consistente e onde será necessário um plano operacional adicional.",
+          "A decisão deve documentar compensações e responsabilidades, evitando promessas de uniformidade que a rede ou a operação não conseguem entregar."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Todas as unidades precisam usar exatamente o mesmo benefício?",
+        "answer": "Não necessariamente. A empresa pode definir um padrão e justificar adaptações quando houver diferenças relevantes de rede ou operação."
+      },
+      {
+        "question": "Como evitar excesso de exceções?",
+        "answer": "Use critérios objetivos, responsáveis definidos e revisão periódica para impedir que decisões temporárias se tornem regras informais."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-12-03T15:00:00.000Z",
+    "title": "Admissão e desligamento no cartão de benefícios: controles para evitar divergências",
+    "shortTitle": "Admissão e desligamento",
+    "slug": "admissao-desligamento-cartao-beneficios-controles",
+    "category": "Operação de RH",
+    "description": "Organize admissões, desligamentos e alterações no cartão de benefícios com controles de corte, evidência e conciliação.",
+    "keywords": [
+      "admissão cartão de benefícios",
+      "desligamento benefícios",
+      "operação de RH",
+      "gestão de cartões",
+      "conciliação de benefícios"
+    ],
+    "hashtags": [
+      "#OperacaoDeRH",
+      "#Admissao",
+      "#Desligamento",
+      "#GestaoDeBeneficios",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Fluxo de admissão e desligamento integrado à gestão de benefícios",
+    "imagePrompt": "Imagem editorial sobre admissão e desligamento, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Admissões e desligamentos concentram boa parte das exceções na gestão de benefícios. Datas, proporcionalidade, envio de dados e confirmação precisam conversar com folha e fornecedor.",
+      "Um fluxo simples e documentado reduz dependência de memória e ajuda o RH a identificar rapidamente onde uma divergência começou."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "O processo deve indicar fonte do dado, data de corte, responsável pelo envio e evidência de processamento. Alterações salariais, transferências e afastamentos também precisam de regra.",
+          "A confirmação do fornecedor é parte do fluxo. Enviar uma planilha não garante que todas as movimentações foram aceitas sem erro."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Sem reconciliação, um colaborador pode ficar sem carga ou permanecer ativo após desligamento. Correções posteriores consomem tempo e podem afetar a experiência.",
+          "Processos diferentes por unidade ou analista dificultam auditoria e continuidade em férias, substituições ou crescimento da equipe."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Definir fonte oficial para cada dado cadastral.",
+          "Documentar cortes, proporcionalidade e exceções.",
+          "Exigir retorno de processamento do fornecedor.",
+          "Conciliar movimentações com folha e faturamento.",
+          "Manter trilha de alterações e responsáveis."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "Ao comparar fornecedores, o RH deve testar como essas movimentações acontecem no portal ou integração. O cenário real revela mais do que uma demonstração genérica.",
+          "A escolha precisa considerar volume, frequência e capacidade interna, sem pressupor que mais automação elimina a necessidade de controles."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Qual é o principal controle em admissões?",
+        "answer": "Garantir que dado, elegibilidade, valor e data de início sejam confirmados antes da primeira carga."
+      },
+      {
+        "question": "Integração elimina erros de desligamento?",
+        "answer": "Não por completo. Integrações reduzem tarefas manuais, mas ainda exigem regras, retornos e reconciliação de exceções."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-12-10T15:00:00.000Z",
+    "title": "Conciliação de benefícios corporativos: como comparar carga, fatura e folha",
+    "shortTitle": "Conciliação de benefícios",
+    "slug": "conciliacao-beneficios-corporativos-carga-fatura-folha",
+    "category": "Financeiro e RH",
+    "description": "Entenda como conciliar cargas, faturas e folha para localizar divergências na gestão de benefícios corporativos.",
+    "keywords": [
+      "conciliação de benefícios corporativos",
+      "fatura cartão benefícios",
+      "carga de benefícios",
+      "folha de pagamento",
+      "financeiro e RH"
+    ],
+    "hashtags": [
+      "#Conciliacao",
+      "#FinanceiroERH",
+      "#GestaoDeBeneficios",
+      "#FolhaDePagamento",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-09.png",
+    "imageAlt": "Planilha de conciliação entre carga, fatura e folha de benefícios",
+    "imagePrompt": "Imagem editorial sobre conciliação de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Carga, fatura e folha representam momentos diferentes da operação. Quando não são comparadas com uma chave comum, divergências aparecem tarde e exigem investigação manual.",
+      "A conciliação cria uma rotina de verificação antes do fechamento e registra como diferenças serão tratadas."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "O ponto de partida é definir identificadores consistentes, como matrícula e competência. Depois, a empresa compara elegibilidade, valor previsto, valor carregado e valor faturado.",
+          "A análise também precisa considerar ajustes retroativos, estornos, admissões fora do corte e desligamentos processados em datas distintas."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Somar valores totais pode esconder divergências individuais que se compensam. A fatura pode fechar no total e ainda conter colaboradores ou valores incorretos.",
+          "Outro risco é corrigir sem registrar causa. Sem histórico, o mesmo tipo de diferença volta a aparecer no mês seguinte."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Usar competência e matrícula como chaves de comparação.",
+          "Separar carga regular, ajuste e estorno.",
+          "Comparar previsto, processado e faturado por colaborador.",
+          "Classificar causas e responsáveis pelas diferenças.",
+          "Registrar aprovação antes do pagamento da fatura."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O fornecedor deve ser avaliado também pela qualidade dos arquivos, relatórios e retornos disponíveis para conciliação. O formato precisa conversar com a maturidade da empresa.",
+          "Não existe uma ferramenta única adequada a todos os portes. O processo deve ser proporcional ao volume, mantendo rastreabilidade suficiente."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Conciliação pode ser feita apenas pelo total da fatura?",
+        "answer": "O total ajuda, mas a conferência por colaborador e tipo de movimento identifica diferenças que podem se compensar no valor agregado."
+      },
+      {
+        "question": "Quem deve aprovar a conciliação?",
+        "answer": "A responsabilidade varia, mas RH e financeiro precisam ter papéis definidos e evidência da validação antes do pagamento."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-12-17T15:00:00.000Z",
+    "title": "Estorno e saldo residual em benefícios: regras que o RH deve documentar",
+    "shortTitle": "Estorno e saldo residual",
+    "slug": "estorno-saldo-residual-beneficios-regras-rh",
+    "category": "Governança operacional",
+    "description": "Veja quais regras de estorno, saldo residual e desligamento devem ser documentadas na gestão de cartões de benefícios.",
+    "keywords": [
+      "estorno de benefícios",
+      "saldo residual cartão",
+      "desligamento de colaborador",
+      "governança de benefícios",
+      "RH"
+    ],
+    "hashtags": [
+      "#GovernancaDeBeneficios",
+      "#Estorno",
+      "#SaldoResidual",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-10.png",
+    "imageAlt": "Equipe revisando regras de estorno e saldo residual de benefícios",
+    "imagePrompt": "Imagem editorial sobre estorno e saldo residual, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Estornos e saldos residuais geram dúvidas porque envolvem regra contratual, política interna e situação do colaborador. A empresa precisa saber o que pode solicitar e como registrar cada decisão.",
+      "Documentar o fluxo antes de uma ocorrência evita respostas improvisadas e expectativas incompatíveis com o contrato."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A política deve diferenciar carga incorreta, duplicidade, desligamento e ajuste autorizado. Cada caso pode ter prazo, evidência e tratamento próprios.",
+          "O fornecedor precisa explicar como solicitações são abertas, quais informações são exigidas e como o resultado aparece em relatórios ou faturas."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Prometer recuperação de saldo sem validar regras pode criar conflito com colaborador e financeiro. O tratamento depende do produto, do contrato e da situação concreta.",
+          "Também há risco quando ajustes são feitos fora do fluxo oficial, sem aprovação ou conciliação posterior."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Mapear tipos de estorno previstos no contrato.",
+          "Definir aprovadores e documentos necessários.",
+          "Registrar protocolo, valor, motivo e competência.",
+          "Acompanhar retorno no saldo ou faturamento.",
+          "Revisar a política com jurídico e contabilidade quando necessário."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "Na comparação de operadoras, a empresa pode solicitar exemplos de relatórios e simular ocorrências. Isso ajuda a avaliar clareza e esforço operacional.",
+          "A decisão deve considerar governança e previsibilidade do processo, sem assumir que todo saldo poderá ser recuperado."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Todo saldo pode ser estornado após desligamento?",
+        "answer": "Não é possível generalizar. O tratamento depende do produto, contrato, regras aplicáveis e circunstâncias da movimentação."
+      },
+      {
+        "question": "Por que registrar cada solicitação?",
+        "answer": "O registro sustenta conciliação, auditoria e aprendizado sobre as causas que geram ajustes recorrentes."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-12-24T15:00:00.000Z",
+    "title": "Pesquisa de benefícios com colaboradores: perguntas que geram decisões úteis",
+    "shortTitle": "Pesquisa com colaboradores",
+    "slug": "pesquisa-beneficios-colaboradores-perguntas-decisoes",
+    "category": "Experiência do colaborador",
+    "description": "Monte uma pesquisa de benefícios com perguntas sobre acesso, rede, comunicação e suporte que ajudem o RH a tomar decisões.",
+    "keywords": [
+      "pesquisa de benefícios",
+      "experiência do colaborador",
+      "rede de aceitação",
+      "comunicação de benefícios",
+      "RH"
+    ],
+    "hashtags": [
+      "#ExperienciaDoColaborador",
+      "#PesquisaDeBeneficios",
+      "#RH",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Colaboradores respondendo pesquisa sobre benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre pesquisa com colaboradores, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Perguntar apenas se o colaborador está satisfeito produz uma resposta ampla e difícil de transformar em ação. Uma pesquisa útil separa acesso, entendimento, rede e suporte.",
+      "O objetivo não é eleger uma marca por popularidade, mas identificar barreiras e prioridades da política de benefícios."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Perguntas fechadas ajudam a comparar períodos, enquanto campos abertos revelam situações não previstas. O questionário deve ser curto o suficiente para estimular participação.",
+          "Segmentações por unidade ou perfil podem ser úteis quando apresentadas de forma agregada e com cuidado para não identificar respondentes."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Uma pesquisa longa tende a reduzir respostas e concentrar participação em quem teve experiências extremas. Isso pode distorcer a leitura.",
+          "Outro risco é perguntar sem comunicar o que será feito com os resultados. A falta de retorno reduz confiança em consultas futuras."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Perguntar se o benefício e suas regras são compreendidos.",
+          "Avaliar facilidade de uso do aplicativo e cartão.",
+          "Medir acesso nos locais relevantes para o público.",
+          "Identificar temas de suporte e comunicação.",
+          "Divulgar síntese dos resultados e próximos passos."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "Os resultados devem ser cruzados com dados operacionais. Uma percepção de rede fraca, por exemplo, pode orientar testes por CEP e não apenas uma troca imediata.",
+          "A pesquisa acrescenta a voz do colaborador à análise, sem substituir critérios financeiros, contratuais e de governança."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "A pesquisa deve ser anônima?",
+        "answer": "O anonimato pode aumentar confiança, desde que a empresa explique finalidade, tratamento e limites de segmentação."
+      },
+      {
+        "question": "Satisfação baixa indica necessidade de troca?",
+        "answer": "Não automaticamente. É preciso entender se a causa está na rede, política, comunicação, suporte ou no fornecedor."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2026-12-31T15:00:00.000Z",
+    "title": "Comunicação de benefícios para gestores: como reduzir exceções e respostas contraditórias",
+    "shortTitle": "Comunicação para gestores",
+    "slug": "comunicacao-beneficios-gestores-reduzir-excecoes",
+    "category": "Comunicação interna",
+    "description": "Estruture a comunicação de benefícios para gestores com regras, encaminhamentos e respostas consistentes para o time.",
+    "keywords": [
+      "comunicação de benefícios",
+      "gestores de pessoas",
+      "política de benefícios",
+      "comunicação interna RH",
+      "benefícios corporativos"
+    ],
+    "hashtags": [
+      "#ComunicacaoInterna",
+      "#GestoresDePessoas",
+      "#PoliticaDeBeneficios",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Gestores recebendo orientação sobre política de benefícios",
+    "imagePrompt": "Imagem editorial sobre comunicação para gestores, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Gestores são procurados quando o colaborador tem dúvidas, mesmo que não sejam responsáveis pela operação do benefício. Sem orientação, respostas diferentes criam expectativas e exceções.",
+      "Uma comunicação específica para liderança ajuda a preservar a política e encaminhar cada tema ao canal correto."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "O gestor precisa conhecer elegibilidade, calendário, principais limites e canais de suporte. Não precisa dominar detalhes operacionais que pertencem ao RH ou fornecedor.",
+          "Materiais curtos, perguntas frequentes e uma régua para momentos de mudança costumam ser mais úteis do que manuais extensos."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Quando a liderança promete uma exceção antes de consultar a política, o RH fica responsável por negar ou operacionalizar algo não previsto.",
+          "Também há risco de compartilhar informações pessoais em canais inadequados. O encaminhamento deve respeitar confidencialidade e necessidade de acesso."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Explicar o que o gestor pode responder diretamente.",
+          "Definir temas que devem ser encaminhados ao RH.",
+          "Disponibilizar FAQ com linguagem simples.",
+          "Orientar como tratar exceções e informações pessoais.",
+          "Atualizar gestores antes de comunicar mudanças ao time."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A comunicação deve fazer parte da avaliação de implantação e renovação. Fornecedores podem oferecer materiais, mas a empresa precisa adaptá-los à sua política.",
+          "O resultado esperado é consistência de orientação, não a transferência da responsabilidade operacional para o gestor."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Gestores devem acessar o portal de benefícios?",
+        "answer": "Somente quando houver necessidade operacional e permissão definida. Muitos temas podem ser resolvidos com orientação e encaminhamento."
+      },
+      {
+        "question": "Como evitar respostas diferentes entre áreas?",
+        "answer": "Mantenha uma fonte oficial de regras, FAQ atualizado e canais claros para dúvidas e exceções."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-01-07T15:00:00.000Z",
+    "title": "RFP de benefícios corporativos: como criar uma cotação comparável entre operadoras",
+    "shortTitle": "RFP de benefícios",
+    "slug": "rfp-beneficios-corporativos-cotacao-comparavel-operadoras",
+    "category": "Seleção de fornecedores",
+    "description": "Aprenda a estruturar uma RFP de benefícios corporativos com escopo, cenários e critérios comparáveis entre operadoras.",
+    "keywords": [
+      "RFP benefícios corporativos",
+      "cotação de operadoras",
+      "seleção de fornecedor",
+      "cartão de benefícios",
+      "compras e RH"
+    ],
+    "hashtags": [
+      "#RFP",
+      "#SelecaoDeFornecedores",
+      "#ComprasERH",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-09.png",
+    "imageAlt": "Documento de RFP para comparação de operadoras de benefícios",
+    "imagePrompt": "Imagem editorial sobre rfp de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Propostas difíceis de comparar geralmente nascem de pedidos diferentes. Uma RFP organiza o escopo e solicita evidências equivalentes para que RH, compras e financeiro usem a mesma base.",
+      "O documento não precisa ser excessivamente longo, mas deve refletir volume, localidades, política e situações críticas da operação."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Além de preço e prazo, a RFP pode incluir rede, implantação, suporte, relatórios, segurança, movimentações e conciliação. Cenários práticos ajudam a testar respostas.",
+          "Os critérios e pesos devem ser definidos antes da leitura das propostas. Isso reduz a influência de apresentações mais atraentes sobre necessidades reais."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Perguntas abertas demais geram respostas comerciais difíceis de validar. No extremo oposto, requisitos excessivos podem excluir alternativas sem relação com o problema da empresa.",
+          "Outro risco é comparar itens com premissas diferentes, como volumes, prazos de implantação ou níveis de suporte."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Descrever população, unidades e calendário operacional.",
+          "Informar categorias, valores e regras relevantes.",
+          "Solicitar evidências de rede, suporte e relatórios.",
+          "Incluir cenários de implantação e tratamento de incidentes.",
+          "Definir critérios, pesos e responsáveis pela avaliação."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A RFP cria comparabilidade, mas não substitui validação. Demonstrações, testes de rede, referências e revisão contratual complementam a análise.",
+          "A escolha deve registrar compensações entre critérios, evitando declarar uma operadora superior fora do contexto avaliado."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "RFP serve apenas para empresas grandes?",
+        "answer": "Não. Empresas menores podem usar uma versão enxuta para garantir que todas as propostas respondam às mesmas perguntas."
+      },
+      {
+        "question": "Preço deve ter o maior peso?",
+        "answer": "Depende da estratégia e do risco operacional. O peso deve ser definido conforme prioridades e não por uma regra universal."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-01-14T15:00:00.000Z",
+    "title": "Projeto-piloto de benefícios: quando testar antes de migrar toda a empresa",
+    "shortTitle": "Projeto-piloto",
+    "slug": "projeto-piloto-beneficios-testar-antes-migracao",
+    "category": "Implantação",
+    "description": "Entenda quando um projeto-piloto pode ajudar a testar operação, rede e comunicação antes da migração de benefícios.",
+    "keywords": [
+      "projeto-piloto benefícios",
+      "migração de benefícios",
+      "teste de operadora",
+      "implantação de cartão",
+      "gestão de RH"
+    ],
+    "hashtags": [
+      "#ProjetoPiloto",
+      "#MigracaoDeBeneficios",
+      "#Implantacao",
+      "#GestaoDeRH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-10.png",
+    "imageAlt": "Grupo piloto testando uma nova solução de benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre projeto-piloto, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Um projeto-piloto pode reduzir incertezas quando a empresa tem públicos diferentes, muitas unidades ou uma operação difícil de simular em apresentação.",
+      "O teste precisa de objetivo, amostra, duração e critérios de saída. Sem isso, vira uma experiência isolada que não sustenta a decisão."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A amostra deve representar situações relevantes: localidades, turnos, perfis de uso e rotinas do RH. O piloto também precisa testar carga, suporte e relatórios.",
+          "Antes de começar, a empresa define quais evidências indicam continuidade, ajuste ou interrupção. Isso evita interpretar o resultado apenas pela impressão dos participantes."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Uma amostra conveniente pode esconder problemas presentes em outras unidades. Pilotos muito curtos também podem não incluir fechamento, segunda carga ou incidentes.",
+          "É importante comunicar que o teste não garante contratação e que regras temporárias podem mudar após a avaliação."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Definir hipótese e decisões que o piloto deve apoiar.",
+          "Selecionar amostra representativa e documentada.",
+          "Testar jornada do colaborador e operação do RH.",
+          "Registrar ocorrências, tempos e percepções.",
+          "Planejar critérios de expansão, ajuste ou encerramento."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O piloto é útil quando responde a dúvidas que documentos e demonstrações não resolvem. Ele não deve atrasar a decisão sem propósito claro.",
+          "Os resultados precisam ser comparados com os critérios definidos e com as limitações da amostra, sem prometer o mesmo desempenho em todos os públicos."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quanto tempo deve durar um piloto?",
+        "answer": "Depende do que será testado. O período precisa incluir os eventos relevantes, como carga, uso, suporte e ao menos um fechamento quando aplicável."
+      },
+      {
+        "question": "Todos os fornecedores oferecem piloto?",
+        "answer": "Não. Formato, condições e viabilidade variam, por isso a possibilidade deve ser discutida no processo de seleção."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-01-21T15:00:00.000Z",
+    "title": "LGPD na gestão de benefícios: cuidados com cadastro, acesso e relatórios",
+    "shortTitle": "LGPD e benefícios",
+    "slug": "lgpd-gestao-beneficios-cadastro-acesso-relatorios",
+    "category": "Privacidade e governança",
+    "description": "Veja cuidados práticos de LGPD na gestão de benefícios, incluindo cadastro, perfis de acesso, relatórios e compartilhamento com fornecedores.",
+    "keywords": [
+      "LGPD benefícios corporativos",
+      "dados pessoais RH",
+      "gestão de acessos",
+      "fornecedor de benefícios",
+      "privacidade"
+    ],
+    "hashtags": [
+      "#LGPD",
+      "#Privacidade",
+      "#DadosPessoais",
+      "#GovernancaDeRH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Gestão segura de dados pessoais em benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre lgpd e benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "A gestão de benefícios envolve dados cadastrais, vínculos, valores e movimentações. Organizar quem acessa cada informação é parte da operação, não apenas uma exigência documental.",
+      "A empresa deve alinhar finalidade, fluxo e retenção com suas áreas responsáveis e com o fornecedor, considerando as características do produto."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Perfis de acesso precisam seguir responsabilidades. Analistas, gestores e fornecedores não necessitam das mesmas informações nem das mesmas permissões.",
+          "Relatórios agregados podem apoiar decisões sem expor detalhes individuais desnecessários. Integrações e arquivos também precisam de canais e controles definidos."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Planilhas enviadas por canais informais, acessos compartilhados e usuários que permanecem ativos após mudança de função aumentam exposição.",
+          "Outro risco é coletar dados sem necessidade clara ou manter arquivos por tempo indefinido. A política deve ser discutida com responsáveis por privacidade e jurídico."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Mapear dados enviados e finalidade de cada campo.",
+          "Revisar perfis de acesso e segregação de funções.",
+          "Definir canais seguros para arquivos e integrações.",
+          "Estabelecer retenção, descarte e revisão periódica.",
+          "Documentar incidentes e contatos de resposta."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "Na seleção de fornecedor, segurança deve ser avaliada com evidências compatíveis com o risco e o porte da operação. Questionários e contratos precisam conversar com a prática.",
+          "Este conteúdo é educativo e não substitui avaliação jurídica ou de privacidade específica para a empresa."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "O RH pode compartilhar todos os dados cadastrais com a operadora?",
+        "answer": "A empresa deve compartilhar apenas os dados necessários para a finalidade definida, conforme sua avaliação jurídica e de privacidade."
+      },
+      {
+        "question": "Relatórios de uso podem identificar colaboradores?",
+        "answer": "A necessidade e o nível de detalhe devem ser avaliados. Para decisões gerenciais, dados agregados costumam reduzir exposição."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-01-28T15:00:00.000Z",
+    "title": "PAT e documentação interna: como alinhar política, operação e fornecedor",
+    "shortTitle": "PAT e documentação",
+    "slug": "pat-documentacao-interna-politica-operacao-fornecedor",
+    "category": "PAT e compliance",
+    "description": "Organize a documentação interna relacionada ao PAT e aos benefícios de alimentação antes de revisar regras ou fornecedores.",
+    "keywords": [
+      "PAT documentação interna",
+      "política de alimentação",
+      "vale-alimentação",
+      "vale-refeição",
+      "compliance de benefícios"
+    ],
+    "hashtags": [
+      "#PAT",
+      "#ComplianceDeBeneficios",
+      "#ValeAlimentacao",
+      "#ValeRefeicao",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Documentação de política de alimentação e benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre pat e documentação, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Política, contrato e operação precisam contar a mesma história. Quando documentos internos não acompanham a prática, dúvidas aparecem em admissões, afastamentos, transferências e auditorias.",
+      "A revisão deve mapear regras atuais e pontos que exigem orientação especializada, sem transformar o fornecedor na única fonte de decisão."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A documentação pode incluir elegibilidade, valores, calendário, tratamento de exceções, responsabilidades e canais de atendimento. Ela precisa ser acessível a quem opera e aprova.",
+          "Também é importante verificar se comunicações e sistemas refletem a regra vigente. Uma política correta no papel não resolve uma operação configurada de forma diferente."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Copiar uma política de outra empresa ignora convenções, contratos e decisões internas. Generalizações sobre PAT também podem levar a conclusões inadequadas.",
+          "Mudanças devem ser revisadas com jurídico, contabilidade e demais responsáveis conforme o contexto da empresa."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Reunir políticas, contratos, comunicados e configurações atuais.",
+          "Comparar regra documentada com a prática operacional.",
+          "Mapear exceções recorrentes e seus aprovadores.",
+          "Revisar linguagem e responsabilidades internas.",
+          "Submeter pontos regulatórios à orientação especializada."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O fornecedor deve sustentar a política definida, e não obrigar a empresa a improvisar regras a partir de limitações desconhecidas.",
+          "A escolha responsável considera capacidade operacional e revisão técnica, sem prometer conformidade automática pela contratação de uma marca."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Trocar de operadora atualiza automaticamente a política interna?",
+        "answer": "Não. A empresa precisa revisar seus documentos, comunicações e processos, independentemente do fornecedor escolhido."
+      },
+      {
+        "question": "Este conteúdo substitui orientação sobre PAT?",
+        "answer": "Não. É um guia de organização e deve ser complementado por avaliação jurídica, contábil e trabalhista aplicável."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-02-04T15:00:00.000Z",
+    "title": "Benefícios para equipes remotas e híbridas: critérios para uma política mais coerente",
+    "shortTitle": "Equipes remotas e híbridas",
+    "slug": "beneficios-equipes-remotas-hibridas-criterios-politica",
+    "category": "Política de benefícios",
+    "description": "Avalie benefícios para equipes remotas e híbridas considerando localização, rotina, rede, elegibilidade e comunicação.",
+    "keywords": [
+      "benefícios equipes remotas",
+      "benefícios trabalho híbrido",
+      "política de benefícios",
+      "rede de aceitação",
+      "RH"
+    ],
+    "hashtags": [
+      "#TrabalhoRemoto",
+      "#TrabalhoHibrido",
+      "#PoliticaDeBeneficios",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-09.png",
+    "imageAlt": "Equipe híbrida conectada por uma política de benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre equipes remotas e híbridas, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Equipes remotas e híbridas ampliam a diversidade de localidades e rotinas. Um benefício desenhado para o entorno do escritório pode não ter o mesmo valor para quem trabalha longe dele.",
+      "A política precisa equilibrar equidade, viabilidade operacional e clareza de propósito, sem confundir igualdade com experiências idênticas."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Mapear localização e jornada ajuda a testar rede e entender como o benefício será usado. A empresa também deve definir se diferenças de regime alteram elegibilidade ou valor.",
+          "Comunicação e suporte digital ganham importância quando o colaborador não tem contato frequente com o RH presencial."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Criar exceções individuais sem critério pode gerar percepção de injustiça e aumentar o trabalho de gestão. Uma regra única, porém, pode ignorar barreiras reais de acesso.",
+          "Outro risco é contratar flexibilidade sem explicar categorias, limites e finalidade, deixando a política dependente da interface do aplicativo."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Mapear localidades e regimes de trabalho.",
+          "Testar rede e jornada digital por amostra.",
+          "Definir critérios de elegibilidade e eventuais diferenças.",
+          "Planejar suporte acessível fora do escritório.",
+          "Revisar percepção e uso após a implantação."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A comparação deve considerar o perfil distribuído e a capacidade do RH de administrar regras. Soluções mais flexíveis podem ser adequadas em alguns cenários, mas exigem governança.",
+          "A escolha deve ser explicável aos colaboradores e revisável conforme a distribuição do time muda."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Trabalho remoto exige benefício diferente?",
+        "answer": "Não existe uma resposta única. Localização, política, orçamento e objetivo do benefício devem orientar a decisão."
+      },
+      {
+        "question": "Como avaliar rede para um time distribuído?",
+        "answer": "Use amostras por região, concentração de colaboradores e situações críticas, registrando as limitações da cobertura analisada."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-02-11T15:00:00.000Z",
+    "title": "Benefícios para temporários e sazonais: como planejar elegibilidade e operação",
+    "shortTitle": "Temporários e sazonais",
+    "slug": "beneficios-temporarios-sazonais-elegibilidade-operacao",
+    "category": "Elegibilidade",
+    "description": "Planeje benefícios para temporários e sazonais com regras de elegibilidade, datas, cadastro e desligamento compatíveis com a operação.",
+    "keywords": [
+      "benefícios para temporários",
+      "benefícios sazonais",
+      "elegibilidade de benefícios",
+      "cadastro de colaboradores",
+      "RH operacional"
+    ],
+    "hashtags": [
+      "#TrabalhoTemporario",
+      "#Sazonalidade",
+      "#Elegibilidade",
+      "#RHOperacional",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-10.png",
+    "imageAlt": "Planejamento de benefícios para colaboradores temporários e sazonais",
+    "imagePrompt": "Imagem editorial sobre temporários e sazonais, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Picos de contratação comprimem prazos e aumentam volume de cadastros, cargas e desligamentos. Se a política não estiver definida, o RH decide casos durante a operação.",
+      "Planejar elegibilidade e calendário antes da temporada reduz improviso e torna a comunicação mais consistente."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A empresa precisa definir quem participa, quando começa, como calcula valores e o que acontece no encerramento do vínculo. Essas decisões devem conversar com contratos e orientação interna.",
+          "O fornecedor também precisa suportar o volume e os prazos de emissão, acesso digital e movimentação esperados."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Cadastrar grandes volumes sem validação aumenta duplicidades, dados incompletos e cartões não entregues. Encerrar tarde pode gerar carga ou faturamento indevido.",
+          "Regras comunicadas de forma diferente entre unidades criam expectativa desigual e chamados em períodos já sobrecarregados."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Definir públicos, datas e proporcionalidade.",
+          "Preparar layout e validação de cadastro em lote.",
+          "Confirmar prazo de emissão e alternativa digital.",
+          "Planejar corte e conferência de desligamentos.",
+          "Criar comunicação específica para gestores e temporários."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A avaliação do fornecedor deve incluir capacidade de processar o pico e retornar erros rapidamente. O cenário sazonal precisa aparecer na proposta e no plano de implantação.",
+          "A empresa deve revisar requisitos trabalhistas e contratuais com especialistas, pois este conteúdo não substitui orientação específica."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Temporários devem receber os mesmos benefícios?",
+        "answer": "A elegibilidade depende das regras aplicáveis e da política da empresa, que deve ser revisada com orientação especializada."
+      },
+      {
+        "question": "O cartão digital resolve prazos curtos?",
+        "answer": "Pode ajudar em alguns modelos, mas disponibilidade, cadastro, comunicação e aceitação precisam ser validados."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-02-18T15:00:00.000Z",
+    "title": "Pós-implantação de benefícios: plano de 30, 60 e 90 dias para o RH",
+    "shortTitle": "Pós-implantação 30-60-90",
+    "slug": "pos-implantacao-beneficios-plano-30-60-90-dias",
+    "category": "Implantação",
+    "description": "Organize os primeiros 30, 60 e 90 dias após implantar um cartão de benefícios com indicadores, suporte e ajustes de processo.",
+    "keywords": [
+      "pós-implantação de benefícios",
+      "plano 30 60 90 dias",
+      "cartão de benefícios",
+      "suporte ao RH",
+      "implantação"
+    ],
+    "hashtags": [
+      "#PosImplantacao",
+      "#Plano306090",
+      "#GestaoDeBeneficios",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Cronograma de 30, 60 e 90 dias após implantação de benefícios",
+    "imagePrompt": "Imagem editorial sobre pós-implantação 30-60-90, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O início do uso não encerra a implantação. Os primeiros meses revelam dúvidas, falhas de cadastro, padrões de suporte e diferenças entre o processo desenhado e a rotina real.",
+      "Um plano de 30, 60 e 90 dias organiza acompanhamento e evita que pendências temporárias se tornem parte permanente da operação."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Nos primeiros 30 dias, a prioridade é acesso, carga e atendimento. Aos 60, o RH já pode revisar recorrências e ajustar comunicação. Aos 90, indicadores e responsabilidades ficam mais claros.",
+          "O plano deve ter donos, reuniões objetivas e registro de decisões. Acompanhamento sem ação apenas acumula relatórios."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Encerrar o projeto logo após a primeira carga deixa o RH sozinho justamente quando surgem exceções. Por outro lado, prolongar a implantação sem critérios impede a passagem para a rotina.",
+          "Também é arriscado avaliar sucesso apenas pela ausência de reclamações, pois baixa ativação pode esconder dificuldade de acesso."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Acompanhar ativação, entrega e primeira carga.",
+          "Classificar chamados e corrigir comunicação recorrente.",
+          "Revisar acessos, relatórios e conciliação.",
+          "Formalizar pendências e responsáveis do fornecedor.",
+          "Encerrar o projeto com critérios de operação estável."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O plano pós-implantação deve ser combinado durante a seleção, incluindo disponibilidade do fornecedor e marcos de transição.",
+          "A comparação considera capacidade de acompanhamento, sem prometer uma implantação sem ocorrências."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quando a implantação pode ser considerada encerrada?",
+        "answer": "Quando processos críticos funcionam de forma estável, pendências têm responsáveis e a rotina foi transferida para a operação."
+      },
+      {
+        "question": "Quais indicadores observar primeiro?",
+        "answer": "Ativação, carga, acesso, chamados, prazo de solução e divergências operacionais costumam ser pontos iniciais."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-02-25T15:00:00.000Z",
+    "title": "Custo total do benefício: como incluir operação e retrabalho na comparação",
+    "shortTitle": "Custo total do benefício",
+    "slug": "custo-total-beneficio-operacao-retrabalho-comparacao",
+    "category": "Custos e eficiência",
+    "description": "Calcule o custo total do benefício considerando preço contratado, horas operacionais, erros, suporte e implantação.",
+    "keywords": [
+      "custo total do benefício",
+      "retrabalho do RH",
+      "comparação de operadoras",
+      "eficiência operacional",
+      "benefícios corporativos"
+    ],
+    "hashtags": [
+      "#CustoTotal",
+      "#EficienciaOperacional",
+      "#RetrabalhoDoRH",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Análise do custo total de benefícios corporativos e esforço operacional",
+    "imagePrompt": "Imagem editorial sobre custo total do benefício, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "A condição comercial é visível, mas parte do custo permanece distribuída em horas do RH, correções, chamados, planilhas e atrasos de fechamento.",
+      "Incluir esforço operacional na comparação não garante economia; serve para tornar custos e compensações mais transparentes."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A empresa pode estimar tempo gasto em cadastro, carga, conciliação, suporte e correção. Ocorrências relevantes também ajudam a visualizar impacto de processos frágeis.",
+          "O cálculo deve usar premissas registradas e intervalos, pois nem todo esforço é medido com precisão e volumes mudam ao longo do tempo."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Transformar toda atividade em valor exato pode criar uma falsa precisão. O objetivo é comparar cenários, não produzir uma promessa financeira.",
+          "Outro risco é ignorar valor percebido e qualidade para perseguir apenas menor esforço interno. A análise precisa equilibrar operação e experiência."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Mapear atividades mensais e eventos excepcionais.",
+          "Estimar horas e pessoas envolvidas por processo.",
+          "Registrar erros, retrabalho e tempo de solução.",
+          "Separar custo de implantação e custo recorrente.",
+          "Comparar cenários com as mesmas premissas."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O custo total ajuda a discutir automação, suporte e desenho do processo. Ele pode mostrar que propostas parecidas exigem cargas operacionais diferentes.",
+          "A decisão deve apresentar premissas e incertezas, sem afirmar redução de custo antes de validar o cenário real."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Custo total é o mesmo que preço contratado?",
+        "answer": "Não. Ele combina valores contratados com esforço operacional e impactos mensuráveis definidos pela empresa."
+      },
+      {
+        "question": "É possível prometer economia com esse cálculo?",
+        "answer": "Não. O cálculo apoia comparação e planejamento, mas resultados dependem de implantação, uso e condições reais."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-03-04T15:00:00.000Z",
+    "title": "Política de benefícios flexíveis: como definir categorias, limites e exceções",
+    "shortTitle": "Política de flexíveis",
+    "slug": "politica-beneficios-flexiveis-categorias-limites-excecoes",
+    "category": "Benefícios flexíveis",
+    "description": "Estruture uma política de benefícios flexíveis com categorias, limites, elegibilidade, exceções e comunicação compreensível.",
+    "keywords": [
+      "política de benefícios flexíveis",
+      "categorias de benefícios",
+      "limites de uso",
+      "elegibilidade",
+      "cartão multibenefícios"
+    ],
+    "hashtags": [
+      "#BeneficiosFlexiveis",
+      "#PoliticaDeBeneficios",
+      "#Multibeneficios",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-09.png",
+    "imageAlt": "Categorias e limites organizados em uma política de benefícios flexíveis",
+    "imagePrompt": "Imagem editorial sobre política de flexíveis, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Flexibilidade sem política clara transfere decisões para o momento de uso e aumenta dúvidas sobre categorias, transferências e exceções.",
+      "Uma política bem estruturada explica o propósito do benefício e define como a liberdade será administrada pela empresa e pelo fornecedor."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A empresa precisa definir públicos, valores, categorias, limites e possibilidade de movimentação entre saldos. Regras do produto devem ser compatíveis com a política desejada.",
+          "A comunicação deve usar exemplos e evitar termos técnicos do fornecedor como única explicação para o colaborador."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Categorias amplas demais podem conflitar com a finalidade definida pela empresa. Limites complexos demais dificultam entendimento e suporte.",
+          "Exceções aprovadas sem critério criam precedentes e tornam a configuração mais difícil de auditar."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Definir objetivo de cada categoria oferecida.",
+          "Estabelecer elegibilidade, valores e periodicidade.",
+          "Documentar transferências, limites e exceções.",
+          "Validar configuração, relatórios e comunicação.",
+          "Revisar a política com áreas técnicas responsáveis."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A operadora deve ser comparada pela capacidade de configurar e reportar a política, além da experiência de uso. Mais opções não significam aderência automática.",
+          "O desenho final precisa equilibrar clareza, governança e valor para o colaborador, considerando regras aplicáveis."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Benefício flexível permite qualquer tipo de uso?",
+        "answer": "Não necessariamente. Categorias, regras do produto e política da empresa definem as possibilidades."
+      },
+      {
+        "question": "Mais categorias tornam o benefício melhor?",
+        "answer": "Não por si só. O conjunto precisa ter propósito, comunicação e capacidade de gestão compatíveis com a empresa."
+      }
+    ]
+  },
+  {
+    "status": "scheduled",
+    "publishAt": "2027-03-11T15:00:00.000Z",
+    "title": "Renovação de cartão de benefícios: cronograma para decidir sem urgência",
+    "shortTitle": "Cronograma de renovação",
+    "slug": "renovacao-cartao-beneficios-cronograma-sem-urgencia",
+    "category": "Renovação contratual",
+    "description": "Monte um cronograma de renovação do cartão de benefícios com auditoria, consulta ao mercado, decisão e comunicação.",
+    "keywords": [
+      "renovação cartão de benefícios",
+      "cronograma de renovação",
+      "contrato de benefícios",
+      "comparação de operadoras",
+      "planejamento RH"
+    ],
+    "hashtags": [
+      "#RenovacaoContratual",
+      "#PlanejamentoRH",
+      "#CartaoDeBeneficios",
+      "#GestaoDeBeneficios",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-10.png",
+    "imageAlt": "Cronograma de renovação contratual de cartão de benefícios",
+    "imagePrompt": "Imagem editorial sobre cronograma de renovação, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Decisões tomadas perto do vencimento reduzem espaço para auditoria, comparação, revisão contratual e comunicação. Um cronograma retroativo distribui essas atividades ao longo dos meses.",
+      "Planejar cedo não significa decidir pela troca. Significa preservar alternativas e negociar com base em informações organizadas."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "O calendário pode começar com diagnóstico do contrato e da operação, seguir para definição de critérios, consulta ao mercado e validações, e terminar com decisão e plano de continuidade ou migração.",
+          "Prazos internos de compras, jurídico, financeiro e liderança precisam entrar no planejamento, assim como eventual implantação."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Começar tarde concentra análise em preço e disponibilidade imediata. Também aumenta a chance de renovar sem revisar problemas conhecidos ou migrar com comunicação insuficiente.",
+          "Um cronograma rígido demais, porém, pode ignorar dependências. Marcos e responsáveis devem ser revistos conforme o processo avança."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Mapear vencimento, aviso prévio e etapas internas.",
+          "Concluir auditoria e prioridades antes da cotação.",
+          "Reservar tempo para rede, demonstrações e referências.",
+          "Planejar revisão contratual e aprovações.",
+          "Preparar continuidade ou migração com comunicação."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A decisão deve acontecer com tempo para documentar critérios e executar o caminho escolhido. Permanecer com o fornecedor também exige plano de ajustes e acompanhamento.",
+          "O cronograma reduz urgência, mas não elimina riscos nem garante condições comerciais; ele melhora a qualidade do processo decisório."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quando começar a renovação?",
+        "answer": "Depende do contrato e das etapas internas. O ponto de partida é calcular o prazo necessário para diagnóstico, comparação, aprovação e eventual implantação."
+      },
+      {
+        "question": "Planejar renovação significa abrir uma concorrência?",
+        "answer": "Não. A empresa pode usar o cronograma para avaliar permanência, negociação ou consulta ao mercado conforme suas necessidades."
+      }
+    ]
   }
 ]
