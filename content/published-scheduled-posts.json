@@ -1,6 +1,307 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-10-22T15:00:00.000Z",
+    "title": "Migração de operadora de benefícios: como comunicar sem ruído",
+    "shortTitle": "Migração sem ruído",
+    "slug": "migracao-operadora-beneficios-como-comunicar-sem-ruido",
+    "category": "Comunicação e migração",
+    "description": "Aprenda como comunicar a migração de operadora de benefícios para colaboradores, gestores e liderança com mais clareza e menos ruído.",
+    "keywords": [
+      "migração de operadora de benefícios",
+      "comunicação RH",
+      "benefícios corporativos",
+      "cartão de benefícios",
+      "implantação RH"
+    ],
+    "hashtags": [
+      "#MigracaoDeBeneficios",
+      "#ComunicacaoRH",
+      "#BeneficiosCorporativos",
+      "#GestaoDeRH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 6,
+    "image": "scheduled-10.png",
+    "imageAlt": "Reunião executiva sobre migração de benefícios corporativos",
+    "imagePrompt": "Imagem editorial gerada por IA sobre migração de operadora de benefícios e comunicação corporativa, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Uma migração de benefícios pode ser tecnicamente correta e ainda assim gerar ruído se a comunicação for fraca. Colaboradores querem saber o que muda, quando muda e como usar.",
+      "Por isso, comunicar bem é parte da implantação, não uma etapa secundária."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "A comunicação precisa traduzir a mudança para quem será impactado. Não basta informar que a operadora mudou. É preciso explicar prazo, acesso, cartão, aplicativo, saldo, suporte e regra de uso.",
+          "Quando essa comunicação vem tarde, o RH recebe dúvidas em massa e a percepção do benefício começa negativa."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco está em mensagens longas demais, técnicas demais ou enviadas sem coordenação com gestores. Outro erro é comunicar todos os detalhes de uma vez, sem separar o que cada público precisa saber.",
+          "Gestores, colaboradores e financeiro precisam de informações diferentes, ainda que alinhadas."
+        ]
+      },
+      {
+        "heading": "Como comunicar melhor",
+        "bullets": [
+          "Criar uma linha do tempo simples da migração.",
+          "Separar comunicados para liderança, gestores e colaboradores.",
+          "Antecipar perguntas frequentes sobre saldo, data de crédito e aplicativo.",
+          "Definir canal de suporte e responsável interno.",
+          "Monitorar dúvidas após o primeiro crédito."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A comunicação deve ser planejada junto com a operação. Se a empresa só pensa nela no fim, perde a chance de reduzir dúvidas antes que elas apareçam.",
+          "A Consultoria VR apoia a construção dessa régua para que a migração seja entendida como melhoria, não como problema novo."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quando comunicar uma migração de benefícios?",
+        "answer": "Depois que cronograma, regras, suporte e datas estiverem definidos, mas antes que o colaborador seja surpreendido pela mudança."
+      },
+      {
+        "question": "Quem deve receber comunicação diferente?",
+        "answer": "Liderança, gestores, RH, financeiro e colaboradores podem precisar de mensagens específicas, com o mesmo alinhamento central."
+      }
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
+  },
+  {
+    "status": "published",
+    "publishAt": "2026-10-15T15:00:00.000Z",
+    "title": "Experiência do colaborador nos benefícios: como reduzir chamados e reclamações",
+    "shortTitle": "Experiência do colaborador",
+    "slug": "experiencia-colaborador-beneficios-reduzir-chamados-reclamacoes",
+    "category": "Experiência do colaborador",
+    "description": "Veja como melhorar a experiência do colaborador com benefícios corporativos reduzindo dúvidas, reclamações e chamados para o RH.",
+    "keywords": [
+      "experiência do colaborador",
+      "benefícios corporativos",
+      "chamados RH",
+      "cartão de benefícios",
+      "comunicação de benefícios"
+    ],
+    "hashtags": [
+      "#ExperienciaDoColaborador",
+      "#BeneficiosCorporativos",
+      "#ComunicacaoRH",
+      "#CartaoDeBeneficios",
+      "#RH"
+    ],
+    "readTime": 6,
+    "image": "scheduled-09.png",
+    "imageAlt": "Reunião corporativa sobre experiência e benefícios de colaboradores",
+    "imagePrompt": "Imagem editorial gerada por IA sobre experiência do colaborador com benefícios corporativos, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Benefício bom é aquele que o colaborador entende, consegue usar e percebe como útil. Quando isso não acontece, o RH vira ponto de suporte para problemas que poderiam ter sido evitados.",
+      "A experiência do colaborador depende de fornecedor, rede, aplicativo, comunicação e política interna."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "A experiência não começa no primeiro uso do cartão. Ela começa na forma como a empresa comunica a regra, explica o aplicativo, apresenta canais de suporte e orienta dúvidas comuns.",
+          "Se o colaborador não entende o benefício, a percepção de valor diminui mesmo quando a empresa investe bem."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco aparece quando a comunicação é genérica, quando a rede não atende a rotina ou quando o suporte do fornecedor demora a responder.",
+          "Também surge quando gestores passam informações diferentes, criando versões paralelas da política."
+        ]
+      },
+      {
+        "heading": "Como reduzir chamados",
+        "bullets": [
+          "Criar uma comunicação de implantação com perguntas frequentes.",
+          "Explicar data de crédito, categorias, senha, segunda via e suporte.",
+          "Treinar gestores para evitar mensagens contraditórias.",
+          "Monitorar dúvidas dos primeiros 30 dias.",
+          "Usar dados de reclamação para ajustar fornecedor ou política."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A escolha do cartão deve considerar a jornada do colaborador. Um portal bom para o RH não basta se o uso diário for confuso.",
+          "A Consultoria VR conecta os dois lados: gestão interna e percepção de quem usa o benefício."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Experiência do colaborador depende só do aplicativo?",
+        "answer": "Não. Aplicativo ajuda, mas rede, comunicação, regra interna e suporte também determinam a experiência."
+      },
+      {
+        "question": "Como saber se o benefício está gerando ruído?",
+        "answer": "Observe reclamações recorrentes, dúvidas repetidas, chamados sobre rede e dificuldade de uso no primeiro mês."
+      }
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
+  },
+  {
+    "status": "published",
+    "publishAt": "2026-10-08T15:00:00.000Z",
+    "title": "Custo invisível dos benefícios: quando a taxa menor sai mais cara para o RH",
+    "shortTitle": "Custo invisível",
+    "slug": "custo-invisivel-beneficios-taxa-menor-retrabalho-rh",
+    "category": "Custo total",
+    "description": "Entenda por que a menor taxa nem sempre representa a melhor escolha quando há retrabalho, suporte fraco e perda de tempo na gestão de benefícios.",
+    "keywords": [
+      "custo invisível dos benefícios",
+      "taxa cartão benefícios",
+      "retrabalho RH",
+      "gestão de benefícios",
+      "benefícios corporativos"
+    ],
+    "hashtags": [
+      "#CustoTotal",
+      "#RetrabalhoRH",
+      "#GestaoDeBeneficios",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Cartões corporativos e aplicativo de benefícios sobre fundo teal e âmbar",
+    "imagePrompt": "Imagem editorial gerada por IA sobre custo total e retrabalho em benefícios corporativos, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Uma proposta com taxa menor chama atenção, principalmente quando a empresa está revisando custos. Mas benefícios corporativos têm custos que não aparecem na primeira linha da proposta.",
+      "Retrabalho, chamados, falhas de suporte, relatórios ruins e baixa aceitação podem transformar uma economia aparente em custo operacional."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "A escolha precisa considerar custo total. Isso inclui preço, taxa, prazo, mas também tempo do RH, estabilidade da operação e satisfação do colaborador.",
+          "Quando o fornecedor exige muito esforço interno para resolver problemas simples, a empresa paga esse custo em horas, desgaste e perda de confiança no benefício."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco está em uma negociação que mede apenas economia direta. Sem olhar suporte e rotina, a empresa pode escolher uma solução mais barata que gera mais exceções, mais dúvidas e menos previsibilidade.",
+          "A conta fica ainda mais sensível quando o RH já trabalha com equipe reduzida."
+        ]
+      },
+      {
+        "heading": "Como enxergar o custo real",
+        "bullets": [
+          "Estimar tempo gasto em chamados de benefício por mês.",
+          "Avaliar estabilidade do portal, relatórios e conciliação.",
+          "Medir reclamações de rede e usabilidade.",
+          "Comparar suporte durante implantação e rotina.",
+          "Colocar retrabalho como critério da matriz de decisão."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "A taxa é parte da decisão, mas não pode ser a decisão inteira. O fornecedor ideal precisa sustentar operação, comunicação e experiência.",
+          "A Consultoria VR ajuda a empresa a comparar propostas com uma visão de custo total, evitando economia que vira problema."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "A menor taxa pode ser uma boa escolha?",
+        "answer": "Pode, desde que o fornecedor também entregue rede, suporte, portal e implantação compatíveis com a operação da empresa."
+      },
+      {
+        "question": "Como medir retrabalho do RH?",
+        "answer": "Mapeando chamados, ajustes manuais, dúvidas recorrentes, falhas de relatório e tempo gasto para resolver exceções."
+      }
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
+  },
+  {
+    "status": "published",
+    "publishAt": "2026-10-01T15:00:00.000Z",
+    "title": "Rede credenciada importa: como avaliar aceitação antes de escolher o cartão",
+    "shortTitle": "Rede credenciada",
+    "slug": "rede-credenciada-como-avaliar-aceitacao-cartao-beneficios",
+    "category": "Rede e aceitação",
+    "description": "Veja como avaliar rede credenciada e aceitação do cartão de benefícios antes da contratação ou migração de operadora.",
+    "keywords": [
+      "rede credenciada",
+      "aceitação cartão de benefícios",
+      "vale refeição",
+      "vale alimentação",
+      "benefícios corporativos",
+      "consultoria em cartões"
+    ],
+    "hashtags": [
+      "#RedeCredenciada",
+      "#ValeRefeicao",
+      "#ValeAlimentacao",
+      "#CartaoDeBeneficios",
+      "#ExperienciaDoColaborador"
+    ],
+    "readTime": 6,
+    "image": "scheduled-07.png",
+    "imageAlt": "Equipe corporativa analisando rede e aceitação de benefícios",
+    "imagePrompt": "Imagem editorial gerada por IA sobre rede credenciada e aceitação de cartão de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Rede credenciada é um dos temas que mais influenciam a percepção do benefício. Quando o colaborador não consegue usar o cartão nos lugares de rotina, a experiência ruim chega rápido ao RH.",
+      "Por isso, rede não deve ser vista como detalhe comercial. Ela é um critério operacional."
+    ],
+    "sections": [
+      {
+        "heading": "O ponto central",
+        "paragraphs": [
+          "A rede precisa ser avaliada onde a empresa está, não apenas em números nacionais. Aceitação ampla no país não garante boa experiência na cidade, bairro ou turno em que o colaborador usa o benefício.",
+          "Uma análise prática cruza unidades da empresa, residência dos colaboradores, deslocamento e categorias de consumo."
+        ]
+      },
+      {
+        "heading": "Onde costuma estar o risco",
+        "paragraphs": [
+          "O risco aparece quando a empresa aceita uma apresentação genérica de rede sem testar locais reais. Também acontece quando compara apenas restaurantes e esquece mercados, conveniência, aplicativos e rotinas de turno.",
+          "Colaboradores de operação, por exemplo, podem usar o benefício em horários e regiões diferentes do time administrativo."
+        ]
+      },
+      {
+        "heading": "Como avaliar aceitação",
+        "bullets": [
+          "Mapear cidades, bairros e trajetos de maior uso.",
+          "Separar perfil administrativo, operacional, híbrido e externo.",
+          "Checar restaurantes, mercados, aplicativos e estabelecimentos de rotina.",
+          "Validar reclamações antigas para entender se o problema era rede ou comunicação.",
+          "Comparar rede antes de negociar a proposta final."
+        ]
+      },
+      {
+        "heading": "Como decidir com segurança",
+        "paragraphs": [
+          "Rede boa é rede aderente. Ela precisa funcionar para o colaborador real da empresa, não para um perfil médio imaginário.",
+          "A Consultoria VR usa esse critério para comparar fornecedores com menos achismo e mais evidência."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Rede nacional garante boa aceitação?",
+        "answer": "Não necessariamente. A empresa deve validar aceitação nas regiões e categorias realmente usadas pelos colaboradores."
+      },
+      {
+        "question": "Como saber se a rede atual é problema?",
+        "answer": "Mapeando reclamações, cidades, tipos de estabelecimento e frequência de dúvidas sobre uso."
+      }
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-09-24T15:00:00.000Z",
     "title": "Gestão de benefícios para empresas em crescimento: quando pedir apoio consultivo",
     "shortTitle": "Empresas em crescimento",

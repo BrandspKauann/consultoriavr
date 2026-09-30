@@ -455,7 +455,7 @@
     "publishedAt": "2026-09-24T18:58:50.834Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-10-01T15:00:00.000Z",
     "title": "Rede credenciada importa: como avaliar aceitação antes de escolher o cartão",
     "shortTitle": "Rede credenciada",
@@ -527,10 +527,11 @@
         "question": "Como saber se a rede atual é problema?",
         "answer": "Mapeando reclamações, cidades, tipos de estabelecimento e frequência de dúvidas sobre uso."
       }
-    ]
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-10-08T15:00:00.000Z",
     "title": "Custo invisível dos benefícios: quando a taxa menor sai mais cara para o RH",
     "shortTitle": "Custo invisível",
@@ -601,10 +602,11 @@
         "question": "Como medir retrabalho do RH?",
         "answer": "Mapeando chamados, ajustes manuais, dúvidas recorrentes, falhas de relatório e tempo gasto para resolver exceções."
       }
-    ]
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-10-15T15:00:00.000Z",
     "title": "Experiência do colaborador nos benefícios: como reduzir chamados e reclamações",
     "shortTitle": "Experiência do colaborador",
@@ -675,10 +677,11 @@
         "question": "Como saber se o benefício está gerando ruído?",
         "answer": "Observe reclamações recorrentes, dúvidas repetidas, chamados sobre rede e dificuldade de uso no primeiro mês."
       }
-    ]
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-10-22T15:00:00.000Z",
     "title": "Migração de operadora de benefícios: como comunicar sem ruído",
     "shortTitle": "Migração sem ruído",
@@ -749,6 +752,7 @@
         "question": "Quem deve receber comunicação diferente?",
         "answer": "Liderança, gestores, RH, financeiro e colaboradores podem precisar de mensagens específicas, com o mesmo alinhamento central."
       }
-    ]
+    ],
+    "publishedAt": "2030-01-01T12:00:00.000Z"
   }
 ]
