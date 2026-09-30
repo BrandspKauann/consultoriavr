@@ -54,6 +54,57 @@ const basePosts = [
   }
 ];
 
+const basePostContent = {
+  'como-escolher-cartao-beneficios-corporativos': {
+    intro: [
+      'A troca de operadora quase nunca falha na negociação comercial. O problema costuma aparecer depois, quando a implantação gera retrabalho, a rede não atende os colaboradores ou a gestão fica mais pesada do que antes.',
+      'A comparação precisa começar no contexto da empresa: onde o time está, como usa o benefício e quanto esforço o RH consegue absorver sem perder o controle.'
+    ],
+    sections: [
+      { heading: 'Rede é critério operacional', paragraphs: ['Uma rede ampla só tem valor quando atende os lugares que fazem parte da rotina do time. A validação deve usar cidades, bairros, turnos e estabelecimentos reais, não apenas uma apresentação comercial.'] },
+      { heading: 'A rotina do RH entra na conta', paragraphs: ['Pedidos, saldos, segunda via, suporte e fechamento mensal continuam depois da assinatura. Portal, relatórios e tempo de resposta precisam ser experimentados antes de qualquer decisão.'] },
+      { heading: 'Checklist para uma comparação justa', bullets: ['Mapear os locais de uso mais relevantes para o quadro atual.', 'Simular admissões, desligamentos, ajustes e ocorrências.', 'Comparar relatórios, permissões e conciliação financeira.', 'Documentar custos, prazos, rede e responsabilidades.', 'Planejar implantação e comunicação antes da assinatura.'] },
+      { heading: 'A escolha precisa caber no cenário', paragraphs: ['Não existe um cartão universalmente melhor. Existe a alternativa que responde melhor às prioridades documentadas pela empresa e cria menos atrito para quem administra e para quem utiliza.'] }
+    ],
+    faq: [
+      { question: 'Qual deve ser o primeiro critério da comparação?', answer: 'A dor que motivou a revisão. Rede, operação, suporte e experiência devem receber pesos coerentes com o cenário real.' },
+      { question: 'Preço menor significa melhor escolha?', answer: 'Não necessariamente. O custo total também inclui implantação, horas do RH, retrabalho e qualidade do suporte.' }
+    ]
+  },
+  'pat-e-gestao-de-beneficios-corporativos': {
+    intro: [
+      'Quando o benefício é tratado apenas como cartão, a conversa fica presa a preço, taxa e prazo. Quando é tratado como política corporativa, entram governança, aderência ao PAT e clareza operacional.',
+      'Revisar essas regras antes da cotação evita que a tecnologia apenas digitalize uma política confusa.'
+    ],
+    sections: [
+      { heading: 'Política interna antes da plataforma', paragraphs: ['Elegibilidade, datas de crédito, admitidos, desligados, afastamentos e exceções precisam estar claros. A operadora deve sustentar essa política, não obrigar a empresa a improvisar uma nova.'] },
+      { heading: 'PAT como parte da governança', paragraphs: ['A empresa precisa manter coerência entre documentação, concessão, operação e comunicação. Pontos regulatórios devem ser confirmados com os profissionais responsáveis e com informações oficiais vigentes.'] },
+      { heading: 'O que revisar antes de implantar', bullets: ['Critérios de elegibilidade e valores por público.', 'Tratamento de admissões, férias, afastamentos e desligamentos.', 'Separação de saldos e regras de utilização.', 'Documentos, relatórios e trilha de aprovação.', 'Responsáveis pela implantação e pelas exceções.'] },
+      { heading: 'Implantação é um projeto', paragraphs: ['Migração de benefício mexe com pessoas e rotina. Um cronograma com responsáveis, testes, janela de transição e comunicação reduz a chance de a primeira carga virar uma corrida de correções.'] }
+    ],
+    faq: [
+      { question: 'O PAT deve ser analisado apenas pelo RH?', answer: 'Não. RH, financeiro e responsáveis por compliance ou assessoria especializada devem alinhar política, documentação e operação.' },
+      { question: 'A troca de operadora resolve uma política confusa?', answer: 'Não sozinha. Primeiro é preciso revisar regras e responsabilidades; depois, verificar qual solução consegue executá-las.' }
+    ]
+  },
+  'comparativo-vr-flash-caju-pluxee': {
+    intro: [
+      'Comparar marcas conhecidas sem um roteiro comum produz apresentações interessantes, mas pouca clareza para decidir. O objetivo não é montar um ranking universal.',
+      'A análise útil coloca VR, Flash, Caju e Pluxee diante das mesmas situações reais de rede, operação, suporte, governança e experiência.'
+    ],
+    sections: [
+      { heading: 'Comece pelo perfil da empresa', paragraphs: ['Porte, localidades, política, capacidade do RH e comportamento de uso mudam o peso de cada critério. Antes das demonstrações, transforme essas variáveis em uma lista curta de prioridades.'] },
+      { heading: 'Teste a operação, não só a promessa', paragraphs: ['Peça para cada fornecedor mostrar tarefas reais: cadastrar pessoas, ajustar saldos, separar acessos, gerar relatórios e resolver ocorrências. Isso revela diferenças que uma tabela comercial não mostra.'] },
+      { heading: 'Matriz para comparar com equilíbrio', bullets: ['Rede validada com uma amostra de CEPs e estabelecimentos.', 'Fluxos mensais do RH e do financeiro.', 'Canais de suporte, prazos e escalonamento.', 'Experiência do colaborador em situações comuns.', 'Custo total, implantação e condições documentadas.'] },
+      { heading: 'Decisão sem vencedor automático', paragraphs: ['Uma alternativa pode ter ótima aderência para uma empresa e criar atrito em outra. A conclusão responsável registra por que cada critério recebeu determinado peso e quais premissas ainda precisam ser confirmadas.'] }
+    ],
+    faq: [
+      { question: 'Qual é a melhor entre VR, Flash, Caju e Pluxee?', answer: 'Não há uma resposta universal. A aderência depende da rede necessária, da política, da operação e das condições atuais de cada proposta.' },
+      { question: 'Como evitar que o comparativo vire apenas uma disputa de preço?', answer: 'Use uma matriz com critérios e evidências, atribua pesos antes das propostas finais e calcule também o esforço operacional.' }
+    ]
+  }
+};
+
 async function exists(filePath) {
   try {
     await fs.access(filePath);
@@ -269,22 +320,62 @@ ${editorialNav('content')}
 `;
 }
 
-function renderSection(section) {
-  const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n            ');
-  const bullets = section.bullets?.length
-    ? `<ul>${section.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join('')}</ul>`
-    : '';
-  return `<section class="seo-fallback__article-block">
-            <h2>${escapeHtml(section.heading)}</h2>
-            ${paragraphs}
-            ${bullets}
-          </section>`;
+function articleContentFor(post) {
+  const fallback = basePostContent[post.slug] || {};
+  return {
+    intro: post.intro?.length ? post.intro : fallback.intro || [post.description],
+    sections: post.sections?.length ? post.sections : fallback.sections || [],
+    faq: post.faq?.length ? post.faq : fallback.faq || []
+  };
+}
+
+function excerpt(value = '', limit = 150) {
+  if (value.length <= limit) return value;
+  const shortened = value.slice(0, limit);
+  return `${shortened.slice(0, shortened.lastIndexOf(' '))}…`;
+}
+
+function renderLandingSignal(section, index) {
+  const copy = section.paragraphs?.[0] || section.bullets?.[0] || '';
+  return `<article class="article-landing__signal">
+              <span>${String(index + 1).padStart(2, '0')}</span>
+              <h3>${escapeHtml(section.heading)}</h3>
+              <p>${escapeHtml(excerpt(copy, 132))}</p>
+            </article>`;
+}
+
+function renderLandingChapter(section, index) {
+  const number = String(index + 1).padStart(2, '0');
+  const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n              ');
+  if (section.bullets?.length) {
+    return `<section class="article-landing__chapter article-landing__chapter--checklist">
+          <div class="article-landing__chapter-inner">
+            <div class="article-landing__chapter-heading">
+              <span>${number}</span>
+              <p>Para levar à reunião</p>
+              <h2>${escapeHtml(section.heading)}</h2>
+            </div>
+            <ol>${section.bullets.map((bullet, bulletIndex) => `<li><span>${String(bulletIndex + 1).padStart(2, '0')}</span><strong>${escapeHtml(bullet)}</strong></li>`).join('')}</ol>
+          </div>
+        </section>`;
+  }
+  return `<section class="article-landing__chapter${index % 2 ? ' article-landing__chapter--tint' : ''}">
+          <div class="article-landing__chapter-inner">
+            <div class="article-landing__chapter-heading">
+              <span>${number}</span>
+              <p>Ponto de decisão</p>
+              <h2>${escapeHtml(section.heading)}</h2>
+            </div>
+            <div class="article-landing__chapter-copy">${paragraphs}</div>
+          </div>
+        </section>`;
 }
 
 function renderArticle(post, posts) {
   const route = routeFor(post);
   const image = imageFor(post);
   const canonical = `${siteUrl}${route}`;
+  const content = articleContentFor(post);
   const related = posts.filter((item) => item.slug !== post.slug).slice(0, 3);
   const structuredData = [
     {
@@ -315,11 +406,11 @@ function renderArticle(post, posts) {
       ]
     }
   ];
-  if (post.faq?.length) {
+  if (content.faq.length) {
     structuredData.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: post.faq.map((item) => ({
+      mainEntity: content.faq.map((item) => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: { '@type': 'Answer', text: item.answer }
@@ -340,54 +431,78 @@ function renderArticle(post, posts) {
   <body>
 ${googleTagManagerBody()}
 ${editorialNav('content')}
-    <main class="seo-fallback" id="topo" aria-label="Artigo da Consultoria VR">
-      <section class="seo-fallback__hero seo-fallback__article">
-        <div class="seo-fallback__article-shell">
-          <div class="seo-fallback__brand"><span class="seo-fallback__brand-mark"></span>Ecossistema Hirayama</div>
-          <div class="seo-fallback__breadcrumb">
+    <main class="seo-fallback article-landing" id="topo" aria-label="Conteúdo da Consultoria VR">
+      <article>
+        <header class="article-landing__hero">
+          <img class="article-landing__hero-image" src="${escapeHtml(image)}" alt="${escapeHtml(post.imageAlt || post.title)}" />
+          <div class="article-landing__hero-shade"></div>
+          <div class="article-landing__hero-inner">
+            <div class="article-landing__breadcrumb">
             <a href="/">Início</a>
             <span>→</span>
             <a href="/conteudo/">Conteúdo</a>
             <span>→</span>
             <span>${escapeHtml(post.shortTitle || post.title)}</span>
           </div>
-          <p class="seo-fallback__eyebrow">${escapeHtml(post.category)}</p>
+          <p class="article-landing__eyebrow">${escapeHtml(post.category)}</p>
           <h1>${escapeHtml(post.title)}</h1>
-          <div class="seo-fallback__article-meta-row">
-            <span class="seo-fallback__article-pill">Artigo</span>
-            <span class="seo-fallback__article-pill">${escapeHtml(formatDate(post.publishAt))}</span>
-            <span class="seo-fallback__article-pill">Leitura de ${escapeHtml(post.readTime || 6)} min</span>
+          <p class="article-landing__lead">${escapeHtml(post.description)}</p>
+          <div class="article-landing__meta">
+            <span>${escapeHtml(formatDate(post.publishAt))}</span>
+            <span>${escapeHtml(post.readTime || 6)} min de leitura</span>
+            <span>Consultoria VR by Hirayama</span>
           </div>
-          <p class="seo-fallback__lead">${escapeHtml(post.description)}</p>
+          <div class="article-landing__hero-actions">
+            <a href="#decisao">Explorar a análise</a>
+            <a href="https://wa.link/3gwhbl" rel="noopener">Conversar com a equipe</a>
+          </div>
         </div>
-      </section>
+        </header>
 
-      <section class="seo-fallback__article-shell">
-        <article class="seo-fallback__article-body">
-          <img class="seo-fallback__article-cover" src="${escapeHtml(image)}" alt="${escapeHtml(post.imageAlt || post.title)}" />
-          ${(post.intro || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n          ')}
-          ${(post.sections || []).map(renderSection).join('\n          ')}
-          ${post.faq?.length ? `<section class="seo-fallback__article-block" id="faq">
-            <h2>Perguntas frequentes</h2>
-            ${post.faq.map((item) => `<p><strong>${escapeHtml(item.question)}</strong><br>${escapeHtml(item.answer)}</p>`).join('\n            ')}
-          </section>` : ''}
-          <div class="seo-fallback__brand-panel">
-            <h3>Como a Consultoria VR by Hirayama entra nessa decisão</h3>
-            <p>O trabalho consultivo organiza critérios de rede, operação, governança, custo total e experiência dos colaboradores para que a empresa escolha benefícios com menos ruído comercial e mais aderência à rotina do RH.</p>
+        <section class="article-landing__signals" aria-label="Resumo executivo">
+          <div class="article-landing__signals-inner">
+            <p class="article-landing__section-label">Resumo executivo</p>
+            <div>${content.sections.slice(0, 3).map(renderLandingSignal).join('\n            ')}</div>
           </div>
-          ${post.hashtags?.length ? `<section class="seo-fallback__article-tags" aria-label="Hashtags">${post.hashtags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</section>` : ''}
-          <section class="seo-fallback__related" aria-label="Continue lendo">
-            <h2>Continue entendendo</h2>
-            <div class="seo-fallback__related-list">
-              ${related.map((item, index) => `<a href="${escapeHtml(routeFor(item))}"><span class="seo-fallback__related-number">${String(index + 1).padStart(2, '0')}</span><span><em>${escapeHtml(item.category)}</em><strong>${escapeHtml(item.title)}</strong></span></a>`).join('\n              ')}
+        </section>
+
+        <section class="article-landing__opening" id="decisao">
+          <div class="article-landing__opening-inner">
+            <div>
+              <p class="article-landing__section-label">O cenário antes da escolha</p>
+              <h2>Decidir bem começa por enxergar o que acontece depois da contratação.</h2>
             </div>
-          </section>
-          <div class="seo-fallback__article-cta">
-            <a class="seo-fallback__article-button" href="https://wa.link/3gwhbl" rel="noopener">Falar com um consultor</a>
-            <a class="seo-fallback__article-button seo-fallback__article-button--ghost" href="/conteudo/">Voltar para a biblioteca</a>
+            <div>${content.intro.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n              ')}</div>
           </div>
-        </article>
-      </section>
+        </section>
+
+        ${content.sections.map(renderLandingChapter).join('\n        ')}
+
+        <section class="article-landing__consulting">
+          <div>
+            <p class="article-landing__section-label">Leitura consultiva</p>
+            <h2>Critérios claros transformam proposta comercial em decisão empresarial.</h2>
+            <p>A Consultoria VR organiza rede, operação, governança, custo total e experiência dos colaboradores em uma análise que RH, financeiro e liderança conseguem usar juntos.</p>
+          </div>
+          <a href="https://wa.link/3gwhbl" rel="noopener">Quero analisar meu cenário <span>→</span></a>
+        </section>
+
+        ${content.faq.length ? `<section class="article-landing__faq" id="faq">
+          <p class="article-landing__section-label">Perguntas frequentes</p>
+          <h2>Respostas diretas antes do próximo passo.</h2>
+          <div>${content.faq.map((item) => `<details><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${escapeHtml(item.answer)}</p></details>`).join('\n            ')}</div>
+        </section>` : ''}
+
+        <section class="article-landing__related" aria-labelledby="related-title">
+          <div class="article-landing__related-heading">
+            <div><p class="article-landing__section-label">Próximas decisões</p><h2 id="related-title">Continue pelo assunto que mais pesa hoje.</h2></div>
+            <a href="/conteudo/">Ver biblioteca completa <span>→</span></a>
+          </div>
+          <div class="article-landing__related-grid">
+            ${related.map((item) => `<a href="${escapeHtml(routeFor(item))}"><img src="${escapeHtml(imageFor(item))}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" /><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><strong>Ler análise →</strong></a>`).join('\n            ')}
+          </div>
+        </section>
+      </article>
 
       <footer class="seo-fallback__footer">
         <strong>Consultoria VR by Hirayama</strong>
@@ -600,7 +715,7 @@ export async function buildSite() {
   await copyPublishedAssets(posts);
   await removeFutureScheduledRoutes(now);
   await fs.writeFile(path.join(projectDir, 'conteudo', 'index.html'), renderBlogIndex(posts), 'utf8');
-  for (const post of publishedScheduled) {
+  for (const post of posts) {
     await writeRoute(routeFor(post), renderArticle(post, posts));
   }
   for (const operator of operators) {
