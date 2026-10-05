@@ -62,6 +62,12 @@ test('all quiz combinations follow the weighted three-point threshold', () => {
 test('generated pages retain static SEO, qualified contact and no future articles', async () => {
   const root = new URL('../', import.meta.url);
   const sitemap = await fs.readFile(new URL('sitemap.xml', root), 'utf8');
+  const contact = await fs.readFile(new URL('contato/index.html', root), 'utf8');
+  const phonePattern = contact.match(/name="phone"[^>]*pattern="([^"]+)"/)[1];
+  const nativePhone = new RegExp(`^(?:${phonePattern})$`, 'v');
+  assert.ok(nativePhone.test('(11) 99999-1234'));
+  assert.ok(nativePhone.test('11999991234'));
+  assert.ok(!nativePhone.test('not-a-phone'));
   for (const route of ['contato', 'ja-tenho-cartao', 'quiz-rede-aberta-ou-fechada', 'politica-de-privacidade']) {
     const html = await fs.readFile(new URL(`${route}/index.html`, root), 'utf8');
     assert.match(html, /<h1>/);

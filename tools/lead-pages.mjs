@@ -17,7 +17,7 @@ export function contactForm(id = 'contact-form') {
       <label>Empresa<input name="company" autocomplete="organization" maxlength="160" required></label>
       <label>CNPJ<input name="cnpj" placeholder="00.000.000/0000-00" autocomplete="off" maxlength="18" pattern="[A-Za-z0-9]{2}[.]?[A-Za-z0-9]{3}[.]?[A-Za-z0-9]{3}/?[A-Za-z0-9]{4}-?[0-9]{2}" required aria-describedby="cnpj-help"><small id="cnpj-help">Informe o CNPJ da empresa.</small></label>
       <label>E-mail corporativo<input name="email" type="email" autocomplete="email" maxlength="160" required aria-describedby="email-help"><small id="email-help">Use o domínio da empresa, não um e-mail pessoal.</small></label>
-      <label>WhatsApp com DDD<input name="phone" type="tel" autocomplete="tel-national" placeholder="(11) 99999-9999" maxlength="16" pattern="[()0-9 +.-]{10,16}" required></label>
+      <label>WhatsApp com DDD<input name="phone" type="tel" autocomplete="tel-national" placeholder="(11) 99999-9999" maxlength="16" pattern="\\([0-9]{2}\\) 9[0-9]{4}-[0-9]{4}|[0-9]{11}" required></label>
       <label>Número de funcionários<select name="employees" required>${options(VOLUMES)}</select></label>
       <label>Quantidade de cartões <small>Opcional</small><input name="card_count" type="number" min="1" max="1000000" step="1"></label>
       <label>Operadora atual<select name="operator" required>${options(OPERATORS)}</select></label>
