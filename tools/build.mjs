@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { articleDepthFor } from './article-depth.mjs';
+import { contactForm, advisorSection, siteFooter, renderLeadPages } from './lead-pages.mjs';
 
 const projectDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://www.consultoriavr.com.br';
@@ -11,7 +12,7 @@ const publishedPath = path.join(contentDir, 'published-scheduled-posts.json');
 const operatorsPath = path.join(contentDir, 'operators.json');
 const publishedAssetsDir = path.join(contentDir, 'published-assets', 'blog');
 const publicScheduledAssetsDir = path.join(projectDir, 'assets', 'blog', 'scheduled');
-const baseSiteLastmod = '2026-08-13';
+const baseSiteLastmod = '2026-10-05';
 
 const basePosts = [
   {
@@ -141,6 +142,10 @@ function operatorRoute(operator) {
   return `/operadoras/${operator.slug}/`;
 }
 
+function operatorFormName(operator) {
+  return operator.name === 'iFood Benefícios' ? operator.name : operator.name.replace(' Benefícios', '');
+}
+
 function absoluteUrl(value) {
   if (!value) return `${siteUrl}/hero-reuniao-empresarial.jpg`;
   if (value.startsWith('http')) return value;
@@ -181,16 +186,16 @@ function googleTagManagerBody() {
 
 function editorialNav(current = '') {
   return `    <nav class="operator-page__nav" aria-label="Navegação principal">
-      <a class="operator-page__brand" href="/">Consultoria<span>VR</span></a>
+      <a class="operator-page__brand" href="/">Consultoria<span>VR</span><small class="brand-signature">by Hirayama Corretora &amp; Consultoria</small></a>
       <div>
         <a href="/#operadoras"${current === 'operators' ? ' aria-current="page"' : ''}>Operadoras</a>
         <a href="/conteudo/"${current === 'content' ? ' aria-current="page"' : ''}>Conteúdos</a>
-        <a class="operator-page__contact" href="https://wa.link/3gwhbl" rel="noopener">Falar com a equipe</a>
+        <a class="operator-page__contact" href="/contato/">Falar com um consultor</a>
       </div>
     </nav>`;
 }
 
-function head({ title, description, keywords = [], canonical, type = 'website', image = '/hero-reuniao-empresarial.jpg', structuredData = [] }) {
+function head({ title, description, keywords = [], canonical, type = 'website', image = '/hero-reuniao-empresarial.jpg', structuredData = [], noindex = false }) {
   const imageUrl = absoluteUrl(image);
   return `<head>
 ${googleTagManagerHead()}
@@ -199,7 +204,7 @@ ${googleTagManagerHead()}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
     <title>${escapeHtml(title)}</title>
-    <meta name="title" content="${escapeHtml(title)}" />
+${noindex ? '    <meta name="robots" content="noindex, follow" />\n' : ''}    <meta name="title" content="${escapeHtml(title)}" />
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="author" content="Consultoria VR" />
     <meta name="keywords" content="${escapeHtml(keywords.join(', '))}" />
@@ -217,6 +222,8 @@ ${googleTagManagerHead()}
     <meta name="twitter:image" content="${escapeHtml(imageUrl)}" />
     <meta name="theme-color" content="#103F3B" />
     <link rel="stylesheet" href="/seo-fallback-hirayama.css" />
+    <link rel="stylesheet" href="/lead-flow.css" />
+    <script type="module" src="/lead-flow.js"></script>
 ${structuredData.map((item) => `    <script type="application/ld+json">${safeJson(item)}</script>`).join('\n')}
   </head>`;
 }
@@ -274,7 +281,7 @@ ${editorialNav('content')}
             <p class="seo-fallback__eyebrow">Conteúdo sobre benefícios corporativos</p>
             <h1>Consultoria em <span>Cartões</span></h1>
             <p class="seo-fallback__lead">Artigos e materiais para empresas que querem comparar VR, Flash, Caju, iFood, ValeCard, Pluxee e outras soluções de benefícios corporativos com mais clareza.</p>
-            <a class="seo-fallback__cta" href="https://wa.link/3gwhbl" rel="noopener">Falar com um consultor</a>
+            <a class="seo-fallback__cta" href="/contato/">Falar com um consultor</a>
           </div>
         </header>
 
@@ -310,10 +317,7 @@ ${editorialNav('content')}
           </div>
         </section>
 
-        <footer class="seo-fallback__footer">
-          <strong>Consultoria VR by Hirayama</strong>
-          <span>Conteúdo institucional sobre cartões e benefícios corporativos.</span>
-        </footer>
+        ${siteFooter}
       </main>
     </div>
   </body>
@@ -456,7 +460,7 @@ ${editorialNav('content')}
           </div>
           <div class="article-landing__hero-actions">
             <a href="#decisao">Explorar a análise</a>
-            <a href="https://wa.link/3gwhbl" rel="noopener">Conversar com a equipe</a>
+            <a href="/contato/">Falar com um consultor</a>
           </div>
         </div>
         </header>
@@ -520,7 +524,7 @@ ${editorialNav('content')}
             <h2>Critérios claros transformam proposta comercial em decisão empresarial.</h2>
             <p>A Consultoria VR organiza rede, operação, governança, custo total e experiência dos colaboradores em uma análise que RH, financeiro e liderança conseguem usar juntos.</p>
           </div>
-          <a href="https://wa.link/3gwhbl" rel="noopener">Quero analisar meu cenário <span>→</span></a>
+          <a href="/contato/">Quero analisar meu cenário <span>→</span></a>
         </section>
 
         ${content.faq.length ? `<section class="article-landing__faq" id="faq">
@@ -540,10 +544,7 @@ ${editorialNav('content')}
         </section>
       </article>
 
-      <footer class="seo-fallback__footer">
-        <strong>Consultoria VR by Hirayama</strong>
-        <span>Conteúdo institucional sobre cartões e benefícios corporativos.</span>
-      </footer>
+      ${siteFooter}
     </main>
   </body>
 </html>
@@ -605,7 +606,7 @@ ${editorialNav('operators')}
             <p class="operator-page__eyebrow">${escapeHtml(operator.eyebrow)}</p>
             <h1>${escapeHtml(operator.title)}</h1>
             <p>${escapeHtml(operator.description)}</p>
-            <a class="operator-page__button" href="https://wa.link/3gwhbl" rel="noopener">Analisar para minha empresa</a>
+            <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa</a>
           </div>
           <div class="operator-page__card" aria-label="Cartão ilustrativo da ${escapeHtml(operator.name)}">
             <span class="operator-page__chip" aria-hidden="true"></span>
@@ -655,16 +656,24 @@ ${editorialNav('operators')}
         ${operator.faq.map((item) => `<details><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${escapeHtml(item.answer)}</p></details>`).join('\n        ')}
       </section>
 
+      <section class="operator-resources" aria-labelledby="resource-title">
+        <p class="operator-page__label">Antes de contratar e durante o uso</p>
+        <h2 id="resource-title">Cuidados e canais oficiais da ${escapeHtml(operator.name)}</h2>
+        <div class="operator-resource-grid">
+          <div><h3>O que merece atenção</h3><ul>${operator.attention.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
+          <div><h3>Já usa este cartão?</h3><p>Para perda ou roubo, procure o bloqueio no aplicativo oficial. Sem acesso ao app, use o canal de atendimento da operadora. A consultoria não bloqueia cartões nem consulta saldos.</p><ul>${operator.resources.map(item => `<li><a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a></li>`).join('')}</ul></div>
+        </div>
+        <p class="operator-source-note">Fontes oficiais consultadas em ${escapeHtml(formatDate(operator.checkedAt + 'T12:00:00Z'))}. ${operator.sources.map(item => `<a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a>`).join(' · ')}. Recursos, prazos e condições devem ser reconfirmados na proposta vigente.</p>
+      </section>
+      <section class="operator-revision"><h2>Já usa ${escapeHtml(operator.name)} na empresa?</h2><p>Revise rede, suporte, esforço do RH e contrato antes de renovar.</p><a href="/ja-tenho-cartao/?operadora=${encodeURIComponent(operatorFormName(operator))}">Avaliar meu contrato →</a></section>
+
       <section class="operator-page__others" aria-labelledby="other-operators-title">
         <p class="operator-page__label">Continue comparando</p>
         <h2 id="other-operators-title">Conheça as outras operadoras</h2>
         <div>${related.map((item) => `<a href="${escapeHtml(operatorRoute(item))}"><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" loading="lazy" /><span>${escapeHtml(item.name)}</span></a>`).join('')}</div>
       </section>
 
-      <footer class="seo-fallback__footer">
-        <strong>Consultoria VR by Hirayama</strong>
-        <span>Análise independente de cartões e benefícios corporativos.</span>
-      </footer>
+      ${siteFooter}
     </main>
   </body>
 </html>
@@ -706,9 +715,10 @@ function renderSitemap(posts, operators) {
   const routes = [
     { loc: siteUrl, lastmod: siteLastmod, changefreq: 'weekly', priority: '1.0' },
     { loc: `${siteUrl}/conteudo`, lastmod: siteLastmod, changefreq: 'weekly', priority: '0.8' },
+    ...['/contato/', '/ja-tenho-cartao/', '/quiz-rede-aberta-ou-fechada/', '/politica-de-privacidade/'].map(route => ({ loc: `${siteUrl}${route}`, lastmod: '2026-10-05', changefreq: 'monthly', priority: '0.7' })),
     ...operators.map((operator) => ({
       loc: `${siteUrl}${operatorRoute(operator)}`,
-      lastmod: '2026-09-29',
+      lastmod: operator.checkedAt,
       changefreq: 'monthly',
       priority: '0.8'
     })),
@@ -750,6 +760,10 @@ export async function buildSite() {
 
   await copyPublishedAssets(posts);
   await removeFutureScheduledRoutes(now);
+  const homeTemplate = await fs.readFile(path.join(projectDir, 'tools', 'home.html'), 'utf8');
+  await fs.writeFile(path.join(projectDir, 'index.html'), homeTemplate.replace('{{CONTACT_FORM}}', contactForm('diagnostic-form')).replace('{{ADVISOR_SECTION}}', advisorSection()).replace('{{SITE_FOOTER}}', siteFooter), 'utf8');
+  const leadPages = renderLeadPages({ head, nav: editorialNav, bodyTag: googleTagManagerBody, siteUrl });
+  for (const [route, html] of Object.entries(leadPages)) await writeRoute(route, html);
   await fs.writeFile(path.join(projectDir, 'conteudo', 'index.html'), renderBlogIndex(posts), 'utf8');
   for (const post of posts) {
     await writeRoute(routeFor(post), renderArticle(post, posts));

@@ -5,20 +5,27 @@
     "eyebrow": "Rede, operação e gestão de benefícios",
     "title": "VR Benefícios para empresas: o que o RH deve avaliar",
     "description": "Entenda quais critérios de rede, gestão, atendimento e implantação avaliar ao considerar a VR Benefícios para sua empresa.",
-    "keywords": ["VR Benefícios", "cartão VR", "vale refeição VR", "vale alimentação VR", "benefícios corporativos", "consultoria de benefícios"],
+    "keywords": [
+      "VR Benefícios",
+      "cartão VR",
+      "vale refeição VR",
+      "vale alimentação VR",
+      "benefícios corporativos",
+      "consultoria de benefícios"
+    ],
     "logo": "/vr-beneficios.png",
     "logoAlt": "Logotipo da VR Benefícios",
     "cardClass": "vr",
-    "summary": "A VR é uma marca tradicional no mercado de benefícios. Para saber se a solução combina com uma empresa, a análise precisa sair do reconhecimento da marca e entrar na realidade de rede, suporte e rotina do RH.",
+    "summary": "Vale investigar a VR quando alimentação e refeição precisam de uma rede credenciada conferida por localidade e a empresa quer avaliar, separadamente, gestão de jornada e mobilidade. O SuperApp concentra a experiência do trabalhador; a oferta exata depende da solução contratada.",
     "overview": [
-      "Ao avaliar a VR Benefícios, o primeiro passo é mapear onde os colaboradores realmente usam alimentação e refeição. A presença de estabelecimentos relevantes por cidade, bairro e turno deve ser confirmada com dados do quadro atual, não apenas por uma percepção geral de cobertura.",
-      "Também vale simular a administração mensal: inclusão e desligamento de pessoas, pedidos de cartão, movimentação de saldo, relatórios, permissões de acesso e tratamento de ocorrências. A proposta comercial só fica comparável quando esses pontos entram na mesma planilha."
+      "Peça que a demonstração passe por carga mensal, admissão, segunda via e consulta de estabelecimentos no SuperApp. Uma amostra de locais realmente frequentados pelos colaboradores ajuda a identificar cobertura útil, não apenas tamanho de rede.",
+      "Se a proposta incluir jornada ou mobilidade, defina quais módulos serão utilizados e quem responde pelos cadastros e ajustes. Uma empresa pode precisar dessas frentes, enquanto outra pode resolver a revisão mantendo somente alimentação e refeição."
     ],
     "strengths": [
-      "Marca conhecida por empresas e colaboradores.",
-      "Soluções voltadas a alimentação, refeição e gestão corporativa.",
-      "Possibilidade de centralizar etapas operacionais em canais digitais.",
-      "Rede e condições que podem variar conforme produto, localidade e contrato."
+      "Alimentação e refeição: conferir a rede credenciada do produto contratado.",
+      "SuperApp com consulta de saldo, extrato e mapa de estabelecimentos.",
+      "Gestão de jornada e mobilidade são frentes a avaliar no escopo da proposta.",
+      "O SuperApp apresenta TotalPass e outras ofertas, com condições específicas de contratação e elegibilidade."
     ],
     "evaluate": [
       "Aceitação nos CEPs com maior concentração de colaboradores.",
@@ -27,11 +34,59 @@
       "Condições comerciais completas e regras vigentes do produto contratado.",
       "Plano de implantação e comunicação para quem administra e utiliza."
     ],
-    "fit": "A VR pode entrar em cenários que valorizam uma operação conhecida e uma leitura cuidadosa de rede. A aderência, porém, depende da proposta vigente e do perfil da empresa. O comparativo deve usar os mesmos critérios aplicados às demais operadoras.",
+    "fit": "Pode entrar na análise de empresas que priorizam alimentação e refeição com rede local validada, ou querem estudar integração com gestão de jornada e mobilidade. Na demonstração, separe a operação do benefício dos serviços adicionais: cada frente precisa ter preço, responsável e condições documentados.",
     "faq": [
-      {"question": "A VR Benefícios é a melhor opção para toda empresa?", "answer": "Não. A escolha depende de rede, política de benefícios, suporte, operação e condições da proposta. Uma marca pode ser adequada a um perfil e menos aderente a outro."},
-      {"question": "Como testar a rede antes de contratar?", "answer": "Use uma amostra de CEPs e estabelecimentos relevantes para os colaboradores, valide o produto correto e registre os resultados para comparar com as demais opções."}
-    ]
+      {
+        "question": "A VR Benefícios é a melhor opção para toda empresa?",
+        "answer": "Não. A escolha depende de rede, política de benefícios, suporte, operação e condições da proposta. Uma marca pode ser adequada a um perfil e menos aderente a outro."
+      },
+      {
+        "question": "Como testar a rede antes de contratar?",
+        "answer": "Use uma amostra de CEPs e estabelecimentos relevantes para os colaboradores, valide o produto correto e registre os resultados para comparar com as demais opções."
+      }
+    ],
+    "attention": [
+      "Não confunda funcionalidades do SuperApp com serviços incluídos em qualquer contrato.",
+      "A página oficial distingue ofertas para soluções Auxílio das soluções PAT. Valide a elegibilidade antes de divulgar vantagens.",
+      "Teste a rede por cidade e estabelecimento. Reconhecimento da marca não garante cobertura de todos os locais de uso."
+    ],
+    "resources": [
+      {
+        "label": "SuperApp VR no Google Play",
+        "url": "https://play.google.com/store/apps/details?id=ws.hanzo.Vrrh&hl=pt_BR"
+      },
+      {
+        "label": "SuperApp VR na App Store",
+        "url": "https://apps.apple.com/br/app/superapp-vr/id667577139"
+      },
+      {
+        "label": "Atendimento: 4004-4938",
+        "url": "tel:40044938"
+      },
+      {
+        "label": "Atendimento: 0800-596-3838",
+        "url": "tel:08005963838"
+      },
+      {
+        "label": "Canais e abrangência do atendimento",
+        "url": "https://www.vr.com.br/contato"
+      }
+    ],
+    "sources": [
+      {
+        "label": "SuperApp e condições das ofertas",
+        "url": "https://www.vr.com.br/superapp"
+      },
+      {
+        "label": "Soluções de mobilidade",
+        "url": "https://www.vr.com.br/mobilidade"
+      },
+      {
+        "label": "Central de ajuda",
+        "url": "https://materiais.vr.com.br/central-de-ajuda/"
+      }
+    ],
+    "checkedAt": "2026-10-05"
   },
   {
     "slug": "flash-beneficios",
@@ -39,20 +94,27 @@
     "eyebrow": "Experiência digital e categorias de benefício",
     "title": "Flash Benefícios para empresas: critérios para uma decisão segura",
     "description": "Veja como analisar a Flash Benefícios considerando experiência digital, categorias, governança, suporte e impacto na rotina do RH.",
-    "keywords": ["Flash Benefícios", "cartão Flash", "benefícios flexíveis", "cartão multibenefícios", "RH", "gestão de benefícios"],
+    "keywords": [
+      "Flash Benefícios",
+      "cartão Flash",
+      "benefícios flexíveis",
+      "cartão multibenefícios",
+      "RH",
+      "gestão de benefícios"
+    ],
     "logo": "/flash-logo-card-03382965.png",
     "logoAlt": "Logotipo da Flash Benefícios",
     "cardClass": "flash",
-    "summary": "A Flash costuma entrar em comparativos de empresas que procuram uma experiência digital e diferentes categorias de benefício. O ponto central é verificar como essa flexibilidade conversa com a política interna e com os controles necessários.",
+    "summary": "A Flash merece uma análise quando benefícios e despesas corporativas precisam conversar com controles de RH e financeiro. O ponto é demonstrar quais módulos reduzem trabalho na sua operação, não contratar uma plataforma apenas por reunir muitas funções.",
     "overview": [
-      "Uma interface moderna pode melhorar a experiência, mas o RH precisa olhar além do aplicativo. É importante entender como categorias, saldos, permissões, relatórios e regras de uso serão configurados e mantidos no dia a dia.",
-      "A análise também deve separar o que faz parte da oferta vigente, o que depende do plano comercial e o que exige uma rotina adicional da empresa. Assim, flexibilidade não vira exceção difícil de controlar."
+      "Leve um caso de despesa desde a solicitação até a prestação de contas: limite, aprovação, comprovante, centro de custo e lançamento financeiro. Depois simule o pedido mensal de benefícios. São fluxos relacionados, mas exigem políticas diferentes.",
+      "Defina quais permissões ficam com RH, financeiro e gestores. Também peça uma resposta demonstrável para uma ocorrência de cartão: quem atende, qual o prazo e como o RH acompanha a resolução. O conjunto de módulos só tem valor quando cabe nessa rotina."
     ],
     "strengths": [
-      "Proposta associada a uma jornada digital para RH e colaboradores.",
-      "Estrutura multibenefícios que pode apoiar políticas com diferentes categorias.",
-      "Recursos de gestão cuja disponibilidade deve ser confirmada na proposta.",
-      "Experiência de uso que merece teste com o perfil real do time."
+      "Cartão Visa com categorias de benefícios e regras por saldo.",
+      "Oferta de gestão de despesas, cartão corporativo e prestação de contas.",
+      "Plataforma de gestão de pessoas e recursos de administração, conforme o escopo.",
+      "A página de planos apresenta combinações com TotalPass, Clude e C4Life; confirme o pacote vigente."
     ],
     "evaluate": [
       "Categorias habilitadas e regras aplicáveis a cada saldo.",
@@ -61,11 +123,59 @@
       "Relatórios, centros de custo, permissões e integrações necessárias.",
       "Comunicação da política para evitar uso incorreto ou expectativa desalinhada."
     ],
-    "fit": "A Flash pode fazer sentido quando a empresa busca uma jornada digital e categorias configuráveis, desde que governança, aceitação e suporte atendam ao cenário. O desenho da política vem antes da escolha do cartão.",
+    "fit": "Pode ser considerada quando há despesas corporativas além dos benefícios e a empresa quer testar uma jornada integrada. Peça a demonstração de reembolso, centro de custo, conciliação e tratamento de exceções. Compare o pacote efetivamente necessário, sem somar módulos que o time não utilizará.",
     "faq": [
-      {"question": "Benefício flexível significa uso sem regras?", "answer": "Não. A empresa precisa definir categorias, elegibilidade, limites e comunicação. As possibilidades concretas dependem do produto e das condições contratadas."},
-      {"question": "O aplicativo é suficiente para decidir?", "answer": "Não. Experiência digital é um critério, mas rede, atendimento, relatórios, implantação e custo total também precisam ser comparados."}
-    ]
+      {
+        "question": "Benefício flexível significa uso sem regras?",
+        "answer": "Não. A empresa precisa definir categorias, elegibilidade, limites e comunicação. As possibilidades concretas dependem do produto e das condições contratadas."
+      },
+      {
+        "question": "O aplicativo é suficiente para decidir?",
+        "answer": "Não. Experiência digital é um critério, mas rede, atendimento, relatórios, implantação e custo total também precisam ser comparados."
+      }
+    ],
+    "attention": [
+      "Benefícios, despesas e gestão de pessoas devem ser comparados por módulo, preço e rotina de aprovação.",
+      "Confirme o modo de pagamento e a aceitação de cada saldo; a modalidade pode variar entre alimentação e outras categorias.",
+      "Teste o atendimento com uma ocorrência realista. Não atribuímos superioridade de suporte sem evidências do seu contrato."
+    ],
+    "resources": [
+      {
+        "label": "Flash no Google Play",
+        "url": "https://play.google.com/store/apps/details?id=br.com.flashapp&hl=pt_BR"
+      },
+      {
+        "label": "Flash na App Store",
+        "url": "https://apps.apple.com/br/app/flash-benef%C3%ADcios-e-despesas/id1460842290"
+      },
+      {
+        "label": "WhatsApp oficial: (11) 4118-0488",
+        "url": "https://wa.me/551141180488"
+      },
+      {
+        "label": "Central de ajuda e segurança do cartão",
+        "url": "https://faq.flashapp.com.br/"
+      },
+      {
+        "label": "Canais oficiais de atendimento",
+        "url": "https://flashapp.com.br/contato"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Cartão, benefícios e despesas",
+        "url": "https://flashapp.com.br/perguntas-e-respostas"
+      },
+      {
+        "label": "Planos e serviços adicionais",
+        "url": "https://flashapp.com.br/planos"
+      },
+      {
+        "label": "Aplicativo oficial",
+        "url": "https://play.google.com/store/apps/details?id=br.com.flashapp&hl=pt_BR"
+      }
+    ],
+    "checkedAt": "2026-10-05"
   },
   {
     "slug": "caju-beneficios",
@@ -73,20 +183,27 @@
     "eyebrow": "Flexibilidade com governança para o RH",
     "title": "Caju Benefícios para empresas: como avaliar antes de contratar",
     "description": "Conheça os pontos de atenção para comparar a Caju em benefícios corporativos: categorias, aceitação, gestão, implantação e suporte.",
-    "keywords": ["Caju Benefícios", "cartão Caju", "benefícios flexíveis", "cartão corporativo", "gestão de RH", "benefícios para empresas"],
+    "keywords": [
+      "Caju Benefícios",
+      "cartão Caju",
+      "benefícios flexíveis",
+      "cartão corporativo",
+      "gestão de RH",
+      "benefícios para empresas"
+    ],
     "logo": "/caju-logo-card-2884052F.png",
     "logoAlt": "Logotipo da Caju Benefícios",
     "cardClass": "caju",
-    "summary": "A Caju aparece em avaliações de benefícios flexíveis por sua proposta digital. Para transformar essa percepção em decisão, a empresa precisa testar as categorias, a operação administrativa e a experiência de uso no seu próprio contexto.",
+    "summary": "A Caju combina uma proposta de benefícios com frentes de despesas e gestão de pessoas. Para o RH, a avaliação deve mostrar como as categorias, os pedidos e os controles se encaixam na política da empresa sem misturar o que é benefício com o que é despesa corporativa.",
     "overview": [
-      "O valor de uma solução flexível depende de uma política clara. Antes da contratação, RH, financeiro e liderança devem alinhar quais públicos recebem cada categoria, como funcionam limites e exceções e quais informações serão acompanhadas.",
-      "Na comparação, vale reproduzir tarefas reais da equipe: importar cadastros, aprovar pedidos, alterar saldos, separar centros de custo, extrair relatórios e resolver um cartão com problema. Essa simulação revela mais que uma demonstração genérica."
+      "Na demonstração, use um pedido com categorias e públicos distintos. Confira como a política é configurada, como as exceções são aprovadas e o que o colaborador vê no aplicativo. Flexibilidade precisa ser compreendida por quem administra e por quem usa.",
+      "Se houver adiantamentos e reembolsos, acompanhe a devolução de saldo e o relatório de fechamento. Registre quais etapas continuam com a empresa, quais dependem do produto e como o financeiro vai conciliar os valores, antes de assumir redução de trabalho."
     ],
     "strengths": [
-      "Proposta digital voltada à gestão de diferentes benefícios.",
-      "Categorias que podem apoiar políticas mais segmentadas.",
-      "Jornada de uso que pode ser testada antes da decisão final.",
-      "Recursos e condições sujeitos ao plano e à oferta comercial vigente."
+      "Cartão Visa com categorias e controles para os saldos habilitados.",
+      "Oferta de despesas com reembolsos e adiantamentos.",
+      "Gestão de pessoas como frente própria da plataforma.",
+      "Módulo de saúde e bem-estar com parceiros, incluindo Wellhub, conforme o pacote."
     ],
     "evaluate": [
       "Configuração de categorias, limites e públicos elegíveis.",
@@ -95,11 +212,59 @@
       "Canais de suporte para empresa e colaborador.",
       "Etapas, responsáveis e cronograma de implantação."
     ],
-    "fit": "A Caju pode ser considerada por empresas que buscam flexibilidade e operação digital. A decisão responsável confirma se os controles oferecidos sustentam a política interna sem criar novos pontos de retrabalho.",
+    "fit": "Pode ser avaliada por empresas que precisam de benefícios por categoria e querem conferir a relação com adiantamentos, reembolsos ou gestão de pessoas. Faça o teste com a política real: quem aprova, quais saldos podem ser usados e como o financeiro recebe os registros.",
     "faq": [
-      {"question": "A Caju serve apenas para empresas de tecnologia?", "answer": "Não existe uma resposta por segmento. A aderência depende do perfil dos colaboradores, da política, das localidades e da capacidade operacional necessária."},
-      {"question": "Como comparar categorias entre cartões diferentes?", "answer": "Crie uma matriz única com nome da categoria, regra de uso, público elegível, controle disponível e impacto operacional. Depois preencha a mesma matriz para todas as propostas."}
-    ]
+      {
+        "question": "A Caju serve apenas para empresas de tecnologia?",
+        "answer": "Não existe uma resposta por segmento. A aderência depende do perfil dos colaboradores, da política, das localidades e da capacidade operacional necessária."
+      },
+      {
+        "question": "Como comparar categorias entre cartões diferentes?",
+        "answer": "Crie uma matriz única com nome da categoria, regra de uso, público elegível, controle disponível e impacto operacional. Depois preencha a mesma matriz para todas as propostas."
+      }
+    ],
+    "attention": [
+      "Aceitação por bandeira continua sujeita à categoria do estabelecimento e à carteira utilizada.",
+      "Confira o que está incluído no plano e o custo dos módulos e parceiros adicionais.",
+      "Em despesas, simule prestação de contas, devolução de saldo e conciliação antes de desenhar a política."
+    ],
+    "resources": [
+      {
+        "label": "Caju no Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.caju.employeeApp&hl=pt_BR"
+      },
+      {
+        "label": "Caju na App Store",
+        "url": "https://apps.apple.com/br/app/caju-benef%C3%ADcios-por-inteiro/id1483671427"
+      },
+      {
+        "label": "Atendimento: (11) 4118-3826",
+        "url": "tel:+551141183826"
+      },
+      {
+        "label": "WhatsApp oficial",
+        "url": "https://wa.me/551141183826"
+      },
+      {
+        "label": "Central de ajuda e segurança do cartão",
+        "url": "https://ajuda.caju.com.br/"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Plataforma e canais oficiais",
+        "url": "https://www.caju.com.br/"
+      },
+      {
+        "label": "Saúde e bem-estar",
+        "url": "https://www.caju.com.br/plataforma/saude-e-bem-estar"
+      },
+      {
+        "label": "Regras de resgate em despesas",
+        "url": "https://ajuda.caju.com.br/s/toparticles/article/Como-funciona-o-resgate-de-saldo-do-Caju-Despesas"
+      }
+    ],
+    "checkedAt": "2026-10-05"
   },
   {
     "slug": "ifood-beneficios",
@@ -107,20 +272,27 @@
     "eyebrow": "Alimentação, refeição e jornada conhecida",
     "title": "iFood Benefícios para empresas: pontos para o RH comparar",
     "description": "Saiba o que avaliar no iFood Benefícios antes da decisão: produtos, aceitação, experiência do colaborador, gestão e implantação.",
-    "keywords": ["iFood Benefícios", "cartão iFood Benefícios", "vale refeição", "vale alimentação", "cartão de benefícios", "RH"],
+    "keywords": [
+      "iFood Benefícios",
+      "cartão iFood Benefícios",
+      "vale refeição",
+      "vale alimentação",
+      "cartão de benefícios",
+      "RH"
+    ],
     "logo": "/ifood.svg",
     "logoAlt": "Logotipo do iFood Benefícios",
     "cardClass": "ifood",
-    "summary": "O iFood Benefícios leva uma marca familiar para a conversa sobre alimentação, refeição e outros saldos corporativos. A familiaridade ajuda na comunicação, mas não substitui a validação de rede, gestão e suporte.",
+    "summary": "O iFood Benefícios pode fazer sentido em uma análise concentrada na experiência de alimentação e refeição. A relação com o aplicativo de delivery ajuda a explicar a proposta, mas o cartão corporativo, os saldos e as condições dos serviços adicionais precisam ser conferidos separadamente.",
     "overview": [
-      "Uma marca conhecida pelos colaboradores pode reduzir parte do esforço de apresentação, porém a implantação ainda precisa explicar produto, regras, desbloqueio, uso e canais de ajuda. Essa comunicação deve ser desenhada para o contrato específico da empresa.",
-      "Para o RH, a avaliação precisa cobrir pedidos, movimentações, relatórios, níveis de acesso e atendimento. Para o colaborador, deve testar aceitação, consulta de saldo e solução de problemas comuns."
+      "Teste o uso do produto corporativo em supermercado, restaurante e delivery, considerando as carteiras habilitadas. A análise precisa explicar ao colaborador onde consultar o saldo, qual cartão utilizar e onde buscar ajuda, sem depender do reconhecimento da marca.",
+      "Peça ao fornecedor o regulamento dos serviços adicionais e o roteiro de administração mensal. Identifique o que é uma condição promocional e o que faz parte do contrato; depois avalie a relevância dessas vantagens para o uso real do time."
     ],
     "strengths": [
-      "Marca reconhecida no contexto de alimentação e consumo diário.",
-      "Oferta corporativa que deve ser avaliada conforme os produtos vigentes.",
-      "Jornada digital para acompanhamento do benefício.",
-      "Possível facilidade de comunicação, a confirmar com o perfil do time."
+      "Oferta corporativa de alimentação, refeição e outras categorias, conforme o produto.",
+      "Aplicativo próprio para acompanhamento do cartão e dos saldos.",
+      "Clube iFood é apresentado em materiais oficiais como vantagem sujeita a regras e elegibilidade.",
+      "A experiência no delivery é um critério a testar com o perfil de uso do time."
     ],
     "evaluate": [
       "Quais saldos e categorias estão incluídos na proposta recebida.",
@@ -129,11 +301,51 @@
       "Atendimento de RH e de usuários em situações críticas.",
       "Materiais e suporte disponíveis para a implantação."
     ],
-    "fit": "O iFood Benefícios pode entrar em empresas que valorizam uma jornada familiar para o colaborador. O encaixe real depende da cobertura, dos controles administrativos e das condições formalizadas na proposta.",
+    "fit": "Vale considerar quando alimentação, refeição e a experiência de uso têm peso alto na revisão. Valide o cartão nos estabelecimentos do dia a dia, as regras de uso no delivery e o atendimento do produto corporativo. Familiaridade com a marca não elimina a necessidade de implantação.",
     "faq": [
-      {"question": "iFood Benefícios é a mesma coisa que pedir comida no aplicativo?", "answer": "Não. É uma oferta corporativa de benefícios. Produtos, formas de uso e condições devem ser confirmados na documentação e na proposta vigente."},
-      {"question": "Reconhecimento de marca garante adesão?", "answer": "Não. Comunicação, aceitação, facilidade de uso e solução de dúvidas influenciam a experiência e precisam ser acompanhadas após a implantação."}
-    ]
+      {
+        "question": "iFood Benefícios é a mesma coisa que pedir comida no aplicativo?",
+        "answer": "Não. É uma oferta corporativa de benefícios. Produtos, formas de uso e condições devem ser confirmados na documentação e na proposta vigente."
+      },
+      {
+        "question": "Reconhecimento de marca garante adesão?",
+        "answer": "Não. Comunicação, aceitação, facilidade de uso e solução de dúvidas influenciam a experiência e precisam ser acompanhadas após a implantação."
+      }
+    ],
+    "attention": [
+      "Cupons, Clube e parcerias não equivalem a um desconto fixo e permanente no benefício.",
+      "Não trate o aplicativo de delivery e o aplicativo do cartão como se fossem o mesmo produto.",
+      "Se a empresa precisa de despesas corporativas, peça o escopo específico e as integrações disponíveis; não presuma inclusão."
+    ],
+    "resources": [
+      {
+        "label": "iFood Benefícios no Google Play",
+        "url": "https://play.google.com/store/apps/details?id=br.com.ifood.benefits&hl=pt_BR"
+      },
+      {
+        "label": "iFood Benefícios na App Store",
+        "url": "https://apps.apple.com/br/app/ifood-benef%C3%ADcios/id1550867930"
+      },
+      {
+        "label": "Portal oficial e canais de ajuda",
+        "url": "https://beneficios.ifood.com.br/"
+      },
+      {
+        "label": "Orientações oficiais ao beneficiário",
+        "url": "https://marketing-assets-benefits.ifood.com.br/assets/referral-channel/manual_beneficiario.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Produtos e aceitação",
+        "url": "https://beneficios.ifood.com.br/"
+      },
+      {
+        "label": "Manual do beneficiário e regras do Clube",
+        "url": "https://marketing-assets-benefits.ifood.com.br/assets/referral-channel/manual_beneficiario.pdf"
+      }
+    ],
+    "checkedAt": "2026-10-05"
   },
   {
     "slug": "valecard",
@@ -141,20 +353,27 @@
     "eyebrow": "Alternativa para benefícios e gestão corporativa",
     "title": "ValeCard para empresas: rede, gestão e critérios de avaliação",
     "description": "Veja como incluir a ValeCard em um comparativo de benefícios corporativos com critérios de rede, operação, suporte e implantação.",
-    "keywords": ["ValeCard", "cartão ValeCard", "benefícios corporativos", "vale alimentação", "vale refeição", "comparativo de cartões"],
+    "keywords": [
+      "ValeCard",
+      "cartão ValeCard",
+      "benefícios corporativos",
+      "vale alimentação",
+      "vale refeição",
+      "comparativo de cartões"
+    ],
     "logo": "/valecard-logo-official-card-2603BF99.png",
     "logoAlt": "Logotipo da ValeCard",
     "cardClass": "valecard",
-    "summary": "A ValeCard amplia o conjunto de alternativas que podem ser consideradas em uma concorrência de benefícios. A avaliação deve verificar com cuidado a cobertura necessária e como a operação funciona para o porte e a distribuição geográfica da empresa.",
+    "summary": "A ValeCard reúne benefícios e frentes específicas de frota, logística e manutenção. Essa diferença importa para empresas que administram veículos além de cartões de alimentação e refeição: é preciso separar os produtos, os usuários e os canais de suporte de cada operação.",
     "overview": [
-      "Ao incluir a ValeCard na comparação, use exatamente o mesmo roteiro aplicado às demais marcas. Isso evita que uma proposta seja avaliada só por preço enquanto outra recebe uma análise detalhada de rede e serviço.",
-      "Empresas com equipes distribuídas precisam dar atenção especial à amostra de cidades e estabelecimentos. Já operações centralizadas podem aprofundar fluxo de pedidos, relatórios e tempo de resposta dos canais de suporte."
+      "Separe a avaliação de alimentação e refeição da avaliação de veículos. Para benefícios, a base de teste são estabelecimentos e usuários. Para frota, inclua rotas, limites de abastecimento, autorização de manutenção e informações necessárias ao fechamento.",
+      "Confirme o aplicativo e o canal de atendimento de cada produto antes da comunicação ao time. A diversidade de soluções pode ser útil, mas também exige clareza para que um colaborador não procure saldo ou suporte no aplicativo de outra frente."
     ],
     "strengths": [
-      "Alternativa adicional em processos de cotação e revisão de benefícios.",
-      "Soluções corporativas cuja aderência deve ser testada por produto.",
-      "Possibilidade de comparar rede, operação e condições comerciais.",
-      "Escopo e recursos que devem ser confirmados na oferta vigente."
+      "Aplicativos distintos para benefício e cartão bandeirado.",
+      "Frentes específicas para gestão de frota e motoristas.",
+      "Soluções de logística e manutenção, com aplicativos próprios.",
+      "Possibilidade de comparar a gestão de benefícios e veículos em escopos separados."
     ],
     "evaluate": [
       "Cobertura por cidade, CEP e estabelecimentos prioritários.",
@@ -163,11 +382,63 @@
       "SLA de atendimento e tratamento de ocorrências.",
       "Cronograma de implantação e materiais de comunicação."
     ],
-    "fit": "A ValeCard pode ser uma alternativa em processos que buscam ampliar concorrência e comparar opções com método. A recomendação depende da validação objetiva da proposta para a população atendida.",
+    "fit": "Pode entrar em empresas que precisam revisar benefícios e também têm demanda de veículos, logística ou manutenção. Isso não significa que todas as frentes devam ser contratadas juntas: compare escopo, cobertura, autorização de gastos e canais de atendimento de cada produto.",
     "faq": [
-      {"question": "Vale a pena incluir uma operadora menos lembrada na cotação?", "answer": "Pode valer, desde que ela passe pelos mesmos critérios de rede, operação, suporte, custo total e experiência aplicados às outras propostas."},
-      {"question": "Como evitar uma comparação desigual?", "answer": "Envie o mesmo escopo, a mesma base de localidades e o mesmo roteiro de perguntas a todas as operadoras. Registre evidências e premissas na matriz de decisão."}
-    ]
+      {
+        "question": "Vale a pena incluir uma operadora menos lembrada na cotação?",
+        "answer": "Pode valer, desde que ela passe pelos mesmos critérios de rede, operação, suporte, custo total e experiência aplicados às outras propostas."
+      },
+      {
+        "question": "Como evitar uma comparação desigual?",
+        "answer": "Envie o mesmo escopo, a mesma base de localidades e o mesmo roteiro de perguntas a todas as operadoras. Registre evidências e premissas na matriz de decisão."
+      }
+    ],
+    "attention": [
+      "Confira se a proposta utiliza rede credenciada ou produto bandeirado. Os aplicativos e a aceitação não são intercambiáveis.",
+      "Frota, combustível e manutenção precisam de política, limites e conciliação próprios.",
+      "Teste cobertura e suporte por localidade. Porte da empresa, por si só, não comprova aderência da solução."
+    ],
+    "resources": [
+      {
+        "label": "ValeCard Benefício no Google Play",
+        "url": "https://play.google.com/store/apps/details?id=valecard.Beneficio.App"
+      },
+      {
+        "label": "ValeCard Benefício na App Store",
+        "url": "https://apps.apple.com/br/app/valecard-benef%C3%ADcio/id992112631"
+      },
+      {
+        "label": "Aplicativos de cartão bandeirado e frota",
+        "url": "https://www.valecard.com.br/baixar-aplicativos/"
+      },
+      {
+        "label": "Benefícios, telefone fixo: 0800 701 5402",
+        "url": "tel:08007015402"
+      },
+      {
+        "label": "Benefícios, celular: (34) 4005-1212",
+        "url": "tel:+553440051212"
+      },
+      {
+        "label": "Canais de benefícios e frota",
+        "url": "https://www.valecard.com.br/contato/"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Aplicativos e linhas de produto",
+        "url": "https://www.valecard.com.br/baixar-aplicativos/"
+      },
+      {
+        "label": "Gestão de manutenção",
+        "url": "https://www.valecard.com.br/blog/gestao-de-manutencao/"
+      },
+      {
+        "label": "Atendimento por produto",
+        "url": "https://www.valecard.com.br/contato/"
+      }
+    ],
+    "checkedAt": "2026-10-05"
   },
   {
     "slug": "pluxee-beneficios",
@@ -175,20 +446,27 @@
     "eyebrow": "Benefícios corporativos e experiência de uso",
     "title": "Pluxee para empresas: como comparar benefícios com critério",
     "description": "Entenda quais pontos de rede, produtos, gestão, experiência e atendimento avaliar ao considerar a Pluxee para sua empresa.",
-    "keywords": ["Pluxee", "Pluxee Benefícios", "cartão Pluxee", "vale refeição", "vale alimentação", "benefícios corporativos"],
+    "keywords": [
+      "Pluxee",
+      "Pluxee Benefícios",
+      "cartão Pluxee",
+      "vale refeição",
+      "vale alimentação",
+      "benefícios corporativos"
+    ],
     "logo": "/pluxee-logo-official-card-EB352836.png",
     "logoAlt": "Logotipo da Pluxee Benefícios",
     "cardClass": "pluxee",
-    "summary": "A Pluxee participa do mercado de benefícios corporativos com soluções que podem envolver alimentação, refeição e outras frentes. O RH deve conectar a proposta atual à política da empresa e à experiência esperada nas localidades atendidas.",
+    "summary": "A Pluxee deve ser avaliada pelo produto concreto: alimentação e refeição, ou Multibenefícios Elo com diferentes carteiras. Essa distinção muda aceitação, administração e regras de saldo, inclusive quando a política da empresa está vinculada ao PAT.",
     "overview": [
-      "Mudanças de marca e evolução de portfólio reforçam a importância de avaliar documentos e canais oficiais vigentes. Na cotação, identifique exatamente o produto, as regras e os serviços incluídos para evitar comparação baseada em informações antigas.",
-      "A decisão também deve observar a jornada pós-venda: administração, relatórios, atendimento ao colaborador e tratamento de exceções. Esses fatores pesam no custo operacional depois que o contrato começa."
+      "Compare a proposta recebida pelo nome do produto e pelas carteiras habilitadas. Na demonstração do Multibenefícios Elo, peça exemplos de pagamento, elegibilidade e movimentação entre carteiras. A política aplicada à empresa precisa estar documentada.",
+      "Para alimentação e refeição, use a mesma amostra de locais adotada no comparativo de outras operadoras. Serviços de saúde e bem-estar entram em uma análise separada de custo, prazo de oferta e elegibilidade, sem substituir a validação da operação principal."
     ],
     "strengths": [
-      "Atuação no mercado de benefícios corporativos.",
-      "Produtos e serviços que devem ser confirmados na proposta vigente.",
-      "Canais digitais para empresa e usuário, conforme solução contratada.",
-      "Rede cuja aderência precisa ser validada para cada população."
+      "Produtos de alimentação e refeição com rede a validar localmente.",
+      "Multibenefícios Elo com carteiras e regras por categoria.",
+      "Aplicativo do beneficiário com consulta e canais de serviço.",
+      "A oferta oficial de Wellhub anuncia gratuidade por prazo e elegibilidade definidos; confirme o regulamento antes de contratar."
     ],
     "evaluate": [
       "Produto exato, categorias e regras incluídas na contratação.",
@@ -197,10 +475,58 @@
       "Suporte, prazos e escalonamento de ocorrências.",
       "Plano de transição e comunicação em caso de migração."
     ],
-    "fit": "A Pluxee pode ser considerada em cenários que buscam uma operadora de benefícios com estrutura corporativa. A aderência precisa ser demonstrada pela rede, pela operação e pelas condições atuais, não apenas pelo nome da marca.",
+    "fit": "Pode ser estudada quando a empresa quer comparar a operação de alimentação e refeição com um desenho multibenefícios. Peça que a demonstração mostre cada carteira, regra de transferência, enquadramento e relatório. Produtos diferentes da mesma marca não devem receber uma avaliação única.",
     "faq": [
-      {"question": "Informações antigas sobre a marca ainda valem?", "answer": "Produtos e condições podem mudar. A decisão deve usar documentação oficial e proposta atualizadas, com dúvidas registradas e respondidas antes da contratação."},
-      {"question": "O que deve ser testado numa demonstração?", "answer": "Peça para executar tarefas reais do RH, visualizar relatórios, explicar permissões e simular ocorrências comuns. Para usuários, confira consulta, uso e canais de atendimento."}
-    ]
+      {
+        "question": "Informações antigas sobre a marca ainda valem?",
+        "answer": "Produtos e condições podem mudar. A decisão deve usar documentação oficial e proposta atualizadas, com dúvidas registradas e respondidas antes da contratação."
+      },
+      {
+        "question": "O que deve ser testado numa demonstração?",
+        "answer": "Peça para executar tarefas reais do RH, visualizar relatórios, explicar permissões e simular ocorrências comuns. Para usuários, confira consulta, uso e canais de atendimento."
+      }
+    ],
+    "attention": [
+      "Transferência entre carteiras depende das regras do produto; não presuma livre movimentação de saldos.",
+      "Nas condições publicadas do Multibenefícios, o PAT altera as possibilidades de movimentação entre carteiras.",
+      "Promoções de Wellhub ou saúde não significam gratuidade permanente nem inclusão em todo contrato."
+    ],
+    "resources": [
+      {
+        "label": "Pluxee Brasil no Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.primety.sodexomobile"
+      },
+      {
+        "label": "Pluxee Brasil na App Store",
+        "url": "https://apps.apple.com/br/app/pluxee-brasil/id921795142"
+      },
+      {
+        "label": "Atendimento: 3003-5083",
+        "url": "tel:30035083"
+      },
+      {
+        "label": "Canais oficiais de atendimento",
+        "url": "https://www.pluxee.com.br/contato/"
+      },
+      {
+        "label": "Portal e orientações ao beneficiário",
+        "url": "https://www.pluxee.com.br/usuarios-cartoes-pluxee/"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Regras do Multibenefícios Elo",
+        "url": "https://www.pluxee.com.br/helpcenter/beneficiarios/como-usar-multibeneficios-elo/"
+      },
+      {
+        "label": "Configuração de carteiras",
+        "url": "https://www.pluxee.com.br/helpcenter/clientes/como-configurar-carteiras-multibeneficios/"
+      },
+      {
+        "label": "Condições da oferta de Wellhub",
+        "url": "https://www.pluxee.com.br/beneficio-bem-estar-wellhub-gratis/"
+      }
+    ],
+    "checkedAt": "2026-10-05"
   }
 ]

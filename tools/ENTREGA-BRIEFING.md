@@ -1,0 +1,153 @@
+# Consultoria VR: entrega do briefing de melhorias
+
+Implementação em 5 de outubro de 2026. Projeto correto: Consultoria VR,
+domínio https://www.consultoriavr.com.br/.
+
+## Entregue no código
+
+- Formulário qualificado na home e em `/contato/`: nome, cargo, empresa,
+  CNPJ, e-mail corporativo, WhatsApp com DDD, porte, cartões opcionais,
+  operadora, interesses múltiplos, prioridade, contexto e consentimento.
+- Máscara e verificação de CNPJ numérico e alfanumérico, validação de celular
+  brasileiro, bloqueio de principais domínios de e-mail pessoal e seleção
+  obrigatória de ao menos um interesse.
+- Página de origem, UTMs e respostas/resultados de quiz e diagnóstico junto
+  ao envio. Os campos pessoais NÃO ficam em sessionStorage nem em eventos.
+- `/ja-tenho-cartao/`: dez perguntas, voltar/revisar, progresso e três
+  categorias por 0-2, 3-5 e 6-8 sinais. Operadora e porte chegam ao formulário.
+- `/quiz-rede-aberta-ou-fechada/`: sete perguntas, peso dois na localização,
+  peso um nos demais critérios, diferença de três pontos para perfil aberto
+  ou fechado, e perfil híbrido para diferença menor. Sem indicação de marca.
+- `/obrigado/`: redirecionamento após resposta de sucesso no envio,
+  WhatsApp opcional nesta etapa, noindex e fora do sitemap.
+- `/politica-de-privacidade/`, com responsável identificado, contato de
+  privacidade, finalidades, prestadores e direitos do titular.
+- CTAs comerciais da home, biblioteca, artigos e páginas das seis operadoras
+  passam pelo formulário. Canais de suporte das operadoras continuam externos.
+- Assinatura Hirayama no topo/rodapé; seção Ewerton com foto e LinkedIn;
+  dados jurídicos e links institucionais em todos os rodapés.
+- Operadoras com diferenças por produto, cuidados, aplicativos Android/iOS,
+  canais oficiais, fontes/data de consulta e revisão com operadora selecionada.
+- Remoção da seção duplicada sobre critérios; banner de revisão de contrato;
+  bloco de perfis substituído pela entrada do quiz; hero com contraste integral;
+  proporção estável da imagem de decisão e tratamento de impressão.
+- HTML estático, title/description/canonical, GTM existente preservado,
+  novas páginas no sitemap. Conteúdos futuros continuam indisponíveis.
+
+## O que não está ativado
+
+O endpoint existente `https://formspree.io/f/mbdppnkr` foi preservado para não
+interromper os pedidos. A troca do destinatário pessoal mencionado no briefing
+NÃO pode ser feita pelo HTML: é uma configuração da conta Formspree.
+Não foi configurada entrega no HubSpot, nem notificação interna por e-mail,
+nem confirmação automática assinada por Ewerton, pois faltam os acessos/dados.
+Não confundir a confirmação visual `/obrigado/` com um e-mail automático.
+
+As validações do navegador melhoram a qualidade do preenchimento, mas NÃO
+são uma barreira contra requisições manuais. Replicar validação e proteção
+anti-spam no fluxo de integração antes de criar/atualizar registros no CRM.
+
+## Mensagem pronta para pedir ao cliente
+
+"Para concluir o recebimento dos leads da Consultoria VR, preciso de:
+1. Formulário público do HubSpot (link ou portal ID, form ID e região),
+   ou webhook do Make para receber as submissões.
+2. E-mail institucional do Ewerton e destinatários das notificações de leads.
+3. Pessoa responsável com acesso ao Formspree para revisar a entrega atual,
+   retirar o e-mail pessoal e conectar o fluxo da Hirayama.
+4. Confirmação da razão social, CNPJ, contato de privacidade, foto e LinkedIn
+   oficiais utilizados; registro SUSEP verificável se deve constar no rodapé.
+5. Acesso delegado ao GTM/GA4 e aprovação dos textos sobre PAT e vantagens.
+Não é necessário enviar senhas ou tokens privados pelo chat."
+
+## Fluxo recomendado: Formspree -> Make -> HubSpot
+
+1. Na conta da Hirayama, conectar um webhook autorizado de submissões do
+   Formspree a um cenário Make. Verificar disponibilidade no plano contratado.
+2. Mapear os campos do formulário, incluindo `origin_page`, `utm_source`,
+   `utm_medium`, `utm_campaign`, `quiz_result`, `quiz_answers`,
+   `diagnostic_result` e `diagnostic_answers`.
+3. Validar consentimento, e-mail, CNPJ e campos obrigatórios; rejeitar `_gotcha`
+   preenchido. Não colocar os dados pessoais em URLs ou logs públicos.
+4. Buscar/criar/atualizar contato por e-mail e empresa por CNPJ no HubSpot,
+   usando as propriedades definidas pela Hirayama, e associar os registros.
+5. Deduplicar por ID da submissão do Formspree: retries não podem gerar
+   contatos, empresas ou notificações duplicadas.
+6. Enviar notificação interna aos destinatários aprovados, com o assunto:
+   `Lead ConsultoriaVR | {{employees}} | {{operator}} | {{priority}}`.
+7. Enviar confirmação ao solicitante por remetente institucional aprovado.
+8. Configurar alerta de falhas e testar entrega no CRM, associação de empresa,
+   notificação, confirmação e retirada do destinatário antigo.
+9. Atualizar a política de privacidade para descrever Make/HubSpot e eventuais
+   transferências internacionais depois de ativar esses prestadores.
+
+Alternativa: integração por formulário nativo HubSpot. Requer ID do formulário,
+propriedades correspondentes, regras de consentimento e confirmação. Não basta
+trocar a URL `action`: é necessário adaptar a submissão ao contrato do HubSpot.
+
+## E-mail de confirmação proposto para aprovação
+
+Assunto: Recebemos sua solicitação | Consultoria VR
+
+"Olá, {{name}}. Recebemos o cenário da {{company}} para analisar os benefícios
+corporativos. Eu ou alguém do time entra em contato em até 1 dia útil pelos
+dados informados. Vamos entender suas prioridades antes de discutir manter,
+renegociar ou comparar opções. Obrigado, Ewerton Hirayama,
+Hirayama Corretora & Consultoria."
+
+## Medição e relatório mensal
+
+Eventos implementados na dataLayer, sem informações pessoais:
+`quiz_completed`, `diagnostic_completed`, `contact_cta_click`,
+`contact_form_start`, `contact_submit`, `generate_lead`,
+`contact_submit_error`, `thank_you_view`, `whatsapp_after_submit`.
+
+Publicar gatilhos de evento personalizado e tags GA4 no GTM `GTM-T636X4P7`.
+Selecionar apenas UM evento como conversão de envio: `generate_lead` é o
+recomendado. Não marcar também `contact_submit` e `thank_you_view` como a mesma
+conversão, evitando triplicar os leads. `thank_you_view` dispara uma vez após
+um envio recente; visita direta e reload não geram novo evento.
+Eventos na dataLayer não significam tags GA4 publicadas: depende da conta GTM.
+
+Registrar dimensões: `result_category`, `employee_range`, `operator`,
+`priority`, `form_id`, `placement`. UTM chega ao formulário/CRM; não inclui
+texto livre nos eventos. Respeitar consentimento e configurações existentes.
+
+Relatório mensal a configurar em GA4/Looker Studio/HubSpot:
+- Visitas/sessões por origem, mídia e campanha.
+- Conclusões do quiz e do diagnóstico por perfil.
+- Envios confirmados por porte, operadora e prioridade.
+- Conversão de visita para formulário e formulário para CRM.
+- Leads efetivamente recebidos no CRM versus envios confirmados pelo Formspree.
+O relatório e seu envio automático NÃO foram configurados sem acesso à conta.
+
+Links prontos para perfil/site no LinkedIn:
+https://www.consultoriavr.com.br/?utm_source=linkedin&utm_medium=social&utm_campaign=perfil_ewerton
+https://www.consultoriavr.com.br/ja-tenho-cartao/?utm_source=linkedin&utm_medium=social&utm_campaign=revisao_cartao
+https://www.consultoriavr.com.br/quiz-rede-aberta-ou-fechada/?utm_source=linkedin&utm_medium=social&utm_campaign=perfil_rede
+Alterações de perfil e publicações semanais no LinkedIn dependem do responsável
+pela conta. Nenhuma publicação ou alteração de perfil foi feita.
+
+## Fontes e ressalvas
+
+Dados jurídicos e privacidade: https://www.hirayamacorretora.com.br/politica-de-privacidade/
+Foto: ativo oficial já existente no projeto Hirayama Corretora.
+LinkedIn: https://www.linkedin.com/in/ewertonhirayama/
+As fontes das seis operadoras estão em `content/operators.json` e nas páginas.
+CNPJ alfanumérico: documentação técnica da Receita Federal; cálculo ASCII-48
+e dois dígitos verificadores preservados, incluindo exemplo 12.ABC.345/01DE-35.
+
+Não publicamos rankings de suporte, exclusividade de TotalPass, serviços de
+despesas ausentes ou gratuidade permanente sem confirmação oficial. O briefing
+é uma pauta, não substitui as condições atuais da operadora. Registro SUSEP
+`S7CC5J` ficou pendente de confirmação verificável; não foi exibido como registro.
+
+## Verificação
+
+`npm run build` e `npm test`.
+Testes: CNPJ/celular/e-mail, nove limites de pontuação do diagnóstico,
+432 combinações do quiz, SEO das novas rotas, canais das operadoras e fila futura.
+`node tools/test-leads-server.mjs` oferece uma simulação local na porta 4175:
+submissões não saem da máquina, a resposta pode falhar uma vez em
+`/__test__/fail-next`, e o último payload está em `/__test__/last`.
+Esse servidor é somente para testes; a Vercel bloqueia `/tools/`.
