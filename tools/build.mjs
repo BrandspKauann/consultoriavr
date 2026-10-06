@@ -562,6 +562,7 @@ function renderOperatorPage(operator, operators, guides) {
   const guide = guides[operator.slug];
   if (!guide) throw new Error(`Missing reading guide: ${operator.slug}`);
   if (guide.checks?.length !== guide.products.length) throw new Error(`Missing solution checks: ${operator.slug}`);
+  if (guide.campaign?.highlights.length !== 3 || guide.campaign?.paragraphs.length !== 2 || guide.campaign?.closing.length !== 2) throw new Error(`Missing operator campaign: ${operator.slug}`);
   const photo = `/assets/operators/${guide.image}.webp`;
   const rolloutPhoto = guide.image === 'gestao-rh' ? 'uso-restaurante' : 'gestao-rh';
   const related = operators.filter((item) => item.slug !== operator.slug);
@@ -617,9 +618,9 @@ ${editorialNav('operators')}
             <p class="operator-page__eyebrow">${escapeHtml(operator.eyebrow)}</p>
             <h1>${escapeHtml(operator.name)}</h1>
             <p class="operator-hero-lead">${escapeHtml(guide.lead)}</p>
-            <p>${escapeHtml(operator.description)}</p>
+            <p>${operatorText(guide.campaign.pitch)}</p>
             <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa</a>
-            <a class="operator-hero-explore" href="#visao-geral">Conhecer os critérios <span aria-hidden="true">↓</span></a>
+            <a class="operator-hero-explore" href="#produtos">Explorar as soluções <span aria-hidden="true">↓</span></a>
           </div>
           <div class="operator-card-float" data-motion-loop>
             <button class="operator-page__card" type="button" data-card-flip data-card-tilt disabled aria-pressed="false" aria-label="Ver foco da análise de ${escapeHtml(operator.name)}" title="Ver foco da análise">
@@ -641,9 +642,14 @@ ${editorialNav('operators')}
         <span class="operator-reading-progress" data-reading-progress aria-hidden="true"></span>
       </nav>
       <section class="operator-page__intro" id="visao-geral">
-        <p class="operator-page__label">Visão consultiva</p>
-        <h2 data-viewport-reveal>O cartão é o começo. A rotina é o teste.</h2>
-        <div data-viewport-reveal><p>${operatorText(operator.summary)}</p><p class="operator-focus"><strong>Foco da análise</strong> ${escapeHtml(guide.focus)}</p></div>
+        <p class="operator-page__label">${escapeHtml(operator.name)} para sua empresa</p>
+        <h2 data-viewport-reveal>${escapeHtml(guide.campaign.headline)}</h2>
+        <div data-viewport-reveal><p>${operatorText(guide.campaign.paragraphs[0])}</p><p>${operatorText(operator.summary)}</p><p class="operator-focus"><strong>Foco da análise</strong> ${escapeHtml(guide.focus)}</p></div>
+      </section>
+      <section class="operator-value operator-section" aria-labelledby="operator-value-title">
+        <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Escolha com orientação da Consultoria VR</p><h2 id="operator-value-title">Oportunidades para seu time e para o RH.</h2><p>${operatorText(guide.campaign.paragraphs[1])}</p></div>
+        <div class="operator-value-grid">${guide.campaign.highlights.map((item, index) => `<article data-viewport-reveal><span class="operator-step">${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(item.title)}</h3><p>${operatorText(item.text)}</p></article>`).join('')}</div>
+        <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Quero avaliar ${escapeHtml(operatorFormName(operator))} para minha empresa</a>
       </section>
 
       <section class="operator-page__reading">
@@ -660,7 +666,7 @@ ${editorialNav('operators')}
       </section>
 
       <section class="operator-products operator-section" id="produtos">
-        <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Escolha pelo uso, não só pela marca</p><h2>O que entra na proposta da ${escapeHtml(operator.name)}</h2><p>Produtos diferentes pedem perguntas diferentes. Separe o que resolve sua necessidade do que apenas amplia o pacote.</p></div>
+        <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Encontre o escopo que combina com sua empresa</p><h2>Conheça as soluções da ${escapeHtml(operator.name)}</h2><p>Explore as possibilidades e compare os usos que fazem sentido para o seu time. Na demonstração, conecte cada produto às prioridades da empresa e às condições da proposta.</p></div>
         <div class="operator-solution-controls" data-solution-controls hidden>
           <div class="operator-solution-tabs" role="tablist" aria-label="Soluções da ${escapeHtml(operator.name)}">${guide.products.map((product, index) => `<button type="button" role="tab" id="solucao-tab-${index}" aria-controls="solucao-${index}" aria-selected="${index === 0}" tabindex="${index === 0 ? '0' : '-1'}"><span aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>${escapeHtml(product.title)}</button>`).join('')}</div>
           <button class="operator-compare-toggle" type="button" data-compare-solutions aria-pressed="false">Comparar lado a lado <span aria-hidden="true">↔</span></button>
@@ -698,6 +704,8 @@ ${editorialNav('operators')}
         <p class="operator-page__label">Aderência ao perfil</p>
         <h2 data-viewport-reveal>Faz sentido para a sua empresa?</h2>
         <p data-viewport-reveal>${operatorText(operator.fit)}</p>
+        ${guide.campaign.closing.map(paragraph => `<p data-viewport-reveal>${operatorText(paragraph)}</p>`).join('\n        ')}
+        <div class="operator-fit-actions"><a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Solicitar uma análise de ${escapeHtml(operatorFormName(operator))}</a><a href="/quiz-rede-aberta-ou-fechada/">Descobrir meu perfil de rede antes do contato →</a></div>
         <a href="/conteudo/como-escolher-cartao-beneficios-corporativos/">Veja como estruturar a comparação completa <span>→</span></a>
       </section>
 

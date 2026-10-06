@@ -3,6 +3,23 @@
     "image": "uso-restaurante",
     "lead": "Alimentação, refeição e uma rotina que vai além da carga mensal.",
     "focus": "Rede local e experiência no SuperApp",
+    "campaign": {
+      "headline": "Leve a VR para onde a rotina do seu time acontece.",
+      "pitch": "Do supermercado ao almoço de trabalho, coloque alimentação e refeição no centro da escolha. Compare a VR com uma visão que une experiência do colaborador, gestão do RH e o contrato da sua empresa.",
+      "paragraphs": [
+        "O valor de um cartão de benefícios aparece nos momentos mais comuns: fazer as compras da semana, escolher onde almoçar e conferir o crédito recebido. Na comparação da VR, esses momentos ganham protagonismo. Em vez de começar por uma apresentação extensa de serviços, comece pelo que seu time precisa usar todos os dias e por como o RH administra essa entrega.",
+        "Sua empresa pode estar contratando o primeiro cartão, ampliando unidades ou revisando um contrato antigo. Em cada cenário, a conversa muda. A consultoria ajuda a organizar alimentação, refeição e eventuais serviços adicionais em um escopo compreensível, para que a proposta da VR seja comparada com as mesmas prioridades das demais opções. O objetivo é escolher com clareza, sem transformar a troca de cartão em mais uma urgência."
+      ],
+      "highlights": [
+        {"title": "O benefício perto de quem usa", "text": "Uma escolha orientada por bairros, cidades e turnos dá espaço para as necessidades reais dos colaboradores. Ao avaliar a rede credenciada, coloque na conversa os supermercados próximos de casa e os restaurantes próximos do trabalho. É essa cobertura útil que merece pesar na decisão."},
+        {"title": "Uma experiência que o time entende", "text": "Saldo, extrato e consulta de estabelecimentos no SuperApp fazem parte da jornada do usuário. Explore essa experiência na demonstração e planeje a orientação de primeiro acesso. Quanto mais clara a comunicação, melhor a oportunidade de o colaborador aproveitar o benefício contratado."},
+        {"title": "Uma operação preparada para crescer", "text": "Novas admissões, unidades e responsáveis mudam a rotina de gestão. Compare os processos de cadastro, crédito e atendimento com exemplos da sua empresa. Se jornada ou mobilidade entrarem na proposta, trate essas frentes como escolhas próprias, com escopo e responsáveis definidos."}
+      ],
+      "closing": [
+        "Quer descobrir se a VR combina com a operação da sua empresa? Traga os locais de uso, o volume de cartões e as prioridades do RH. A partir desse contexto, podemos organizar o que comparar e quais perguntas levar à proposta.",
+        "Você não precisa decidir pela marca antes de entender a rotina. O próximo passo é construir uma comparação de alimentação e refeição que faça sentido para quem aprova, administra e utiliza o cartão."
+      ]
+    },
     "checks": [
       {"question": "A rede atende onde o time mora e trabalha?", "evidence": "Leve uma amostra de supermercados e restaurantes por unidade e turno. Valide cada local no produto da proposta."},
       {"question": "O colaborador encontra sozinho o que precisa?", "evidence": "Peça uma demonstração de primeiro acesso, consulta de saldo e busca de rede. Identifique o caminho de ajuda quando o acesso falhar."},
@@ -20,8 +37,25 @@
   },
   "flash-beneficios": {
     "image": "gestao-rh",
-    "lead": "Benefícios, pessoas e despesas: o valor está no fluxo, não no número de funções.",
+    "lead": "Mais conexão entre benefícios, pessoas e despesas. Mais espaço para o RH pensar no time.",
     "focus": "Categorias, permissões e prestação de contas",
+    "campaign": {
+      "headline": "Um cartão rosa. Uma oportunidade de repensar a sua operação.",
+      "pitch": "Explore a Flash para conectar cartões de benefícios, gestão de pessoas e despesas no escopo que sua empresa precisa. Faça a comparação com foco em flexibilidade para o time e clareza para quem administra.",
+      "paragraphs": [
+        "Seu RH não precisa escolher entre olhar para as pessoas e cuidar da operação. Ao avaliar a Flash, a proposta é colocar essas duas frentes na mesma conversa: como os colaboradores recebem e usam os benefícios e como a empresa configura categorias, acompanha pedidos e organiza os processos. O cartão chama atenção; a experiência por trás dele é o que precisa sustentar a escolha.",
+        "Para uma empresa com reembolsos, viagens e diferentes políticas de benefícios, vale explorar também a gestão de despesas. Para outra, o melhor escopo pode começar apenas por alimentação e refeição. A consultoria ajuda a separar essas necessidades, comparar os módulos previstos na proposta e enxergar o potencial de simplificação sem contratar funções que não terão uso. Uma escolha mais inteligente começa pelo tamanho certo da solução."
+      ],
+      "highlights": [
+        {"title": "Flexibilidade com direção", "text": "Categorias e saldos devem traduzir o que sua empresa quer oferecer. Organize a política para cada público e explore como ela aparece no cartão e no aplicativo. Assim, a conversa sobre benefícios flexíveis ganha um objetivo concreto: uma experiência compreensível para o colaborador e administrável para o RH."},
+        {"title": "Despesas com um caminho definido", "text": "Quando despesas fazem parte da demanda, acompanhe uma situação inteira: limite, aprovação, comprovante e prestação de contas. Essa visão permite comparar como a Flash pode entrar no fluxo do financeiro e quais etapas precisam continuar com a equipe. O produto e os serviços incluídos dependem da proposta."},
+        {"title": "Pessoas no centro da implantação", "text": "Uma mudança de cartão também é uma mudança de hábito. Planeje acessos, comunicação e canais de ajuda para que gestores e colaboradores saibam por onde começar. A oportunidade de modernizar os benefícios precisa chegar acompanhada de um plano que funcione no primeiro crédito e nos meses seguintes."}
+      ],
+      "closing": [
+        "Vamos colocar a Flash na comparação da sua empresa? Conte como o RH trabalha hoje, quais categorias são necessárias e se há uma demanda de despesas corporativas. Esse contexto ajuda a distinguir o que agrega valor do que apenas amplia o pacote.",
+        "A consultoria organiza as perguntas, a leitura da proposta e os critérios de implantação. Você ganha um caminho para decidir com mais clareza, seja para adotar a Flash, negociar outra opção ou manter a operação atual."
+      ]
+    },
     "checks": [
       {"question": "Os saldos respeitam a política da sua empresa?", "evidence": "Demonstre um pedido para dois públicos e uma exceção autorizada. Compare o que aparece no painel do RH e no aplicativo do colaborador."},
       {"question": "A despesa chega ao fechamento sem retrabalho?", "evidence": "Acompanhe limite, aprovação, comprovante e prestação de contas. Identifique as etapas que continuam manuais e quem confere cada uma."},
@@ -41,6 +75,23 @@
     "image": "gestao-rh",
     "lead": "Flexibilidade para quem usa. Clareza para quem administra.",
     "focus": "Política de saldos, pedidos e conciliação",
+    "campaign": {
+      "headline": "Dê mais sabor à escolha dos benefícios. Sem perder o controle.",
+      "pitch": "Conheça a Caju na perspectiva da sua empresa: categorias de benefícios, experiência de uso e uma política que o RH consiga administrar. Flexibilidade faz mais sentido quando cada público entende o que recebe.",
+      "paragraphs": [
+        "Um time pode reunir pessoas no escritório, em campo e em trabalho remoto. Essas rotinas não precisam ser ignoradas na escolha do cartão. Ao comparar a Caju, transforme as diferenças em uma política clara: quais categorias fazem sentido, quais valores estão previstos e como cada público utiliza o benefício. A proposta comercial ganha força quando conversa com a vida real dos colaboradores.",
+        "Também existe uma rotina de quem administra: configurar pedidos, tratar exceções, conferir informações e fechar o mês. A consultoria aproxima essa visão da experiência de quem usa o cartão. Em vez de escolher apenas pela imagem de uma marca flexível, você pode comparar a Caju pelo que realmente entra no contrato e pelo encaixe da operação na sua empresa."
+      ],
+      "highlights": [
+        {"title": "Benefícios com a cara do seu time", "text": "Comece pela composição das equipes e pelos usos esperados. Categorias e valores bem definidos dão contexto à demonstração do cartão. Ao visualizar os saldos no aplicativo, confira se a comunicação da empresa também ajuda o colaborador a entender suas possibilidades e os limites de utilização."},
+        {"title": "RH e financeiro na mesma conversa", "text": "Pedidos e conciliação precisam fazer sentido para quem trabalha com eles. Se houver interesse em adiantamentos ou reembolsos, avalie o produto de despesas separadamente, com um exemplo de aprovação e fechamento. Não é necessário ampliar o escopo quando a necessidade está apenas nos benefícios."},
+        {"title": "Uma mudança que chega com clareza", "text": "A experiência começa antes de o cartão ser utilizado. Organize os públicos, os responsáveis e a orientação de acesso para apresentar a novidade ao time. Serviços de pessoas ou bem-estar podem entrar na análise quando forem relevantes e tiverem custo, regras e elegibilidade confirmados."}
+      ],
+      "closing": [
+        "Quer comparar a Caju com seu cartão atual? Compartilhe o perfil dos colaboradores, as categorias oferecidas e os pontos que mais ocupam o RH. Podemos transformar essas informações em um roteiro de comparação de política, pedidos e experiência de uso.",
+        "Flexibilidade não precisa significar uma decisão confusa. O próximo passo é entender qual configuração faz sentido para sua empresa e o que precisa estar documentado antes de comunicar qualquer mudança."
+      ]
+    },
     "checks": [
       {"question": "Cada público entende suas categorias e seus valores?", "evidence": "Simule pedidos para equipe de campo e escritório. Confira a configuração da política e a explicação dos saldos no aplicativo."},
       {"question": "Como uma despesa é aprovada e conciliada?", "evidence": "Use uma viagem de exemplo para conferir adiantamento, comprovante e fechamento. Confirme a inclusão desse produto na proposta."},
@@ -60,6 +111,23 @@
     "image": "uso-restaurante",
     "lead": "Do almoço ao delivery: compare o benefício no uso real.",
     "focus": "Alimentação, refeição e orientação ao colaborador",
+    "campaign": {
+      "headline": "Coloque a experiência de alimentação no centro do cartão.",
+      "pitch": "Explore o iFood Benefícios para as rotinas de alimentação e refeição do seu time. Compare o uso presencial, as possibilidades digitais e a gestão do cartão com as prioridades da sua empresa.",
+      "paragraphs": [
+        "A hora do almoço não é igual para todo mundo. Há quem faça a refeição perto do escritório, quem trabalhe de casa e quem use alimentação nas compras para a família. Na comparação do iFood Benefícios, essas rotinas merecem aparecer juntas. O reconhecimento da marca pode iniciar a conversa, mas a escolha do cartão precisa considerar produto, saldos e locais de uso.",
+        "Uma proposta interessante é aquela que o colaborador consegue entender e o RH consegue administrar. A consultoria ajuda a aproximar essas duas experiências: quais modalidades entram na política, como o time recebe orientação e o que será acompanhado após a implantação. Assim, sua empresa avalia o iFood Benefícios com critérios próprios, em vez de transferir para o cartão expectativas que pertencem apenas ao aplicativo de delivery."
+      ],
+      "highlights": [
+        {"title": "O almoço dentro e fora do escritório", "text": "Traga para a comparação uma amostra de restaurantes e dos cenários digitais do time, quando aplicáveis ao produto. A proposta deve explicar como a refeição será utilizada e quais regras valem para cada saldo. A experiência merece ser analisada além de uma única situação de pagamento."},
+        {"title": "Alimentação para diferentes rotinas", "text": "As compras de alimentos precisam entrar no mapa de necessidades dos colaboradores. Verifique os estabelecimentos relevantes e as carteiras habilitadas no cartão proposto. Essa leitura permite distinguir o uso de alimentação do uso de refeição e preparar uma comunicação mais simples para cada público."},
+        {"title": "Vantagens com contexto", "text": "Ofertas adicionais podem tornar a proposta mais interessante quando o time realmente tem uso para elas. Caso Clube iFood ou outra vantagem esteja no pacote, compare regulamento, elegibilidade e prazo. O benefício principal continua sendo o ponto de partida da decisão, não uma campanha temporária."}
+      ],
+      "closing": [
+        "Vamos comparar o iFood Benefícios para sua empresa? Conte se o time trabalha presencialmente, de forma híbrida ou em diferentes localidades, e quais modalidades já recebe. A conversa começa pelo uso, não por uma indicação automática.",
+        "Com a consultoria, essas informações viram critérios para avaliar rede, experiência, condições comerciais e implantação. O objetivo é construir uma escolha que o RH consiga explicar e o colaborador consiga utilizar com clareza."
+      ]
+    },
     "checks": [
       {"question": "O produto atende tanto o mercado quanto a refeição?", "evidence": "Confira as carteiras habilitadas e os locais relevantes para o time. Teste a consulta de saldo e a orientação de primeiro uso."},
       {"question": "A experiência funciona no presencial e no digital?", "evidence": "Demonstre pagamento presencial e delivery quando aplicável. Identifique o aplicativo de benefícios e o atendimento correto para cada situação."},
@@ -77,8 +145,25 @@
   },
   "valecard": {
     "image": "uso-alimentacao",
-    "lead": "Benefícios e veículos podem entrar na mesma conversa. Os critérios, não.",
+    "lead": "Cartões para o time. Critérios para cada frente da sua operação.",
     "focus": "Produtos, aplicativos e responsáveis por operação",
+    "campaign": {
+      "headline": "Uma empresa tem muitas rotinas. Seu cartão precisa encontrar a certa.",
+      "pitch": "Conheça a ValeCard com foco nos cartões de alimentação e refeição da sua empresa. Se frota ou mobilidade também fizerem parte da demanda, compare essas soluções em um escopo próprio.",
+      "paragraphs": [
+        "Empresas com várias bases precisam enxergar o benefício além da sede. As pessoas compram alimentos e fazem refeições em lugares diferentes; o RH administra públicos, pedidos e dúvidas que nem sempre chegam pelo mesmo caminho. Ao colocar a ValeCard na comparação, use essa distribuição como ponto de partida para avaliar o produto e a rede relevantes para o seu time.",
+        "Quando a operação também envolve veículos, existe uma oportunidade de discutir outras frentes com seus responsáveis. Mas uma proposta ampla não precisa virar um pacote indistinto. A consultoria ajuda a organizar o escopo de cartões de benefícios e a separar eventuais demandas de frota, manutenção ou logística. Cada escolha ganha um objetivo claro, uma demonstração adequada e critérios próprios de gestão."
+      ],
+      "highlights": [
+        {"title": "Alimentação próxima dos colaboradores", "text": "Mapeie supermercados, restaurantes e horários de uso em cada base. Ao avaliar a ValeCard, identifique o cartão oferecido e o aplicativo correspondente. Essa combinação de produto e rotina permite comparar o benefício pelo que o time precisa, não somente pela extensão de um catálogo de soluções."},
+        {"title": "Gestão com responsáveis definidos", "text": "Um pedido de benefícios e uma autorização de veículo exigem processos diferentes. Separe quem utiliza, quem aprova e quem acompanha cada produto. Quando as responsabilidades estão claras, sua empresa consegue avaliar relatórios e atendimento com as pessoas que realmente vão operar a solução contratada."},
+        {"title": "Uma proposta do tamanho da demanda", "text": "A análise pode começar apenas pelos cartões do time. Se houver interesse em frota ou manutenção, inclua essas frentes com uma amostra de rotas e autorizações. Priorize os serviços que resolvem uma necessidade atual e confirme quais deles estão incluídos no contrato proposto."}
+      ],
+      "closing": [
+        "Quer avaliar a ValeCard sem misturar as necessidades da empresa? Conte onde estão os colaboradores, quais cartões utiliza e se há uma demanda operacional além de alimentação e refeição. Esse contexto ajuda a montar um comparativo mais útil.",
+        "A consultoria coloca cada produto em seu lugar: benefício do time, gestão administrativa e eventuais soluções para veículos. Você pode avançar com um escopo organizado antes de discutir uma mudança ou renovação de contrato."
+      ]
+    },
     "checks": [
       {"question": "Qual produto e aplicativo o colaborador vai usar?", "evidence": "Valide alimentação e refeição em uma amostra de estabelecimentos por base. Demonstre saldo, rede e o caminho de atendimento."},
       {"question": "As rotas e os limites fazem sentido para a frota?", "evidence": "Crie um escopo separado para os veículos. Teste autorização, cobertura nas rotas e relatórios com o responsável da operação."},
@@ -96,8 +181,25 @@
   },
   "pluxee-beneficios": {
     "image": "uso-alimentacao",
-    "lead": "O produto e a carteira importam tanto quanto o nome do cartão.",
+    "lead": "Mais possibilidades para os benefícios. Uma escolha que começa pelo seu time.",
     "focus": "Modalidades, carteiras e aceitação por categoria",
+    "campaign": {
+      "headline": "Explore a Pluxee e desenhe uma experiência mais clara para o time.",
+      "pitch": "Compare alimentação, refeição e as modalidades da Pluxee com as necessidades da sua empresa. Entenda as carteiras, a experiência de pagamento e o que precisa fazer parte de uma boa implantação.",
+      "paragraphs": [
+        "Uma política de benefícios precisa ser atraente para quem recebe e compreensível para quem administra. Ao avaliar a Pluxee, a oportunidade é conectar essas duas perspectivas: que experiência o cartão entrega no dia a dia e como o RH organiza modalidades, públicos e valores. A proposta ganha sentido quando traduz as prioridades da empresa em usos que o colaborador consegue reconhecer.",
+        "Alimentação e refeição têm rotinas próprias. Se Multibenefícios Elo entrar na comparação, as carteiras e as categorias também precisam ficar claras. A consultoria ajuda a estruturar essa leitura, comparar as possibilidades da proposta e planejar a comunicação do primeiro crédito. A escolha não precisa depender de uma lista extensa de vantagens: ela pode começar por uma experiência de uso bem explicada."
+      ],
+      "highlights": [
+        {"title": "Modalidades alinhadas ao seu público", "text": "Olhe para onde os colaboradores compram alimentos e fazem refeições. Compare o produto da Pluxee que atende cada necessidade, com uma amostra por cidade e unidade. Essa avaliação aproxima o cartão da rotina real do time e ajuda o RH a comunicar a modalidade com mais precisão."},
+        {"title": "Carteiras que fazem sentido", "text": "No Multibenefícios Elo, explore o uso por categoria com exemplos de pagamento e consulta de saldo. Entender qual carteira atende cada compra é parte da experiência. A aceitação da bandeira, por si só, não substitui a conferência das regras do benefício e do estabelecimento."},
+        {"title": "Mais valor, sem perder o essencial", "text": "Serviços adicionais podem entrar na conversa quando houver aderência ao perfil do time. Compare as condições e a elegibilidade antes de anunciá-los. Alimentação, refeição, administração e atendimento precisam continuar no centro da decisão, mesmo quando o pacote apresenta outras possibilidades."}
+      ],
+      "closing": [
+        "Vamos entender qual proposta da Pluxee merece entrar na comparação? Conte o perfil do time, as modalidades atuais e as dúvidas mais frequentes do RH. Essas informações ajudam a separar necessidade, oportunidade e condição comercial.",
+        "A consultoria organiza a leitura dos produtos e a preparação para implantação. Assim, você pode decidir com critérios mais claros e apresentar ao colaborador uma política que explique o cartão, os saldos e os canais de ajuda."
+      ]
+    },
     "checks": [
       {"question": "Qual modalidade atende a rotina de alimentação?", "evidence": "Identifique o produto da proposta e valide supermercados e restaurantes por cidade, unidade e horário de uso."},
       {"question": "Qual carteira paga cada tipo de compra?", "evidence": "Peça um exemplo por categoria habilitada e o tratamento de uma recusa. Diferencie aceitação da bandeira de uso permitido do saldo."},
@@ -117,6 +219,23 @@
     "image": "uso-restaurante",
     "lead": "Alimentação, Restaurante ou Flex: comece pelo jeito que o time usa.",
     "focus": "Modalidade, rede credenciada e carga mensal",
+    "campaign": {
+      "headline": "Ticket para as compras, para o almoço e para o jeito do seu time.",
+      "pitch": "Compare Ticket Alimentação, Restaurante e Flex com as rotinas dos seus colaboradores. Encontre os critérios para escolher a modalidade e organizar uma operação de cartões que sua empresa consiga acompanhar.",
+      "paragraphs": [
+        "O cartão certo começa por uma pergunta simples: como seu time se alimenta no dia a dia? Há quem compre alimentos para casa, quem almoce perto da empresa e quem precise combinar as duas situações. Ao conhecer Ticket Alimentação, Restaurante e Flex, coloque essas diferenças no centro da conversa. A modalidade precisa acompanhar a política da empresa e a experiência dos colaboradores.",
+        "A Ticket pode entrar tanto na comparação do primeiro benefício quanto na revisão de uma operação já existente. A consultoria ajuda a transformar essa intenção em um escopo: quais públicos serão atendidos, que locais precisam entrar na validação e como o RH fará os pedidos e acompanhará o crédito. Uma proposta fica mais convincente quando sua empresa consegue enxergar o caminho entre a contratação e o primeiro uso."
+      ],
+      "highlights": [
+        {"title": "Alimentação para a rotina de casa", "text": "No Ticket Alimentação, dê atenção aos supermercados e outros locais de compra de alimentos relevantes para os colaboradores. Não limite o mapa à região da empresa: a distribuição de moradia também importa. A comparação ganha qualidade quando considera o produto exato e a cobertura útil para cada público."},
+        {"title": "Restaurante para a hora da refeição", "text": "No Ticket Restaurante, olhe para refeições prontas e horários de uso. Equipes com turnos distintos podem ter necessidades diferentes perto da mesma unidade. Ao validar a rede credenciada, inclua exemplos que representem a hora do almoço, as jornadas de campo e os horários menos convencionais."},
+        {"title": "Flex para uma política combinada", "text": "Quando alimentação e restaurante precisam estar no mesmo cartão, coloque Ticket Flex na demonstração. Entenda as regras do produto e a forma de administrar a política proposta. Essa explicação é importante para alinhar a escolha do RH ao que o colaborador poderá utilizar no dia a dia."}
+      ],
+      "closing": [
+        "Quer colocar a Ticket na comparação da sua empresa? Traga o perfil dos colaboradores, as modalidades atuais e os locais que não podem ficar de fora. A análise parte dessas informações para organizar rede, gestão e condições comerciais.",
+        "Você pode avançar sem decidir a modalidade no escuro. A consultoria ajuda a distinguir Alimentação, Restaurante e Flex e a preparar uma escolha que faça sentido para a empresa, para o RH e para quem vai utilizar o cartão."
+      ]
+    },
     "checks": [
       {"question": "Os mercados úteis para o time estão na rede?", "evidence": "Mapeie onde as pessoas moram e fazem compras. Valide a amostra no Ticket Alimentação, não apenas em uma lista genérica da marca."},
       {"question": "A rede de restaurantes cobre os turnos de trabalho?", "evidence": "Confira os locais e horários de refeição próximos de cada unidade. Demonstre a consulta de rede no produto Ticket Restaurante."},

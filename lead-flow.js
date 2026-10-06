@@ -64,9 +64,8 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
     if (!form.reportValidity()) return;
     const campaigns = fresh('campaign') || {};
     for (const key of ['utm_source', 'utm_medium', 'utm_campaign']) field(key).value = campaigns[key] || '';
-    field('origin_page').value = form.dataset.leadResult ? location.pathname : fresh('origin')?.path || location.pathname;
+    field('origin_page').value = fresh('origin')?.path || location.pathname;
     for (const kind of ['quiz', 'diagnostic']) {
-      if (kind === form.dataset.leadResult) continue;
       const evaluation = fresh(kind);
       field(`${kind}_result`).value = evaluation?.result.category || '';
       field(`${kind}_answers`).value = evaluation ? JSON.stringify(evaluation.labels) : '';
@@ -86,11 +85,7 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
       track('generate_lead', metadata);
       write('submitted', { at: Date.now(), metadata });
       form.reset();
-      if (form.dataset.leadResult) {
-        form.dispatchEvent(new CustomEvent('lead:success'));
-      } else {
-        location.assign('/obrigado/');
-      }
+      location.assign('/obrigado/');
     } catch {
       status.textContent = 'Não foi possível confirmar o envio. Seus dados foram mantidos nesta página. Tente novamente em instantes.';
       track('contact_submit_error', { form_id: form.id });
@@ -118,9 +113,6 @@ for (const element of document.querySelectorAll('[data-wizard]')) {
   const back = element.querySelector('.wizard-back');
   const next = form.querySelector('[type=submit]');
   const resultBox = element.querySelector('.wizard-result');
-  const capture = element.querySelector('.wizard-capture');
-  const leadForm = capture.querySelector('[data-lead-form]');
-  let pending = null;
   const error = element.querySelector('.wizard-error');
   const progress = element.querySelector('progress');
   const status = element.querySelector('.wizard-progress');
@@ -128,12 +120,11 @@ for (const element of document.querySelectorAll('[data-wizard]')) {
     const current = questions[step];
     form.hidden = false;
     resultBox.hidden = true;
-    capture.hidden = true;
     progress.value = step + 1;
     status.textContent = `Pergunta ${step + 1} de ${questions.length}`;
     question.innerHTML = `<fieldset><legend tabindex="-1">${escape(current.title)}</legend>${current.hint ? `<p class="wizard-hint">${escape(current.hint)}</p>` : ''}<div class="wizard-options">${current.options.map((x, index) => `<label><input type="radio" name="answer" value="${index}" required${answers[current.id] === index ? ' checked' : ''}><span>${escape(x.label)}</span></label>`).join('')}</div></fieldset>`;
     back.disabled = step === 0;
-    next.textContent = step === questions.length - 1 ? 'Continuar para meus dados →' : 'Continuar →';
+    next.textContent = step === questions.length - 1 ? (kind === 'quiz' ? 'Ver meu perfil de rede →' : 'Ver meu diagnóstico →') : 'Continuar →';
     error.textContent = '';
     if (focus) question.querySelector('legend').focus({ preventScroll: true });
   };
@@ -146,7 +137,7 @@ for (const element of document.querySelectorAll('[data-wizard]')) {
     if (step < questions.length - 1) { step++; render(); return; }
     const result = calculate(answers);
     if (!result) return;
-    pending = { result, labels: answerLabels(questions, answers) };
+    remember(kind, { result, labels: answerLabels(questions, answers) });
     const fingerprint = JSON.stringify(answers);
     if (read(`${kind}:measured`) !== fingerprint) {
       track(`${kind}_completed`, { result_category: result.category });
@@ -154,28 +145,17 @@ for (const element of document.querySelectorAll('[data-wizard]')) {
     }
     form.hidden = true;
     progress.value = questions.length;
-    status.textContent = 'Perguntas concluídas · falta enviar seus dados';
-    leadForm.elements.namedItem(`${kind}_result`).value = result.category;
-    leadForm.elements.namedItem(`${kind}_answers`).value = JSON.stringify(pending.labels);
-    if (result.operator) leadForm.elements.namedItem('operator').value = result.operator;
-    if (result.employees) leadForm.elements.namedItem('employees').value = result.employees;
-    capture.hidden = false;
-    capture.querySelector('h2').focus({ preventScroll: true });
+    status.textContent = 'Resultado disponível · consultoria opcional';
+    const operator = result.operator || (OPERATORS.includes(requestedOperator) ? requestedOperator : '');
+    const contactUrl = `/contato/${operator ? `?operadora=${encodeURIComponent(operator)}` : ''}`;
+    resultBox.innerHTML = `<p class="kicker">${kind === 'quiz' ? 'Seu perfil de rede' : 'Sua leitura inicial'}</p><h2 tabindex="-1">${escape(result.category)}</h2>${kind === 'quiz' ? `<p>${escape(result.explanation)}</p><h3>O que priorizar na comparação</h3><ul>${result.priorities.map(x => `<li>${escape(x)}</li>`).join('')}</ul>` : `<p>${result.score} de 8 sinais de revisão. Esta é uma leitura das suas respostas, não um parecer sobre a operadora.</p><ul>${result.reasons.map(x => `<li>${escape(x)}</li>`).join('')}</ul>`}<p class="result-note">Esta orientação inicial não recomenda uma marca nem substitui a análise do contrato. Confirme aceitação nos locais de uso, regras dos saldos, enquadramento no PAT, serviços incluídos e condições comerciais antes de decidir.</p><div class="wizard-next-step"><h3>Quer transformar essa leitura em uma escolha?</h3><p>Seu resultado já está disponível. Se quiser comparar opções para sua empresa, a consultoria pode analisar os critérios com você. Nenhuma solicitação foi enviada pelo teste.</p><a class="button" href="${contactUrl}">${kind === 'quiz' ? 'Analisar esse perfil para minha empresa' : 'Analisar esse cenário para minha empresa'} →</a></div><button type="button" class="review-answers">Revisar minhas respostas</button>${kind === 'quiz' ? '<a class="result-secondary" href="/ja-tenho-cartao/">Já tenho cartão e quero revisar →</a>' : ''}`;
+    resultBox.hidden = false;
+    resultBox.querySelector('h2').focus();
   });
-  capture.querySelector('.review-answers').addEventListener('click', () => {
-    if (leadForm.hasAttribute('aria-busy')) return;
+  resultBox.addEventListener('click', event => {
+    if (!event.target.closest('.review-answers')) return;
     step = 0;
     render();
-  });
-  leadForm.addEventListener('lead:success', () => {
-    if (!pending) return;
-    const { result } = pending;
-    remember(kind, pending);
-    capture.hidden = true;
-    status.textContent = 'Solicitação enviada · resultado disponível';
-    resultBox.innerHTML = `<p class="kicker">Seu ponto de partida</p><h2 tabindex="-1">${escape(result.category)}</h2>${kind === 'quiz' ? `<p>${escape(result.explanation)}</p>` : `<p>${result.score} de 8 sinais de revisão. Uma leitura das suas respostas, não um parecer sobre a operadora.</p><ul>${result.reasons.map(x => `<li>${escape(x)}</li>`).join('')}</ul>`}<p class="result-note">Confirme aceitação nos locais de uso, regras dos saldos, enquadramento no PAT, serviços incluídos e condições do contrato antes de decidir.</p><p>Sua solicitação e suas respostas foram enviadas. O Ewerton ou alguém do time entra em contato em até 1 dia útil.</p><a class="button" href="/obrigado/">Continuar com a equipe →</a>${kind === 'quiz' ? '<a class="result-secondary" href="/ja-tenho-cartao/">Já tenho cartão e quero revisar →</a>' : ''}`;
-    resultBox.hidden = false;
-    resultBox.querySelector('h2').focus({ preventScroll: true });
   });
   render(false);
 }

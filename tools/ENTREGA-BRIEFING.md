@@ -5,6 +5,21 @@ domínio https://www.consultoriavr.com.br/.
 
 ## Complemento aprovado em 6 de outubro de 2026
 
+### Resultado antes do contato e foco comercial em cartões
+
+- Home: "Cartões corporativos com critério", com alimentação, refeição e
+  benefícios flexíveis explícitos. Metadados e descrição institucional alinhados.
+- Quiz e diagnóstico mostram classificação e explicação imediatamente, sem
+  cadastro, envio de formulário ou contato obrigatório. Consultoria opcional
+  oferecida somente depois do resultado, em `/contato/`.
+- O perfil de rede inclui três prioridades para comparar. Fórmula e pesos
+  existentes preservados; a orientação não promete aceitação nem indica marca.
+- Respostas podem ser revisadas. Se o usuário solicitar uma análise, a avaliação
+  acompanha o envio ao Formspree; concluir o teste sozinho não gera lead.
+- Sete páginas de operadoras ampliadas com chamadas comerciais, oportunidades
+  por marca, três frentes de valor e convite personalizado para a consultoria.
+  Produtos, contratos, fontes oficiais e canais de suporte continuam distintos.
+
 ### Leitura e movimento das páginas de operadoras
 
 - Logos das outras operadoras em cartões com fundos de marca, sem letras
@@ -43,14 +58,11 @@ domínio https://www.consultoriavr.com.br/.
 
 - Ticket incluída na home, em página própria `/operadoras/ticket-beneficios/`,
   nos links entre operadoras e no sitemap. Logo e referências oficiais preservados.
-- Quiz e diagnóstico solicitam contato antes de mostrar o resultado. O envio
-  confirmado pelo Formspree libera o resultado na mesma página; uma falha mantém
-  os campos preenchidos e permite nova tentativa sem liberar o resultado.
-- As respostas e a classificação seguem no formulário. A etapa é uma barreira
-  de fluxo na interface, não um controle de acesso no servidor: o cálculo segue
-  no navegador e não envolve informações restritas.
-- Formulários comuns continuam direcionando para `/obrigado/`. Nas avaliações,
-  a página de confirmação fica disponível após consultar o resultado.
+- A antiga captura obrigatória antes do resultado foi removida a pedido do
+  cliente. O cálculo é feito no navegador, sem enviar a avaliação por conta própria.
+- Respostas e classificação acompanham o formulário apenas quando a pessoa
+  decide solicitar contato. O envio confirmado leva para `/obrigado/`; falhas
+  mantêm o formulário preenchido e permitem nova tentativa.
 - Cliente autorizou manter a entrega atual ao e-mail de Kauann via Formspree.
   HubSpot/Make ficam para uma próxima etapa; não bloqueiam esta entrega.
 - LinkedIn oficial do Ewerton confirmado pelo cliente. Dados institucionais e

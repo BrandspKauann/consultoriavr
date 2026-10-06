@@ -28,6 +28,8 @@ try {
     for (const operator of operators) {
       await page.goto(`http://127.0.0.1:4175/operadoras/${operator.slug}/`);
       assert.equal(await page.locator('h1').textContent(), operator.name);
+      assert.equal(await page.locator('.operator-value-grid article').count(), 3);
+      assert.ok((await page.locator('.operator-value').textContent()).length > 1000);
       assert.equal(await page.locator('.operator-choice').count(), 6);
       await page.locator('.operator-page__others').scrollIntoViewIfNeeded();
       await page.waitForFunction(() => [...document.querySelectorAll('.operator-choice img')].every(img => img.complete && img.naturalWidth > 0));
@@ -74,6 +76,7 @@ try {
       await page.locator('#duvidas details').first().locator('summary').click();
       assert.equal(await page.locator('#duvidas details').first().getAttribute('open'), '');
       if (['ticket-beneficios', 'flash-beneficios', 'valecard'].includes(operator.slug)) {
+        await page.locator('.operator-value').screenshot({ path: `${output}/${operator.slug}-campaign-${width}.png` });
         await page.locator('.operator-page__others').screenshot({ path: `${output}/${operator.slug}-logos-${width}.png` });
         await page.locator('.operator-page__hero').screenshot({ path: `${output}/${operator.slug}-hero-${width}.png` });
       }

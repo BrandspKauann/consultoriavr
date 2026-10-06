@@ -46,6 +46,7 @@ test('all quiz combinations follow the weighted three-point threshold', () => {
       }, { open: 0, closed: 0 });
       const difference = expected.open - expected.closed;
       assert.equal(result.category, difference >= 3 ? 'Rede aberta' : difference <= -3 ? 'Rede fechada' : 'Modelo híbrido');
+      assert.equal(result.priorities.length, 3);
       boundaries.add(difference);
       checked++;
       return;
@@ -61,6 +62,10 @@ test('all quiz combinations follow the weighted three-point threshold', () => {
 
 test('generated pages retain static SEO, qualified contact and no future articles', async () => {
   const root = new URL('../', import.meta.url);
+  const home = await fs.readFile(new URL('index.html', root), 'utf8');
+  assert.match(home, /Cartões corporativos com/);
+  assert.match(home, /Testar meu perfil de rede/);
+  assert.doesNotMatch(home, /Informe seus dados ao final para acessar o resultado/);
   const sitemap = await fs.readFile(new URL('sitemap.xml', root), 'utf8');
   const contact = await fs.readFile(new URL('contato/index.html', root), 'utf8');
   const phonePattern = contact.match(/name="phone"[^>]*pattern="([^"]+)"/)[1];
@@ -84,9 +89,8 @@ test('generated pages retain static SEO, qualified contact and no future article
   assert.ok(!sitemap.includes('/obrigado/'));
   for (const [route, kind] of [['quiz-rede-aberta-ou-fechada', 'quiz'], ['ja-tenho-cartao', 'diagnostic']]) {
     const html = await fs.readFile(new URL(`${route}/index.html`, root), 'utf8');
-    assert.match(html, /class="wizard-capture" hidden/);
-    assert.ok(html.includes(`data-lead-result="${kind}"`));
-    assert.match(html, /Enviar e ver meu resultado/);
+    assert.doesNotMatch(html, /wizard-capture|data-lead-result|Enviar e ver meu resultado/);
+    assert.match(html, /resultado imediato, sem cadastro obrigatório/);
     assert.match(html, /class="wizard-result" hidden/);
     assert.doesNotMatch(html, /sem CNPJ nesta etapa/);
   }
@@ -102,6 +106,13 @@ test('generated pages retain static SEO, qualified contact and no future article
     assert.ok(operator.resources.some(x => x.url.includes('apps.apple.com')));
     assert.equal(guides[operator.slug].products.length, 3);
     assert.equal(guides[operator.slug].checks.length, 3);
+    const campaign = guides[operator.slug].campaign;
+    assert.equal(campaign.highlights.length, 3);
+    assert.equal(campaign.paragraphs.length, 2);
+    assert.equal(campaign.closing.length, 2);
+    assert.ok(JSON.stringify(campaign).split(/\s+/).length > 300);
+    assert.ok(html.includes(campaign.headline));
+    assert.match(html, /operator-value-grid/);
     for (const check of guides[operator.slug].checks) {
       assert.ok(check.question.length > 20 && check.evidence.length > 60);
       assert.ok(html.includes(check.question));

@@ -95,7 +95,24 @@ export function quizResult(answers) {
     'Rede fechada': 'Seu perfil dá mais peso a uma rede credenciada e a uma rotina já previsível. Vale conferir cobertura local, suporte e condições do produto, sem presumir que toda rede credenciada atende ao seu time.',
     'Modelo híbrido': 'As respostas equilibram prioridades diferentes. Compare soluções credenciadas e por bandeira com a mesma amostra de estabelecimentos, regras de uso e necessidades do RH.'
   };
-  return { open, closed, category, explanation: explanations[category] };
+  const priorities = {
+    'Rede aberta': [
+      'Compare a aceitação em diferentes cidades e nos locais realmente usados pelo time, não apenas a presença de uma bandeira.',
+      'Confira quais categorias de compra podem utilizar cada saldo e como o colaborador consulta essas regras.',
+      'Teste atendimento, pedidos e relatórios com o RH antes de ampliar as modalidades contratadas.'
+    ],
+    'Rede fechada': [
+      'Valide a rede credenciada do produto exato em supermercados e restaurantes relevantes para cada unidade e turno.',
+      'Compare alimentação e refeição separadamente, considerando onde as pessoas compram alimentos e fazem suas refeições.',
+      'Documente prazos de crédito, reposição de cartão e atendimento para manter a operação previsível.'
+    ],
+    'Modelo híbrido': [
+      'Separe os públicos da empresa: escritório, campo, unidades regionais e trabalho remoto podem exigir critérios diferentes.',
+      'Compare credenciamento e bandeira com os mesmos locais de uso, valores e regras de categoria.',
+      'Confira se uma única modalidade atende a todos ou se combinar soluções merece entrar na análise.'
+    ]
+  };
+  return { open, closed, category, explanation: explanations[category], priorities: priorities[category] };
 }
 
 export function answerLabels(questions, answers) {
