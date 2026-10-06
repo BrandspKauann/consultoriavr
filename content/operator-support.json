@@ -1,0 +1,61 @@
+{
+  "ticket-beneficios": {
+    "source": "https://www.ticket.com.br/central-de-ajuda/",
+    "checkedAt": "2026-10-06",
+    "channels": [
+      {"audience": "Colaboradores", "label": "Central Ticket", "number": "4004-2233", "url": "tel:40042233", "note": "Atendimento 24 horas. Capitais e regiões metropolitanas; nas demais localidades, acrescente código da operadora e DDD conforme orientação da Ticket."},
+      {"audience": "RH e empresas clientes", "label": "Central de empresas", "number": "4003-9000", "url": "tel:40039000", "note": "Dias úteis, das 8h às 18h30. Capitais e regiões metropolitanas; nas demais localidades, acrescente código da operadora e DDD."},
+      {"audience": "Pessoas com deficiência auditiva ou de fala", "label": "Atendimento exclusivo", "number": "0800-880-0404", "url": "tel:08008800404", "note": "Canal exclusivo informado pela Ticket."}
+    ]
+  },
+  "vr-beneficios": {
+    "source": "https://www.vr.com.br/contato",
+    "checkedAt": "2026-10-06",
+    "channels": [
+      {"audience": "Trabalhadores · São Paulo e região metropolitana", "label": "Central VR", "number": "4004-4938", "url": "tel:40044938", "note": "Atendimento do cartão e dos benefícios. Não confundir com o SAC do Banco VR."},
+      {"audience": "Trabalhadores · demais localidades", "label": "Central VR", "number": "0800-596-3838", "url": "tel:08005963838", "note": "Canal informado para trabalhadores fora de São Paulo e região metropolitana."},
+      {"audience": "RH e empresas", "label": "SuperPortal do empregador", "number": "Acessar atendimento", "url": "https://superportal-empregador.vr.com.br", "note": "A página oficial direciona empregadores para os portais de gestão da VR."}
+    ]
+  },
+  "flash-beneficios": {
+    "source": "https://flashapp.com.br/contato",
+    "checkedAt": "2026-10-06",
+    "channels": [
+      {"audience": "Benefícios, despesas e pessoas", "label": "WhatsApp oficial Flash", "number": "(11) 4118-0488", "url": "https://wa.me/551141180488", "note": "Este é o canal de WhatsApp para os produtos Flash, não um telefone de rastreamento de entregas. Selecione o produto ao iniciar a conversa."},
+      {"audience": "RH e gestores", "label": "Atendimento da empresa", "number": "Ver canais oficiais", "url": "https://flashapp.com.br/contato", "note": "A página da Flash oferece formulário específico para administradores e gestores."},
+      {"audience": "Ouvidoria · casos especiais", "label": "Ouvidoria Flash", "number": "0800 591 2549", "url": "tel:08005912549", "note": "Exclusivo da ouvidoria; não substitui o suporte dos produtos. Segunda a sexta-feira, das 9h às 17h."}
+    ]
+  },
+  "caju-beneficios": {
+    "source": "https://www.caju.com.br/",
+    "checkedAt": "2026-10-06",
+    "channels": [
+      {"audience": "Usuários do cartão", "label": "Telefone Caju", "number": "(11) 4118-3826", "url": "tel:+551141183826", "note": "Canal de atendimento informado para usuários do aplicativo."},
+      {"audience": "Usuários do cartão", "label": "WhatsApp oficial Caju", "number": "(11) 4118-3826", "url": "https://wa.me/551141183826", "note": "O mesmo número também recebe atendimento pelo WhatsApp."},
+      {"audience": "RH e empresas", "label": "Contato empresarial", "number": "empresas@caju.com.br", "url": "mailto:empresas@caju.com.br", "note": "Empresas também podem usar o chat no Portal do RH da Caju."}
+    ]
+  },
+  "valecard": {
+    "source": "https://www.valecard.com.br/contato/",
+    "checkedAt": "2026-10-06",
+    "channels": [
+      {"audience": "Empresas e usuários · benefícios", "label": "Ligação de telefone fixo", "number": "0800 701 5402", "url": "tel:08007015402", "note": "Central de alimentação, refeição, convênio e cartões corporativos. Frota possui contatos próprios."},
+      {"audience": "Empresas e usuários · benefícios", "label": "Ligação de celular", "number": "(34) 4005-1212", "url": "tel:+553440051212", "note": "Número de benefícios indicado para ligações de celular."},
+      {"audience": "Empresas e usuários", "label": "WhatsApp oficial ValeCard", "number": "(34) 98424-9742", "url": "https://wa.me/5534984249742", "note": "Informe se a dúvida é sobre benefícios ou mobilidade para seguir o atendimento adequado."}
+    ]
+  },
+  "pluxee-beneficios": {
+    "source": "https://www.pluxee.com.br/contato/",
+    "checkedAt": "2026-10-06",
+    "channels": [
+      {"audience": "Usuários do cartão", "label": "Telefone Pluxee", "number": "3003-5083", "url": "tel:30035083", "note": "Todas as localidades do Brasil. Atendimento 24 horas, todos os dias."},
+      {"audience": "Empresas clientes", "label": "Central de empresas", "number": "3003-5083", "url": "tel:30035083", "note": "Todas as localidades do Brasil. Dias úteis, das 8h às 18h."},
+      {"audience": "Empresas e estabelecimentos", "label": "WhatsApp oficial Pluxee", "number": "(11) 2662-0580", "url": "https://wa.me/551126620580", "note": "Canal empresarial e de estabelecimentos; usuários devem procurar a central do cartão."}
+    ]
+  },
+  "ifood-beneficios": {
+    "source": "https://beneficios.ifood.com.br/",
+    "channels": [],
+    "note": "Para ajuda com o cartão iFood Benefícios, use os canais indicados no aplicativo do benefício ou no portal oficial. O suporte de pedidos de delivery é uma operação diferente."
+  }
+}

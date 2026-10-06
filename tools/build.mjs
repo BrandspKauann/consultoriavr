@@ -7,6 +7,7 @@ import { contactForm, advisorSection, siteFooter, renderLeadPages } from './lead
 const projectDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://www.consultoriavr.com.br';
 const contentDir = path.join(projectDir, 'content');
+const operatorSupport = JSON.parse(await fs.readFile(path.join(contentDir, 'operator-support.json'), 'utf8'));
 const scheduledPath = path.join(contentDir, 'scheduled-posts.json');
 const publishedPath = path.join(contentDir, 'published-scheduled-posts.json');
 const operatorsPath = path.join(contentDir, 'operators.json');
@@ -566,6 +567,12 @@ function renderOperatorPage(operator, operators, guides) {
   const photo = `/assets/operators/${guide.image}.webp`;
   const rolloutPhoto = guide.image === 'gestao-rh' ? 'uso-restaurante' : 'gestao-rh';
   const related = operators.filter((item) => item.slug !== operator.slug);
+  const support = operatorSupport[operator.slug];
+  if (!support) throw new Error(`Missing support channels: ${operator.slug}`);
+  const supportAnswer = support.channels.length
+    ? support.channels.map(item => `${item.audience}: ${item.label}, ${item.number}. ${item.note}`).join(' ')
+    : support.note;
+  const faq = [...operator.faq, { question: `Qual é o telefone de atendimento da ${operator.name}?`, answer: supportAnswer }];
   const structuredData = [
     {
       '@context': 'https://schema.org',
@@ -588,7 +595,7 @@ function renderOperatorPage(operator, operators, guides) {
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: operator.faq.map((item) => ({
+      mainEntity: faq.map((item) => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: { '@type': 'Answer', text: item.answer }
@@ -628,7 +635,7 @@ ${editorialNav('operators')}
                 <span class="operator-card-front">
                   <span class="operator-page__chip" aria-hidden="true"></span>
                   <img src="${escapeHtml(operator.logo)}" alt="${escapeHtml(operator.logoAlt)}" />
-                  <small>Benefícios corporativos · ilustração</small>
+                  <small>Benefícios corporativos</small>
                 </span>
                 <span class="operator-card-back" aria-hidden="true"><span>Foco da análise</span><strong>${escapeHtml(guide.focus)}</strong><small>${escapeHtml(operator.name)}</small></span>
               </span>
@@ -674,7 +681,7 @@ ${editorialNav('operators')}
         <div class="operator-products-list">${guide.products.map((product, index) => `<article id="solucao-${index}" data-solution-panel aria-labelledby="solucao-titulo-${index}"><div class="operator-solution-copy"><span class="operator-step">${String(index + 1).padStart(2, '0')}</span><h3 id="solucao-titulo-${index}">${escapeHtml(product.title)}</h3><p>${operatorText(product.text)}</p></div><div class="operator-solution-proof"><p class="operator-page__label">Na demonstração</p><h4>${escapeHtml(guide.checks[index].question)}</h4><p>${operatorText(guide.checks[index].evidence)}</p></div></article>`).join('')}</div>
       </section>
       <section class="operator-scenario" id="na-pratica">
-        <figure data-viewport-reveal><span class="operator-image-window"><img data-scroll-photo src="/assets/operators/${guide.image === 'uso-alimentacao' ? 'uso-restaurante' : 'uso-alimentacao'}.webp" alt="Cena ilustrativa gerada por IA de uso de benefício de alimentação e refeição" width="1440" height="810" loading="lazy"></span><figcaption>Cena ilustrativa criada por IA, sem produto de marca.</figcaption></figure>
+        <figure data-viewport-reveal><span class="operator-image-window"><img data-scroll-photo src="/assets/operators/${guide.image === 'uso-alimentacao' ? 'uso-restaurante' : 'uso-alimentacao'}.webp" alt="Uso de cartão de benefícios na rotina de alimentação e refeição" width="1440" height="810" loading="lazy"></span></figure>
         <div data-viewport-reveal><p class="operator-page__label">Um cenário para colocar à prova</p><h2>${escapeHtml(guide.scenarioTitle)}</h2><p>${operatorText(guide.scenario)}</p><p class="operator-takeaway"><strong>O que levar à comparação</strong>${operatorText(guide.action)}</p></div>
       </section>
       <section class="operator-page__checklist" id="checklist" data-comparison-checklist>
@@ -694,7 +701,7 @@ ${editorialNav('operators')}
       </section>
       <section class="operator-rollout operator-section" id="implantacao">
         <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Do contrato ao primeiro crédito</p><h2>Uma boa escolha precisa chegar bem ao time.</h2><p>A implantação da ${escapeHtml(operator.name)} deve ter responsáveis, prazos e comunicação. Antes de trocar, confira o tratamento dos cartões e saldos atuais; não presuma transferência automática.</p></div>
-        <div class="operator-rollout-grid"><figure data-viewport-reveal><span class="operator-image-window"><img data-scroll-photo src="/assets/operators/${rolloutPhoto}.webp" alt="${rolloutPhoto === 'gestao-rh' ? 'Cena ilustrativa gerada por IA de revisão de cadastros e implantação de benefícios' : 'Cena ilustrativa gerada por IA de uso do benefício após a implantação'}" width="1440" height="810" loading="lazy"></span><figcaption>Cena ilustrativa criada por IA.</figcaption></figure><ol>
+        <div class="operator-rollout-grid"><figure data-viewport-reveal><span class="operator-image-window"><img data-scroll-photo src="/assets/operators/${rolloutPhoto}.webp" alt="${rolloutPhoto === 'gestao-rh' ? 'Revisão de cadastros e implantação de benefícios pelo RH' : 'Uso de cartão de benefícios em uma refeição'}" width="1440" height="810" loading="lazy"></span></figure><ol>
           <li data-viewport-reveal><strong>01 · Organizar a base</strong><p>Revise unidades, públicos, valores e responsáveis. Trate os dados pessoais apenas nos canais autorizados.</p></li>
           <li data-viewport-reveal><strong>02 · Validar antes da virada</strong><p>Teste acesso, pedido, crédito e atendimento com o fornecedor. Documente as regras de transição do contrato anterior.</p></li>
           <li data-viewport-reveal><strong>03 · Comunicar e acompanhar</strong><p>Explique aplicativo, saldos e canais de ajuda. Acompanhe as primeiras ocorrências para ajustar o que não ficou claro.</p></li>
@@ -712,15 +719,19 @@ ${editorialNav('operators')}
       <section class="operator-page__faq" id="duvidas" aria-labelledby="operator-faq-title">
         <p class="operator-page__label">Perguntas frequentes</p>
         <h2 id="operator-faq-title">Dúvidas sobre ${escapeHtml(operator.name)}</h2>
-        ${operator.faq.map((item) => `<details data-viewport-reveal><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${operatorText(item.answer)}</p></details>`).join('\n        ')}
+        ${faq.map((item) => `<details data-viewport-reveal><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${operatorText(item.answer)}</p></details>`).join('\n        ')}
       </section>
 
       <section class="operator-resources" id="atendimento" aria-labelledby="resource-title">
-        <p class="operator-page__label">Antes de contratar e durante o uso</p>
-        <h2 id="resource-title">Cuidados e canais oficiais da ${escapeHtml(operator.name)}</h2>
+        <p class="operator-page__label">Precisa de ajuda com seu cartão?</p>
+        <h2 id="resource-title">Telefone e atendimento oficial da ${escapeHtml(operator.name)}</h2>
+        <p>Saldo, senha, perda, bloqueio ou uma compra que não passou? Procure o canal da operadora adequado ao seu perfil. <strong>A Consultoria VR não é o suporte oficial da ${escapeHtml(operator.name)} e não consulta saldos nem bloqueia cartões.</strong></p>
+        <div class="operator-support-list">${support.channels.map(item => `<article data-viewport-reveal><p class="operator-page__label">${escapeHtml(item.audience)}</p><h3>${escapeHtml(item.label)}</h3><a class="operator-support-number" href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.number)} <span aria-hidden="true">→</span></a><p>${escapeHtml(item.note)}</p></article>`).join('')}</div>
+        ${support.note ? `<p>${escapeHtml(support.note)}</p>` : ''}
+        <p class="operator-support-source"><a href="${escapeHtml(support.source)}" rel="noopener">Conferir os canais no site oficial da ${escapeHtml(operator.name)} →</a>${support.checkedAt ? ` · Contatos verificados em ${escapeHtml(formatDate(support.checkedAt + 'T12:00:00Z'))}.` : ''} Canais e horários podem mudar.</p>
         <div class="operator-resource-grid">
           <div data-viewport-reveal><h3>O que merece atenção</h3><ul>${operator.attention.map(item => `<li>${operatorText(item)}</li>`).join('')}</ul></div>
-          <div data-viewport-reveal><h3>Já usa este cartão?</h3><p>Para perda ou roubo, procure o bloqueio no aplicativo oficial. Sem acesso ao app, use o canal de atendimento da operadora. <strong>A consultoria não bloqueia cartões nem consulta saldos.</strong></p><ul>${operator.resources.map(item => `<li><a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a></li>`).join('')}</ul></div>
+          <div data-viewport-reveal><h3>Antes de entrar em contato</h3><p>Identifique o produto, anote o erro e, se houver, a data da compra e o protocolo anterior. <strong>Nunca compartilhe senha, código de segurança ou código de confirmação com a consultoria.</strong> Para perda ou roubo, procure imediatamente o bloqueio no aplicativo ou no atendimento oficial.</p><ul>${operator.resources.filter(item => !/play.google.com|apps.apple.com|baixar-aplicativos/.test(item.url) && !item.url.startsWith('tel:') && !item.url.includes('wa.me')).map(item => `<li><a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a></li>`).join('')}</ul><details class="operator-support-apps"><summary>Aplicativos oficiais</summary><ul>${operator.resources.filter(item => /play.google.com|apps.apple.com|baixar-aplicativos/.test(item.url)).map(item => `<li><a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a></li>`).join('')}</ul></details></div>
         </div>
         <p class="operator-source-note">Fontes oficiais consultadas em ${escapeHtml(formatDate(operator.checkedAt + 'T12:00:00Z'))}. ${operator.sources.map(item => `<a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a>`).join(' · ')}. Recursos, prazos e condições devem ser reconfirmados na proposta vigente.</p>
       </section>

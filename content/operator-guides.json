@@ -33,7 +33,7 @@
     "scenarioTitle": "O restaurante existe na rede. Mas atende ao seu turno?",
     "scenario": "Imagine uma empresa com escritório central e uma unidade que encerra o turno à noite. Validar apenas os restaurantes próximos da sede deixa uma parte do time fora da análise. Para comparar a VR, monte uma amostra por unidade, bairro e horário, verificando o produto exato.",
     "action": "Leve os locais de uso e um exemplo de carga mensal para a demonstração. Saia dela com uma lista de cobertura útil, prazos e responsáveis, não apenas uma apresentação comercial.",
-    "imageAlt": "Cena ilustrativa gerada por IA de pagamento com cartão em restaurante"
+    "imageAlt": "Pagamento com cartão em restaurante"
   },
   "flash-beneficios": {
     "image": "gestao-rh",
@@ -69,7 +69,7 @@
     "scenarioTitle": "Uma plataforma completa pode simplificar. Ou criar mais uma rotina.",
     "scenario": "Imagine um RH que administra os benefícios enquanto o financeiro confere reembolsos em outra ferramenta. A pergunta para a Flash é se o fluxo proposto reduz digitação e conciliação, ou se apenas reúne telas. Faça o teste com uma situação real, sem dados pessoais de colaboradores.",
     "action": "Peça uma demonstração ponta a ponta de benefício e despesa. Registre as etapas que deixam de ser manuais e as que continuam dependendo da sua equipe.",
-    "imageAlt": "Cena ilustrativa gerada por IA de profissionais conferindo uma gestão de benefícios"
+    "imageAlt": "Profissionais conferindo a gestão de benefícios"
   },
   "caju-beneficios": {
     "image": "gestao-rh",
@@ -105,7 +105,7 @@
     "scenarioTitle": "Dois públicos, duas políticas. Um pedido precisa respeitar ambos.",
     "scenario": "Imagine uma empresa com equipe de campo e equipe administrativa. Elas podem ter localidades e necessidades distintas. Na avaliação da Caju, teste um pedido para cada público e uma exceção autorizada, observando o que muda no painel e no aplicativo.",
     "action": "Monte uma matriz de categorias e responsáveis. Use-a para demonstrar pedido, exceção e fechamento, verificando se a política está compreensível para RH e colaboradores.",
-    "imageAlt": "Cena ilustrativa gerada por IA de conferência de pedidos e políticas de benefícios"
+    "imageAlt": "Conferência de pedidos e políticas de benefícios"
   },
   "ifood-beneficios": {
     "image": "uso-restaurante",
@@ -141,7 +141,7 @@
     "scenarioTitle": "Quem usa no restaurante e quem usa em casa precisam entrar no teste.",
     "scenario": "Imagine um time híbrido: parte almoça perto do escritório e parte trabalha de casa. Ao avaliar iFood Benefícios, a amostra deve incluir as duas rotinas, com as carteiras propostas e os locais relevantes. Não limite a comparação à popularidade do aplicativo de delivery.",
     "action": "Liste os cenários presenciais e digitais do time. Documente onde o cartão foi validado, quais regras se aplicam e como uma dúvida de uso será atendida.",
-    "imageAlt": "Cena ilustrativa gerada por IA de uso de benefício de refeição em restaurante"
+    "imageAlt": "Uso de benefício de refeição em restaurante"
   },
   "valecard": {
     "image": "uso-alimentacao",
@@ -177,7 +177,7 @@
     "scenarioTitle": "O RH procura benefícios. A operação procura controle de veículos.",
     "scenario": "Imagine uma empresa com colaboradores em várias bases e veículos em rotas regionais. Ao comparar a ValeCard, separe a lista de supermercados e restaurantes da lista de locais de abastecimento e manutenção. Cada equipe precisa de cobertura e relatórios próprios.",
     "action": "Crie dois escopos de teste: benefícios e veículos. Valide aplicativo, rede, permissões e suporte de cada produto com as pessoas que vão administrar a operação.",
-    "imageAlt": "Cena ilustrativa gerada por IA de compra de alimentos com cartão de benefício"
+    "imageAlt": "Compra de alimentos com cartão de benefício"
   },
   "pluxee-beneficios": {
     "image": "uso-alimentacao",
@@ -213,7 +213,7 @@
     "scenarioTitle": "A compra foi recusada. Era rede, categoria ou carteira?",
     "scenario": "Imagine uma empresa adotando Multibenefícios Elo com diferentes categorias. Antes da implantação, faça o fornecedor demonstrar um pagamento por carteira e o caminho de atendimento para uma recusa. Essa explicação ajuda a evitar que o RH receba toda dúvida como se fosse um problema de rede.",
     "action": "Documente as carteiras contratadas, os usos previstos e as regras aplicáveis. Entregue uma comunicação que diferencie saldo disponível de compra autorizada.",
-    "imageAlt": "Cena ilustrativa gerada por IA de pagamento de alimentos em supermercado"
+    "imageAlt": "Pagamento de alimentos em supermercado"
   },
   "ticket-beneficios": {
     "image": "uso-restaurante",
@@ -249,6 +249,6 @@
     "scenarioTitle": "A mesma empresa pode ter três rotinas de alimentação.",
     "scenario": "Imagine pessoas no escritório, no campo e em trabalho remoto. Antes de comparar Ticket Alimentação, Restaurante ou Flex, entenda onde cada público compra alimentos e faz suas refeições. Essa diferença pode pesar mais do que uma condição comercial isolada.",
     "action": "Use os mesmos locais e processos para comparar propostas. Confira carga, inclusão de usuário, segunda via e atendimento com exemplos da sua empresa.",
-    "imageAlt": "Cena ilustrativa gerada por IA de uso de cartão de refeição no almoço"
+    "imageAlt": "Uso de cartão de refeição no almoço"
   }
 }

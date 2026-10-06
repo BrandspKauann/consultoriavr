@@ -28,6 +28,17 @@ try {
     for (const operator of operators) {
       await page.goto(`http://127.0.0.1:4175/operadoras/${operator.slug}/`);
       assert.equal(await page.locator('h1').textContent(), operator.name);
+      assert.doesNotMatch(await page.locator('main').textContent(), /ilustra[çc][ãa]o|criada por IA|gerada por IA/i);
+      assert.match(await page.locator('#resource-title').textContent(), /Telefone e atendimento oficial/);
+      assert.equal(await page.locator('.operator-support-list article').count(), operator.slug === 'ifood-beneficios' ? 0 : 3);
+      const apps = page.locator('.operator-support-apps');
+      assert.equal(await apps.getAttribute('open'), null);
+      await apps.locator('summary').click();
+      assert.ok(await apps.locator('a').count() >= 2);
+      await apps.locator('summary').click();
+      await page.locator('#atendimento').scrollIntoViewIfNeeded();
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Support overflows: ${operator.slug} at ${width}`);
+      if (operator.slug === 'flash-beneficios') await page.screenshot({ path: `${output}/flash-support-${width}.png` });
       assert.equal(await page.locator('.operator-value-grid article').count(), 3);
       assert.ok((await page.locator('.operator-value').textContent()).length > 1000);
       assert.equal(await page.locator('.operator-choice').count(), 6);

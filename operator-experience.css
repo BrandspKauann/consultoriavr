@@ -270,3 +270,12 @@ html { scroll-behavior: smooth; }
   .operator-costs { background: #fff; color: #153b36; }
   .operator-costs p, .operator-costs h2, .operator-costs dd, .operator-costs dt { color: #153b36; }
 }
+.operator-support-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 32px 0 24px; }
+.operator-support-list article { border-top: 3px solid #DA9F3C; padding-top: 20px; min-width: 0; }
+.operator-support-list h3 { font-size: 19px; margin: 12px 0; }
+.operator-support-number { display: inline-block; font-size: 23px; font-weight: 800; line-height: 1.4; color: #103F3B; overflow-wrap: anywhere; margin-bottom: 12px; }
+.operator-support-number:hover { color: #875c15; }
+.operator-support-source { font-size: 14px; line-height: 1.6; }
+.operator-support-apps { margin-top: 20px; border-top: 1px solid #b9cec8; padding-top: 14px; }
+.operator-support-apps summary { cursor: pointer; font-weight: 700; }
+@media (max-width: 760px) { .operator-support-list { grid-template-columns: 1fr; gap: 22px; } }
