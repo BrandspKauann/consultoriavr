@@ -561,6 +561,7 @@ function renderOperatorPage(operator, operators, guides) {
   const canonical = `${siteUrl}${route}`;
   const guide = guides[operator.slug];
   if (!guide) throw new Error(`Missing reading guide: ${operator.slug}`);
+  if (guide.checks?.length !== guide.products.length) throw new Error(`Missing solution checks: ${operator.slug}`);
   const photo = `/assets/operators/${guide.image}.webp`;
   const rolloutPhoto = guide.image === 'gestao-rh' ? 'uso-restaurante' : 'gestao-rh';
   const related = operators.filter((item) => item.slug !== operator.slug);
@@ -620,10 +621,18 @@ ${editorialNav('operators')}
             <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa</a>
             <a class="operator-hero-explore" href="#visao-geral">Conhecer os critérios <span aria-hidden="true">↓</span></a>
           </div>
-          <div class="operator-page__card" aria-label="Cartão ilustrativo da ${escapeHtml(operator.name)}">
-            <span class="operator-page__chip" aria-hidden="true"></span>
-            <img src="${escapeHtml(operator.logo)}" alt="${escapeHtml(operator.logoAlt)}" />
-            <small>Benefícios corporativos · ilustração</small>
+          <div class="operator-card-float" data-motion-loop>
+            <button class="operator-page__card" type="button" data-card-flip data-card-tilt disabled aria-pressed="false" aria-label="Ver foco da análise de ${escapeHtml(operator.name)}" title="Ver foco da análise">
+              <span class="operator-card-sides">
+                <span class="operator-card-front">
+                  <span class="operator-page__chip" aria-hidden="true"></span>
+                  <img src="${escapeHtml(operator.logo)}" alt="${escapeHtml(operator.logoAlt)}" />
+                  <small>Benefícios corporativos · ilustração</small>
+                </span>
+                <span class="operator-card-back" aria-hidden="true"><span>Foco da análise</span><strong>${escapeHtml(guide.focus)}</strong><small>${escapeHtml(operator.name)}</small></span>
+              </span>
+              <span class="operator-card-turn" aria-hidden="true">↻</span>
+            </button>
           </div>
         </div>
       </header>
@@ -652,10 +661,14 @@ ${editorialNav('operators')}
 
       <section class="operator-products operator-section" id="produtos">
         <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Escolha pelo uso, não só pela marca</p><h2>O que entra na proposta da ${escapeHtml(operator.name)}</h2><p>Produtos diferentes pedem perguntas diferentes. Separe o que resolve sua necessidade do que apenas amplia o pacote.</p></div>
-        <div class="operator-products-list">${guide.products.map((product, index) => `<article data-viewport-reveal><span class="operator-step">${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(product.title)}</h3><p>${operatorText(product.text)}</p></article>`).join('')}</div>
+        <div class="operator-solution-controls" data-solution-controls hidden>
+          <div class="operator-solution-tabs" role="tablist" aria-label="Soluções da ${escapeHtml(operator.name)}">${guide.products.map((product, index) => `<button type="button" role="tab" id="solucao-tab-${index}" aria-controls="solucao-${index}" aria-selected="${index === 0}" tabindex="${index === 0 ? '0' : '-1'}"><span aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>${escapeHtml(product.title)}</button>`).join('')}</div>
+          <button class="operator-compare-toggle" type="button" data-compare-solutions aria-pressed="false">Comparar lado a lado <span aria-hidden="true">↔</span></button>
+        </div>
+        <div class="operator-products-list">${guide.products.map((product, index) => `<article id="solucao-${index}" data-solution-panel aria-labelledby="solucao-titulo-${index}"><div class="operator-solution-copy"><span class="operator-step">${String(index + 1).padStart(2, '0')}</span><h3 id="solucao-titulo-${index}">${escapeHtml(product.title)}</h3><p>${operatorText(product.text)}</p></div><div class="operator-solution-proof"><p class="operator-page__label">Na demonstração</p><h4>${escapeHtml(guide.checks[index].question)}</h4><p>${operatorText(guide.checks[index].evidence)}</p></div></article>`).join('')}</div>
       </section>
       <section class="operator-scenario" id="na-pratica">
-        <figure data-viewport-reveal><img src="/assets/operators/${guide.image === 'uso-alimentacao' ? 'uso-restaurante' : 'uso-alimentacao'}.webp" alt="Cena ilustrativa gerada por IA de uso de benefício de alimentação e refeição" width="1440" height="810" loading="lazy"><figcaption>Cena ilustrativa criada por IA, sem produto de marca.</figcaption></figure>
+        <figure data-viewport-reveal><span class="operator-image-window"><img data-scroll-photo src="/assets/operators/${guide.image === 'uso-alimentacao' ? 'uso-restaurante' : 'uso-alimentacao'}.webp" alt="Cena ilustrativa gerada por IA de uso de benefício de alimentação e refeição" width="1440" height="810" loading="lazy"></span><figcaption>Cena ilustrativa criada por IA, sem produto de marca.</figcaption></figure>
         <div data-viewport-reveal><p class="operator-page__label">Um cenário para colocar à prova</p><h2>${escapeHtml(guide.scenarioTitle)}</h2><p>${operatorText(guide.scenario)}</p><p class="operator-takeaway"><strong>O que levar à comparação</strong>${operatorText(guide.action)}</p></div>
       </section>
       <section class="operator-page__checklist" id="checklist" data-comparison-checklist>
@@ -664,6 +677,8 @@ ${editorialNav('operators')}
           <h2>O que validar antes de decidir</h2>
           <p>Uma proposta fica mais clara quando os critérios são registrados. Considere cada item no produto e no contrato que a sua empresa vai utilizar.</p>
           <p class="operator-checklist-status" data-checklist-status role="status" aria-live="polite">0 de ${operator.evaluate.length} critérios revisados</p>
+          <progress class="operator-checklist-progress" data-checklist-progress value="0" max="${operator.evaluate.length}" aria-label="Critérios revisados"></progress>
+          <a class="operator-checklist-next" data-checklist-next hidden href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Conversar sobre esses critérios <span aria-hidden="true">→</span></a>
         </div>
         <ol>${operator.evaluate.map((item, index) => `<li data-viewport-reveal><label><input type="checkbox"><span class="operator-step" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span>${operatorText(item)}</span></label></li>`).join('')}</ol>
       </section>
@@ -673,7 +688,7 @@ ${editorialNav('operators')}
       </section>
       <section class="operator-rollout operator-section" id="implantacao">
         <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Do contrato ao primeiro crédito</p><h2>Uma boa escolha precisa chegar bem ao time.</h2><p>A implantação da ${escapeHtml(operator.name)} deve ter responsáveis, prazos e comunicação. Antes de trocar, confira o tratamento dos cartões e saldos atuais; não presuma transferência automática.</p></div>
-        <div class="operator-rollout-grid"><figure data-viewport-reveal><img src="/assets/operators/${rolloutPhoto}.webp" alt="${rolloutPhoto === 'gestao-rh' ? 'Cena ilustrativa gerada por IA de revisão de cadastros e implantação de benefícios' : 'Cena ilustrativa gerada por IA de uso do benefício após a implantação'}" width="1440" height="810" loading="lazy"><figcaption>Cena ilustrativa criada por IA.</figcaption></figure><ol>
+        <div class="operator-rollout-grid"><figure data-viewport-reveal><span class="operator-image-window"><img data-scroll-photo src="/assets/operators/${rolloutPhoto}.webp" alt="${rolloutPhoto === 'gestao-rh' ? 'Cena ilustrativa gerada por IA de revisão de cadastros e implantação de benefícios' : 'Cena ilustrativa gerada por IA de uso do benefício após a implantação'}" width="1440" height="810" loading="lazy"></span><figcaption>Cena ilustrativa criada por IA.</figcaption></figure><ol>
           <li data-viewport-reveal><strong>01 · Organizar a base</strong><p>Revise unidades, públicos, valores e responsáveis. Trate os dados pessoais apenas nos canais autorizados.</p></li>
           <li data-viewport-reveal><strong>02 · Validar antes da virada</strong><p>Teste acesso, pedido, crédito e atendimento com o fornecedor. Documente as regras de transição do contrato anterior.</p></li>
           <li data-viewport-reveal><strong>03 · Comunicar e acompanhar</strong><p>Explique aplicativo, saldos e canais de ajuda. Acompanhe as primeiras ocorrências para ajustar o que não ficou claro.</p></li>
@@ -706,7 +721,7 @@ ${editorialNav('operators')}
       <section class="operator-page__others" aria-labelledby="other-operators-title">
         <p class="operator-page__label">Continue comparando</p>
         <h2 id="other-operators-title">Conheça as outras operadoras</h2>
-        <div>${related.map((item) => `<a class="operator-choice operator-choice--${escapeHtml(item.cardClass)}" href="${escapeHtml(operatorRoute(item))}" data-viewport-reveal><span class="operator-choice__face"><span class="operator-choice__chip" aria-hidden="true"></span><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" loading="lazy" /></span><span class="operator-choice__name">${escapeHtml(item.name)}</span><span class="operator-choice__link">Ver análise <span aria-hidden="true">→</span></span></a>`).join('')}</div>
+        <div>${related.map((item) => `<a class="operator-choice operator-choice--${escapeHtml(item.cardClass)}" href="${escapeHtml(operatorRoute(item))}" data-viewport-reveal><span class="operator-choice__face" data-card-tilt><span class="operator-choice__chip" aria-hidden="true"></span><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" loading="lazy" /></span><span class="operator-choice__name">${escapeHtml(item.name)}</span><span class="operator-choice__link">Ver análise <span aria-hidden="true">→</span></span></a>`).join('')}</div>
       </section>
 
       ${siteFooter}

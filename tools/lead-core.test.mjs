@@ -101,6 +101,15 @@ test('generated pages retain static SEO, qualified contact and no future article
     assert.ok(operator.resources.some(x => x.url.includes('play.google.com')));
     assert.ok(operator.resources.some(x => x.url.includes('apps.apple.com')));
     assert.equal(guides[operator.slug].products.length, 3);
+    assert.equal(guides[operator.slug].checks.length, 3);
+    for (const check of guides[operator.slug].checks) {
+      assert.ok(check.question.length > 20 && check.evidence.length > 60);
+      assert.ok(html.includes(check.question));
+    }
+    assert.match(html, /data-card-flip/);
+    assert.match(html, /data-solution-controls hidden/);
+    assert.equal((html.match(/data-solution-panel/g) || []).length, 3);
+    assert.match(html, /data-checklist-progress/);
     for (const id of ['produtos', 'na-pratica', 'custos', 'implantacao', 'checklist', 'atendimento']) assert.ok(html.includes(`id="${id}"`));
     assert.match(html, /operator-reading-nav/);
     assert.equal((html.match(/class="operator-choice operator-choice--/g) || []).length, operators.length - 1);

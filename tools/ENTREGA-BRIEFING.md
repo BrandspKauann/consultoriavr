@@ -23,6 +23,24 @@ domínio https://www.consultoriavr.com.br/.
 - QA adicional: `node tools/test-operator-experience.mjs`, usando as mesmas
   variáveis de runtime Playwright e navegador do teste de captura de leads.
 
+### Interação e velocidade nas sete operadoras
+
+- Flutuação mais perceptível em 3,2 segundos (antes: 7 segundos), movimento
+  contextual na fotografia e transições de entrada em 140-200 milissegundos.
+- Cartão principal reage ao mouse e vira por clique, toque, Enter ou Espaço,
+  mostrando o foco consultivo da operadora. Ilustração, não cartão oficial.
+- Soluções em abas acessíveis, com setas, Home/End e altura estável. Opção de
+  comparação lado a lado e perguntas específicas para levar à demonstração.
+- Checklist com barra de progresso e acesso à análise ao revisar todos os
+  critérios. Nenhum dado de formulário é enviado ao marcar esses itens.
+- Navegação por assunto com deslocamento de 320 ms, cancelável por roda,
+  toque ou teclado. Imagens de uso acompanham discretamente a rolagem.
+- Movimento contínuo pausa fora da tela; preferência por movimento reduzido
+  desliga flutuação, inclinação e transições sem desativar as funcionalidades.
+- Sem JavaScript e na impressão, as três soluções continuam disponíveis.
+- Testes cobrem 1440/390/320 px, troca de abas sem salto, comparação, virar
+  cartão, foco de teclado, toque, inclinação e preservação dos fluxos de leads.
+
 - Ticket incluída na home, em página própria `/operadoras/ticket-beneficios/`,
   nos links entre operadoras e no sitemap. Logo e referências oficiais preservados.
 - Quiz e diagnóstico solicitam contato antes de mostrar o resultado. O envio
