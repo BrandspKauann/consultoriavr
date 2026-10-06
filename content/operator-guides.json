@@ -1,0 +1,100 @@
+{
+  "vr-beneficios": {
+    "image": "uso-restaurante",
+    "lead": "Alimentação, refeição e uma rotina que vai além da carga mensal.",
+    "focus": "Rede local e experiência no SuperApp",
+    "products": [
+      {"title": "Alimentação e refeição", "text": "Comece pelos locais que o time realmente frequenta. Um supermercado perto de casa e um restaurante perto do trabalho representam necessidades diferentes. Compare a rede do produto contratado, sem transformar uma lista nacional em garantia de cobertura local."},
+      {"title": "SuperApp na rotina", "text": "Saldo, extrato e consulta de estabelecimentos precisam ser fáceis para o colaborador encontrar. Peça uma demonstração com situações comuns: primeiro acesso, consulta de rede e uma dúvida depois do crédito. A experiência no aplicativo faz parte da percepção do benefício."},
+      {"title": "Jornada e mobilidade", "text": "Se essas frentes estiverem na proposta, avalie cada uma com seu responsável interno. Não basta ter vários serviços disponíveis: é necessário saber quem administra, qual problema será resolvido e o que está incluído no contrato."}
+    ],
+    "scenarioTitle": "O restaurante existe na rede. Mas atende ao seu turno?",
+    "scenario": "Imagine uma empresa com escritório central e uma unidade que encerra o turno à noite. Validar apenas os restaurantes próximos da sede deixa uma parte do time fora da análise. Para comparar a VR, monte uma amostra por unidade, bairro e horário, verificando o produto exato.",
+    "action": "Leve os locais de uso e um exemplo de carga mensal para a demonstração. Saia dela com uma lista de cobertura útil, prazos e responsáveis, não apenas uma apresentação comercial.",
+    "imageAlt": "Cena ilustrativa gerada por IA de pagamento com cartão em restaurante"
+  },
+  "flash-beneficios": {
+    "image": "gestao-rh",
+    "lead": "Benefícios, pessoas e despesas: o valor está no fluxo, não no número de funções.",
+    "focus": "Categorias, permissões e prestação de contas",
+    "products": [
+      {"title": "Benefícios por categoria", "text": "O cartão e seus saldos precisam refletir a política da empresa. Mostre ao fornecedor quem recebe cada categoria, como acontecem os pedidos e onde surgem exceções. Peça que a demonstração mostre o que o colaborador consegue ver e utilizar."},
+      {"title": "Despesas corporativas", "text": "Siga uma despesa do limite à prestação de contas: solicitação, aprovação, comprovante e fechamento. Benefício e despesa podem estar no mesmo ecossistema, mas não devem perder suas regras e responsabilidades próprias."},
+      {"title": "Gestão de pessoas", "text": "Verifique os módulos previstos no pacote e a participação do RH, dos gestores e do financeiro. Uma plataforma integrada só ajuda quando as permissões e os processos fazem sentido para quem trabalha nela todos os meses."}
+    ],
+    "scenarioTitle": "Uma plataforma completa pode simplificar. Ou criar mais uma rotina.",
+    "scenario": "Imagine um RH que administra os benefícios enquanto o financeiro confere reembolsos em outra ferramenta. A pergunta para a Flash é se o fluxo proposto reduz digitação e conciliação, ou se apenas reúne telas. Faça o teste com uma situação real, sem dados pessoais de colaboradores.",
+    "action": "Peça uma demonstração ponta a ponta de benefício e despesa. Registre as etapas que deixam de ser manuais e as que continuam dependendo da sua equipe.",
+    "imageAlt": "Cena ilustrativa gerada por IA de profissionais conferindo uma gestão de benefícios"
+  },
+  "caju-beneficios": {
+    "image": "gestao-rh",
+    "lead": "Flexibilidade para quem usa. Clareza para quem administra.",
+    "focus": "Política de saldos, pedidos e conciliação",
+    "products": [
+      {"title": "Categorias de benefícios", "text": "Uma política flexível precisa ter critérios claros. Defina públicos, valores e categorias antes da demonstração da Caju. Confira como o pedido é configurado e como o colaborador entende os saldos no aplicativo."},
+      {"title": "Adiantamentos e reembolsos", "text": "Despesas pedem um fluxo próprio de aprovação e fechamento. Mostre uma viagem ou compra corporativa de exemplo e acompanhe o comprovante, a prestação de contas e o tratamento do saldo. Não presuma que a gestão de despesas está incluída em qualquer proposta."},
+      {"title": "Pessoas e bem-estar", "text": "Compare essas frentes pelo uso esperado, pelo custo e pelas condições do pacote. Antes de comunicar uma vantagem ao time, confirme elegibilidade e responsabilidades. Uma oferta adicional não substitui o funcionamento do benefício principal."}
+    ],
+    "scenarioTitle": "Dois públicos, duas políticas. Um pedido precisa respeitar ambos.",
+    "scenario": "Imagine uma empresa com equipe de campo e equipe administrativa. Elas podem ter localidades e necessidades distintas. Na avaliação da Caju, teste um pedido para cada público e uma exceção autorizada, observando o que muda no painel e no aplicativo.",
+    "action": "Monte uma matriz de categorias e responsáveis. Use-a para demonstrar pedido, exceção e fechamento, verificando se a política está compreensível para RH e colaboradores.",
+    "imageAlt": "Cena ilustrativa gerada por IA de conferência de pedidos e políticas de benefícios"
+  },
+  "ifood-beneficios": {
+    "image": "uso-restaurante",
+    "lead": "Do almoço ao delivery: compare o benefício no uso real.",
+    "focus": "Alimentação, refeição e orientação ao colaborador",
+    "products": [
+      {"title": "Alimentação e refeição", "text": "Confira o produto e as carteiras habilitadas para supermercado e refeição pronta. O nome iFood é conhecido, mas não explica sozinho a aceitação e as regras do cartão corporativo. A política precisa chegar ao colaborador de forma simples."},
+      {"title": "Experiência de uso", "text": "Peça que o teste inclua saldo, uso presencial e a experiência no delivery quando aplicável. Confirme o aplicativo correto para consultar o benefício e os canais de atendimento. Reconhecimento da marca não substitui orientação de primeiro acesso."},
+      {"title": "Vantagens adicionais", "text": "Se a proposta incluir Clube iFood ou outra oferta, solicite o regulamento. Separe a regra contratual da campanha temporária e avalie a relevância para o perfil do time. Só comunique condições que estejam confirmadas para o público elegível."}
+    ],
+    "scenarioTitle": "Quem usa no restaurante e quem usa em casa precisam entrar no teste.",
+    "scenario": "Imagine um time híbrido: parte almoça perto do escritório e parte trabalha de casa. Ao avaliar iFood Benefícios, a amostra deve incluir as duas rotinas, com as carteiras propostas e os locais relevantes. Não limite a comparação à popularidade do aplicativo de delivery.",
+    "action": "Liste os cenários presenciais e digitais do time. Documente onde o cartão foi validado, quais regras se aplicam e como uma dúvida de uso será atendida.",
+    "imageAlt": "Cena ilustrativa gerada por IA de uso de benefício de refeição em restaurante"
+  },
+  "valecard": {
+    "image": "uso-alimentacao",
+    "lead": "Benefícios e veículos podem entrar na mesma conversa. Os critérios, não.",
+    "focus": "Produtos, aplicativos e responsáveis por operação",
+    "products": [
+      {"title": "Benefícios do time", "text": "Para alimentação e refeição, comece pelo produto, pelos estabelecimentos e pela gestão dos usuários. Confirme qual aplicativo será utilizado e como o time consulta saldo e rede. A linha de produto deve estar clara antes de comunicar a mudança."},
+      {"title": "Frota e mobilidade", "text": "Se veículos fazem parte da operação, analise rotas, limites e responsáveis separadamente. A gestão de frota exige critérios diferentes do benefício do colaborador. Peça uma demonstração correspondente ao produto que está sendo proposto."},
+      {"title": "Manutenção e logística", "text": "Compare o fluxo de autorização e as informações necessárias ao fechamento. Os aplicativos e canais variam por frente. Uma oferta ampla é útil quando a empresa consegue identificar rapidamente quem utiliza e quem administra cada solução."}
+    ],
+    "scenarioTitle": "O RH procura benefícios. A operação procura controle de veículos.",
+    "scenario": "Imagine uma empresa com colaboradores em várias bases e veículos em rotas regionais. Ao comparar a ValeCard, separe a lista de supermercados e restaurantes da lista de locais de abastecimento e manutenção. Cada equipe precisa de cobertura e relatórios próprios.",
+    "action": "Crie dois escopos de teste: benefícios e veículos. Valide aplicativo, rede, permissões e suporte de cada produto com as pessoas que vão administrar a operação.",
+    "imageAlt": "Cena ilustrativa gerada por IA de compra de alimentos com cartão de benefício"
+  },
+  "pluxee-beneficios": {
+    "image": "uso-alimentacao",
+    "lead": "O produto e a carteira importam tanto quanto o nome do cartão.",
+    "focus": "Modalidades, carteiras e aceitação por categoria",
+    "products": [
+      {"title": "Alimentação e refeição", "text": "Identifique o produto recebido na proposta antes de comparar rede e administração. Valide os estabelecimentos relevantes com uma amostra por cidade e unidade. A rotina de compra de alimentos não é a mesma da refeição pronta."},
+      {"title": "Multibenefícios Elo", "text": "As carteiras possuem usos por categoria. Peça exemplos de pagamento para os saldos habilitados e confira como a política é configurada. Aceitar a bandeira não significa que toda compra pode consumir qualquer carteira."},
+      {"title": "Serviços adicionais", "text": "Bem-estar e outras ofertas devem ser comparados com regulamento, custo e elegibilidade. Uma condição anunciada por prazo limitado precisa ficar separada do que será mantido durante o contrato. Confirme tudo antes de divulgar ao time."}
+    ],
+    "scenarioTitle": "A compra foi recusada. Era rede, categoria ou carteira?",
+    "scenario": "Imagine uma empresa adotando Multibenefícios Elo com diferentes categorias. Antes da implantação, faça o fornecedor demonstrar um pagamento por carteira e o caminho de atendimento para uma recusa. Essa explicação ajuda a evitar que o RH receba toda dúvida como se fosse um problema de rede.",
+    "action": "Documente as carteiras contratadas, os usos previstos e as regras aplicáveis. Entregue uma comunicação que diferencie saldo disponível de compra autorizada.",
+    "imageAlt": "Cena ilustrativa gerada por IA de pagamento de alimentos em supermercado"
+  },
+  "ticket-beneficios": {
+    "image": "uso-restaurante",
+    "lead": "Alimentação, Restaurante ou Flex: comece pelo jeito que o time usa.",
+    "focus": "Modalidade, rede credenciada e carga mensal",
+    "products": [
+      {"title": "Ticket Alimentação", "text": "A modalidade é voltada à compra de alimentos em estabelecimentos credenciados. Compare os locais próximos de onde as pessoas moram, além dos próximos da empresa. A avaliação precisa considerar a distribuição real do time."},
+      {"title": "Ticket Restaurante", "text": "Olhe para a refeição pronta e para o horário de uso. Um local credenciado que não atende o turno de trabalho pode não resolver a necessidade do colaborador. Verifique o produto exato e a amostra de estabelecimentos."},
+      {"title": "Ticket Flex", "text": "Reúne alimentação e restaurante em um cartão. Confira as regras do produto e a forma de administrar a política proposta. A decisão deve explicar para RH e colaboradores como o benefício será usado, sem presumir aceitação de qualquer compra."}
+    ],
+    "scenarioTitle": "A mesma empresa pode ter três rotinas de alimentação.",
+    "scenario": "Imagine pessoas no escritório, no campo e em trabalho remoto. Antes de comparar Ticket Alimentação, Restaurante ou Flex, entenda onde cada público compra alimentos e faz suas refeições. Essa diferença pode pesar mais do que uma condição comercial isolada.",
+    "action": "Use os mesmos locais e processos para comparar propostas. Confira carga, inclusão de usuário, segunda via e atendimento com exemplos da sua empresa.",
+    "imageAlt": "Cena ilustrativa gerada por IA de uso de cartão de refeição no almoço"
+  }
+}

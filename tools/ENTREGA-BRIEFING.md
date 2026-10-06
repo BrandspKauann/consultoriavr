@@ -5,6 +5,24 @@ domínio https://www.consultoriavr.com.br/.
 
 ## Complemento aprovado em 6 de outubro de 2026
 
+### Leitura e movimento das páginas de operadoras
+
+- Logos das outras operadoras em cartões com fundos de marca, sem letras
+  brancas sobre branco. Proporções e links individuais preservados.
+- Guias específicos em `content/operator-guides.json`: soluções, cenário de uso,
+  custos, implantação, destaques semânticos em negrito e checklist interativo.
+- Índice fixo por assunto, seção atual indicada e progresso da leitura.
+- Três imagens ilustrativas criadas por IA, otimizadas em WebP e armazenadas
+  em `assets/operators/`. Fotografias de uso, compra de alimentos e gestão do RH;
+  não são retratos de clientes nem reprodução de produtos oficiais.
+- Hero com marca em destaque, imagem contextual e cartão ilustrativo flutuante.
+- Movimento compartilhado em `site-motion.js`: opacidade nas bordas da tela,
+  conteúdo central nítido, retorno ao rolar e foco de teclado sempre visível.
+- HTML permanece legível sem JavaScript; impressão e preferência por movimento
+  reduzido desativam animações. Formulários e navegação não somem na rolagem.
+- QA adicional: `node tools/test-operator-experience.mjs`, usando as mesmas
+  variáveis de runtime Playwright e navegador do teste de captura de leads.
+
 - Ticket incluída na home, em página própria `/operadoras/ticket-beneficios/`,
   nos links entre operadoras e no sitemap. Logo e referências oficiais preservados.
 - Quiz e diagnóstico solicitam contato antes de mostrar o resultado. O envio

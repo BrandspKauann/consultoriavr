@@ -223,6 +223,7 @@ ${noindex ? '    <meta name="robots" content="noindex, follow" />\n' : ''}    <m
     <meta name="theme-color" content="#103F3B" />
     <link rel="stylesheet" href="/seo-fallback-hirayama.css" />
     <link rel="stylesheet" href="/lead-flow.css" />
+    <link rel="stylesheet" href="/operator-experience.css" />
     <script type="module" src="/lead-flow.js"></script>
 ${structuredData.map((item) => `    <script type="application/ld+json">${safeJson(item)}</script>`).join('\n')}
   </head>`;
@@ -551,9 +552,17 @@ ${editorialNav('content')}
 `;
 }
 
-function renderOperatorPage(operator, operators) {
+function operatorText(text) {
+  return escapeHtml(text).replace(/(rede credenciada|alimentação e refeição|RH e financeiro|condições comerciais|produto contratado|primeiro acesso|carga mensal|segunda via|permissões|elegibilidade|conciliação|política de benefícios|carteiras|prestação de contas|implantação|supermercados|Ticket Flex|Ticket Alimentação|Ticket Restaurante|SuperApp|Multibenefícios Elo)/giu, '<strong>$1</strong>');
+}
+
+function renderOperatorPage(operator, operators, guides) {
   const route = operatorRoute(operator);
   const canonical = `${siteUrl}${route}`;
+  const guide = guides[operator.slug];
+  if (!guide) throw new Error(`Missing reading guide: ${operator.slug}`);
+  const photo = `/assets/operators/${guide.image}.webp`;
+  const rolloutPhoto = guide.image === 'gestao-rh' ? 'uso-restaurante' : 'gestao-rh';
   const related = operators.filter((item) => item.slug !== operator.slug);
   const structuredData = [
     {
@@ -592,7 +601,7 @@ function renderOperatorPage(operator, operators) {
     description: operator.description,
     keywords: operator.keywords,
     canonical,
-    image: operator.logo,
+    image: photo,
     structuredData
   })}
   <body>
@@ -600,77 +609,104 @@ ${googleTagManagerBody()}
 ${editorialNav('operators')}
     <main class="seo-fallback operator-page" id="topo" aria-label="Análise da ${escapeHtml(operator.name)}">
       <header class="operator-page__hero operator-page__hero--${escapeHtml(operator.cardClass)}">
+        <img class="operator-hero-photo" src="${photo}" alt="${escapeHtml(guide.imageAlt)}" width="1440" height="810" fetchpriority="high" />
         <div class="operator-page__hero-inner">
-          <div class="operator-page__hero-copy">
+          <div class="operator-page__hero-copy" data-viewport-reveal>
             <div class="operator-page__breadcrumb"><a href="/">Início</a><span>→</span><a href="/#operadoras">Operadoras</a><span>→</span><strong>${escapeHtml(operator.name)}</strong></div>
             <p class="operator-page__eyebrow">${escapeHtml(operator.eyebrow)}</p>
-            <h1>${escapeHtml(operator.title)}</h1>
+            <h1>${escapeHtml(operator.name)}</h1>
+            <p class="operator-hero-lead">${escapeHtml(guide.lead)}</p>
             <p>${escapeHtml(operator.description)}</p>
             <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa</a>
+            <a class="operator-hero-explore" href="#visao-geral">Conhecer os critérios <span aria-hidden="true">↓</span></a>
           </div>
           <div class="operator-page__card" aria-label="Cartão ilustrativo da ${escapeHtml(operator.name)}">
             <span class="operator-page__chip" aria-hidden="true"></span>
             <img src="${escapeHtml(operator.logo)}" alt="${escapeHtml(operator.logoAlt)}" />
-            <small>Benefícios corporativos</small>
+            <small>Benefícios corporativos · ilustração</small>
           </div>
         </div>
       </header>
-
-      <section class="operator-page__intro">
+      <nav class="operator-reading-nav" aria-label="Assuntos desta análise">
+        <div><a href="#visao-geral">Visão geral</a><a href="#produtos">Soluções</a><a href="#na-pratica">Na prática</a><a href="#checklist">Checklist</a><a href="#custos">Custos</a><a href="#implantacao">Implantação</a><a href="#duvidas">Dúvidas</a><a href="#atendimento">Atendimento</a></div>
+        <span class="operator-reading-progress" data-reading-progress aria-hidden="true"></span>
+      </nav>
+      <section class="operator-page__intro" id="visao-geral">
         <p class="operator-page__label">Visão consultiva</p>
-        <h2>O nome da operadora é só o começo da análise.</h2>
-        <p>${escapeHtml(operator.summary)}</p>
+        <h2 data-viewport-reveal>O cartão é o começo. A rotina é o teste.</h2>
+        <div data-viewport-reveal><p>${operatorText(operator.summary)}</p><p class="operator-focus"><strong>Foco da análise</strong> ${escapeHtml(guide.focus)}</p></div>
       </section>
 
       <section class="operator-page__reading">
-        <article>
+        <article data-viewport-reveal>
           <p class="operator-page__label">Entenda o cenário</p>
           <h2>Como olhar para a ${escapeHtml(operator.name)}</h2>
-          ${operator.overview.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n          ')}
+          ${operator.overview.map((paragraph) => `<p>${operatorText(paragraph)}</p>`).join('\n          ')}
         </article>
-        <aside>
+        <aside data-viewport-reveal>
           <h3>Pontos que podem entrar no comparativo</h3>
-          <ul>${operator.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+          <ul>${operator.strengths.map((item) => `<li>${operatorText(item)}</li>`).join('')}</ul>
           <p>Recursos, rede e condições comerciais podem mudar. Confirme sempre a documentação e a proposta oficiais vigentes.</p>
         </aside>
       </section>
 
-      <section class="operator-page__checklist">
-        <div>
+      <section class="operator-products operator-section" id="produtos">
+        <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Escolha pelo uso, não só pela marca</p><h2>O que entra na proposta da ${escapeHtml(operator.name)}</h2><p>Produtos diferentes pedem perguntas diferentes. Separe o que resolve sua necessidade do que apenas amplia o pacote.</p></div>
+        <div class="operator-products-list">${guide.products.map((product, index) => `<article data-viewport-reveal><span class="operator-step">${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(product.title)}</h3><p>${operatorText(product.text)}</p></article>`).join('')}</div>
+      </section>
+      <section class="operator-scenario" id="na-pratica">
+        <figure data-viewport-reveal><img src="/assets/operators/${guide.image === 'uso-alimentacao' ? 'uso-restaurante' : 'uso-alimentacao'}.webp" alt="Cena ilustrativa gerada por IA de uso de benefício de alimentação e refeição" width="1440" height="810" loading="lazy"><figcaption>Cena ilustrativa criada por IA, sem produto de marca.</figcaption></figure>
+        <div data-viewport-reveal><p class="operator-page__label">Um cenário para colocar à prova</p><h2>${escapeHtml(guide.scenarioTitle)}</h2><p>${operatorText(guide.scenario)}</p><p class="operator-takeaway"><strong>O que levar à comparação</strong>${operatorText(guide.action)}</p></div>
+      </section>
+      <section class="operator-page__checklist" id="checklist" data-comparison-checklist>
+        <div data-viewport-reveal>
           <p class="operator-page__label">Checklist para RH e financeiro</p>
           <h2>O que validar antes de decidir</h2>
+          <p>Uma proposta fica mais clara quando os critérios são registrados. Considere cada item no produto e no contrato que a sua empresa vai utilizar.</p>
+          <p class="operator-checklist-status" data-checklist-status role="status" aria-live="polite">0 de ${operator.evaluate.length} critérios revisados</p>
         </div>
-        <ol>${operator.evaluate.map((item, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(item)}</strong></li>`).join('')}</ol>
+        <ol>${operator.evaluate.map((item, index) => `<li data-viewport-reveal><label><input type="checkbox"><span class="operator-step" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span>${operatorText(item)}</span></label></li>`).join('')}</ol>
       </section>
-
+      <section class="operator-costs operator-section" id="custos">
+        <div data-viewport-reveal><p class="operator-page__label">Além do preço anunciado</p><h2>O custo não termina na proposta.</h2><p>Ao comparar ${escapeHtml(operator.name)}, coloque na mesma conta <strong>condições comerciais, esforço de gestão e transição</strong>. Uma taxa isolada não descreve tudo o que a operação vai exigir.</p><p>Peça uma proposta com produto, categorias, serviços incluídos e validade. Diferencie preço recorrente de condição promocional e solicite os prazos de emissão, crédito e atendimento. O que não estiver claro precisa virar uma pergunta, não uma suposição.</p></div>
+        <dl data-viewport-reveal><div><dt>Contrato</dt><dd>Taxas, serviços, vigência, obrigações e condições de saída documentados.</dd></div><div><dt>Rotina do RH</dt><dd>Pedidos, cadastros, exceções e relatórios demonstrados com exemplos da empresa.</dd></div><div><dt>Experiência do time</dt><dd>Rede útil, orientação de uso e caminho de atendimento quando algo não funciona.</dd></div></dl>
+      </section>
+      <section class="operator-rollout operator-section" id="implantacao">
+        <div class="operator-section-heading" data-viewport-reveal><p class="operator-page__label">Do contrato ao primeiro crédito</p><h2>Uma boa escolha precisa chegar bem ao time.</h2><p>A implantação da ${escapeHtml(operator.name)} deve ter responsáveis, prazos e comunicação. Antes de trocar, confira o tratamento dos cartões e saldos atuais; não presuma transferência automática.</p></div>
+        <div class="operator-rollout-grid"><figure data-viewport-reveal><img src="/assets/operators/${rolloutPhoto}.webp" alt="${rolloutPhoto === 'gestao-rh' ? 'Cena ilustrativa gerada por IA de revisão de cadastros e implantação de benefícios' : 'Cena ilustrativa gerada por IA de uso do benefício após a implantação'}" width="1440" height="810" loading="lazy"><figcaption>Cena ilustrativa criada por IA.</figcaption></figure><ol>
+          <li data-viewport-reveal><strong>01 · Organizar a base</strong><p>Revise unidades, públicos, valores e responsáveis. Trate os dados pessoais apenas nos canais autorizados.</p></li>
+          <li data-viewport-reveal><strong>02 · Validar antes da virada</strong><p>Teste acesso, pedido, crédito e atendimento com o fornecedor. Documente as regras de transição do contrato anterior.</p></li>
+          <li data-viewport-reveal><strong>03 · Comunicar e acompanhar</strong><p>Explique aplicativo, saldos e canais de ajuda. Acompanhe as primeiras ocorrências para ajustar o que não ficou claro.</p></li>
+        </ol></div>
+      </section>
       <section class="operator-page__fit">
         <p class="operator-page__label">Aderência ao perfil</p>
-        <h2>Quando essa alternativa pode entrar na conversa</h2>
-        <p>${escapeHtml(operator.fit)}</p>
+        <h2 data-viewport-reveal>Faz sentido para a sua empresa?</h2>
+        <p data-viewport-reveal>${operatorText(operator.fit)}</p>
         <a href="/conteudo/como-escolher-cartao-beneficios-corporativos/">Veja como estruturar a comparação completa <span>→</span></a>
       </section>
 
-      <section class="operator-page__faq" aria-labelledby="operator-faq-title">
+      <section class="operator-page__faq" id="duvidas" aria-labelledby="operator-faq-title">
         <p class="operator-page__label">Perguntas frequentes</p>
         <h2 id="operator-faq-title">Dúvidas sobre ${escapeHtml(operator.name)}</h2>
-        ${operator.faq.map((item) => `<details><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${escapeHtml(item.answer)}</p></details>`).join('\n        ')}
+        ${operator.faq.map((item) => `<details data-viewport-reveal><summary>${escapeHtml(item.question)}<span>+</span></summary><p>${operatorText(item.answer)}</p></details>`).join('\n        ')}
       </section>
 
-      <section class="operator-resources" aria-labelledby="resource-title">
+      <section class="operator-resources" id="atendimento" aria-labelledby="resource-title">
         <p class="operator-page__label">Antes de contratar e durante o uso</p>
         <h2 id="resource-title">Cuidados e canais oficiais da ${escapeHtml(operator.name)}</h2>
         <div class="operator-resource-grid">
-          <div><h3>O que merece atenção</h3><ul>${operator.attention.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
-          <div><h3>Já usa este cartão?</h3><p>Para perda ou roubo, procure o bloqueio no aplicativo oficial. Sem acesso ao app, use o canal de atendimento da operadora. A consultoria não bloqueia cartões nem consulta saldos.</p><ul>${operator.resources.map(item => `<li><a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a></li>`).join('')}</ul></div>
+          <div data-viewport-reveal><h3>O que merece atenção</h3><ul>${operator.attention.map(item => `<li>${operatorText(item)}</li>`).join('')}</ul></div>
+          <div data-viewport-reveal><h3>Já usa este cartão?</h3><p>Para perda ou roubo, procure o bloqueio no aplicativo oficial. Sem acesso ao app, use o canal de atendimento da operadora. <strong>A consultoria não bloqueia cartões nem consulta saldos.</strong></p><ul>${operator.resources.map(item => `<li><a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a></li>`).join('')}</ul></div>
         </div>
         <p class="operator-source-note">Fontes oficiais consultadas em ${escapeHtml(formatDate(operator.checkedAt + 'T12:00:00Z'))}. ${operator.sources.map(item => `<a href="${escapeHtml(item.url)}" rel="noopener">${escapeHtml(item.label)}</a>`).join(' · ')}. Recursos, prazos e condições devem ser reconfirmados na proposta vigente.</p>
       </section>
-      <section class="operator-revision"><h2>Já usa ${escapeHtml(operator.name)} na empresa?</h2><p>Revise rede, suporte, esforço do RH e contrato antes de renovar.</p><a href="/ja-tenho-cartao/?operadora=${encodeURIComponent(operatorFormName(operator))}">Avaliar meu contrato →</a></section>
+      <section class="operator-revision" data-viewport-reveal><h2>Já usa ${escapeHtml(operator.name)} na empresa?</h2><p>Revise rede, suporte, esforço do RH e contrato antes de renovar.</p><a href="/ja-tenho-cartao/?operadora=${encodeURIComponent(operatorFormName(operator))}">Avaliar meu contrato →</a></section>
 
       <section class="operator-page__others" aria-labelledby="other-operators-title">
         <p class="operator-page__label">Continue comparando</p>
         <h2 id="other-operators-title">Conheça as outras operadoras</h2>
-        <div>${related.map((item) => `<a href="${escapeHtml(operatorRoute(item))}"><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" loading="lazy" /><span>${escapeHtml(item.name)}</span></a>`).join('')}</div>
+        <div>${related.map((item) => `<a class="operator-choice operator-choice--${escapeHtml(item.cardClass)}" href="${escapeHtml(operatorRoute(item))}" data-viewport-reveal><span class="operator-choice__face"><span class="operator-choice__chip" aria-hidden="true"></span><img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" loading="lazy" /></span><span class="operator-choice__name">${escapeHtml(item.name)}</span><span class="operator-choice__link">Ver análise <span aria-hidden="true">→</span></span></a>`).join('')}</div>
       </section>
 
       ${siteFooter}
@@ -718,7 +754,7 @@ function renderSitemap(posts, operators) {
     ...['/contato/', '/ja-tenho-cartao/', '/quiz-rede-aberta-ou-fechada/', '/politica-de-privacidade/'].map(route => ({ loc: `${siteUrl}${route}`, lastmod: '2026-10-06', changefreq: 'monthly', priority: '0.7' })),
     ...operators.map((operator) => ({
       loc: `${siteUrl}${operatorRoute(operator)}`,
-      lastmod: operator.checkedAt,
+      lastmod: [operator.checkedAt, '2026-10-06'].sort().at(-1),
       changefreq: 'monthly',
       priority: '0.8'
     })),
@@ -755,6 +791,7 @@ export async function buildSite() {
     .filter((post) => new Date(post.publishAt) <= now)
     .map(normalizeScheduled);
   const operators = await readJson(operatorsPath, []);
+  const guides = await readJson(path.join(contentDir, 'operator-guides.json'), {});
   const posts = [...publishedScheduled, ...basePosts]
     .sort((a, b) => new Date(b.publishAt) - new Date(a.publishAt));
 
@@ -769,7 +806,7 @@ export async function buildSite() {
     await writeRoute(routeFor(post), renderArticle(post, posts));
   }
   for (const operator of operators) {
-    await writeRoute(operatorRoute(operator), renderOperatorPage(operator, operators));
+    await writeRoute(operatorRoute(operator), renderOperatorPage(operator, operators, guides));
   }
   await fs.writeFile(path.join(projectDir, 'sitemap.xml'), renderSitemap(posts, operators), 'utf8');
   console.log(`Build completed with ${posts.length} visible posts (${publishedScheduled.length} scheduled published) and ${operators.length} operator pages.`);

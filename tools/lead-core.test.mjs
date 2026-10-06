@@ -91,6 +91,7 @@ test('generated pages retain static SEO, qualified contact and no future article
     assert.doesNotMatch(html, /sem CNPJ nesta etapa/);
   }
   const operators = JSON.parse(await fs.readFile(new URL('content/operators.json', root)));
+  const guides = JSON.parse(await fs.readFile(new URL('content/operator-guides.json', root)));
   for (const operator of operators) {
     const html = await fs.readFile(new URL(`operadoras/${operator.slug}/index.html`, root), 'utf8');
     assert.doesNotMatch(html, /wa\.link\/3gwhbl/);
@@ -99,5 +100,15 @@ test('generated pages retain static SEO, qualified contact and no future article
     assert.ok(operator.attention.length >= 3 && operator.sources.length >= 2);
     assert.ok(operator.resources.some(x => x.url.includes('play.google.com')));
     assert.ok(operator.resources.some(x => x.url.includes('apps.apple.com')));
+    assert.equal(guides[operator.slug].products.length, 3);
+    for (const id of ['produtos', 'na-pratica', 'custos', 'implantacao', 'checklist', 'atendimento']) assert.ok(html.includes(`id="${id}"`));
+    assert.match(html, /operator-reading-nav/);
+    assert.equal((html.match(/class="operator-choice operator-choice--/g) || []).length, operators.length - 1);
+    assert.match(html, /<strong>/);
+    assert.ok(html.includes(`/assets/operators/${guides[operator.slug].image}.webp`));
+    const photos = [...html.matchAll(/src="(\/assets\/operators\/[^"]+)"/g)].map(match => match[1]);
+    assert.equal(new Set(photos).size, 3);
+    for (const photo of photos) await fs.access(new URL(photo.slice(1), root));
+    assert.ok(!html.includes(`property="og:image" content="https://www.consultoriavr.com.br${operator.logo}"`));
   }
 });

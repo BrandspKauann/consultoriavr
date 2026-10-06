@@ -1,4 +1,5 @@
 import { validCnpj, maskCnpj, validCorporateEmail, validPhone, diagnosticQuestions, quizQuestions, diagnosticResult, quizResult, answerLabels, OPERATORS, VOLUMES } from './lead-core.mjs';
+import './site-motion.js';
 
 const track = (event, parameters = {}) => (window.dataLayer = window.dataLayer || []).push({ event, ...parameters });
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
