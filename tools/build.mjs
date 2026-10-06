@@ -715,7 +715,7 @@ function renderSitemap(posts, operators) {
   const routes = [
     { loc: siteUrl, lastmod: siteLastmod, changefreq: 'weekly', priority: '1.0' },
     { loc: `${siteUrl}/conteudo`, lastmod: siteLastmod, changefreq: 'weekly', priority: '0.8' },
-    ...['/contato/', '/ja-tenho-cartao/', '/quiz-rede-aberta-ou-fechada/', '/politica-de-privacidade/'].map(route => ({ loc: `${siteUrl}${route}`, lastmod: '2026-10-05', changefreq: 'monthly', priority: '0.7' })),
+    ...['/contato/', '/ja-tenho-cartao/', '/quiz-rede-aberta-ou-fechada/', '/politica-de-privacidade/'].map(route => ({ loc: `${siteUrl}${route}`, lastmod: '2026-10-06', changefreq: 'monthly', priority: '0.7' })),
     ...operators.map((operator) => ({
       loc: `${siteUrl}${operatorRoute(operator)}`,
       lastmod: operator.checkedAt,

@@ -32,7 +32,9 @@ const operators = await readJson('operators.json');
 const allSlugs = scheduled.map((post) => post.slug);
 
 assert(new Set(allSlugs).size === allSlugs.length, 'Há slugs duplicados na fila editorial.');
-assert(operators.length === 6, 'O catálogo deve conter as seis operadoras apresentadas na home.');
+const home = await fs.readFile(path.join(projectDir, 'index.html'), 'utf8');
+assert(operators.length >= 7, 'O catálogo deve incluir a Ticket e as operadoras existentes.');
+assert((home.match(/class="operator-card operator-card--/g) || []).length === operators.length, 'A home e o catálogo devem apresentar as mesmas operadoras.');
 assert(new Set(operators.map((operator) => operator.slug)).size === operators.length, 'Há slugs duplicados nas operadoras.');
 
 for (const post of scheduled) {
@@ -67,6 +69,7 @@ for (const post of future) {
 
 for (const operator of operators) {
   assert(sitemap.includes(`/operadoras/${operator.slug}/`), `Operadora ausente do sitemap: ${operator.slug}.`);
+  assert(home.includes(`href="/operadoras/${operator.slug}/"`), `Operadora ausente da home: ${operator.slug}.`);
   assert(await exists(path.join(projectDir, 'operadoras', operator.slug, 'index.html')), `Rota da operadora ausente: ${operator.slug}.`);
 }
 

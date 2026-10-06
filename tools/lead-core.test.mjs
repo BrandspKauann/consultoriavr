@@ -82,6 +82,14 @@ test('generated pages retain static SEO, qualified contact and no future article
   assert.match(thanks, /noindex, follow/);
   assert.match(thanks, /wa\.link\/3gwhbl/);
   assert.ok(!sitemap.includes('/obrigado/'));
+  for (const [route, kind] of [['quiz-rede-aberta-ou-fechada', 'quiz'], ['ja-tenho-cartao', 'diagnostic']]) {
+    const html = await fs.readFile(new URL(`${route}/index.html`, root), 'utf8');
+    assert.match(html, /class="wizard-capture" hidden/);
+    assert.ok(html.includes(`data-lead-result="${kind}"`));
+    assert.match(html, /Enviar e ver meu resultado/);
+    assert.match(html, /class="wizard-result" hidden/);
+    assert.doesNotMatch(html, /sem CNPJ nesta etapa/);
+  }
   const operators = JSON.parse(await fs.readFile(new URL('content/operators.json', root)));
   for (const operator of operators) {
     const html = await fs.readFile(new URL(`operadoras/${operator.slug}/index.html`, root), 'utf8');

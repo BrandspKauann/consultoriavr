@@ -1,5 +1,58 @@
 [
   {
+    "slug": "ticket-beneficios",
+    "name": "Ticket Benefícios",
+    "eyebrow": "Alimentação, refeição e rotina do RH",
+    "title": "Ticket Alimentação e Restaurante: como avaliar para sua empresa",
+    "description": "Compare Ticket Alimentação, Restaurante e Flex com critérios de rede local, gestão do RH, implantação e experiência dos colaboradores.",
+    "keywords": ["Ticket Alimentação", "Ticket Restaurante", "Ticket Flex", "cartão Ticket", "Ticket para empresas", "consultoria de benefícios"],
+    "logo": "/ticket-logo-official.svg",
+    "logoAlt": "Logotipo oficial da Ticket",
+    "cardClass": "ticket",
+    "summary": "A Ticket entra na comparação de empresas que precisam organizar alimentação e refeição, validar a rede utilizada pelo time e revisar a gestão dos benefícios. A análise deve distinguir Ticket Alimentação, Ticket Restaurante e Ticket Flex: o produto escolhido muda os locais e as regras de uso.",
+    "overview": [
+      "No Ticket Alimentação, o foco é a compra de alimentos em estabelecimentos credenciados, como supermercados. No Ticket Restaurante, é a refeição pronta. Antes de pedir uma proposta, identifique se o time faz refeições perto do trabalho, compra alimentos para casa ou precisa das duas modalidades.",
+      "O Ticket Flex reúne alimentação e restaurante em um cartão. Confirme na proposta a modalidade, os saldos, a aceitação e as condições aplicáveis. Flexibilidade precisa ser entendida no produto contratado, sem presumir que qualquer compra será autorizada.",
+      "Leve uma amostra de cidades, bairros e estabelecimentos à demonstração. Depois, simule admissão, crédito mensal, desligamento e segunda via com quem realmente administra o benefício. Esse teste conecta a proposta comercial à rotina do RH."
+    ],
+    "strengths": [
+      "Alimentação e Restaurante com finalidades distintas para avaliar conforme o perfil do time.",
+      "Ticket Flex como alternativa a analisar quando alimentação e refeição precisam estar em um cartão.",
+      "Portal de gestão de benefícios e aplicativo para usuários, a validar na demonstração.",
+      "Consulta oficial de rede credenciada para conferir estabelecimentos relevantes."
+    ],
+    "evaluate": [
+      "Rede do produto específico nos locais frequentados pelos colaboradores.",
+      "Regras dos saldos e categorias previstas na proposta.",
+      "Prazos de crédito, emissão, reposição e tratamento de ocorrências.",
+      "Relatórios, permissões e conciliação para RH e financeiro.",
+      "Custos completos, canais de atendimento e responsabilidades da implantação."
+    ],
+    "fit": "Pode fazer sentido comparar a Ticket quando a empresa quer revisar alimentação e refeição com uma operação documentada. A decisão deve partir do uso do time, não apenas da familiaridade com a marca. Registre os locais testados e os processos demonstrados para comparar propostas em condições equivalentes.",
+    "attention": [
+      "Não confunda Ticket Alimentação, Restaurante e Flex: compare o produto efetivamente proposto.",
+      "Rede nacional não substitui a validação dos locais de uso do seu time.",
+      "Serviços adicionais, campanhas e condições comerciais dependem da proposta vigente; não presuma inclusão automática."
+    ],
+    "faq": [
+      {"question": "Qual a diferença entre Ticket Alimentação e Ticket Restaurante?", "answer": "Alimentação é voltado à compra de alimentos em supermercados e outros estabelecimentos credenciados. Restaurante atende refeições prontas. A empresa deve avaliar a modalidade conforme a rotina dos colaboradores e a política de benefícios."},
+      {"question": "Como avaliar a Ticket antes de trocar de cartão?", "answer": "Confira a rede do produto por localidade, teste a gestão com o RH e documente custos, suporte e prazos. Compare esses critérios com o contrato atual antes de decidir."},
+      {"question": "A Consultoria VR é o suporte oficial da Ticket?", "answer": "Não. A Consultoria VR organiza a análise de benefícios para empresas. Problemas de saldo, bloqueio, senha e cartão devem ser tratados nos canais oficiais da Ticket, indicados nesta página."}
+    ],
+    "resources": [
+      {"label": "Ticket no Google Play", "url": "https://play.google.com/store/apps/details?id=br.com.mobile.ticket&hl=pt"},
+      {"label": "Ticket na App Store", "url": "https://apps.apple.com/br/app/ticket/id864205019"},
+      {"label": "Consulta de rede credenciada", "url": "https://www.ticket.com.br/portal-usuario/rede-credenciada"},
+      {"label": "Central de ajuda oficial", "url": "https://www.ticket.com.br/central-de-ajuda/"}
+    ],
+    "sources": [
+      {"label": "Ticket Alimentação", "url": "https://www.ticket.com.br/contratar-ticket/ticket-alimentacao/"},
+      {"label": "Ticket Restaurante", "url": "https://www.ticket.com.br/contratar-ticket/ticket-restaurante/"},
+      {"label": "Ticket Flex", "url": "https://www.ticket.com.br/contratar-ticket/ticket-flex/"}
+    ],
+    "checkedAt": "2026-10-06"
+  },
+  {
     "slug": "vr-beneficios",
     "name": "VR Benefícios",
     "eyebrow": "Rede, operação e gestão de benefícios",

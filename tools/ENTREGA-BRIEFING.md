@@ -3,6 +3,28 @@
 Implementação em 5 de outubro de 2026. Projeto correto: Consultoria VR,
 domínio https://www.consultoriavr.com.br/.
 
+## Complemento aprovado em 6 de outubro de 2026
+
+- Ticket incluída na home, em página própria `/operadoras/ticket-beneficios/`,
+  nos links entre operadoras e no sitemap. Logo e referências oficiais preservados.
+- Quiz e diagnóstico solicitam contato antes de mostrar o resultado. O envio
+  confirmado pelo Formspree libera o resultado na mesma página; uma falha mantém
+  os campos preenchidos e permite nova tentativa sem liberar o resultado.
+- As respostas e a classificação seguem no formulário. A etapa é uma barreira
+  de fluxo na interface, não um controle de acesso no servidor: o cálculo segue
+  no navegador e não envolve informações restritas.
+- Formulários comuns continuam direcionando para `/obrigado/`. Nas avaliações,
+  a página de confirmação fica disponível após consultar o resultado.
+- Cliente autorizou manter a entrega atual ao e-mail de Kauann via Formspree.
+  HubSpot/Make ficam para uma próxima etapa; não bloqueiam esta entrega.
+- LinkedIn oficial do Ewerton confirmado pelo cliente. Dados institucionais e
+  inclusão da Ticket foram aprovados na conversa.
+- GTM e os três eventos GA4 foram publicados pelo usuário e testados no Tag
+  Assistant. A marcação de `generate_lead` como evento principal é feita no GA4.
+- QA: `npm run build`, `npm test` e `node tools/test-lead-gate.mjs` com Playwright
+  disponível. O teste de navegador usa o servidor local isolado, sem enviar leads
+  reais. Aceita `PLAYWRIGHT_MODULE` e `QA_BROWSER_PATH` para runtimes externos.
+
 ## Entregue no código
 
 - Formulário qualificado na home e em `/contato/`: nome, cargo, empresa,
@@ -22,7 +44,7 @@ domínio https://www.consultoriavr.com.br/.
   WhatsApp opcional nesta etapa, noindex e fora do sitemap.
 - `/politica-de-privacidade/`, com responsável identificado, contato de
   privacidade, finalidades, prestadores e direitos do titular.
-- CTAs comerciais da home, biblioteca, artigos e páginas das seis operadoras
+- CTAs comerciais da home, biblioteca, artigos e páginas das operadoras
   passam pelo formulário. Canais de suporte das operadoras continuam externos.
 - Assinatura Hirayama no topo/rodapé; seção Ewerton com foto e LinkedIn;
   dados jurídicos e links institucionais em todos os rodapés.
@@ -37,8 +59,8 @@ domínio https://www.consultoriavr.com.br/.
 ## O que não está ativado
 
 O endpoint existente `https://formspree.io/f/mbdppnkr` foi preservado para não
-interromper os pedidos. A troca do destinatário pessoal mencionado no briefing
-NÃO pode ser feita pelo HTML: é uma configuração da conta Formspree.
+interromper os pedidos. O cliente autorizou manter o destinatário atual.
+Qualquer troca futura NÃO pode ser feita pelo HTML: é uma configuração da conta Formspree.
 Não foi configurada entrega no HubSpot, nem notificação interna por e-mail,
 nem confirmação automática assinada por Ewerton, pois faltam os acessos/dados.
 Não confundir a confirmação visual `/obrigado/` com um e-mail automático.
@@ -53,8 +75,8 @@ anti-spam no fluxo de integração antes de criar/atualizar registros no CRM.
 1. Formulário público do HubSpot (link ou portal ID, form ID e região),
    ou webhook do Make para receber as submissões.
 2. E-mail institucional do Ewerton e destinatários das notificações de leads.
-3. Pessoa responsável com acesso ao Formspree para revisar a entrega atual,
-   retirar o e-mail pessoal e conectar o fluxo da Hirayama.
+3. Pessoa responsável com acesso ao Formspree para revisar a entrega atual
+   e conectar o fluxo da Hirayama quando a migração for solicitada.
 4. Confirmação da razão social, CNPJ, contato de privacidade, foto e LinkedIn
    oficiais utilizados; registro SUSEP verificável se deve constar no rodapé.
 5. Acesso delegado ao GTM/GA4 e aprovação dos textos sobre PAT e vantagens.
