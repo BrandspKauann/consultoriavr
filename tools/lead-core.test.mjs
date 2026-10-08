@@ -60,6 +60,22 @@ test('all quiz combinations follow the weighted three-point threshold', () => {
   assert.equal(quizResult({}), null);
 });
 
+test('payroll landing retains neutral identity, static SEO and dedicated form', async () => {
+  const html = await fs.readFile(new URL('../pagamento-de-folha/index.html', import.meta.url), 'utf8');
+  const sitemap = await fs.readFile(new URL('../sitemap.xml', import.meta.url), 'utf8');
+  assert.doesNotMatch(html, /somapay|autorizada pelo banco central|c[oó]digo 520/i);
+  assert.match(html, /data-lead-kind="payroll"/);
+  assert.match(html, /name="solution_kind" value="Pagamento de folha"/);
+  assert.match(html, /name="payroll_flow" required/);
+  assert.match(html, /name="operator" value="Não se aplica"/);
+  assert.match(html, /FAQPage/);
+  assert.match(html, /BreadcrumbList/);
+  assert.match(html, /name="consent"[^>]+required/);
+  assert.match(html, /Não há retorno garantido/);
+  assert.match(sitemap, /\/pagamento-de-folha\//);
+  assert.equal((html.match(/gtm\.js\?id=/g) || []).length, 1);
+});
+
 test('generated pages retain static SEO, qualified contact and no future articles', async () => {
   const root = new URL('../', import.meta.url);
   const home = await fs.readFile(new URL('index.html', root), 'utf8');

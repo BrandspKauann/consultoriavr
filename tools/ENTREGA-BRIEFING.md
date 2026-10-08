@@ -221,3 +221,25 @@ Testes: CNPJ/celular/e-mail, nove limites de pontuação do diagnóstico,
 submissões não saem da máquina, a resposta pode falhar uma vez em
 `/__test__/fail-next`, e o último payload está em `/__test__/last`.
 Esse servidor é somente para testes; a Vercel bloqueia `/tools/`.
+
+## Pagamento de folha - 8 de outubro de 2026
+
+Landing separada em `/pagamento-de-folha/`, acessível pelo rodapé e pelo link
+direto das campanhas. Mantém a marca Consultoria VR by Hirayama e não revela
+o fornecedor no HTML, na URL, nos metadados nem nas imagens. O PDF comercial
+não é distribuído pelo site. Não atribui autorização bancária à Hirayama.
+
+Formulário `payroll-form` no Formspree existente, com processo atual e prioridade
+de folha no lugar das perguntas sobre cartões. `solution_kind` identifica
+`Pagamento de folha` no envio e na conversão confirmada. Resultados anteriores
+dos quizzes de cartões não acompanham esse lead. Não solicita remuneração
+individual, conta bancária, documentos dos colaboradores ou arquivos de folha.
+
+Campanhas podem usar `utm_source`, `utm_medium` e `utm_campaign` no link.
+O site recebe e preserva esses parâmetros durante a sessão. Não configura
+disparos externos, contas, cadências ou conexões do DUX e Snov.
+
+Teste isolado: `node tools/test-payroll-page.mjs`, com Playwright disponível.
+Cobre 1440/390/320 px, ausência de marca do fornecedor, conteúdo sem JavaScript,
+metadados, CNPJ inválido, falha/reenvio, contexto isolado e conversão sem dados
+pessoais. Todos os envios de QA ficam apenas no servidor local.

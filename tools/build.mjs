@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { articleDepthFor } from './article-depth.mjs';
 import { contactForm, advisorSection, siteFooter, renderLeadPages } from './lead-pages.mjs';
+import { renderPayrollPage } from './payroll-page.mjs';
 
 const projectDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://www.consultoriavr.com.br';
@@ -191,12 +192,12 @@ function editorialNav(current = '') {
       <div>
         <a href="/#operadoras"${current === 'operators' ? ' aria-current="page"' : ''}>Operadoras</a>
         <a href="/conteudo/"${current === 'content' ? ' aria-current="page"' : ''}>Conteúdos</a>
-        <a class="operator-page__contact" href="/contato/">Falar com um consultor</a>
+        <a class="operator-page__contact" href="${current === 'payroll' ? '#analise-folha' : '/contato/'}">Falar com um consultor</a>
       </div>
     </nav>`;
 }
 
-function head({ title, description, keywords = [], canonical, type = 'website', image = '/hero-reuniao-empresarial.jpg', structuredData = [], noindex = false }) {
+function head({ title, description, keywords = [], canonical, type = 'website', image = '/hero-reuniao-empresarial.jpg', structuredData = [], noindex = false, stylesheets = [] }) {
   const imageUrl = absoluteUrl(image);
   return `<head>
 ${googleTagManagerHead()}
@@ -225,6 +226,7 @@ ${noindex ? '    <meta name="robots" content="noindex, follow" />\n' : ''}    <m
     <link rel="stylesheet" href="/seo-fallback-hirayama.css" />
     <link rel="stylesheet" href="/lead-flow.css" />
     <link rel="stylesheet" href="/operator-experience.css" />
+${stylesheets.map(href => `    <link rel="stylesheet" href="${escapeHtml(href)}" />`).join('\n')}
     <script type="module" src="/lead-flow.js"></script>
 ${structuredData.map((item) => `    <script type="application/ld+json">${safeJson(item)}</script>`).join('\n')}
   </head>`;
@@ -786,6 +788,7 @@ function renderSitemap(posts, operators) {
     { loc: siteUrl, lastmod: siteLastmod, changefreq: 'weekly', priority: '1.0' },
     { loc: `${siteUrl}/conteudo`, lastmod: siteLastmod, changefreq: 'weekly', priority: '0.8' },
     ...['/contato/', '/ja-tenho-cartao/', '/quiz-rede-aberta-ou-fechada/', '/politica-de-privacidade/'].map(route => ({ loc: `${siteUrl}${route}`, lastmod: '2026-10-06', changefreq: 'monthly', priority: '0.7' })),
+    { loc: `${siteUrl}/pagamento-de-folha/`, lastmod: '2026-10-08', changefreq: 'monthly', priority: '0.8' },
     ...operators.map((operator) => ({
       loc: `${siteUrl}${operatorRoute(operator)}`,
       lastmod: [operator.checkedAt, '2026-10-06'].sort().at(-1),
@@ -835,6 +838,7 @@ export async function buildSite() {
   await fs.writeFile(path.join(projectDir, 'index.html'), homeTemplate.replace('{{CONTACT_FORM}}', contactForm('diagnostic-form')).replace('{{ADVISOR_SECTION}}', advisorSection()).replace('{{SITE_FOOTER}}', siteFooter), 'utf8');
   const leadPages = renderLeadPages({ head, nav: editorialNav, bodyTag: googleTagManagerBody, siteUrl });
   for (const [route, html] of Object.entries(leadPages)) await writeRoute(route, html);
+  await writeRoute('/pagamento-de-folha/', renderPayrollPage({ head, nav: editorialNav, bodyTag: googleTagManagerBody, siteUrl }));
   await fs.writeFile(path.join(projectDir, 'conteudo', 'index.html'), renderBlogIndex(posts), 'utf8');
   for (const post of posts) {
     await writeRoute(routeFor(post), renderArticle(post, posts));

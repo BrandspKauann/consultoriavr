@@ -37,6 +37,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.consultoriavr.com.br/pagamento-de-folha/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.consultoriavr.com.br/operadoras/ticket-beneficios/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -77,6 +83,12 @@
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.consultoriavr.com.br/conteudo/custo-invisivel-beneficios-taxa-menor-retrabalho-rh/</loc>
+    <lastmod>2030-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.consultoriavr.com.br/conteudo/rede-credenciada-como-avaliar-aceitacao-cartao-beneficios/</loc>

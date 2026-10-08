@@ -20,7 +20,7 @@ document.addEventListener('click', event => {
   const link = event.target.closest('a[href]');
   if (!link) return;
   const url = new URL(link.href, location.href);
-  if (url.origin === location.origin && (url.pathname === '/contato/' || url.hash === '#diagnostico')) {
+  if (url.origin === location.origin && (url.pathname === '/contato/' || url.hash === '#diagnostico' || url.hash === '#analise-folha')) {
     remember('origin', { path: location.pathname });
     track('contact_cta_click', { placement: link.dataset.placement || 'page' });
   }
@@ -32,12 +32,13 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
   const cnpj = field('cnpj');
   const email = field('email');
   const phone = field('phone');
-  const interests = [...form.querySelectorAll('[name=interests]')];
+  const payroll = form.dataset.leadKind === 'payroll';
+  const interests = [...form.querySelectorAll('input[type=checkbox][name=interests]')];
   const validate = () => {
     cnpj.setCustomValidity(cnpj.value && !validCnpj(cnpj.value) ? 'Informe um CNPJ válido, com os dígitos verificadores corretos.' : '');
     email.setCustomValidity(email.value && !validCorporateEmail(email.value) ? 'Informe seu e-mail corporativo, com o domínio da empresa.' : '');
     phone.setCustomValidity(phone.value && !validPhone(phone.value) ? 'Informe um celular brasileiro com DDD e nove dígitos.' : '');
-    interests[0].setCustomValidity(interests.some(x => x.checked) ? '' : 'Selecione pelo menos uma solução.');
+    if (interests.length) interests[0].setCustomValidity(interests.some(x => x.checked) ? '' : 'Selecione pelo menos uma solução.');
   };
   cnpj.addEventListener('input', () => { cnpj.value = maskCnpj(cnpj.value); cnpj.setCustomValidity(''); });
   phone.addEventListener('input', () => {
@@ -52,25 +53,25 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
   const diagnostic = fresh('diagnostic');
   const requestedOperator = search.get('operadora');
   const operator = OPERATORS.includes(requestedOperator) ? requestedOperator : diagnostic?.result.operator;
-  if (operator) field('operator').value = operator;
-  if (VOLUMES.includes(diagnostic?.result.employees)) field('employees').value = diagnostic.result.employees;
+  if (!payroll && operator) field('operator').value = operator;
+  if (!payroll && VOLUMES.includes(diagnostic?.result.employees)) field('employees').value = diagnostic.result.employees;
   form.addEventListener('focusin', () => track('contact_form_start', { form_id: form.id }), { once: true });
   form.addEventListener('submit', async event => {
     event.preventDefault();
     const button = form.querySelector('[type=submit]');
     if (button.disabled) return;
     validate();
-    if (!interests.some(x => x.checked)) form.querySelector('#interests-error').textContent = 'Selecione pelo menos uma solução.';
+    if (interests.length && !interests.some(x => x.checked)) form.querySelector('#interests-error').textContent = 'Selecione pelo menos uma solução.';
     if (!form.reportValidity()) return;
     const campaigns = fresh('campaign') || {};
     for (const key of ['utm_source', 'utm_medium', 'utm_campaign']) field(key).value = campaigns[key] || '';
-    field('origin_page').value = fresh('origin')?.path || location.pathname;
+    field('origin_page').value = payroll ? location.pathname : fresh('origin')?.path || location.pathname;
     for (const kind of ['quiz', 'diagnostic']) {
-      const evaluation = fresh(kind);
+      const evaluation = payroll ? null : fresh(kind);
       field(`${kind}_result`).value = evaluation?.result.category || '';
       field(`${kind}_answers`).value = evaluation ? JSON.stringify(evaluation.labels) : '';
     }
-    field('_subject').value = `Lead ConsultoriaVR | ${field('employees').value} | ${field('operator').value} | ${field('priority').value}`;
+    field('_subject').value = `Lead ConsultoriaVR | ${field('solution_kind').value} | ${field('employees').value} | ${payroll ? field('payroll_flow').value : field('operator').value} | ${field('priority').value}`;
     const label = button.textContent;
     button.disabled = true;
     button.textContent = 'Enviando…';
@@ -80,7 +81,7 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
       const response = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
       if (!response.ok) throw new Error('Submission rejected');
       // Only enumerated business categories enter measurement, never personal or free-text fields.
-      const metadata = { form_id: form.id, employee_range: field('employees').value, operator: field('operator').value, priority: field('priority').value };
+      const metadata = { form_id: form.id, solution_kind: field('solution_kind').value, employee_range: field('employees').value, operator: field('operator').value, priority: field('priority').value };
       track('contact_submit', metadata);
       track('generate_lead', metadata);
       write('submitted', { at: Date.now(), metadata });
