@@ -6,6 +6,11 @@
   "outputDirectory": ".",
   "routes": [
     {
+      "src": "/pagamento-de-folha(?:/index\\.html)?/?",
+      "headers": { "Location": "https://www.gestaobeneficios.com.br/pagamento-de-folha" },
+      "status": 308
+    },
+    {
       "src": "/content/(.*)",
       "status": 404
     },

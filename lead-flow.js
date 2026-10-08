@@ -20,7 +20,7 @@ document.addEventListener('click', event => {
   const link = event.target.closest('a[href]');
   if (!link) return;
   const url = new URL(link.href, location.href);
-  if (url.origin === location.origin && (url.pathname === '/contato/' || url.hash === '#diagnostico' || url.hash === '#analise-folha')) {
+  if (url.origin === location.origin && (url.pathname === '/contato/' || url.hash === '#diagnostico')) {
     remember('origin', { path: location.pathname });
     track('contact_cta_click', { placement: link.dataset.placement || 'page' });
   }
@@ -32,7 +32,6 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
   const cnpj = field('cnpj');
   const email = field('email');
   const phone = field('phone');
-  const payroll = form.dataset.leadKind === 'payroll';
   const interests = [...form.querySelectorAll('input[type=checkbox][name=interests]')];
   const validate = () => {
     cnpj.setCustomValidity(cnpj.value && !validCnpj(cnpj.value) ? 'Informe um CNPJ válido, com os dígitos verificadores corretos.' : '');
@@ -53,8 +52,8 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
   const diagnostic = fresh('diagnostic');
   const requestedOperator = search.get('operadora');
   const operator = OPERATORS.includes(requestedOperator) ? requestedOperator : diagnostic?.result.operator;
-  if (!payroll && operator) field('operator').value = operator;
-  if (!payroll && VOLUMES.includes(diagnostic?.result.employees)) field('employees').value = diagnostic.result.employees;
+  if (operator) field('operator').value = operator;
+  if (VOLUMES.includes(diagnostic?.result.employees)) field('employees').value = diagnostic.result.employees;
   form.addEventListener('focusin', () => track('contact_form_start', { form_id: form.id }), { once: true });
   form.addEventListener('submit', async event => {
     event.preventDefault();
@@ -65,13 +64,13 @@ for (const form of document.querySelectorAll('[data-lead-form]')) {
     if (!form.reportValidity()) return;
     const campaigns = fresh('campaign') || {};
     for (const key of ['utm_source', 'utm_medium', 'utm_campaign']) field(key).value = campaigns[key] || '';
-    field('origin_page').value = payroll ? location.pathname : fresh('origin')?.path || location.pathname;
+    field('origin_page').value = fresh('origin')?.path || location.pathname;
     for (const kind of ['quiz', 'diagnostic']) {
-      const evaluation = payroll ? null : fresh(kind);
+      const evaluation = fresh(kind);
       field(`${kind}_result`).value = evaluation?.result.category || '';
       field(`${kind}_answers`).value = evaluation ? JSON.stringify(evaluation.labels) : '';
     }
-    field('_subject').value = `Lead ConsultoriaVR | ${field('solution_kind').value} | ${field('employees').value} | ${payroll ? field('payroll_flow').value : field('operator').value} | ${field('priority').value}`;
+    field('_subject').value = `Lead ConsultoriaVR | ${field('solution_kind').value} | ${field('employees').value} | ${field('operator').value} | ${field('priority').value}`;
     const label = button.textContent;
     button.disabled = true;
     button.textContent = 'Enviando…';

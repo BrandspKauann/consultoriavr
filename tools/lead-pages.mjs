@@ -6,11 +6,11 @@ const options = values => '<option value="">Selecione</option>' + values.map(x =
 export const siteFooter = `<footer class="institutional-footer">
   <div><a class="footer-brand" href="/">Consultoria<span>VR</span></a><p>by Hirayama Corretora &amp; Consultoria</p><p>Cartões de alimentação, refeição e benefícios flexíveis com critério.</p></div>
   <div><strong>Hirayama Administradora e Corretora de Seguros Ltda.</strong><p>CNPJ 18.166.550/0001-40</p><p>Av. Ferdinando Jungers, 97 · Biritiba Mirim, SP</p><a href="/politica-de-privacidade/">Política de privacidade</a></div>
-  <nav aria-label="Ecossistema Hirayama"><a href="https://www.hirayamacorretora.com.br/" rel="noopener">Hirayama Corretora</a><a href="https://gestaobeneficios.com.br/" rel="noopener">Gestão de benefícios</a><a href="/pagamento-de-folha/">Pagamento de folha</a><a href="https://www.linkedin.com/in/ewertonhirayama/" rel="noopener">Ewerton no LinkedIn</a><a href="/contato/">Falar com um consultor</a></nav>
+  <nav aria-label="Ecossistema Hirayama"><a href="https://www.hirayamacorretora.com.br/" rel="noopener">Hirayama Corretora</a><a href="https://gestaobeneficios.com.br/" rel="noopener">Gestão de benefícios</a><a href="https://www.linkedin.com/in/ewertonhirayama/" rel="noopener">Ewerton no LinkedIn</a><a href="/contato/">Falar com um consultor</a></nav>
 </footer>`;
 
-export function contactForm(id = 'contact-form', { payroll = false } = {}) {
-  return `<form id="${id}" class="diagnostic-form qualified-form" data-lead-form${payroll ? ' data-lead-kind="payroll"' : ''} action="https://formspree.io/f/mbdppnkr" method="POST">
+export function contactForm(id = 'contact-form') {
+  return `<form id="${id}" class="diagnostic-form qualified-form" data-lead-form action="https://formspree.io/f/mbdppnkr" method="POST">
     <div class="form-grid">
       <label>Nome completo<input name="name" autocomplete="name" maxlength="120" required></label>
       <label>Seu cargo<select name="role" required>${options(ROLES)}</select></label>
@@ -19,19 +19,17 @@ export function contactForm(id = 'contact-form', { payroll = false } = {}) {
       <label>E-mail corporativo<input name="email" type="email" autocomplete="email" maxlength="160" required aria-describedby="email-help"><small id="email-help">Use o domínio da empresa, não um e-mail pessoal.</small></label>
       <label>WhatsApp com DDD<input name="phone" type="tel" autocomplete="tel-national" placeholder="(11) 99999-9999" maxlength="16" pattern="\\([0-9]{2}\\) 9[0-9]{4}-[0-9]{4}|[0-9]{11}" required></label>
       <label>Número de funcionários<select name="employees" required>${options(VOLUMES)}</select></label>
-      ${payroll ? `<label>Como a folha é paga hoje?<select name="payroll_flow" required>${options(['Portal bancário e arquivo de remessa', 'Transferências individuais', 'Plataforma integrada ao ERP', 'Mais de um processo ou instituição', 'Quero entender as alternativas'])}</select></label>
-      <label>O que mais precisa melhorar?<select name="priority" required>${options(['Agilidade no pagamento', 'Comprovantes e conciliação', 'Integração com ERP', 'Abertura de contas para o time', 'Condições comerciais da folha', 'Revisão completa do processo'])}</select></label>
-      <input type="hidden" name="operator" value="Não se aplica"><input type="hidden" name="interests" value="Pagamento de folha">` : `<label>Quantidade de cartões <small>Opcional</small><input name="card_count" type="number" min="1" max="1000000" step="1"></label>
+      <label>Quantidade de cartões <small>Opcional</small><input name="card_count" type="number" min="1" max="1000000" step="1"></label>
       <label>Operadora atual<select name="operator" required>${options(OPERATORS)}</select></label>
-      <label>O que mais pede atenção?<select name="priority" required>${options(PRIORITIES)}</select></label>`}
+      <label>O que mais pede atenção?<select name="priority" required>${options(PRIORITIES)}</select></label>
     </div>
-    ${payroll ? '' : `<fieldset class="interest-fields"><legend>Quais soluções quer avaliar?</legend>${INTERESTS.map((x, i) => `<label><input type="checkbox" name="interests" value="${escape(x)}"${i === 0 ? ' aria-describedby="interests-error"' : ''}> ${escape(x)}</label>`).join('')}<p id="interests-error" class="field-error" role="status"></p></fieldset>`}
+    <fieldset class="interest-fields"><legend>Quais soluções quer avaliar?</legend>${INTERESTS.map((x, i) => `<label><input type="checkbox" name="interests" value="${escape(x)}"${i === 0 ? ' aria-describedby="interests-error"' : ''}> ${escape(x)}</label>`).join('')}<p id="interests-error" class="field-error" role="status"></p></fieldset>
     <label>Contexto da empresa <small>Opcional</small><textarea name="message" rows="4" maxlength="3000" placeholder="Conte o que precisa melhorar. Não envie dados pessoais de colaboradores nem documentos sensíveis."></textarea></label>
-    <label class="consent"><input type="checkbox" name="consent" value="Autorizo o contato para análise de ${payroll ? 'pagamento de folha' : 'benefícios'} e li a política de privacidade" required><span>Autorizo o contato da Hirayama sobre minha solicitação e li a <a href="/politica-de-privacidade/">política de privacidade</a>.</span></label>
-    <input type="hidden" name="solution_kind" value="${payroll ? 'Pagamento de folha' : 'Cartões e benefícios'}">
+    <label class="consent"><input type="checkbox" name="consent" value="Autorizo o contato para análise de benefícios e li a política de privacidade" required><span>Autorizo o contato da Hirayama sobre minha solicitação e li a <a href="/politica-de-privacidade/">política de privacidade</a>.</span></label>
+    <input type="hidden" name="solution_kind" value="Cartões e benefícios">
     <input type="hidden" name="origin_page"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="quiz_result"><input type="hidden" name="quiz_answers"><input type="hidden" name="diagnostic_result"><input type="hidden" name="diagnostic_answers"><input type="hidden" name="_subject">
     <label class="form-honeypot" aria-hidden="true">Não preencha<input name="_gotcha" tabindex="-1" autocomplete="off"></label>
-    <button class="button" type="submit">${payroll ? 'Quero avaliar minha folha de pagamento' : 'Solicitar análise do meu cenário'}</button>
+    <button class="button" type="submit">Solicitar análise do meu cenário</button>
     <p class="form-note" role="status" aria-live="polite">O Ewerton ou alguém do time fala com você em até 1 dia útil.</p>
     <noscript><p>O envio abre a confirmação do Formspree. Ative o JavaScript para receber a confirmação aqui no site.</p></noscript>
   </form>`;
@@ -42,7 +40,7 @@ export function advisorSection() {
 }
 
 export function renderLeadPages({ head, nav, bodyTag, siteUrl }) {
-  const page = (route, title, description, content, noindex = false) => `<!doctype html><html lang="pt-BR">${head({ title: `${title} | Consultoria VR`, description, canonical: `${siteUrl}${route}`, noindex })}<body>${bodyTag()}${nav()}<main class="lead-page">${content}${route === '/politica-de-privacidade/' ? '<section class="lead-reading"><h2>Solicitações sobre pagamento de folha</h2><p>Complemento de 8 de outubro de 2026: a página de pagamento de folha recebe os dados de contato da empresa, porte, processo de pagamento atual, prioridade e contexto opcional para preparar a análise solicitada. Não solicitamos arquivos de folha, remuneração individual, dados bancários ou documentos de colaboradores. O envio utiliza os mesmos prestadores e condições de atendimento descritos nesta política.</p></section>' : ''}</main>${siteFooter}</body></html>`;
+  const page = (route, title, description, content, noindex = false) => `<!doctype html><html lang="pt-BR">${head({ title: `${title} | Consultoria VR`, description, canonical: `${siteUrl}${route}`, noindex })}<body>${bodyTag()}${nav()}<main class="lead-page">${content}</main>${siteFooter}</body></html>`;
   const wizard = (kind, title, description, count) => `<header class="lead-hero"><div><p class="kicker">Consultoria VR by Hirayama</p><h1>${title}</h1><p>${description}</p><span>${count} perguntas · cerca de 3 minutos · resultado imediato, sem cadastro obrigatório</span></div></header><section class="wizard-band"><div class="wizard" data-wizard="${kind}"><p class="wizard-progress" aria-live="polite"></p><progress max="${count}" value="1" aria-label="Progresso"></progress><form class="wizard-form"><div class="wizard-question"></div><div class="wizard-actions"><button class="wizard-back" type="button">← Voltar</button><button class="button" type="submit">Continuar →</button></div><p class="wizard-error" role="status"></p></form><section class="wizard-result" hidden aria-live="polite"></section></div><noscript><p>Esta avaliação interativa precisa de JavaScript. Você também pode <a href="/contato/">solicitar uma análise pelo formulário</a>.</p></noscript></section>`;
   return {
     '/contato/': page('/contato/', 'Consultoria em cartões para sua empresa', 'Conte seu cenário para uma análise consultiva de rede, operação, custos e implantação de cartões e vales.', `<section class="contact-page"><div><p class="kicker">Conversa com contexto</p><h1>Vamos escolher os cartões com mais clareza.</h1><p>Informe a operação atual e o que mais precisa melhorar. O Ewerton ou alguém do time retorna em até 1 dia útil.</p><p>Não é uma cotação automática nem uma indicação de marca. É o início de uma análise que considera rede, política, gestão e experiência do time.</p><a href="/quiz-rede-aberta-ou-fechada/">Descobrir meu perfil de rede antes do contato →</a><a href="/ja-tenho-cartao/">Prefere revisar seu cartão primeiro? →</a></div>${contactForm()}</section>`),

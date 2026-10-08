@@ -60,20 +60,17 @@ test('all quiz combinations follow the weighted three-point threshold', () => {
   assert.equal(quizResult({}), null);
 });
 
-test('payroll landing retains neutral identity, static SEO and dedicated form', async () => {
-  const html = await fs.readFile(new URL('../pagamento-de-folha/index.html', import.meta.url), 'utf8');
+test('payroll landing is moved out of the site with a permanent redirect', async () => {
   const sitemap = await fs.readFile(new URL('../sitemap.xml', import.meta.url), 'utf8');
-  assert.doesNotMatch(html, /somapay|autorizada pelo banco central|c[oó]digo 520/i);
-  assert.match(html, /data-lead-kind="payroll"/);
-  assert.match(html, /name="solution_kind" value="Pagamento de folha"/);
-  assert.match(html, /name="payroll_flow" required/);
-  assert.match(html, /name="operator" value="Não se aplica"/);
-  assert.match(html, /FAQPage/);
-  assert.match(html, /BreadcrumbList/);
-  assert.match(html, /name="consent"[^>]+required/);
-  assert.match(html, /Não há retorno garantido/);
-  assert.match(sitemap, /\/pagamento-de-folha\//);
-  assert.equal((html.match(/gtm\.js\?id=/g) || []).length, 1);
+  const home = await fs.readFile(new URL('../index.html', import.meta.url), 'utf8');
+  const config = JSON.parse(await fs.readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+  assert.doesNotMatch(home, /\/pagamento-de-folha\//);
+  assert.doesNotMatch(sitemap, /\/pagamento-de-folha\//);
+  const redirect = config.routes[0];
+  assert.equal(redirect.status, 308);
+  assert.equal(redirect.headers.Location, 'https://www.gestaobeneficios.com.br/pagamento-de-folha');
+  for (const path of ['/pagamento-de-folha', '/pagamento-de-folha/', '/pagamento-de-folha/index.html']) assert.ok(new RegExp(`^${redirect.src}$`).test(path));
+  await assert.rejects(fs.access(new URL('../pagamento-de-folha/index.html', import.meta.url)), { code: 'ENOENT' });
 });
 
 test('generated pages retain static SEO, qualified contact and no future articles', async () => {
