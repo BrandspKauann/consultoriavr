@@ -37,13 +37,19 @@
   },
   "flash-beneficios": {
     "image": "gestao-rh",
-    "lead": "Mais conexão entre benefícios, pessoas e despesas. Mais espaço para o RH pensar no time.",
-    "focus": "Categorias, permissões e prestação de contas",
+    "lead": "Compare rede, categorias, suporte e implantação antes de contratar.",
+    "focus": "Rede de aceitação, categorias, suporte e implantação",
+    "evaluationCriteria": [
+      {"title": "Rede de aceitação", "text": "Confira mercados e restaurantes usados pelo seu time. A Flash informa aceitação pela bandeira Visa, mas a compra também depende do saldo e da categoria do estabelecimento. A central de ajuda orienta usar voucher em alimentação e refeição e crédito nas demais categorias.", "source": "https://faq.flashapp.com.br/kb/guide/pt-BR/como-posso-usar-meu-saldo-flash-3ONw5XRp4T/Steps/4198175", "sourceLabel": "Ver regras de uso na Flash"},
+      {"title": "Categorias de benefícios", "text": "A Flash apresenta alimentação, refeição, saúde, mobilidade, educação, home office, cultura e vale-transporte. Confirme quais categorias estarão contratadas e como os saldos e as regras refletem a política da sua empresa.", "source": "https://flashapp.com.br/motivos", "sourceLabel": "Consultar categorias oficiais"},
+      {"title": "Suporte para RH e colaboradores", "text": "A Flash mantém formulário para administradores e gestores, central de ajuda para colaboradores e WhatsApp para seus produtos. Defina quem abre os chamados, como o RH acompanha cada caso e quais prazos estão previstos na proposta.", "source": "https://flashapp.com.br/contato", "sourceLabel": "Conhecer os canais oficiais"},
+      {"title": "Implantação e primeiro crédito", "text": "A Flash informa onboarding assistido. Antes de mudar, combine cadastro dos colaboradores, categorias, pagamento do pedido, acesso ao cartão virtual e entrega dos cartões físicos. Registre os prazos aplicáveis à sua empresa e o responsável por cada etapa.", "source": "https://flashapp.com.br/motivos", "sourceLabel": "Ver como funciona a implantação"}
+    ],
     "campaign": {
-      "headline": "Um cartão rosa. Uma oportunidade de repensar a sua operação.",
-      "pitch": "Explore a Flash para conectar cartões de benefícios, gestão de pessoas e despesas no escopo que sua empresa precisa. Faça a comparação com foco em flexibilidade para o time e clareza para quem administra.",
+      "headline": "Vale a pena quando a operação combina com a sua empresa.",
+      "pitch": "Avalie a Flash pelo que seu time precisa usar e pelo que o RH precisa administrar. Compare a rede de aceitação, as categorias, os canais de suporte e o plano de implantação com orientação especializada.",
       "paragraphs": [
-        "Seu RH não precisa escolher entre olhar para as pessoas e cuidar da operação. Ao avaliar a Flash, a proposta é colocar essas duas frentes na mesma conversa: como os colaboradores recebem e usam os benefícios e como a empresa configura categorias, acompanha pedidos e organiza os processos. O cartão chama atenção; a experiência por trás dele é o que precisa sustentar a escolha.",
+        "Para decidir se a Flash vale a pena para seu RH, comece pelos locais onde os colaboradores usam os benefícios, pelas categorias previstas na política, pelo atendimento em caso de problema e pelo primeiro crédito. A análise reúne esses critérios em uma comparação prática, com base nas informações oficiais e nas condições da proposta da sua empresa.",
         "Para uma empresa com reembolsos, viagens e diferentes políticas de benefícios, vale explorar também a gestão de despesas. Para outra, o melhor escopo pode começar apenas por alimentação e refeição. A consultoria ajuda a separar essas necessidades, comparar os módulos previstos na proposta e enxergar o potencial de simplificação sem contratar funções que não terão uso. Uma escolha mais inteligente começa pelo tamanho certo da solução."
       ],
       "highlights": [

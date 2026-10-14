@@ -53,6 +53,17 @@ html { scroll-behavior: smooth; }
 .operator-page__card img { height: auto; max-width: 64%; max-height: 45%; }
 .operator-page__hero--vr .operator-page__card img { width: 55px; }
 .operator-page__hero--flash .operator-page__card img { width: 115px; }
+.operator-page__hero--flash { height: auto; }
+.operator-page__hero--flash h1 { font-size: clamp(34px, 4.3vw, 52px); }
+.operator-evaluation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
+.operator-evaluation-grid article { min-width: 0; border-top: 3px solid #da9f3c; padding-top: 18px; }
+.operator-evaluation-grid h3 { font-size: 22px; line-height: 1.4; margin: 0 0 12px; }
+.operator-evaluation-grid p { color: #244c43; margin: 0 0 14px; }
+.operator-evaluation-grid a { color: #103f3b; font-size: 14px; font-weight: 700; }
+@media (max-width: 760px) {
+  .operator-evaluation-grid { grid-template-columns: minmax(0, 1fr); }
+  .operator-page__hero--flash h1 { font-size: 34px; }
+}
 .operator-page__hero--caju .operator-page__card img { width: 125px; }
 .operator-page__hero--ifood .operator-page__card img { width: 100px; }
 .operator-page__hero--valecard .operator-page__card img { width: 110px; }

@@ -27,7 +27,7 @@ try {
     await page.setViewportSize({ width, height: 900 });
     for (const operator of operators) {
       await page.goto(`http://127.0.0.1:4175/operadoras/${operator.slug}/`);
-      assert.equal(await page.locator('h1').textContent(), operator.name);
+      assert.equal(await page.locator('h1').textContent(), operator.heading || operator.name);
       assert.doesNotMatch(await page.locator('main').textContent(), /ilustra[çc][ãa]o|criada por IA|gerada por IA/i);
       assert.match(await page.locator('#resource-title').textContent(), /Telefone e atendimento oficial/);
       assert.equal(await page.locator('.operator-support-list article').count(), operator.slug === 'ifood-beneficios' ? 0 : 3);

@@ -145,8 +145,10 @@
     "slug": "flash-beneficios",
     "name": "Flash Benefícios",
     "eyebrow": "Experiência digital e categorias de benefício",
-    "title": "Flash Benefícios para empresas: critérios para uma decisão segura",
-    "description": "Veja como analisar a Flash Benefícios considerando experiência digital, categorias, governança, suporte e impacto na rotina do RH.",
+    "title": "Flash Benefícios para empresas: vale a pena para seu RH?",
+    "appendSiteName": false,
+    "heading": "Flash Benefícios para empresas: vale a pena para seu RH?",
+    "description": "Avalie rede de aceitação, categorias, suporte e implantação da Flash. Compare os critérios que importam para sua empresa antes de contratar.",
     "keywords": [
       "Flash Benefícios",
       "cartão Flash",
@@ -158,7 +160,7 @@
     "logo": "/flash-logo-card-03382965.png",
     "logoAlt": "Logotipo da Flash Benefícios",
     "cardClass": "flash",
-    "summary": "A Flash merece uma análise quando benefícios e despesas corporativas precisam conversar com controles de RH e financeiro. O ponto é demonstrar quais módulos reduzem trabalho na sua operação, não contratar uma plataforma apenas por reunir muitas funções.",
+    "summary": "A Flash vale a pena quando a rede atende ao seu time, as categorias correspondem à política de benefícios e o suporte e a implantação cabem na rotina do RH. Compare esses quatro critérios antes de contratar; despesas e gestão de pessoas entram na avaliação apenas quando fizerem parte da necessidade da empresa.",
     "overview": [
       "Leve um caso de despesa desde a solicitação até a prestação de contas: limite, aprovação, comprovante, centro de custo e lançamento financeiro. Depois simule o pedido mensal de benefícios. São fluxos relacionados, mas exigem políticas diferentes.",
       "Defina quais permissões ficam com RH, financeiro e gestores. Também peça uma resposta demonstrável para uma ocorrência de cartão: quem atende, qual o prazo e como o RH acompanha a resolução. O conjunto de módulos só tem valor quando cabe nessa rotina."
@@ -226,9 +228,21 @@
       {
         "label": "Aplicativo oficial",
         "url": "https://play.google.com/store/apps/details?id=br.com.flashapp&hl=pt_BR"
+      },
+      {
+        "label": "Categorias, aceitação e implantação",
+        "url": "https://flashapp.com.br/motivos"
+      },
+      {
+        "label": "Regras de uso dos saldos",
+        "url": "https://faq.flashapp.com.br/kb/guide/pt-BR/como-posso-usar-meu-saldo-flash-3ONw5XRp4T/Steps/4198175"
+      },
+      {
+        "label": "Suporte para RH e colaboradores",
+        "url": "https://flashapp.com.br/contato"
       }
     ],
-    "checkedAt": "2026-10-05"
+    "checkedAt": "2026-10-14"
   },
   {
     "slug": "caju-beneficios",

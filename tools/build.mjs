@@ -606,7 +606,7 @@ function renderOperatorPage(operator, operators, guides) {
   return `<!doctype html>
 <html lang="pt-BR">
   ${head({
-    title: `${operator.title} | Consultoria VR`,
+    title: operator.appendSiteName === false ? operator.title : `${operator.title} | Consultoria VR`,
     description: operator.description,
     keywords: operator.keywords,
     canonical,
@@ -623,7 +623,7 @@ ${editorialNav('operators')}
           <div class="operator-page__hero-copy" data-viewport-reveal>
             <div class="operator-page__breadcrumb"><a href="/">Início</a><span>→</span><a href="/#operadoras">Operadoras</a><span>→</span><strong>${escapeHtml(operator.name)}</strong></div>
             <p class="operator-page__eyebrow">${escapeHtml(operator.eyebrow)}</p>
-            <h1>${escapeHtml(operator.name)}</h1>
+            <h1>${escapeHtml(operator.heading || operator.name)}</h1>
             <p class="operator-hero-lead">${escapeHtml(guide.lead)}</p>
             <p>${operatorText(guide.campaign.pitch)}</p>
             <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa</a>
@@ -648,7 +648,10 @@ ${editorialNav('operators')}
         <div><a href="#visao-geral">Visão geral</a><a href="#produtos">Soluções</a><a href="#na-pratica">Na prática</a><a href="#checklist">Checklist</a><a href="#custos">Custos</a><a href="#implantacao">Implantação</a><a href="#duvidas">Dúvidas</a><a href="#atendimento">Atendimento</a></div>
         <span class="operator-reading-progress" data-reading-progress aria-hidden="true"></span>
       </nav>
-      <section class="operator-page__intro" id="visao-geral">
+      ${guide.evaluationCriteria ? `<section class="operator-evaluation operator-section" aria-labelledby="operator-evaluation-title">
+        <div class="operator-section-heading"><p class="operator-page__label">Compare antes de contratar</p><h2 id="operator-evaluation-title">Quatro critérios para avaliar a Flash.</h2><p>Use as informações oficiais como ponto de partida e confira as condições aplicáveis ao seu contrato.</p></div>
+        <div class="operator-evaluation-grid">${guide.evaluationCriteria.map(item => `<article><h3>${escapeHtml(item.title)}</h3><p>${operatorText(item.text)}</p><a href="${escapeHtml(item.source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.sourceLabel)} <span aria-hidden="true">↗</span></a></article>`).join('')}</div>
+      </section>\n      ` : ''}<section class="operator-page__intro" id="visao-geral">
         <p class="operator-page__label">${escapeHtml(operator.name)} para sua empresa</p>
         <h2 data-viewport-reveal>${escapeHtml(guide.campaign.headline)}</h2>
         <div data-viewport-reveal><p>${operatorText(guide.campaign.paragraphs[0])}</p><p>${operatorText(operator.summary)}</p><p class="operator-focus"><strong>Foco da análise</strong> ${escapeHtml(guide.focus)}</p></div>
