@@ -1,0 +1,122 @@
+[
+  {
+    "status": "published",
+    "publishAt": "2026-10-15T03:00:00.000Z",
+    "slug": "vale-alimentacao-recusado-credito-ou-voucher-guia-rh",
+    "title": "Vale-alimentação recusado: crédito ou voucher? Guia para o RH orientar a equipe",
+    "shortTitle": "Crédito ou voucher?",
+    "category": "Operação de VA e VR",
+    "description": "Vale-alimentação recusado mesmo com saldo? Entenda crédito e voucher e veja como o RH pode orientar a equipe, registrar falhas e cobrar a operadora.",
+    "keywords": ["vale-alimentação recusado", "crédito ou voucher", "função voucher", "VA e VR para empresas", "gestão de benefícios RH", "Pluxee Elo", "aceitação de cartão alimentação"],
+    "hashtags": ["#ValeAlimentacao", "#ValeRefeicao", "#GestaoDeRH", "#BeneficiosCorporativos", "#ConsultoriaVR"],
+    "image": "/assets/blog/editorial/vale-alimentacao-credito-voucher.webp",
+    "imageAlt": "Cartão de benefício próximo à maquininha no caixa de um supermercado com alimentos sobre o balcão",
+    "readTime": 9,
+    "openingTitle": "O cartão tem saldo. A compra não passa. O que o RH precisa descobrir?",
+    "intro": [
+      "A mensagem costuma chegar no horário do almoço: o colaborador tentou pagar, o cartão foi recusado e o aplicativo ainda mostra saldo. Para quem administra o benefício, responder apenas que ele deve tentar de novo não resolve. Antes de abrir um chamado, é preciso saber qual cartão está em uso, de qual carteira sairia o valor e qual função foi selecionada na maquininha.",
+      "Este guia é para RH, departamento pessoal e financeiro que contratam ou administram VA e VR. A proposta não é transformar sua equipe em suporte técnico, mas organizar uma orientação confiável, identificar recusas recorrentes e levar evidências à operadora quando a experiência prometida na contratação não aparece no uso."
+    ],
+    "sections": [
+      {
+        "heading": "Crédito ou voucher? Comece pelo produto contratado",
+        "paragraphs": [
+          "A função correta deve ser confirmada na orientação atual do emissor para o produto e a carteira utilizados. Não copie uma instrução de outra marca só porque os cartões parecem semelhantes. Cartão multibenefícios, bandeira e categoria de saldo são informações diferentes; uma apresentação comercial que fala apenas em aceitação ampla deixa essa parte da implantação incompleta.",
+          "No caso do Multibenefícios Pluxee Elo, a orientação oficial é selecionar voucher para usar as carteiras Alimentação e Refeição. A Pluxee informa que crédito utiliza outras carteiras, quando disponíveis; sem saldo nelas, a compra pode ser recusada mesmo com valor em alimentação ou refeição. Essa explicação é específica do produto, não uma autorização para generalizar o procedimento a qualquer cartão.",
+          "Para o RH, a medida prática é manter uma instrução por produto contratado, com a data da conferência e o endereço da orientação oficial. Se a empresa usa mais de um cartão, os comunicados também precisam distinguir os públicos. A frase curta que acompanha a entrega do cartão deve estar alinhada com o fornecedor, e não com a experiência pessoal de quem redigiu o aviso."
+        ],
+        "links": [{"label": "Pluxee: orientação oficial sobre o trilho voucher", "url": "https://www.pluxee.com.br/helpcenter/beneficiarios/o-que-e-trilho-voucher/"}]
+      },
+      {
+        "heading": "Saldo, função e aceitação são três verificações diferentes",
+        "paragraphs": [
+          "Saldo responde se existe valor disponível na carteira que atende à compra. Um total exibido no aplicativo pode reunir categorias diferentes. Peça ao colaborador que confira a carteira pertinente, sem encaminhar extratos completos ao grupo da empresa. O objetivo é identificar uma informação operacional, não reunir dados sobre seus hábitos de consumo.",
+          "Função responde por qual modalidade a transação está sendo encaminhada. Na página do Elo Voucher, a Elo diferencia voucher para alimentação e refeição de crédito para outros benefícios. A instrução do produto ajuda a evitar que a tentativa seja direcionada a uma carteira que não possui saldo para aquele uso.",
+          "Aceitação responde se o estabelecimento e seu terminal estão habilitados para aquele benefício. Ver uma bandeira na porta não substitui a confirmação do produto e da modalidade. Ao comparar fornecedores, valide os locais relevantes para as unidades da empresa. Rede aberta ou fechada é outra dimensão da análise: o nome da função na maquininha, sozinho, não decide qual modelo atende melhor ao seu time."
+        ],
+        "links": [
+          {"label": "Elo: como utilizar o Elo Voucher", "url": "https://www.elo.com.br/cartoes/elo-voucher/"},
+          {"label": "Avalie o perfil de rede da sua empresa", "url": "/quiz-rede-aberta-ou-fechada/"}
+        ]
+      },
+      {
+        "heading": "Roteiro de triagem para não transformar cada recusa em uma urgência",
+        "bullets": [
+          "Identifique a operadora, o nome do produto e a carteira usada na tentativa, sem pedir foto do cartão.",
+          "Confirme se havia saldo na categoria correspondente e se o cartão estava ativo no momento da compra.",
+          "Pergunte qual função foi selecionada e compare com a orientação atual publicada pelo emissor.",
+          "Registre data, horário aproximado, estabelecimento, cidade e mensagem de erro, quando disponível.",
+          "Verifique se a dificuldade ocorreu só naquele local ou se outros colaboradores relataram o mesmo cenário.",
+          "Encaminhe o caso ao canal oficial apropriado e mantenha o protocolo, o responsável e o retorno combinado."
+        ]
+      },
+      {
+        "heading": "Como agir quando a orientação correta não resolve",
+        "paragraphs": [
+          "Uma falha isolada não prova que a rede inteira é inadequada. Se a mesma pessoa utiliza o benefício em outros locais, registre o estabelecimento e peça à operadora a verificação da aceitação e da habilitação aplicável. A Elo também orienta o estabelecimento a consultar seu credenciador para oferecer voucher na maquininha. Não prometa que o próprio RH consegue corrigir uma configuração do terminal.",
+          "Se o problema aparece em várias unidades após uma mudança de produto ou de instrução, trate o conjunto como incidente de implantação. Consolide os relatos por tipo de erro, em vez de abrir conversas desconectadas. Peça ao fornecedor uma resposta que separe causa, abrangência, providência e previsão de atualização. Um protocolo sem responsável ou próximo retorno deixa a empresa sem condições de orientar a equipe.",
+          "Bloqueio de segurança, perda do cartão e suspeita de fraude exigem o atendimento oficial da operadora. O RH não deve solicitar senha, código de verificação, CVV ou número completo do cartão. Também não deve recomendar uma função incompatível apenas para fazer a compra passar. A solução precisa preservar tanto o uso correto do benefício quanto a segurança do colaborador."
+        ],
+        "links": [{"label": "Elo: orientação de habilitação para estabelecimentos", "url": "https://www.elo.com.br/elo-voucher/estabelecimento/"}]
+      },
+      {
+        "heading": "Uma mensagem que o RH pode adaptar para a equipe",
+        "paragraphs": [
+          "Para usar o benefício, confira a carteira adequada à compra e siga a função indicada pela operadora para o seu produto. Se a tentativa continuar sendo recusada, anote o local, o horário e a mensagem apresentada e utilize o canal oficial de atendimento.",
+          "Não envie senha, código de segurança, foto do cartão ou extrato completo em grupos. Se precisar de apoio do RH para registrar a ocorrência, compartilhe somente as informações necessárias pelo canal interno indicado pela empresa.",
+          "Antes de distribuir esse texto, substitua o exemplo pelo produto efetivamente contratado, acrescente o canal oficial correspondente e valide a instrução com a operadora. Uma empresa que migrou de cartão precisa retirar os comunicados antigos dos canais internos. Manter duas orientações contraditórias publicadas é uma forma previsível de multiplicar os chamados."
+        ]
+      },
+      {
+        "heading": "O que pedir na proposta antes de contratar ou migrar",
+        "bullets": [
+          "Orientação escrita sobre a função de pagamento de cada produto e carteira oferecidos à empresa.",
+          "Validação de aceitação em uma amostra de estabelecimentos próximos às unidades e aos turnos do time.",
+          "Material de implantação que explique primeiro uso, categorias e resolução de recusas sem instruções conflitantes.",
+          "Canal para o RH escalar falhas recorrentes, com responsáveis e condições de atendimento documentadas.",
+          "Demonstração dos relatórios disponíveis para acompanhar ocorrências sem expor dados pessoais desnecessários.",
+          "Responsabilidade definida para atualizar os comunicados quando houver mudança de produto, regra ou procedimento."
+        ]
+      },
+      {
+        "heading": "O esclarecimento do MTE não deve ser confundido com um manual da maquininha",
+        "paragraphs": [
+          "Em 22 de julho de 2026, o Ministério do Trabalho e Emprego esclareceu que as disposições do Decreto nº 12.712/2025 alcançam as empresas que concedem VA e VR, inscritas ou não no PAT. A nota também reforça a finalidade de aquisição de alimentos e refeições. Estar fora do programa não deve ser tratado como licença para transformar o auxílio-alimentação em saldo livre.",
+          "Esse contexto regulatório e a instrução de pagamento têm funções diferentes. A nota do MTE trata das regras do benefício; a orientação da operadora explica como utilizar um produto específico. O RH precisa conferir ambas, sem apresentar a escolha de uma função na maquininha como garantia de conformidade de toda a política de benefícios.",
+          "Ao revisar um contrato, envolva os responsáveis jurídicos, contábeis e pela política interna quando necessário. Este conteúdo organiza critérios operacionais e fontes de consulta; não substitui uma análise do enquadramento da sua empresa. A checagem das fontes deste artigo foi feita em 15 de outubro de 2026."
+        ],
+        "links": [
+          {"label": "MTE: esclarecimento publicado em 22 de julho de 2026", "url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/julho/regras-do-auxilio-alimentacao-e-do-auxilio-refeicao-passam-a-valer-para-todas-as-empresas"},
+          {"label": "PAT e gestão de benefícios: critérios para a empresa", "url": "/conteudo/pat-e-gestao-de-beneficios-corporativos/"}
+        ]
+      },
+      {
+        "heading": "Recusa recorrente também é dado para renegociar o benefício",
+        "paragraphs": [
+          "Depois de organizar a orientação, acompanhe se o problema diminui. Compare motivos de chamados, locais com maior recorrência, tempo de solução e necessidade de intervenção do RH. Um volume menor de dúvidas por função de pagamento pode indicar que a comunicação ficou mais clara; recusas persistentes nos mesmos locais pedem investigação de aceitação.",
+          "Leve esse histórico para a renovação contratual. Em vez de dizer apenas que o cartão não passa, mostre os cenários que a operação precisa atender e peça evidências da solução. A comparação de operadoras ganha utilidade quando combina experiência dos colaboradores, capacidade de atendimento e esforço mensal de administração, não somente uma taxa anunciada.",
+          "A Consultoria VR by Hirayama ajuda empresas a organizar esses critérios para avaliar a operadora atual ou uma troca. Se a dúvida é sobre um bloqueio individual ou uma transação em andamento, procure primeiro o suporte oficial do cartão. Se a dificuldade se repete e compromete a gestão do benefício, vale transformar as ocorrências em uma análise da contratação."
+        ],
+        "links": [
+          {"label": "Pluxee para empresas: compare produto, rede e operação", "url": "/operadoras/pluxee-beneficios/"},
+          {"label": "Já tenho cartão: revisar o cenário da empresa", "url": "/ja-tenho-cartao/"},
+          {"label": "Levar meu cenário à Consultoria VR", "url": "/contato/"}
+        ]
+      }
+    ],
+    "faq": [
+      {"question": "Vale-alimentação deve passar no crédito ou no voucher?", "answer": "No Multibenefícios Pluxee Elo, a orientação para Alimentação e Refeição é voucher. Para outros produtos, confirme a instrução correspondente com o emissor."},
+      {"question": "Por que o cartão Pluxee Elo pode ser recusado mesmo com saldo de alimentação?", "answer": "Segundo a orientação da Pluxee, selecionar crédito no Multibenefícios Elo pode direcionar a transação a outras carteiras. Sem saldo nelas, há recusa mesmo com valor em Alimentação ou Refeição. Confirme também aceitação, situação do cartão e demais condições com o atendimento oficial."},
+      {"question": "Voucher significa que o cartão é de rede fechada?", "answer": "Não tire essa conclusão apenas pelo nome da função. Rede de aceitação e modalidade de processamento são critérios diferentes. Verifique o arranjo, o produto e os estabelecimentos relevantes para a empresa na documentação da operadora."},
+      {"question": "O RH deve pedir os dados completos do cartão para abrir um chamado?", "answer": "Não peça senha, CVV, códigos de verificação ou foto do cartão. Registre somente as informações necessárias para identificar o cenário e siga o procedimento seguro do canal oficial da operadora."},
+      {"question": "As regras de VA e VR também alcançam empresas fora do PAT?", "answer": "No esclarecimento de 22 de julho de 2026, o MTE informa que as disposições do Decreto nº 12.712/2025 alcançam as empresas que concedem VA e VR, inscritas ou não no PAT. Confirme o enquadramento da sua operação com os responsáveis pela política e a assessoria da empresa."},
+      {"question": "Quando faz sentido comparar outra operadora?", "answer": "Quando os problemas persistem após a orientação correta e a análise do suporte, ou quando rede, atendimento e esforço de gestão não atendem à rotina da empresa. Compare evidências por localidade e produto, não apenas o total de estabelecimentos ou a taxa da proposta."}
+    ],
+    "sources": [
+      {"label": "Ministério do Trabalho e Emprego", "url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/julho/regras-do-auxilio-alimentacao-e-do-auxilio-refeicao-passam-a-valer-para-todas-as-empresas"},
+      {"label": "Pluxee: O que é o Trilho Voucher?", "url": "https://www.pluxee.com.br/helpcenter/beneficiarios/o-que-e-trilho-voucher/"},
+      {"label": "Elo Voucher: utilização", "url": "https://www.elo.com.br/cartoes/elo-voucher/"},
+      {"label": "Elo Voucher: estabelecimentos", "url": "https://www.elo.com.br/elo-voucher/estabelecimento/"}
+    ]
+  }
+]

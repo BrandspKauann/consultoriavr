@@ -10,6 +10,7 @@ const contentDir = path.join(projectDir, 'content');
 const operatorSupport = JSON.parse(await fs.readFile(path.join(contentDir, 'operator-support.json'), 'utf8'));
 const scheduledPath = path.join(contentDir, 'scheduled-posts.json');
 const publishedPath = path.join(contentDir, 'published-scheduled-posts.json');
+const editorialPath = path.join(contentDir, 'editorial-posts.json');
 const operatorsPath = path.join(contentDir, 'operators.json');
 const publishedAssetsDir = path.join(contentDir, 'published-assets', 'blog');
 const publicScheduledAssetsDir = path.join(projectDir, 'assets', 'blog', 'scheduled');
@@ -331,7 +332,7 @@ function articleContentFor(post) {
   const fallback = basePostContent[post.slug] || {};
   return {
     intro: post.intro?.length ? post.intro : fallback.intro || [post.description],
-    sections: [...(post.sections?.length ? post.sections : fallback.sections || []), ...articleDepthFor(post)],
+    sections: [...(post.sections?.length ? post.sections : fallback.sections || []), ...(post.source === 'editorial' ? [] : articleDepthFor(post))],
     faq: post.faq?.length ? post.faq : fallback.faq || []
   };
 }
@@ -354,6 +355,7 @@ function renderLandingSignal(section, index) {
 function renderLandingChapter(section, index) {
   const number = String(index + 1).padStart(2, '0');
   const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n              ');
+  const links = (section.links || []).map((link) => `<p><a href="${escapeHtml(link.url)}">${escapeHtml(link.label)} →</a></p>`).join('\n              ');
   if (section.bullets?.length) {
     return `<section class="article-landing__chapter article-landing__chapter--checklist" id="secao-${index + 1}">
           <div class="article-landing__chapter-inner">
@@ -373,7 +375,7 @@ function renderLandingChapter(section, index) {
               <p>Ponto de decisão</p>
               <h2>${escapeHtml(section.heading)}</h2>
             </div>
-            <div class="article-landing__chapter-copy">${paragraphs}</div>
+            <div class="article-landing__chapter-copy">${paragraphs}${links}</div>
           </div>
         </section>`;
 }
@@ -402,7 +404,8 @@ function renderArticle(post, posts) {
       dateModified: post.publishedAt || post.publishAt,
       mainEntityOfPage: canonical,
       keywords: post.keywords || [],
-      articleSection: post.category
+      articleSection: post.category,
+      ...(post.sources?.length ? { citation: post.sources.map((source) => source.url) } : {})
     },
     {
       '@context': 'https://schema.org',
@@ -485,7 +488,7 @@ ${editorialNav('content')}
           <div class="article-landing__opening-inner">
             <div>
               <p class="article-landing__section-label">O cenário antes da escolha</p>
-              <h2>Decidir bem começa por enxergar o que acontece depois da contratação.</h2>
+              <h2>${escapeHtml(post.openingTitle || 'Decidir bem começa por enxergar o que acontece depois da contratação.')}</h2>
             </div>
             <div>${content.intro.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n              ')}</div>
           </div>
@@ -772,9 +775,10 @@ async function writeRoute(route, html) {
   await fs.writeFile(path.join(targetDir, 'index.html'), html, 'utf8');
 }
 
-async function removeFutureScheduledRoutes(now) {
+async function removeUnpublishedRoutes(now) {
   const scheduled = await readJson(scheduledPath, []);
-  for (const post of scheduled.filter((item) => item.status !== 'published' || new Date(item.publishAt) > now)) {
+  const editorial = await readJson(editorialPath, []);
+  for (const post of [...scheduled, ...editorial].filter((item) => item.status !== 'published' || new Date(item.publishAt) > now)) {
     const routeDir = path.join(projectDir, 'conteudo', post.slug);
     await fs.rm(routeDir, { recursive: true, force: true });
   }
@@ -827,13 +831,16 @@ export async function buildSite() {
   const publishedScheduled = (await readJson(publishedPath, []))
     .filter((post) => new Date(post.publishAt) <= now)
     .map(normalizeScheduled);
+  const editorial = (await readJson(editorialPath, []))
+    .filter((post) => post.status === 'published' && new Date(post.publishAt) <= now)
+    .map((post) => ({ ...post, source: 'editorial' }));
   const operators = await readJson(operatorsPath, []);
   const guides = await readJson(path.join(contentDir, 'operator-guides.json'), {});
-  const posts = [...publishedScheduled, ...basePosts]
+  const posts = [...editorial, ...publishedScheduled, ...basePosts]
     .sort((a, b) => new Date(b.publishAt) - new Date(a.publishAt));
 
   await copyPublishedAssets(posts);
-  await removeFutureScheduledRoutes(now);
+  await removeUnpublishedRoutes(now);
   const homeTemplate = await fs.readFile(path.join(projectDir, 'tools', 'home.html'), 'utf8');
   await fs.writeFile(path.join(projectDir, 'index.html'), homeTemplate.replace('{{CONTACT_FORM}}', contactForm('diagnostic-form')).replace('{{ADVISOR_SECTION}}', advisorSection()).replace('{{SITE_FOOTER}}', siteFooter), 'utf8');
   const leadPages = renderLeadPages({ head, nav: editorialNav, bodyTag: googleTagManagerBody, siteUrl });
@@ -846,7 +853,7 @@ export async function buildSite() {
     await writeRoute(operatorRoute(operator), renderOperatorPage(operator, operators, guides));
   }
   await fs.writeFile(path.join(projectDir, 'sitemap.xml'), renderSitemap(posts, operators), 'utf8');
-  console.log(`Build completed with ${posts.length} visible posts (${publishedScheduled.length} scheduled published) and ${operators.length} operator pages.`);
+  console.log(`Build completed with ${posts.length} visible posts (${publishedScheduled.length} scheduled published, ${editorial.length} editorial) and ${operators.length} operator pages.`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
