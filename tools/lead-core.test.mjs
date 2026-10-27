@@ -3,6 +3,18 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import { validCnpj, maskCnpj, validCorporateEmail, validPhone, quizQuestions, quizResult, diagnosticQuestions, diagnosticResult, answerLabels } from '../lead-core.mjs';
 
+test('contact authorization starts checked and remains an editable required checkbox', async () => {
+  for (const file of ['index.html', 'contato/index.html', 'tools/lead-pages.mjs']) {
+    const html = await fs.readFile(new URL(`../${file}`, import.meta.url), 'utf8');
+    const input = html.match(/<input[^>]*name="consent"[^>]*>/)?.[0];
+    assert.ok(input, file);
+    assert.match(input, /type="checkbox"/);
+    assert.match(input, /\schecked(?:\s|>)/);
+    assert.match(input, /\srequired(?:\s|>)/);
+    assert.doesNotMatch(input, /disabled|readonly|onclick/);
+  }
+});
+
 test('CNPJ masks and check digits support both Receita formats', () => {
   for (const value of ['18.166.550/0001-40', '12.ABC.345/01DE-35', '18166550000140']) assert.equal(validCnpj(value), true, value);
   for (const value of ['', '00.000.000/0000-00', '11111111111111', '18.166.550/0001-41', '12.ABC.345/01DE-AA']) assert.equal(validCnpj(value), false, value);
