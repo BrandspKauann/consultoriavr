@@ -52,7 +52,7 @@ test('new article uses the existing landing layout, crawlable text, links and SE
   assert.ok(html.includes(`rel="canonical" href="https://www.consultoriavr.com.br/conteudo/${slug}/"`));
   assert.match(html, /property="og:type" content="article"/);
   assert.ok(library.includes(`/conteudo/${slug}/`) && sitemap.includes(`/conteudo/${slug}/`));
-  assert.equal((html.match(/gtm\.js\?id=/g) || []).length, 1);
+  assert.equal((html.match(/gtag\/js\?id=G-FM1ZJGL2RN/g) || []).length, 1);
 });
 
 test('isolated build keeps future editorial and scheduled posts out of routes and sitemap', async () => {

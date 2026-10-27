@@ -172,7 +172,7 @@ Eventos implementados na dataLayer, sem informações pessoais:
 `contact_form_start`, `contact_submit`, `generate_lead`,
 `contact_submit_error`, `thank_you_view`, `whatsapp_after_submit`.
 
-Publicar gatilhos de evento personalizado e tags GA4 no GTM `GTM-T636X4P7`.
+Atualização: a propriedade oficial é `G-FM1ZJGL2RN`, confirmada pelo proprietário. A tag é instalada diretamente uma vez por página; os eventos são enviados via `gtag`. Não restaurar o contêiner anterior nem substituir o ID sem nova solicitação explícita.
 Selecionar apenas UM evento como conversão de envio: `generate_lead` é o
 recomendado. Não marcar também `contact_submit` e `thank_you_view` como a mesma
 conversão, evitando triplicar os leads. `thank_you_view` dispara uma vez após

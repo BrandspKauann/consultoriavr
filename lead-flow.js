@@ -1,7 +1,12 @@
 import { validCnpj, maskCnpj, validCorporateEmail, validPhone, diagnosticQuestions, quizQuestions, diagnosticResult, quizResult, answerLabels, OPERATORS, VOLUMES } from './lead-core.mjs';
 import './site-motion.js';
 
-const track = (event, parameters = {}) => (window.dataLayer = window.dataLayer || []).push({ event, ...parameters });
+const track = (event, parameters = {}) => {
+  window.dataLayer = window.dataLayer || [];
+  // Keep local event consumers while sending GA4 events directly, without GTM.
+  window.dataLayer.push({ event, ...parameters });
+  window.gtag?.('event', event, { ...parameters, send_to: 'G-FM1ZJGL2RN' });
+};
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const read = key => { try { return JSON.parse(sessionStorage.getItem(`vr:${key}`) || 'null'); } catch { return null; } };
 const write = (key, value) => { try { sessionStorage.setItem(`vr:${key}`, JSON.stringify(value)); } catch { /* The form must work when browser storage is disabled. */ } };

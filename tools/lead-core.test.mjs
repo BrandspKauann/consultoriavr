@@ -106,7 +106,7 @@ test('generated pages retain static SEO, qualified contact and no future article
     assert.match(html, /lead-flow.js/);
     assert.match(html, /institutional-footer/);
     assert.doesNotMatch(html, /wa\.link\/3gwhbl/);
-    assert.equal((html.match(/gtm\.js\?id=/g) || []).length, 1);
+    assert.equal((html.match(/gtag\/js\?id=G-FM1ZJGL2RN/g) || []).length, 1);
   }
   const thanks = await fs.readFile(new URL('obrigado/index.html', root), 'utf8');
   assert.match(thanks, /noindex, follow/);
