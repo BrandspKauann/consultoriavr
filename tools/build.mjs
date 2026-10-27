@@ -192,7 +192,7 @@ function editorialNav(current = '') {
       <div>
         <a href="/#operadoras"${current === 'operators' ? ' aria-current="page"' : ''}>Operadoras</a>
         <a href="/conteudo/"${current === 'content' ? ' aria-current="page"' : ''}>Conteúdos</a>
-        <a class="operator-page__contact" href="/contato/">Falar com um consultor</a>
+        <a class="profile-cta" href="/quiz-rede-aberta-ou-fechada/">Testar meu perfil de rede grátis →</a>
       </div>
     </nav>`;
 }
@@ -226,6 +226,7 @@ ${noindex ? '    <meta name="robots" content="noindex, follow" />\n' : ''}    <m
     <link rel="stylesheet" href="/seo-fallback-hirayama.css" />
     <link rel="stylesheet" href="/lead-flow.css" />
     <link rel="stylesheet" href="/operator-experience.css" />
+    <link rel="stylesheet" href="/profile-cta.css" />
     <script type="module" src="/lead-flow.js"></script>
 ${structuredData.map((item) => `    <script type="application/ld+json">${safeJson(item)}</script>`).join('\n')}
   </head>`;
@@ -265,7 +266,7 @@ function renderBlogIndex(posts) {
   return `<!doctype html>
 <html lang="pt-BR">
   ${head({
-    title: 'Blog da Consultoria | Artigos sobre Benefícios Corporativos',
+    title: 'Cartões VA e VR: guias e teste grátis de perfil | Consultoria VR',
     description: 'Conteúdos sobre benefícios corporativos. Veja artigos sobre comparação de VR, Flash, Caju, iFood, ValeCard e Pluxee, além de gestão de RH, PAT e implantação.',
     keywords: ['consultoria em cartões', 'benefícios corporativos', 'vale refeição', 'vale alimentação', 'VR', 'Flash', 'Caju', 'iFood Benefícios', 'ValeCard', 'Pluxee', 'PAT'],
     canonical: `${siteUrl}/conteudo`,
@@ -284,7 +285,7 @@ ${editorialNav('content')}
             <p class="seo-fallback__eyebrow">Conteúdo sobre benefícios corporativos</p>
             <h1>Consultoria em <span>Cartões</span></h1>
             <p class="seo-fallback__lead">Artigos e materiais para empresas que querem comparar VR, Flash, Caju, iFood, ValeCard, Pluxee e outras soluções de benefícios corporativos com mais clareza.</p>
-            <a class="seo-fallback__cta" href="/contato/">Falar com um consultor</a>
+            <a class="profile-cta" href="/quiz-rede-aberta-ou-fechada/">Testar meu perfil de rede grátis →</a>
           </div>
         </header>
 
@@ -465,7 +466,7 @@ ${editorialNav('content')}
           </div>
           <div class="article-landing__hero-actions">
             <a href="#decisao">Explorar a análise</a>
-            <a href="/contato/">Falar com um consultor</a>
+            <a class="profile-cta" href="/quiz-rede-aberta-ou-fechada/">Testar meu perfil de rede grátis →</a>
           </div>
         </div>
         </header>
@@ -500,12 +501,12 @@ ${editorialNav('content')}
           <div class="article-landing__application-intro">
             <p class="article-landing__section-label">Da análise para a rotina</p>
             <h2>Como transformar esta leitura em um plano de ação.</h2>
-            <p>O tema “${escapeHtml(post.shortTitle || post.title)}” fica mais útil quando sai da discussão abstrata e passa a ter responsáveis, evidências e um momento claro de revisão.</p>
+            <p>Para aplicar esta análise, defina evidências, responsáveis e uma data de revisão.</p>
           </div>
           <div class="article-landing__application-steps">
-            <article><span>01</span><div><h3>Fotografe o cenário atual</h3><p>Registre volumes, localidades, reclamações, tarefas manuais e regras internas. Sem essa linha de base, a empresa corre o risco de avaliar a mudança pela memória ou pela apresentação comercial.</p></div></article>
-            <article><span>02</span><div><h3>Peça evidências comparáveis</h3><p>Leve os mesmos casos para cada alternativa e registre como cada uma responde aos pontos centrais desta análise: ${escapeHtml(decisionTopics)}. Uma matriz comum torna diferenças e pendências visíveis para todas as áreas.</p></div></article>
-            <article><span>03</span><div><h3>Defina dono, prazo e revisão</h3><p>Cada decisão precisa indicar quem aprova, quem opera, o que será comunicado e quando os resultados serão revistos. Assim, o benefício deixa de ser uma compra pontual e passa a ser gerido.</p></div></article>
+            <article><span>01</span><div><h3>Fotografe o cenário atual</h3><p>Registre volumes, localidades, reclamações, tarefas manuais e regras internas antes de comparar propostas.</p></div></article>
+            <article><span>02</span><div><h3>Peça evidências comparáveis</h3><p>Apresente os mesmos casos às alternativas e documente diferenças e pendências.</p></div></article>
+            <article><span>03</span><div><h3>Defina dono, prazo e revisão</h3><p>Indique quem aprova, quem opera, o que será comunicado e quando revisar os resultados.</p></div></article>
           </div>
         </section>
 
@@ -513,7 +514,7 @@ ${editorialNav('content')}
           <div class="article-landing__metrics-heading">
             <p class="article-landing__section-label">Depois da decisão</p>
             <h2>Quatro sinais mostram se a escolha está funcionando.</h2>
-            <p>Os indicadores devem ser comparados com a linha de base anterior e interpretados em conjunto. Um número isolado raramente explica a experiência completa.</p>
+            <p>Compare os indicadores com o cenário anterior, sempre em conjunto.</p>
           </div>
           <div class="article-landing__metrics-grid">
             <article><strong>01</strong><h3>Chamados</h3><p>Volume, motivo e recorrência das dúvidas recebidas pelo RH e pelo suporte.</p></article>
@@ -527,9 +528,9 @@ ${editorialNav('content')}
           <div>
             <p class="article-landing__section-label">Leitura consultiva</p>
             <h2>Critérios claros transformam proposta comercial em decisão empresarial.</h2>
-            <p>A Consultoria VR organiza rede, operação, governança, custo total e experiência dos colaboradores em uma análise que RH, financeiro e liderança conseguem usar juntos.</p>
+            <p>A Consultoria VR reúne rede, operação, governança e custo total para apoiar a decisão de RH, financeiro e liderança.</p>
           </div>
-          <a href="/contato/">Quero analisar meu cenário <span>→</span></a>
+          <a class="profile-cta" href="/quiz-rede-aberta-ou-fechada/">Testar meu perfil de rede grátis <span>→</span></a>
         </section>
 
         ${content.faq.length ? `<section class="article-landing__faq" id="faq">
@@ -629,7 +630,8 @@ ${editorialNav('operators')}
             <h1>${escapeHtml(operator.heading || operator.name)}</h1>
             <p class="operator-hero-lead">${escapeHtml(guide.lead)}</p>
             <p>${operatorText(guide.campaign.pitch)}</p>
-            <a class="operator-page__button" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa</a>
+            <a class="profile-cta" href="/quiz-rede-aberta-ou-fechada/">Testar meu perfil de rede grátis →</a>
+            <a class="operator-hero-explore" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa →</a>
             <a class="operator-hero-explore" href="#produtos">Explorar as soluções <span aria-hidden="true">↓</span></a>
           </div>
           <div class="operator-card-float" data-motion-loop>
