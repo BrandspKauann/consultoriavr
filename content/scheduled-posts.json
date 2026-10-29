@@ -756,7 +756,7 @@
     "publishedAt": "2030-01-01T12:00:00.000Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-10-29T15:00:00.000Z",
     "title": "Auditoria de benefícios corporativos: quais dados revisar antes da renovação",
     "shortTitle": "Auditoria antes da renovação",
@@ -827,7 +827,8 @@
         "question": "Quais áreas devem participar?",
         "answer": "RH e financeiro costumam liderar, com contribuições de gestores, compras, jurídico e colaboradores conforme o porte e a política da empresa."
       }
-    ]
+    ],
+    "publishedAt": "2026-10-29T20:09:46.322Z"
   },
   {
     "status": "scheduled",

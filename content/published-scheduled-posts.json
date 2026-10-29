@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-10-29T15:00:00.000Z",
+    "title": "Auditoria de benefícios corporativos: quais dados revisar antes da renovação",
+    "shortTitle": "Auditoria antes da renovação",
+    "slug": "auditoria-beneficios-corporativos-dados-antes-renovacao",
+    "category": "Auditoria de benefícios",
+    "description": "Veja quais dados de uso, operação, suporte e rede ajudam o RH a preparar uma renovação de benefícios corporativos com critérios claros.",
+    "keywords": [
+      "auditoria de benefícios corporativos",
+      "renovação de benefícios",
+      "dados de RH",
+      "cartão de benefícios",
+      "gestão de benefícios"
+    ],
+    "hashtags": [
+      "#AuditoriaDeBeneficios",
+      "#GestaoDeRH",
+      "#BeneficiosCorporativos",
+      "#DadosDeRH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Equipe de RH revisando dados para a renovação de benefícios corporativos",
+    "imagePrompt": "Imagem editorial sobre auditoria antes da renovação, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Renovar um contrato de benefícios sem revisar a operação do período anterior faz a empresa repetir decisões com pouca evidência. A proposta comercial é apenas uma parte da análise.",
+      "Uma auditoria organizada reúne dados de uso, chamados, rede, cargas, ajustes e percepção dos colaboradores para mostrar o que deve ser mantido, corrigido ou comparado."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "A auditoria transforma fatos dispersos em perguntas objetivas. Quantos chamados foram abertos, quais unidades concentraram reclamações e onde o RH precisou intervir manualmente são sinais importantes.",
+          "Também vale separar problemas do fornecedor de problemas da política interna. Sem essa distinção, a empresa pode trocar de operadora e levar o mesmo ruído para o contrato seguinte."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "O risco mais comum é negociar apenas taxa e prazo. Essa abordagem deixa de fora o trabalho operacional, a disponibilidade da rede e a qualidade do suporte durante eventos críticos.",
+          "Outro risco é usar médias gerais que escondem diferenças entre filiais, turnos e perfis de colaboradores. A auditoria precisa observar o contexto de uso."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Consolidar cargas, ajustes, estornos e divergências do período.",
+          "Classificar chamados por motivo, unidade e tempo de solução.",
+          "Revisar aceitação nos locais de uso mais relevantes.",
+          "Ouvir RH, financeiro, gestores e uma amostra de colaboradores.",
+          "Registrar critérios e pesos antes de receber novas propostas."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O resultado da auditoria deve virar uma matriz de renovação. Cada critério recebe peso conforme a realidade da empresa, sem presumir que um fornecedor atende melhor todos os cenários.",
+          "Com esse material, a conversa de renovação fica mais transparente e permite comparar permanência, ajustes contratuais ou nova cotação com a mesma régua."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Auditoria significa que a empresa precisa trocar de fornecedor?",
+        "answer": "Não. A auditoria serve para entender o cenário e pode sustentar a permanência, uma renegociação ou uma nova comparação."
+      },
+      {
+        "question": "Quais áreas devem participar?",
+        "answer": "RH e financeiro costumam liderar, com contribuições de gestores, compras, jurídico e colaboradores conforme o porte e a política da empresa."
+      }
+    ],
+    "publishedAt": "2026-10-29T20:09:46.322Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-10-22T15:00:00.000Z",
     "title": "Migração de operadora de benefícios: como comunicar sem ruído",
     "shortTitle": "Migração sem ruído",
