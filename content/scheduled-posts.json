@@ -831,7 +831,7 @@
     "publishedAt": "2026-10-29T20:09:46.322Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-11-05T15:00:00.000Z",
     "title": "Indicadores de benefícios corporativos: o que acompanhar além do valor carregado",
     "shortTitle": "Indicadores de benefícios",
@@ -902,7 +902,8 @@
         "question": "Indicadores permitem comparar operadoras?",
         "answer": "Sim, desde que sejam coletados com definições equivalentes e interpretados considerando público, política e período analisado."
       }
-    ]
+    ],
+    "publishedAt": "2026-11-05T21:25:29.010Z"
   },
   {
     "status": "scheduled",

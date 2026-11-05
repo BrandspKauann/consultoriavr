@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-11-05T15:00:00.000Z",
+    "title": "Indicadores de benefícios corporativos: o que acompanhar além do valor carregado",
+    "shortTitle": "Indicadores de benefícios",
+    "slug": "indicadores-beneficios-corporativos-alem-valor-carregado",
+    "category": "Dados e indicadores",
+    "description": "Conheça indicadores de benefícios corporativos para acompanhar adesão, chamados, rede, operação e experiência sem depender apenas do valor carregado.",
+    "keywords": [
+      "indicadores de benefícios corporativos",
+      "dados de benefícios",
+      "KPIs de RH",
+      "gestão de benefícios",
+      "cartão corporativo"
+    ],
+    "hashtags": [
+      "#IndicadoresDeRH",
+      "#DadosDeBeneficios",
+      "#GestaoDeBeneficios",
+      "#RH",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-08.png",
+    "imageAlt": "Painel com indicadores de benefícios corporativos para análise do RH",
+    "imagePrompt": "Imagem editorial sobre indicadores de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O valor mensal carregado informa quanto a empresa destinou ao benefício, mas não explica se a operação está funcionando bem. Para isso, o RH precisa combinar indicadores financeiros, operacionais e de experiência.",
+      "A leitura não precisa começar com um painel complexo. Poucos indicadores consistentes já ajudam a identificar gargalos e orientar perguntas ao fornecedor."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Indicadores úteis acompanham ativação, cartões bloqueados, chamados, prazo de resposta, ajustes de carga e cobertura da rede. Eles mostram onde a jornada exige intervenção do RH.",
+          "Quando possível, os dados devem ser analisados por unidade ou público de forma agregada. Isso evita conclusões baseadas em uma média que não representa toda a empresa."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Medir apenas volume pode incentivar interpretações erradas. Mais chamados podem indicar problema, mas também podem refletir uma comunicação que orientou os colaboradores a usar o canal correto.",
+          "Também é importante evitar dados pessoais desnecessários. A análise deve respeitar finalidade, acesso e governança definidos pela empresa."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Taxa de ativação e primeiro acesso ao aplicativo.",
+          "Chamados por motivo e tempo de resolução.",
+          "Ocorrências de carga, ajuste, estorno e segunda via.",
+          "Cobertura da rede nas regiões prioritárias.",
+          "Percepção do colaborador em pesquisas curtas e periódicas."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "O conjunto de indicadores deve responder às decisões do RH. Se a prioridade é reduzir retrabalho, chamados e exceções merecem mais atenção; se é melhorar acesso, rede e experiência ganham peso.",
+          "O acompanhamento periódico cria uma base comparável para renovação e implantação, sem transformar um número isolado em promessa de resultado."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "É preciso acompanhar muitos indicadores?",
+        "answer": "Não. É melhor começar com poucos indicadores ligados às decisões da empresa e ampliar somente quando houver rotina para analisar e agir."
+      },
+      {
+        "question": "Indicadores permitem comparar operadoras?",
+        "answer": "Sim, desde que sejam coletados com definições equivalentes e interpretados considerando público, política e período analisado."
+      }
+    ],
+    "publishedAt": "2026-11-05T21:25:29.010Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-10-29T15:00:00.000Z",
     "title": "Auditoria de benefícios corporativos: quais dados revisar antes da renovação",
     "shortTitle": "Auditoria antes da renovação",
