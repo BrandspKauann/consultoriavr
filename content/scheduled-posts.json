@@ -906,7 +906,7 @@
     "publishedAt": "2026-11-05T21:25:29.010Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-11-12T15:00:00.000Z",
     "title": "SLA de operadora de benefícios: como avaliar suporte antes de contratar",
     "shortTitle": "SLA e suporte",
@@ -977,7 +977,8 @@
         "question": "O colaborador deve falar direto com a operadora?",
         "answer": "Depende do tema e do desenho de suporte. O fluxo deve deixar claro o que vai para a operadora e o que permanece com o RH."
       }
-    ]
+    ],
+    "publishedAt": "2026-11-12T21:47:58.084Z"
   },
   {
     "status": "scheduled",

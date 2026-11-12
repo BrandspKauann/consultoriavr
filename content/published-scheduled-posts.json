@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-11-12T15:00:00.000Z",
+    "title": "SLA de operadora de benefícios: como avaliar suporte antes de contratar",
+    "shortTitle": "SLA e suporte",
+    "slug": "sla-operadora-beneficios-como-avaliar-suporte",
+    "category": "Suporte e atendimento",
+    "description": "Entenda como avaliar SLA, canais, escalonamento e suporte de uma operadora de benefícios antes da contratação ou renovação.",
+    "keywords": [
+      "SLA operadora de benefícios",
+      "suporte cartão de benefícios",
+      "atendimento ao RH",
+      "benefícios corporativos",
+      "gestão de fornecedores"
+    ],
+    "hashtags": [
+      "#SLA",
+      "#SuporteAoRH",
+      "#GestaoDeFornecedores",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-09.png",
+    "imageAlt": "Equipe analisando SLA e suporte de operadora de benefícios",
+    "imagePrompt": "Imagem editorial sobre sla e suporte, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "O suporte costuma receber atenção somente quando algo falha. Por isso, avaliar SLA antes da contratação ajuda o RH a entender como ocorrências serão registradas, priorizadas e resolvidas.",
+      "Um prazo escrito no contrato é importante, mas precisa vir acompanhado de canais, responsabilidades, evidências e regras de escalonamento."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "SLA deve diferenciar dúvidas simples de incidentes que impedem uso, afetam uma carga ou atingem muitos colaboradores. Cada situação exige prioridade e comunicação compatíveis.",
+          "Também importa saber quem acompanha a empresa após a implantação. Atendimento comercial, suporte operacional e canal do colaborador cumprem papéis diferentes."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Um SLA genérico pode parecer suficiente até surgir uma ocorrência crítica. Sem classificação, um problema de carga pode entrar na mesma fila de uma dúvida de cadastro.",
+          "Outro risco é depender de conversas sem protocolo. Sem registro, o RH perde histórico e fica difícil avaliar recorrência ou cobrar o fluxo previsto."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Canais disponíveis para RH e colaboradores.",
+          "Prazos por severidade e horário de atendimento.",
+          "Fluxo de escalonamento para incidentes críticos.",
+          "Formato dos relatórios de chamados e causas recorrentes.",
+          "Responsabilidades da empresa e do fornecedor em cada etapa."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A comparação de suporte deve usar situações reais da empresa. Perguntar como o fornecedor trataria uma carga divergente ou cartões não entregues produz evidências mais úteis do que uma descrição ampla.",
+          "O objetivo é escolher um modelo de atendimento compatível com a complexidade da operação, sem assumir que um único formato serve para todas as empresas."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "SLA mais curto significa suporte melhor?",
+        "answer": "Não necessariamente. O prazo precisa ser viável, mensurável e acompanhado de qualidade da solução e comunicação durante o atendimento."
+      },
+      {
+        "question": "O colaborador deve falar direto com a operadora?",
+        "answer": "Depende do tema e do desenho de suporte. O fluxo deve deixar claro o que vai para a operadora e o que permanece com o RH."
+      }
+    ],
+    "publishedAt": "2026-11-12T21:47:58.084Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-11-05T15:00:00.000Z",
     "title": "Indicadores de benefícios corporativos: o que acompanhar além do valor carregado",
     "shortTitle": "Indicadores de benefícios",
