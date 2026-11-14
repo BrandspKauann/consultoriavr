@@ -88,7 +88,7 @@ test('payroll landing is moved out of the site with a permanent redirect', async
 test('generated pages retain static SEO, qualified contact and no future articles', async () => {
   const root = new URL('../', import.meta.url);
   const home = await fs.readFile(new URL('index.html', root), 'utf8');
-  assert.match(home, /Cartões corporativos com/);
+  assert.match(home, /VA e VR para empresas, com/);
   assert.match(home, /Testar meu perfil de rede/);
   assert.doesNotMatch(home, /Informe seus dados ao final para acessar o resultado/);
   const sitemap = await fs.readFile(new URL('sitemap.xml', root), 'utf8');
