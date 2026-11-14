@@ -1,5 +1,117 @@
 [
   {
+    "slug": "vale-alimentacao-refeicao-ferias-recesso-rh",
+    "title": "VA e VR nas férias: a melhor decisão começa antes do recesso",
+    "description": "Sua empresa vai entrar em recesso? Entenda o que conferir no VA e VR, organize os créditos e comece com um diagnóstico de perfil grátis.",
+    "category": "Rotina do RH",
+    "imageAlt": "Profissional de RH revisa um calendário ao lado de um cartão sem marca e uma refeição; imagem ilustrativa gerada por IA",
+    "openingTitle": "O calendário muda. A orientação ao colaborador precisa acompanhar.",
+    "intro": [
+      "Chega dezembro e a mesma dúvida volta ao RH: o vale continua durante as férias? Antes de responder no grupo da empresa ou alterar a carga do cartão, é preciso separar férias, recesso e dias efetivamente trabalhados. Tratar situações diferentes como uma única regra costuma criar correções justamente quando a equipe responsável também está reduzida.",
+      "A melhor decisão para a empresa começa pela conferência da política aplicável e termina com uma orientação que o colaborador entende. O cartão é apenas uma parte dessa operação. Calendário, contrato, atendimento e comunicação precisam estar combinados antes do fechamento."
+    ],
+    "sections": [
+      {
+        "heading": "Permissão do PAT não resolve sozinha a regra da empresa",
+        "paragraphs": [
+          "O Ministério do Trabalho e Emprego informa que a concessão do benefício do PAT é permitida durante férias e outros afastamentos. Isso não significa que toda empresa deva aplicar a mesma regra em qualquer situação. A orientação do programa precisa ser lida junto das obrigações e condições que efetivamente se aplicam à relação de trabalho.",
+          "Antes de reduzir, suspender ou manter um crédito, peça à área responsável que confira a convenção ou acordo coletivo, o contrato e a política interna. Não decida com base na experiência de outra empresa. Uma resposta válida para determinado público pode não servir para todos os vínculos e unidades."
+        ]
+      },
+      {
+        "heading": "Desenhe o calendário antes de enviar o arquivo",
+        "paragraphs": [
+          "Imagine uma equipe que terá férias em datas diferentes e outra que seguirá trabalhando. É um exemplo de operação, não uma regra de cálculo: se o RH usa uma única data para todo mundo, a carga pode precisar de revisão depois. Organize os grupos de calendário e valide os critérios antes do processamento.",
+          "Combine com o fornecedor os prazos reais de envio, aprovação e disponibilização. Confirme também quem acompanha uma rejeição durante o recesso. Uma planilha aprovada internamente não é a mesma coisa que um crédito confirmado na plataforma. Guarde o retorno da operação e defina um responsável pelas exceções."
+        ]
+      },
+      {
+        "heading": "Comunique o que foi decidido, sem linguagem de contrato",
+        "paragraphs": [
+          "O colaborador precisa saber a data prevista, a regra utilizada pela empresa e onde pedir ajuda se houver divergência. Uma mensagem curta, baseada na política validada, funciona melhor do que encaminhar telas e deixar cada pessoa interpretar o saldo.",
+          "Explique separadamente o que é uma decisão da empresa e o que é uma orientação de uso do cartão. O RH responde pela política; o fornecedor esclarece questões da plataforma e do pagamento. Essa divisão evita prometer funcionalidades que não foram confirmadas."
+        ]
+      },
+      {
+        "heading": "Use as ocorrências para melhorar a próxima contratação",
+        "paragraphs": [
+          "Créditos ajustados, chamados sem resposta e instruções desencontradas são informações úteis para a renovação. Registre o tipo de problema e o tempo de resolução, sem expor extratos ou hábitos de compra de pessoas identificadas.",
+          "Na comparação entre cartões, pergunte como cada fornecedor ajuda a administrar calendários, perfis e atendimento. A melhor alternativa é a que faz sentido para a operação que a empresa consegue demonstrar, não a que apresenta a promessa mais ampla."
+        ]
+      },
+      {
+        "heading": "Comece gratuitamente pelo perfil da sua empresa",
+        "paragraphs": [
+          "O diagnóstico de perfil da Consultoria VR é gratuito e ajuda a organizar os critérios iniciais de comparação. Ele não escolhe automaticamente uma operadora nem substitui a validação das regras trabalhistas.",
+          "Use o resultado para preparar uma conversa sobre aceitação, rotina do RH e suporte. A contratação de cartões ou serviços depende de uma proposta específica; a etapa gratuita é o diagnóstico inicial."
+        ],
+        "links": [
+          {
+            "label": "Faça seu diagnóstico de perfil grátis",
+            "url": "/quiz-rede-aberta-ou-fechada/"
+          },
+          {
+            "label": "Compare critérios entre cartões",
+            "url": "/conteudo/comparativo-vr-flash-caju-pluxee/"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "MTE: perguntas frequentes do PAT",
+        "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/perguntas-frequentes"
+      }
+    ],
+    "related": [
+      {
+        "label": "Faça seu diagnóstico de perfil grátis",
+        "url": "/quiz-rede-aberta-ou-fechada/"
+      },
+      {
+        "label": "Compare critérios entre cartões",
+        "url": "/conteudo/comparativo-vr-flash-caju-pluxee/"
+      }
+    ],
+    "faq": [
+      {
+        "question": "O PAT permite manter o benefício durante férias?",
+        "answer": "O MTE informa que a concessão é permitida. A regra concreta deve ser conferida com a área responsável, considerando instrumentos coletivos, contrato e política aplicáveis."
+      },
+      {
+        "question": "Férias e recesso devem ter o mesmo cálculo?",
+        "answer": "Não presuma uma regra única. Confirme o enquadramento de cada situação e os critérios validados pela empresa antes de processar a carga."
+      },
+      {
+        "question": "O diagnóstico de perfil é gratuito?",
+        "answer": "Sim. A etapa inicial de perfil é gratuita e não exige contratação. Cartões e serviços posteriores dependem de proposta."
+      },
+      {
+        "question": "O teste escolhe uma operadora automaticamente?",
+        "answer": "Não. Ele organiza critérios de perfil para a comparação e não substitui avaliação contratual ou trabalhista."
+      }
+    ],
+    "status": "published",
+    "publishAt": "2026-11-14T14:58:52.714Z",
+    "publishedAt": "2026-11-14T14:58:52.714Z",
+    "image": "/assets/blog/editorial/vale-alimentacao-refeicao-ferias-recesso-rh.webp",
+    "shortTitle": "VA e VR nas férias",
+    "readTime": 5,
+    "keywords": [
+      "VA e VR nas férias",
+      "vale alimentação recesso",
+      "diagnóstico grátis",
+      "rotina RH",
+      "vale refeição férias",
+      "política de benefícios"
+    ],
+    "hashtags": [
+      "#ValeRefeicao",
+      "#GestaoDeRH",
+      "#BeneficiosCorporativos"
+    ]
+  },
+  {
     "slug": "vale-refeicao-delivery-criterios-contratacao-rh",
     "title": "Vale-refeição no delivery: o que o RH deve conferir antes de contratar",
     "description": "O cartão funciona no delivery que sua equipe usa? Entenda como avaliar produto, restaurante, plataforma e suporte antes de contratar o vale-refeição.",
