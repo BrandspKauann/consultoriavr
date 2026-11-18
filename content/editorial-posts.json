@@ -1,5 +1,85 @@
 [
   {
+    "slug": "valor-va-vr-2027-realidade-cada-cidade",
+    "title": "Quanto oferecer de VA e VR em 2027? Comece pela realidade de cada cidade",
+    "description": "Compare localidades, rotina e política da empresa antes de definir VA e VR. Um guia para preparar a análise sem confundir referências com valores obrigatórios.",
+    "category": "Planejamento de VA e VR",
+    "imageAlt": "Profissionais de RH com mapas de cidades e refeições em escritório; imagem ilustrativa gerada por IA",
+    "openingTitle": "Um único valor pode esconder experiências diferentes.",
+    "intro": [
+      "A empresa atende clientes em várias cidades, mas decide o benefício olhando apenas para a região da matriz. O resultado pode ser uma política simples de administrar e difícil de explicar para quem almoça em outro contexto. Preparar o valor de VA e VR para 2027 exige conhecer essa diferença antes de comparar propostas.",
+      "O objetivo não é encontrar um número universal. Este texto ajuda a organizar a decisão comercial; regras aplicáveis, instrumentos coletivos e condições do benefício precisam ser conferidos pelos responsáveis da empresa."
+    ],
+    "sections": [
+      {
+        "heading": "A cidade é um ponto de partida, não a resposta inteira",
+        "paragraphs": [
+          "Uma média regional pode orientar perguntas, mas não descreve todos os bairros, horários e modelos de trabalho. Uma equipe em campo pode depender de estabelecimentos diferentes dos utilizados por quem trabalha perto da sede. O primeiro levantamento deve distinguir esses contextos sem transformar a consulta em acompanhamento individual do consumo.",
+          "Como exemplo identificado de fornecedor, a contratação online da Ticket apresenta uma consulta de referências por estado e cidade. Essa ferramenta é uma referência comercial da própria operação e não deve ser lida como valor obrigatório para todas as empresas ou como garantia de aceitação de qualquer cartão."
+        ]
+      },
+      {
+        "heading": "Defina uma amostra que represente a operação",
+        "paragraphs": [
+          "Converse com responsáveis pelas localidades e reúna situações típicas de refeição. O propósito é descobrir se as premissas usadas na sede também fazem sentido para as equipes externas. Relatos agregados ajudam a discutir a política sem pedir extratos, fotografias de cartões ou histórico pessoal de compras.",
+          "Registre de onde veio cada referência e quando foi observada. Se a amostra é pequena, apresente essa limitação. A decisão melhora quando explica o que foi comparado, em vez de dar aparência de precisão a um levantamento que não representa toda a empresa."
+        ]
+      },
+      {
+        "heading": "Separe valor contratado, aceitação e suporte",
+        "paragraphs": [
+          "Um valor mais alto não resolve uma rede inadequada para o local de uso. Da mesma forma, uma marca conhecida não garante que a experiência da equipe será a mesma em todas as cidades. Peça a cada fornecedor evidências e orientações relativas ao produto efetivamente ofertado.",
+          "A comparação deve manter o mesmo cenário para as propostas. Confirme como consultar a rede, quem atende o colaborador e como a empresa acompanha uma ocorrência recorrente. Isso evita decidir apenas pelo benefício anunciado e descobrir a operação depois de assinar."
+        ]
+      },
+      {
+        "heading": "Transforme o levantamento em premissas de decisão",
+        "paragraphs": [
+          "O RH pode apresentar cenários de valor e o financeiro pode explicar as restrições de orçamento. A discussão precisa mostrar as diferenças entre localidades, os públicos considerados e as dúvidas ainda abertas. Não é necessário prometer que um cenário resolverá todas as situações.",
+          "Antes de comunicar qualquer mudança, valide a política e as condições aplicáveis com os responsáveis internos. O PAT tem orientações oficiais sobre alimentação do trabalhador; a adoção de um valor e a leitura das obrigações da empresa exigem análise do caso, não uma conclusão tirada de um comparativo comercial."
+        ]
+      },
+      {
+        "heading": "Leve o perfil da empresa para a contratação",
+        "paragraphs": [
+          "A escolha de operadora ganha sentido quando consegue explicar como atende às localidades e à rotina que foram levantadas. O valor do benefício entra nessa análise junto com aceitação, implantação, atendimento e condições da proposta.",
+          "A Consultoria VR parte desse perfil para organizar os critérios de comparação. Se a empresa está planejando 2027, comece reunindo as localidades atendidas e as dificuldades atuais. A conversa deve produzir uma decisão com respaldo, sem eleger uma marca como melhor para todas as operações."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.ticket.com.br/faq/alimentacao-rh-empresas/contratacao-online-da-ticket/",
+        "label": "Ticket: contratação e consulta regional"
+      },
+      {
+        "url": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/programa-de-alimentacao-do-trabalhador-pat",
+        "label": "MTE: Programa de Alimentação do Trabalhador"
+      }
+    ],
+    "related": [
+      {
+        "url": "/conteudo/comparativo-vr-flash-caju-pluxee/",
+        "label": "Comparação de operadoras por critérios"
+      },
+      {
+        "url": "/",
+        "label": "Analise o perfil da sua empresa"
+      }
+    ],
+    "status": "published",
+    "publishAt": "2026-11-18T12:00:00.000Z",
+    "publishedAt": "2026-11-18T12:00:00.000Z",
+    "image": "/assets/blog/editorial/valor-va-vr-2027-realidade-cada-cidade.webp",
+    "shortTitle": "Quanto oferecer de VA e VR em 2027? Comece pela realidade de cada cidade",
+    "readTime": 4,
+    "keywords": [
+      "Quanto oferecer de VA e VR em 2027? Comece pela realidade de cada cidade",
+      "Planejamento de VA e VR"
+    ],
+    "hashtags": []
+  },
+  {
     "slug": "vale-alimentacao-refeicao-ferias-recesso-rh",
     "title": "VA e VR nas férias: a melhor decisão começa antes do recesso",
     "description": "Sua empresa vai entrar em recesso? Entenda o que conferir no VA e VR, organize os créditos e comece com um diagnóstico de perfil grátis.",
