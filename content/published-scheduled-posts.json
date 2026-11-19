@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-11-19T15:00:00.000Z",
+    "title": "Rede credenciada por CEP: como testar aceitação antes de escolher o cartão",
+    "shortTitle": "Rede por CEP",
+    "slug": "rede-credenciada-por-cep-testar-aceitacao-cartao",
+    "category": "Rede de aceitação",
+    "description": "Aprenda a testar a rede credenciada por CEP, unidade e rotina de uso antes de escolher um cartão de alimentação ou refeição.",
+    "keywords": [
+      "rede credenciada por CEP",
+      "aceitação cartão benefícios",
+      "vale-refeição",
+      "vale-alimentação",
+      "comparação de operadoras"
+    ],
+    "hashtags": [
+      "#RedeCredenciada",
+      "#ValeRefeicao",
+      "#ValeAlimentacao",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-10.png",
+    "imageAlt": "Mapa com pontos de aceitação de cartão de benefícios por região",
+    "imagePrompt": "Imagem editorial sobre rede por cep, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Listas amplas de estabelecimentos não garantem que o cartão funcione bem onde os colaboradores vivem, trabalham e fazem refeições. A rede precisa ser testada a partir da geografia real da empresa.",
+      "Uma análise por CEP e unidade ajuda a identificar vazios de cobertura antes que a implantação transforme essa descoberta em reclamação."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "O teste deve incluir bairros próximos às unidades, rotas de transporte e cidades com concentração de colaboradores. Para equipes externas, a análise pode considerar corredores de deslocamento.",
+          "Também vale separar alimentação, refeição e outras categorias. Um estabelecimento conhecido pode aceitar uma modalidade e não outra."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Consultar apenas capitais ou grandes redes pode esconder dificuldades em cidades menores e regiões industriais. A quantidade total de credenciados não substitui a relevância local.",
+          "A rede também muda ao longo do tempo. Por isso, a empresa precisa entender como atualizações, contestações e solicitações de credenciamento são tratadas."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Selecionar CEPs representativos de cada unidade.",
+          "Testar estabelecimentos de diferentes portes e categorias.",
+          "Confirmar modalidade aceita e condições de uso.",
+          "Registrar pontos críticos e alternativas próximas.",
+          "Entender o processo de atualização e expansão da rede."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A rede deve receber peso proporcional ao perfil da empresa. Operações concentradas podem testar uma amostra menor; equipes distribuídas exigem análise mais ampla e recorrente.",
+          "O resultado não aponta uma rede universalmente superior. Ele mostra qual cobertura se aproxima melhor do uso esperado em cada cenário."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "A lista no aplicativo é suficiente para validar a rede?",
+        "answer": "Ela é um ponto de partida. Uma amostra prática por região ajuda a confirmar disponibilidade e modalidade aceita."
+      },
+      {
+        "question": "Como avaliar empresas com colaboradores em muitas cidades?",
+        "answer": "Priorize cidades com maior concentração, regiões críticas e perfis diferentes, documentando a amostra e as limitações da análise."
+      }
+    ],
+    "publishedAt": "2026-11-19T22:37:58.186Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-11-12T15:00:00.000Z",
     "title": "SLA de operadora de benefícios: como avaliar suporte antes de contratar",
     "shortTitle": "SLA e suporte",

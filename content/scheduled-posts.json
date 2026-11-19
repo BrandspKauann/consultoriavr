@@ -981,7 +981,7 @@
     "publishedAt": "2026-11-12T21:47:58.084Z"
   },
   {
-    "status": "scheduled",
+    "status": "published",
     "publishAt": "2026-11-19T15:00:00.000Z",
     "title": "Rede credenciada por CEP: como testar aceitação antes de escolher o cartão",
     "shortTitle": "Rede por CEP",
@@ -1052,7 +1052,8 @@
         "question": "Como avaliar empresas com colaboradores em muitas cidades?",
         "answer": "Priorize cidades com maior concentração, regiões críticas e perfis diferentes, documentando a amostra e as limitações da análise."
       }
-    ]
+    ],
+    "publishedAt": "2026-11-19T22:37:58.186Z"
   },
   {
     "status": "scheduled",
