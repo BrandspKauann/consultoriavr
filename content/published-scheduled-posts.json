@@ -678,11 +678,11 @@
   {
     "status": "published",
     "publishAt": "2026-09-17T15:00:00.000Z",
-    "title": "Implantação de cartão de benefícios: checklist para evitar retrabalho",
+    "title": "Primeiro VA e VR: como comparar a implantação antes de contratar",
     "shortTitle": "Checklist de implantação",
     "slug": "implantacao-cartao-beneficios-checklist-retrabalho",
     "category": "Implantação",
-    "description": "Use um checklist consultivo para implantar cartão de benefícios com menos retrabalho, dúvidas de colaboradores e falhas de comunicação.",
+    "description": "Vai contratar VA e VR pela primeira vez? Compare cadastro, rede, primeiro crédito e suporte antes de escolher a operadora para sua empresa.",
     "keywords": [
       "implantação de cartão de benefícios",
       "checklist RH",
@@ -702,10 +702,17 @@
     "imageAlt": "Checklist de implantação de benefícios corporativos com cartões e selo de aprovação",
     "imagePrompt": "Imagem editorial gerada por IA sobre checklist de implantação de cartão de benefícios, sem texto, sem marcas reais e com paleta Hirayama.",
     "intro": [
-      "A implantação é o momento em que a promessa comercial encontra a rotina real da empresa. Se o processo não for bem organizado, o RH vira central de dúvidas antes mesmo do primeiro crédito.",
-      "Um checklist simples ajuda a reduzir falhas e transformar a mudança em uma transição compreensível para todos."
+      "Contratar VA e VR pela primeira vez exige comparar mais do que a taxa. A proposta precisa explicar como a empresa cadastra a equipe, confirma a aceitação nas localidades relevantes e acompanha o primeiro crédito. Este guia ajuda o RH a levar o mesmo cenário a cada fornecedor.",
+      "A Consultoria VR organiza critérios para a decisão empresarial. Não somos canal de saldo ou desbloqueio das operadoras e não indicamos uma marca como melhor para qualquer empresa."
     ],
     "sections": [
+      {
+        "heading": "Peça uma demonstração do mesmo cenário a cada fornecedor",
+        "paragraphs": [
+          "Descreva quantas unidades precisam ser atendidas, quem prepara os cadastros e quais localidades representam a rotina dos colaboradores. Peça que o fornecedor explique cadastro, pedido, aprovação, confirmação do pagamento e primeiro uso. Prazos e responsabilidades devem vir da proposta vigente, sem presumir que a operação de uma marca seja igual à de outra.",
+          "Uma demonstração comercial não exige compra fictícia ou envio de dados pessoais de colaboradores. Use informações agregadas e registre o que foi confirmado, o que depende do contrato e o que ainda precisa de resposta. A comparação fica mais útil quando todos recebem as mesmas perguntas."
+        ]
+      },
       {
         "heading": "O ponto central",
         "paragraphs": [
@@ -748,7 +755,8 @@
         "answer": "Bases desatualizadas, falta de comunicação, dúvidas sobre acesso e ausência de responsável claro por cada etapa."
       }
     ],
-    "publishedAt": "2026-09-17T18:55:21.571Z"
+    "publishedAt": "2026-09-17T18:55:21.571Z",
+    "updatedAt": "2026-11-21"
   },
   {
     "status": "published",

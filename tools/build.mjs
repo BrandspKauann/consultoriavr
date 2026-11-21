@@ -623,6 +623,7 @@ ${editorialNav('operators')}
             <h1>${escapeHtml(operator.heading || operator.name)}</h1>
             <p class="operator-hero-lead">${escapeHtml(guide.lead)}</p>
             <p>${operatorText(guide.campaign.pitch)}</p>
+            ${operator.slug === "ticket-beneficios" || operator.slug === "ifood-beneficios" ? '<p><a href="/conteudo/implantacao-cartao-beneficios-checklist-retrabalho/">Primeira contratação? Veja como comparar a implantação de VA e VR.</a></p>' : ""}
             <a class="profile-cta" href="/quiz-rede-aberta-ou-fechada/">Testar meu perfil de rede grátis →</a>
             <a class="operator-hero-explore" href="/contato/?operadora=${encodeURIComponent(operatorFormName(operator))}">Analisar para minha empresa →</a>
             <a class="operator-hero-explore" href="#produtos">Explorar as soluções <span aria-hidden="true">↓</span></a>
@@ -786,7 +787,7 @@ function renderSitemap(posts, operators) {
     .at(-1);
   const routes = [
     { loc: siteUrl, lastmod: '2026-11-16', changefreq: 'weekly', priority: '1.0' },
-    { loc: `${siteUrl}/conteudo`, lastmod: '2026-11-14', changefreq: 'weekly', priority: '0.8' },
+    { loc: `${siteUrl}/conteudo`, lastmod: '2026-11-21', changefreq: 'weekly', priority: '0.8' },
     ...['/contato/', '/ja-tenho-cartao/', '/quiz-rede-aberta-ou-fechada/', '/politica-de-privacidade/'].map(route => ({ loc: `${siteUrl}${route}`, lastmod: '2026-10-06', changefreq: 'monthly', priority: '0.7' })),
     ...operators.map((operator) => ({
       loc: `${siteUrl}${operatorRoute(operator)}`,
