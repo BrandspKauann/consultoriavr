@@ -46,6 +46,7 @@ const basePosts = [
   {
     source: 'base',
     slug: 'comparativo-vr-flash-caju-pluxee',
+    seoTitle: 'Flash ou Caju? Compare cartões de benefícios com VR e Pluxee',
     title: 'Comparativo entre VR, Flash, Caju e Pluxee para empresas com rotina operacional intensa',
     shortTitle: 'Comparativo',
     category: 'Comparativo',
@@ -425,7 +426,7 @@ function renderArticle(post, posts) {
   return `<!doctype html>
 <html lang="pt-BR">
   ${head({
-    title: `${post.title} | Consultoria VR`,
+    title: post.seoTitle || `${post.title} | Consultoria VR`,
     description: post.description,
     keywords: post.keywords || [],
     canonical,
