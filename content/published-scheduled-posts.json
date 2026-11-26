@@ -1,6 +1,81 @@
 [
   {
     "status": "published",
+    "publishAt": "2026-11-26T15:00:00.000Z",
+    "title": "Benefícios corporativos em empresas com várias unidades: como padronizar sem ignorar diferenças",
+    "shortTitle": "Benefícios multiunidade",
+    "slug": "beneficios-corporativos-varias-unidades-padronizar",
+    "category": "Operação multiunidade",
+    "description": "Veja como organizar benefícios corporativos em várias unidades conciliando padrão, rede local, governança e necessidades diferentes.",
+    "keywords": [
+      "benefícios corporativos várias unidades",
+      "gestão multiunidade",
+      "política de benefícios",
+      "rede credenciada",
+      "RH corporativo"
+    ],
+    "hashtags": [
+      "#GestaoMultiunidade",
+      "#PoliticaDeBeneficios",
+      "#RHCorporativo",
+      "#BeneficiosCorporativos",
+      "#ConsultoriaVR"
+    ],
+    "readTime": 7,
+    "image": "scheduled-07.png",
+    "imageAlt": "Mapa de unidades empresariais conectado a uma política de benefícios",
+    "imagePrompt": "Imagem editorial sobre benefícios multiunidade, sem texto, sem marcas reais e com paleta Hirayama.",
+    "intro": [
+      "Empresas com várias unidades precisam equilibrar consistência e contexto local. Uma regra única facilita governança, mas pode falhar se rede, jornada ou perfil de uso variar muito entre regiões.",
+      "O desenho deve começar pelaquilo que precisa ser comum e pelo que pode receber tratamento específico sem virar exceção permanente."
+    ],
+    "sections": [
+      {
+        "heading": "Por que este tema importa",
+        "paragraphs": [
+          "Elegibilidade, calendário, responsáveis e critérios de aprovação costumam funcionar melhor quando padronizados. Já rede e comunicação podem exigir adaptação regional.",
+          "Mapear diferenças antes da contratação evita que a matriz escolha com base em sua própria realidade e transfira o problema para filiais."
+        ]
+      },
+      {
+        "heading": "Riscos que merecem atenção",
+        "paragraphs": [
+          "Exceções não documentadas criam tratamento desigual e dificultam conciliação. No extremo oposto, uma padronização rígida pode manter um benefício pouco utilizável em certas localidades.",
+          "Outro risco é descentralizar cadastros sem controles de acesso e datas de corte, aumentando divergências entre folha, fornecedor e financeiro."
+        ]
+      },
+      {
+        "heading": "Checklist para o RH",
+        "bullets": [
+          "Definir regras corporativas que não mudam por unidade.",
+          "Mapear necessidades locais e cobertura por região.",
+          "Estabelecer responsáveis, acessos e datas de corte.",
+          "Criar comunicação central com complementos regionais.",
+          "Acompanhar indicadores por unidade sem expor indivíduos."
+        ]
+      },
+      {
+        "heading": "Como conduzir a decisão",
+        "paragraphs": [
+          "A matriz de comparação pode combinar critérios corporativos e regionais. Assim, a empresa enxerga onde uma solução atende de forma consistente e onde será necessário um plano operacional adicional.",
+          "A decisão deve documentar compensações e responsabilidades, evitando promessas de uniformidade que a rede ou a operação não conseguem entregar."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Todas as unidades precisam usar exatamente o mesmo benefício?",
+        "answer": "Não necessariamente. A empresa pode definir um padrão e justificar adaptações quando houver diferenças relevantes de rede ou operação."
+      },
+      {
+        "question": "Como evitar excesso de exceções?",
+        "answer": "Use critérios objetivos, responsáveis definidos e revisão periódica para impedir que decisões temporárias se tornem regras informais."
+      }
+    ],
+    "publishedAt": "2026-11-26T23:40:10.014Z"
+  },
+  {
+    "status": "published",
     "publishAt": "2026-11-19T15:00:00.000Z",
     "title": "Rede credenciada por CEP: como testar aceitação antes de escolher o cartão",
     "shortTitle": "Rede por CEP",
